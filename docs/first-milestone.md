@@ -32,7 +32,7 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza | Simulada |
 | Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render | **Real** tras reinicio; tras suspensión: arranque en frío real (28,3 s), recuperación de un resultado anterior pendiente |
 | Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones | Pendiente REAL (proceso vivo > 1 h); no se ejecutó la prueba en el entorno cloud del 30/09 |
-| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente REAL; autorun verificado solo con evidencia SIMULADA (17 pruebas web, rama `feat/mobile-autorun`). ADB en Windows y despliegue pendientes |
+| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente REAL; autorun verificado solo con evidencia SIMULADA (17 pruebas web, rama `feat/mobile-autorun`). ADB `device` informado por el propietario; prueba móvil y despliegue pendientes |
 | Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes | **Real**: ~210 MB pico, 0,5–0,6 s CPU; sin reinicios observados |
 
 No modificar `cloud_gate_passed` para convertir una prueba parcial en aprobación. La versión actual siempre informa `false`: es una prueba de viabilidad, no certificación del agente.
