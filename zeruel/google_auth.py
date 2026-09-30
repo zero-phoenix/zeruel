@@ -1,4 +1,6 @@
 """Owner-only Google Sign-In: accepts a Google ID token only for the owner's verified address."""
+import base64
+import collections
 import hashlib
 import json
 import threading
@@ -8,12 +10,26 @@ from urllib.request import urlopen
 
 TOKENINFO = "https://oauth2.googleapis.com/tokeninfo"
 ISSUERS = {"accounts.google.com", "https://accounts.google.com"}
+MAX_CHECKS_PER_MINUTE = 10  # Caps outbound tokeninfo calls so junk tokens cannot flood Google or Render.
 
 
 def fetch_tokeninfo(id_token):
     # POST keeps the ID token out of URLs and access logs.
     with urlopen(TOKENINFO, urlencode({"id_token": id_token}).encode(), timeout=5) as response:
         return json.load(response)
+
+
+def unverified_claims(id_token):
+    """Decode the JWT payload WITHOUT checking the signature (used only as a cheap local pre-filter)."""
+    parts = id_token.split(".")
+    if len(parts) != 3:
+        return None
+    try:
+        payload = parts[1] + "=" * (-len(parts[1]) % 4)
+        claims = json.loads(base64.urlsafe_b64decode(payload.encode("ascii")))
+    except (ValueError, UnicodeError):
+        return None
+    return claims if isinstance(claims, dict) else None
 
 
 class GoogleOwnerVerifier:
@@ -23,29 +39,45 @@ class GoogleOwnerVerifier:
         self.client_id, self.owner = client_id, owner_email.strip().lower()
         self.fetch, self.clock = fetch, clock
         self.cache = {}  # sha256(token) -> expiry; the token itself is never stored.
+        self.checks = collections.deque()  # timestamps of recent tokeninfo calls
         self.lock = threading.Lock()
+
+    def accepted(self, claims, now):
+        try:
+            return (claims.get("aud") == self.client_id and claims.get("iss") in ISSUERS
+                    and str(claims.get("email", "")).lower() == self.owner
+                    and int(claims.get("exp", 0)) > now)
+        except (TypeError, ValueError):
+            return False
 
     def verify(self, id_token):
         if not isinstance(id_token, str) or not 20 <= len(id_token) <= 4096:
             return False
-        key = hashlib.sha256(id_token.encode()).hexdigest()
+        key = hashlib.sha256(id_token.encode("utf-8", "surrogateescape")).hexdigest()
         now = self.clock()
         with self.lock:
             expiry = self.cache.get(key)
         if expiry and expiry > now:
             return True
+        # Local pre-filter: tokens that do not even claim to be the owner's never reach Google.
+        claims = unverified_claims(id_token)
+        if claims is None or not self.accepted(claims, now):
+            return False
+        with self.lock:
+            while self.checks and self.checks[0] <= now - 60:
+                self.checks.popleft()
+            if len(self.checks) >= MAX_CHECKS_PER_MINUTE:
+                return False
+            self.checks.append(now)
         try:
-            info = self.fetch(id_token)
-            accepted = (isinstance(info, dict) and info.get("aud") == self.client_id
-                and info.get("iss") in ISSUERS
-                and str(info.get("email", "")).lower() == self.owner
-                and str(info.get("email_verified", "")).lower() == "true"
-                and int(info.get("exp", 0)) > now)
+            info = self.fetch(id_token)  # Google remains the source of truth for the signature.
+            ok = (isinstance(info, dict) and self.accepted(info, now)
+                  and str(info.get("email_verified", "")).lower() == "true")
         except Exception:
             return False  # Fail closed on network errors or malformed replies.
-        if accepted:
+        if ok:
             with self.lock:
                 self.cache = {k: v for k, v in self.cache.items() if v > now}
                 if len(self.cache) < 64:
                     self.cache[key] = int(info["exp"])
-        return accepted
+        return ok
