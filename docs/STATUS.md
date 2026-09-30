@@ -23,11 +23,20 @@
 
 **El primer hito NO está superado. El resto de la implementación permanece condicionado a su validación, según el plan aprobado.**
 
-El acceso GitHub disponible no permite publicar workflows de Actions (`workflow` scope ausente). El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las pruebas se ejecutaron localmente, sin ampliar permisos de GitHub.
+El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las pruebas anteriores se ejecutaron localmente; el primer hito aún carece de validación real de Google.
 
 ## Acceso privado: avance posterior
 
-- Propietario exclusivo requerido; cuentas secundarias pendientes. No se public� la configuraci�n web con acceso Cualquiera.
-- C�digo actualizado guardado en Apps Script: entrada web deshabilitada, funci�n privada con comprobaci�n de identidad y manifiesto limitado a userinfo.email. Propiedad privada del propietario configurada.
+- Propietario exclusivo requerido; cuentas secundarias pendientes. No se publicó la configuración web con acceso Cualquiera.
+- Código actualizado guardado en Apps Script: entrada web deshabilitada, función privada con comprobación de identidad y manifiesto limitado a userinfo.email. Propiedad privada del propietario configurada.
 - Transporte Python para API OAuth preparado y probado con respuestas simuladas. Deshabilitado el antiguo transporte web.
-- Pendientes: proyecto Cloud est�ndar com�n, cliente OAuth, implementaci�n API Solo yo, permisos reales, almacenamiento autorizado de credenciales y despliegue actualizado en Render. La versi�n Live anterior sigue en blocked_persistence.
+- Pendientes: proyecto Cloud estándar común, cliente OAuth, implementación API Solo yo, permisos reales, almacenamiento autorizado de credenciales y despliegue actualizado en Render. La versión Live anterior sigue en blocked_persistence.
+
+## Relevo desde DESKTOP-B6D864U — 29 de septiembre de 2026, Lima
+
+- Checkout nuevo y limpio en `C:\Users\D\Documents\Codex\zeruel`, basado en `main` `63e77959eb5f805ac5caa17cba73586dfd51f59d`. La modificación local de `README.md` en la PC original no se tocó y debe inspeccionarse mañana antes de sincronizar.
+- Google anunció oficialmente que Gemini CLI dejó de servir solicitudes de Google AI Pro el 18/06/2026: https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/ . La inferencia de Zeruel permanece bloqueada bajo el fundamento actual. No se autorizaron otros CLI, Gemini API ni Vertex.
+- La consola de Google Cloud, abierta con `david.chavez.nge@gmail.com`, muestra una aceptación inicial de Condiciones del Servicio. No se aceptaron, no se creó proyecto ni se habilitó facturación. Apps Script sigue visible bajo la cuenta principal; no se vinculó un proyecto estándar ni se desplegó el ejecutable de API.
+- El dashboard de Render solicitó iniciar sesión. La opción GitHub requirió conceder acceso nuevo a la aplicación Render; no se concedió. Por ello no se verificó de nuevo el commit Live. Última versión **documentada**, no reconfirmada hoy: `6f07373`, `blocked_persistence`.
+- Este relevo actualiza documentación y corrige la codificación mixta previa de `STATUS.md` y `first-milestone.md`; no toca código de ejecución, credenciales, expedientes ni servicios. Pasaron 22 pruebas Python y 9 Node locales; no se hicieron pruebas de integración real ni de inferencia. `cloud_gate_passed` sigue `false`.
+- Próximo paso externo: aceptar personalmente las condiciones de Google Cloud si se desean usar sus servicios; después revisar el proyecto estándar concreto y confirmar la vinculación irreversible del script. Para inspeccionar Render se necesitará iniciar sesión sin ampliar permisos inesperados. Ningún proceso nuevo debe permanecer activo.

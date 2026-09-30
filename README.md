@@ -6,6 +6,8 @@ Agente personal para aprender procedimientos y preparar borradores entre disposi
 
 Este repositorio implementa **el primer hito: prueba sintética de viabilidad**. No es todavía un agente operativo, no observa el escritorio y no procesa expedientes. La ejecución en Render, el acceso a Google AI Pro y la recuperación tras suspensión requieren pruebas con las cuentas del propietario. No se afirma que estén superadas.
 
+**Bloqueo del proveedor (29/09/2026):** [Google anunció](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) que Gemini CLI dejó de atender solicitudes de Google AI Pro el 18/06/2026. El código fijado en `0.62.0` conserva la restricción de autenticación personal, pero sus pruebas simuladas no prueban que esa suscripción pueda inferir. No habilitar credenciales ni declarar superado el hito mientras no exista una vía oficial compatible con **Gemini CLI y Google AI Pro**. Antigravity CLI, Gemini API y Vertex no son sustitutos autorizados por este proyecto.
+
 - Python sin dependencias para el servidor y las pruebas.
 - Gemini CLI oficial fijado en `0.62.0`, autenticación `oauth-personal` obligatoria.
 - Rechazo de variables de API, Vertex y credenciales de servicio; sin alternativa facturable.
@@ -25,7 +27,7 @@ python -m zeruel.probe --prepare
 
 El instalador descarga exclusivamente el paquete oficial del registro npm y comprueba su integridad SHA-512. No modifica la instalación de Antigravity ni la configuración personal de Gemini.
 
-El informe de preparación indica la carpeta privada para Gemini. Para autenticar, establece `GEMINI_CLI_HOME` en esa carpeta e inicia el CLI instalado con Node de forma interactiva. Elige **Sign in with Google** y la cuenta asociada a tu suscripción. No selecciones API Key ni Vertex. No copies credenciales en el repositorio, chat o logs.
+El informe de preparación indica la carpeta privada para Gemini. El inicio de sesión y la inferencia quedan suspendidos por el bloqueo del proveedor descrito arriba. Los comandos siguientes documentan el procedimiento previsto **solo para cuando Google confirme nuevamente la compatibilidad**. No selecciones API Key ni Vertex. No copies credenciales en el repositorio, chat o logs.
 
 ```powershell
 $env:GEMINI_CLI_HOME = (Join-Path (Get-Location) 'work/private/gemini-home')
