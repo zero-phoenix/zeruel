@@ -8,7 +8,9 @@ services:
     envVars:
       - key: ZERUEL_ACCESS_TOKEN
         generateValue: true
-      - key: ZERUEL_GEMINI_OAUTH_JSON
+      - key: ZERUEL_AGY_OAUTH_TOKEN
+        sync: false
+      - key: ZERUEL_GEMINI_FREE_KEY
         sync: false
       - key: ZERUEL_CHECKPOINT_DEPLOYMENT_ID
         sync: false

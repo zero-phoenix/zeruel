@@ -6,10 +6,10 @@ Agente personal para aprender procedimientos y preparar borradores entre disposi
 
 Este repositorio implementa **el primer hito: prueba sintética de viabilidad**. No es todavía un agente operativo, no observa el escritorio y no procesa expedientes. La ejecución en Render, el acceso a Google AI Pro y la recuperación tras suspensión requieren pruebas con las cuentas del propietario. No se afirma que estén superadas.
 
-**Bloqueo del proveedor (29/09/2026):** [Google anunció](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) que Gemini CLI dejó de atender solicitudes de Google AI Pro el 18/06/2026. El código fijado en `0.62.0` conserva la restricción de autenticación personal, pero sus pruebas simuladas no prueban que esa suscripción pueda inferir. No habilitar credenciales ni declarar superado el hito mientras no exista una vía oficial compatible con **Gemini CLI y Google AI Pro**. Antigravity CLI, Gemini API y Vertex no son sustitutos autorizados por este proyecto.
+**Motor de inferencia (decisión del propietario, 30/09/2026):** Gemini CLI dejó de atender a Google AI Pro el 18/06/2026 ([anuncio](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)). El propietario autorizó su reemplazo oficial, **Antigravity CLI (`agy`)**, con su suscripción Google AI Pro y el modelo Gemini 3.8 Flash (High). Respaldo autorizado solo tras cuota agotada: Gemini API en capa gratuita, sin facturación y únicamente para la prueba sintética. Vertex y rutas facturables siguen prohibidas.
 
 - Python sin dependencias para el servidor y las pruebas.
-- Gemini CLI oficial fijado en `0.62.0`, autenticación `oauth-personal` obligatoria.
+- Antigravity CLI oficial fijado en `1.2.14` (SHA-512), binario de solo lectura, `--sandbox`, sin comandos de barra ni herramientas aprobadas automáticamente.
 - Rechazo de variables de API, Vertex y credenciales de servicio; sin alternativa facturable.
 - Una inferencia a la vez; prueba fija, sin archivos ni herramientas.
 - Interfaz móvil con estados desconectado/pausado/activo, autenticación y resultados sanitizados.
@@ -22,21 +22,10 @@ Python 3.12 y Node.js 20 o superior:
 
 ```powershell
 python -m unittest discover -s tests -v
-python scripts/install_cli.py --destination work/gemini-cli
-python -m zeruel.probe --prepare
+docker build -t zeruel .
 ```
 
-El instalador descarga exclusivamente el paquete oficial del registro npm y comprueba su integridad SHA-512. No modifica la instalación de Antigravity ni la configuración personal de Gemini.
-
-El informe de preparación indica la carpeta privada para Gemini. El inicio de sesión y la inferencia quedan suspendidos por el bloqueo del proveedor descrito arriba. Los comandos siguientes documentan el procedimiento previsto **solo para cuando Google confirme nuevamente la compatibilidad**. No selecciones API Key ni Vertex. No copies credenciales en el repositorio, chat o logs.
-
-```powershell
-$env:GEMINI_CLI_HOME = (Join-Path (Get-Location) 'work/private/gemini-home')
-node work/gemini-cli/package/bundle/gemini.js
-python -m zeruel.probe
-```
-
-La prueba devuelve únicamente estados, versión, resultado sintético y métricas. `blocked_auth` exige completar el acceso de Google; `paused_quota` conserva la pausa y no reintenta automáticamente.
+La sesión de `agy` la crea el propietario iniciando sesión con su cuenta (enlace oficial + código). Su archivo se provisiona a Render solo como secreto `ZERUEL_AGY_OAUTH_TOKEN`; nunca en el repositorio, chat ni logs. Sin sesión, la prueba devuelve `blocked_auth` sin llamar al modelo; cuota agotada devuelve `paused_quota` o usa el respaldo gratuito si `ZERUEL_GEMINI_FREE_KEY` existe.
 
 ## Prueba en nube
 

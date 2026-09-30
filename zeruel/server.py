@@ -8,7 +8,7 @@ import re
 import threading
 import time
 from .checkpoint import PrivateCheckpoint
-from .probe import home_path, prepare, probe
+from .probe import TOKEN, home_path, prepare, probe
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,8 @@ class Controller:
     @staticmethod
     def public(record):
         allowed = {"id", "state", "started", "completed", "elapsed_seconds", "children_peak_rss_kib",
-                   "children_cpu_seconds", "result", "checkpoint_saved", "recovered"}
+                   "children_cpu_seconds", "result", "checkpoint_saved", "recovered",
+                   "engine", "model", "primary_state"}
         return {**{k: v for k, v in record.items() if k in allowed}, "cloud_gate_passed": False}
 
     def journal(self, task_id, value):
@@ -197,13 +198,11 @@ def main():
     prepare(home_path())
     # Import occurs only if the owner explicitly provisions this secret.
     # No automatic extraction of credentials from other applications.
-    credentials = os.environ.get("ZERUEL_GEMINI_OAUTH_JSON")
+    credentials = os.environ.get("ZERUEL_AGY_OAUTH_TOKEN", "").strip()
     if credentials:
-        data = json.loads(credentials)
-        if not isinstance(data, dict) or not data.get("refresh_token"):
-            raise SystemExit("Invalid OAuth credential format")
-        path = home_path() / ".gemini" / "oauth_creds.json"
-        path.write_text(json.dumps(data), encoding="utf-8")
+        # The agy session file the owner created for Zeruel, provisioned as a Render secret.
+        path = home_path() / TOKEN
+        path.write_text(credentials, encoding="utf-8")
         if os.name != "nt":
             path.chmod(0o600)
     gateway = None
