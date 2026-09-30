@@ -1,6 +1,7 @@
 # Relevo de Zeruel — para el siguiente agente (GPT 6.1 u otro)
 
 ## 12. Relevo — 30/09/2026, DESKTOP-NLTEF6C (Codex)
+- **Relevo durable:** `docs/PROMPT-continuacion-claude-opus55-low.md`, solicitado por el propietario para Claude Opus 5.5 con esfuerzo low. PR documental #23, pendiente de autorización; incluye decisiones, evidencia móvil, bloqueos, limpieza y pasos C1–D.
 - **Continuación REAL:** PR #22 fusionado con autorización del propietario (`8662fb8`). En rama `codex/mobile-real-evidence` se documenta la prueba móvil real siguiente. Despliegue de `8662fb8` pendiente de verificación; no atribuirle la versión Live.
 - **Prueba móvil REAL:** Brave (`com.brave.browser`), lectura/pulsaciones por ADB: inicio Google con la cuenta abierta y lanzamiento manual `0a079423ff3c3fcc25f255e6a1058255` → `synthetic_success`, `ZERUEL_OK`, suma 42; 7,27 s, pico 210816 KiB, 0,629 s CPU. Consulta del checkpoint recuperó el mismo resultado, `completed=1790810077` UTC. Windows encendido; no satisface la fila de equipos apagados. Sin nuevas pruebas SIMULADAS en esta continuación.
 - **Bloqueo actualizado:** abrir el navegador por ADB continúa rechazado, pero leer y pulsar controles visibles funcionó después de que el propietario dejó la web abierta. El primer volcado mostraba `Desconectado`; se restableció Google sin escribir credenciales. No se cambiaron ajustes; XML eliminado y ADB cerrado.
