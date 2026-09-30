@@ -112,3 +112,8 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **Real:** repetir `POST /api/probe` con un id ya completado devuelve el registro guardado sin reejecutar (misma marca `completed`).
 - **Real:** tras «Restart service» en Render (disco local borrado; estado en memoria vuelve a `paused`), ambas tareas se recuperan desde el checkpoint de Apps Script y un reintento del mismo id tras el reinicio no reejecuta (`completed=1790798200` original).
 - Pendiente: suspensión por inactividad de Render, renovación del token OAuth (>1 h), cuota agotada + respaldo, otra identidad en vivo, prueba desde el móvil con ambos Windows apagados. `cloud_gate_passed=false`.
+
+## Suspensión y endurecimiento — 30/09/2026 ~15:35
+- **Real:** tras 17 min sin tráfico, el endpoint de salud respondió 200 en 28,3 s (arranque en frío de Render Free).
+- **Real:** con el endurecimiento del PR #18 desplegado, acceso con Google del propietario y tarea `046b7652…` → `synthetic_success` (8,18 s, pico 208 768 KiB); token basura y cabecera no ASCII → 401.
+- Pendiente: tarea desde el móvil con ambos Windows apagados; renovación del token en proceso vivo >1 h; cuota agotada + respaldo. `cloud_gate_passed=false`.

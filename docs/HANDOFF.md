@@ -26,7 +26,8 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 | Recuperación del checkpoint (lease, generación, journal, `recover` manual) | Fusionado (PR #1, #2) | Simulada: 50 Python, 22 Node |
 | Motor `agy` 1.2.14 (SHA-512, binario de root, `--sandbox`) | Fusionado (PR #3) | **Real** en contenedor 512 MB / 0,1 CPU: `synthetic_success` 12–20 s, ~210 MB |
 | Herramientas del modelo | Denegadas en modo `-p` | **Real**: `denied_actions: RunCommand`, sin archivos creados |
-| Render `zeruel-synthetic-probe` (`srv-dau6eq9srm7s73avnsb0`) | Live en `dc7eced` con los 5 secretos (`ZERUEL_ACCESS_TOKEN`, `ZERUEL_AGY_OAUTH_TOKEN`, `ZERUEL_CHECKPOINT_DEPLOYMENT_ID/_OAUTH_JSON/_SECRET`); autodeploy desactivado | **Real** 30/09: log «probe ready», `/healthz` OK. Tarea sintética en Render **aún no probada** (requiere el token de acceso del propietario) |
+| Render `zeruel-synthetic-probe` (`srv-dau6eq9srm7s73avnsb0`) | Live en `main` (tras PR #18) con 7 variables (5 secretos + `ZERUEL_GOOGLE_CLIENT_ID`, `ZERUEL_OWNER_EMAIL`); autodeploy desactivado | **Real** 30/09: `synthetic_success` con `agy`, checkpoint privado, idempotencia, recuperación tras reinicio, arranque en frío 28,3 s tras 17 min sin uso |
+| Acceso web | Google solo para el propietario (redirección OIDC, prefiltro local, ≤10 consultas/min a tokeninfo) + token legado | **Real**: owner acepta, token basura y cabecera no ASCII → 401. Revisión adversarial: 4 hallazgos corregidos (PR #18) |
 | Apps Script «Zeruel — punto de control sintético» | Vinculado al proyecto estándar 1096719789550; código = `main`; Ejecutable de API «Solo yo» | **Real** 30/09 (manifiesto `executionApi.access: MYSELF`) |
 | Google Cloud | Proyecto `zeruel-checkpoint-09292354` sin facturación; 24 APIs conservadas; pantalla de consentimiento «Zeruel» en producción (solo `userinfo.email`); cliente OAuth de escritorio | **Real** 30/09 |
 | Sesión `agy` (Google AI Pro) | Creada en Codespace con `tools/agy-login-codespace.ps1`; copiada a Render por el propietario | **Real** 30/09: `"status":"SUCCESS"`, `ZERUEL_OK` (en el codespace, no en Render) |
@@ -96,3 +97,12 @@ Título «Relevo»: fecha y host; cambios; rama y último commit publicado; vers
 - **Bloqueos:** la tarea sintética **en Render** no se ha ejecutado (requiere que el propietario pegue `ZERUEL_ACCESS_TOKEN` en https://zeruel-synthetic-probe.onrender.com); `cloud_gate_passed=false`.
 - **Próximo paso exacto:** el propietario lanza una tarea en la web del servicio; esperado `synthetic_success`. Si falla, leer `/api/status` y logs de Render. Después, resto de la matriz (sección 4, paso 6), incluida la prueba desde el móvil con los Windows apagados.
 - **Procesos activos:** ninguno local. Codespace de login borrado; queda «silver-space-carnival» apagado (no creado por el agente; GitHub lo elimina tras 30 días sin uso).
+
+## 11. Relevo — 30/09/2026 ~15:35 (UTC-5), DESKTOP-NLTEF6C (Claude Opus 5.5)
+- **Cambios:** PR #14–#18: acceso con Google solo para el propietario (redirección OIDC con `state`/`nonce`; GIS/FedCM fallaba), endurecimiento tras revisión adversarial de 4 agentes (prefiltro local, límite de tokeninfo, comparación en bytes, pruebas no vacías), evidencia de matriz.
+- **Desplegado:** Render Live con `main` (PR #18). Tras cada cambio: «Manual Deploy → Deploy latest commit».
+- **Pruebas reales:** `synthetic_success` ×4 (antes y después del endurecimiento; 5–8 s, ~210 MB); checkpoint privado consultable; idempotencia; reinicio; arranque en frío 28,3 s; 401 limpio con token basura y cabecera no ASCII. **Simuladas:** 61 Python (5/5 mutantes detectados), 61 Node.
+- **DeepSeek:** US$0; acumulado US$0,2143.
+- **Pendiente de la matriz:** tarea desde el móvil con ambos Windows apagados (solo el propietario); renovación del token OAuth en un proceso vivo >1 h; cuota agotada + respaldo; otra identidad Google real en vivo. `cloud_gate_passed=false`.
+- **Próximo paso exacto:** el propietario apaga ambos Windows y, desde el celular con datos móviles, entra en https://zeruel-synthetic-probe.onrender.com → «Acceder con Google» → «Ejecutar prueba sintética»; al volver informa el estado. Si es `synthetic_success`, marcar la prueba y evaluar `cloud_gate_passed` con la matriz completa.
+- **Nota para agentes:** el agente puede entrar a la web desde su navegador integrado eligiendo la cuenta de Google ya abierta (sin contraseña); los secretos siempre los pega el propietario en Edge.
