@@ -79,3 +79,8 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - La sesión de `agy` en Linux es un archivo (`.gemini/antigravity-cli/antigravity-oauth-token`), no el llavero: puede provisionarse como secreto de Render. Pide el ámbito `cloud-platform` además de los de identidad.
 - `--json-schema` se descartó: `agy` lo implementa como herramienta interna y se atasca con 0,1 CPU (0 tokens tras 110 s). La respuesta se valida de forma estricta en Zeruel.
 - Pendiente: vincular Apps Script al proyecto `zeruel-checkpoint-09292354`, cargar secretos en Render, desplegar y pruebas reales en nube. `cloud_gate_passed=false`.
+
+## Relevo a otra computadora — 30/09/2026
+
+- Relevo completo en `docs/HANDOFF.md`. Herramientas portables en `tools/` (asistente DeepSeek con registro de gasto; inicio de sesión de `agy`). Revisiones en `docs/reviews/`.
+- No viajan con el repositorio: la sesión de `agy`, la clave DeepSeek y los secretos de la fase 2. Gasto DeepSeek acumulado ≤ US$0,2143.

@@ -16,3 +16,7 @@ node_modules/
 *.png
 *.jpg
 *.zip
+*.token
+antigravity-oauth-token
+deepseek_ledger.*
+.zeruel-private/
