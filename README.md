@@ -6,7 +6,11 @@ Agente personal para aprender procedimientos y preparar borradores entre disposi
 
 **Continuidad:** el relevo completo para el siguiente agente está en [docs/HANDOFF.md](docs/HANDOFF.md).
 
-Este repositorio implementa **el primer hito: prueba sintética de viabilidad**. No es todavía un agente operativo, no observa el escritorio y no procesa expedientes. La ejecución en Render, el acceso a Google AI Pro y la recuperación tras suspensión requieren pruebas con las cuentas del propietario. No se afirma que estén superadas.
+Este repositorio implementa **el primer hito: prueba sintética de viabilidad**. No es todavía un agente operativo, no observa el escritorio y no procesa expedientes.
+
+**Evidencia real (30/09/2026):** en Render Free, la prueba sintética responde `synthetic_success` con Antigravity CLI y Google AI Pro (5–8 s, ~210 MB); el resultado se guarda y recupera desde el punto de control privado de Apps Script; no se repite una tarea ya completada, ni siquiera tras reiniciar el servicio; tras suspensión, el servicio despierta en ~28 s. Detalle y límites en [docs/STATUS.md](docs/STATUS.md) y en la matriz de [docs/first-milestone.md](docs/first-milestone.md). **Pendiente:** tarea lanzada desde el celular con ambos Windows apagados, renovación del token con el servicio encendido más de 1 h y cuota agotada. `cloud_gate_passed` sigue en `false`.
+
+**Uso:** https://zeruel-synthetic-probe.onrender.com → «Acceder con Google» (solo la cuenta del propietario) → «Ejecutar prueba sintética». Funciona igual desde el celular. Siguiente agente: [docs/PROMPT-continuacion-celular.md](docs/PROMPT-continuacion-celular.md).
 
 **Motor de inferencia (decisión del propietario, 30/09/2026):** Gemini CLI dejó de atender a Google AI Pro el 18/06/2026 ([anuncio](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)). El propietario autorizó su reemplazo oficial, **Antigravity CLI (`agy`)**, con su suscripción Google AI Pro y el modelo Gemini 3.8 Flash (High). Respaldo autorizado solo tras cuota agotada: Gemini API en capa gratuita, sin facturación y únicamente para la prueba sintética. Vertex y rutas facturables siguen prohibidas.
 
@@ -24,10 +28,9 @@ Python 3.12 y Node.js 20 o superior:
 
 ```powershell
 python -m unittest discover -s tests -v
-docker build -t zeruel .
 ```
 
-La sesión de `agy` la crea el propietario iniciando sesión con su cuenta (enlace oficial + código). Su archivo se provisiona a Render solo como secreto `ZERUEL_AGY_OAUTH_TOKEN`; nunca en el repositorio, chat ni logs. Sin sesión, la prueba devuelve `blocked_auth` sin llamar al modelo; cuota agotada devuelve `paused_quota` o usa el respaldo gratuito si `ZERUEL_GEMINI_FREE_KEY` existe.
+La imagen Docker se construye en Render o en un Codespace, no en la PC del propietario (equipo de bajos recursos). La sesión de `agy` la crea el propietario iniciando sesión con su cuenta (enlace oficial + código), sin Docker local, con `tools/agy-login-codespace.ps1`. Su archivo se provisiona a Render solo como secreto `ZERUEL_AGY_OAUTH_TOKEN`; nunca en el repositorio, chat ni logs. Sin sesión, la prueba devuelve `blocked_auth` sin llamar al modelo; cuota agotada devuelve `paused_quota` o usa el respaldo gratuito si `ZERUEL_GEMINI_FREE_KEY` existe.
 
 ## Prueba en nube
 

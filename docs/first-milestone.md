@@ -17,23 +17,23 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 
 ## Matriz de aceptación
 
-| Prueba | Evidencia necesaria |
-|---|---|
-| Instalación | Versión fijada y SHA-512 del paquete oficial comprobada |
-| Autenticación | Perfil aislado OAuth y comprobación oficial del nivel de suscripción |
-| Inferencia | Respuesta sintética `ZERUEL_OK`, suma 42; sin herramientas |
-| Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático |
-| Concurrencia | Segunda ejecución rechazada mientras haya otra activa |
-| Idempotencia | Recuperar el identificador completado no repite la llamada |
-| Bloqueo expirado | La operación incierta queda pausada; no se vuelve a inferir |
-| Trabajador antiguo | Una generación anterior no puede completar otra operación |
-| Escritura parcial | El fallo de almacenamiento bloquea nuevas inferencias y conserva la incertidumbre |
-| Recuperación manual | Lease vencida cerrada por el propietario sin llamar al modelo: informe durable idempotente o `terminal_unknown`, nunca éxito |
-| Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza |
-| Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render |
-| Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones |
-| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable |
-| Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes |
+| Prueba | Evidencia necesaria | Estado (30/09/2026) |
+|---|---|---|
+| Instalación | Versión fijada y SHA-512 del paquete oficial comprobada | **Real** (`agy` 1.2.14, PR #3) |
+| Autenticación | Perfil aislado OAuth y comprobación oficial del nivel de suscripción | **Real**: sesión `agy` del propietario (Google AI Pro) responde; nivel no comprobado por vía oficial |
+| Inferencia | Respuesta sintética `ZERUEL_OK`, suma 42; sin herramientas | **Real** en Render (5–8 s) |
+| Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático | Simulada |
+| Concurrencia | Segunda ejecución rechazada mientras haya otra activa | Simulada |
+| Idempotencia | Recuperar el identificador completado no repite la llamada | **Real** (también tras reinicio) |
+| Bloqueo expirado | La operación incierta queda pausada; no se vuelve a inferir | Simulada |
+| Trabajador antiguo | Una generación anterior no puede completar otra operación | Simulada |
+| Escritura parcial | El fallo de almacenamiento bloquea nuevas inferencias y conserva la incertidumbre | Simulada |
+| Recuperación manual | Lease vencida cerrada por el propietario sin llamar al modelo: informe durable idempotente o `terminal_unknown`, nunca éxito | Simulada |
+| Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza | Simulada |
+| Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render | **Real** tras reinicio; tras suspensión: arranque en frío real (28,3 s), recuperación de un resultado anterior pendiente |
+| Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones | Pendiente (proceso vivo > 1 h) |
+| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente |
+| Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes | **Real**: ~210 MB pico, 0,5–0,6 s CPU; sin reinicios observados |
 
 No modificar `cloud_gate_passed` para convertir una prueba parcial en aprobación. La versión actual siempre informa `false`: es una prueba de viabilidad, no certificación del agente.
 
