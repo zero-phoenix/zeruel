@@ -84,3 +84,9 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 
 - Relevo completo en `docs/HANDOFF.md`. Herramientas portables en `tools/` (asistente DeepSeek con registro de gasto; inicio de sesión de `agy`). Revisiones en `docs/reviews/`.
 - No viajan con el repositorio: la sesión de `agy`, la clave DeepSeek y los secretos de la fase 2. Gasto DeepSeek acumulado ≤ US$0,2143.
+
+## Fase 2 — 30/09/2026 ~11:40, DESKTOP-NLTEF6C (Claude Opus 5.5)
+- **Real:** Apps Script vinculado por el propietario al proyecto estándar 1096719789550 (irreversible). Sin facturación. Las 24 APIs se conservan (sin facturación no generan coste; Analytics Hub no se toca).
+- **Real:** código remoto = `apps-script/SyntheticCheckpoint.gs` de `main` (8 756 bytes LF); manifiesto con `oauthScopes: [userinfo.email]` y `executionApi.access: MYSELF`.
+- **Real:** implementación «Ejecutable de API, Solo yo» creada por el propietario. El ID se guardará solo como secreto de Render (`ZERUEL_CHECKPOINT_DEPLOYMENT_ID`), no en el repositorio.
+- Pendiente: cliente OAuth + refresh token (paso 4), secretos en Render y despliegue manual (paso 5), matriz real (paso 6). `cloud_gate_passed=false`.
