@@ -26,9 +26,10 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 | Recuperación del checkpoint (lease, generación, journal, `recover` manual) | Fusionado (PR #1, #2) | Simulada: 50 Python, 22 Node |
 | Motor `agy` 1.2.14 (SHA-512, binario de root, `--sandbox`) | Fusionado (PR #3) | **Real** en contenedor 512 MB / 0,1 CPU: `synthetic_success` 12–20 s, ~210 MB |
 | Herramientas del modelo | Denegadas en modo `-p` | **Real**: `denied_actions: RunCommand`, sin archivos creados |
-| Render `zeruel-synthetic-probe` (`srv-dau6eq9srm7s73avnsb0`) | Live en `6f07373` (código viejo), autodeploy desactivado | Dashboard: https://dashboard.render.com/web/srv-dau6eq9srm7s73avnsb0 |
-| Apps Script «Zeruel — punto de control sintético» | Código remoto viejo; proyecto Cloud predeterminado | https://script.google.com/home/projects/1CBRJQOLkMf-Fy6JVpsj0fqKx-9KyjeKbQw9wrsFE3F_lWjzHpQdRsxth/edit |
-| Google Cloud | Condiciones aceptadas por el propietario. Proyecto `zeruel-checkpoint-09292354` (nº 1096719789550) creado, **sin vincular** | 30/09/2026: consola confirma que no tiene cuenta de facturación vinculada; 24 APIs habilitadas, incluida Apps Script |
+| Render `zeruel-synthetic-probe` (`srv-dau6eq9srm7s73avnsb0`) | Live en `dc7eced` con los 5 secretos (`ZERUEL_ACCESS_TOKEN`, `ZERUEL_AGY_OAUTH_TOKEN`, `ZERUEL_CHECKPOINT_DEPLOYMENT_ID/_OAUTH_JSON/_SECRET`); autodeploy desactivado | **Real** 30/09: log «probe ready», `/healthz` OK. Tarea sintética en Render **aún no probada** (requiere el token de acceso del propietario) |
+| Apps Script «Zeruel — punto de control sintético» | Vinculado al proyecto estándar 1096719789550; código = `main`; Ejecutable de API «Solo yo» | **Real** 30/09 (manifiesto `executionApi.access: MYSELF`) |
+| Google Cloud | Proyecto `zeruel-checkpoint-09292354` sin facturación; 24 APIs conservadas; pantalla de consentimiento «Zeruel» en producción (solo `userinfo.email`); cliente OAuth de escritorio | **Real** 30/09 |
+| Sesión `agy` (Google AI Pro) | Creada en Codespace con `tools/agy-login-codespace.ps1`; copiada a Render por el propietario | **Real** 30/09: `"status":"SUCCESS"`, `ZERUEL_OK` (en el codespace, no en Render) |
 | DeepSeek | ≤ US$0,2143 gastados de US$1 | `docs/reviews/` |
 
 ## 4. Próximos pasos (fase 2), en orden
@@ -41,7 +42,7 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 7. Actualizar `docs/STATUS.md` con evidencia real y límites.
 
 ## 5. Lo que NO está en el repositorio (debe recrearse)
-- **Sesión de `agy`:** el propietario inicia sesión otra vez. En Windows con Docker: `docker build -t zeruel .` y luego `tools/agy-login.ps1` (abre el enlace completo y pasa el código; guarda la sesión en `%USERPROFILE%\.zeruel-private\agy-home`). En Linux/macOS basta ejecutar `agy` en una terminal.
+- **Sesión de `agy`:** el propietario inicia sesión otra vez. **Sin Docker local (preferido en la PC Celeron):** `gh auth refresh -s codespace`, `gh codespace create -R zero-phoenix/zeruel -m basicLinux32gb --idle-timeout 30m --retention-period 1h`, `docker build -t zeruel .` dentro del codespace y luego `powershell -ExecutionPolicy Bypass -File tools\agy-login-codespace.ps1 -Codespace <nombre>`; el propietario copia la sesión a Render y se borra el codespace. En Windows con Docker: `docker build -t zeruel .` y luego `tools/agy-login.ps1` (abre el enlace completo y pasa el código; guarda la sesión en `%USERPROFILE%\.zeruel-private\agy-home`). En Linux/macOS basta ejecutar `agy` en una terminal.
 - **Clave DeepSeek:** el propietario la define en la variable `DEEPSEEK_API_KEY`. Al crear un registro nuevo, usa `DEEPSEEK_SPENT_BEFORE=0.2143` para no exceder el US$1 total.
 - Clave gratuita de AI Studio (opcional), secreto del checkpoint y credenciales OAuth: se generan en la fase 2.
 
@@ -70,6 +71,9 @@ También se exige copiar íntegramente formato: tipografía, tamaño, estilo, in
 - `agy` pide el ámbito `cloud-platform` y descarga binarios auxiliares en `$HOME` (`webm_encoder`). Vigilar.
 - `gcloud billing ...` puede quedarse esperando una respuesta interactiva: usa `--quiet` y ejecútalo solo.
 - Fusionar un PR propio puede requerir aprobación del propietario.
+- **PC del propietario (Celeron):** se congela con capturas de escritorio, Docker o procesos pesados. Trabajo pesado en la nube (Codespaces/Render); leer páginas como texto.
+- El navegador integrado del agente no acepta pegar desde el portapapeles de Windows y falla al iniciar sesión en GitHub con Google: los secretos los pega el propietario en Edge.
+- Git Credential Manager muestra un selector de 3 cuentas y falla («string binding is invalid»): en el checkout se configuró `credential.helper` local a `gh auth git-credential` (cuenta `zero-phoenix`).
 
 ## 8. Formato de cierre de cada sesión
 Título «Relevo»: fecha y host; cambios; rama y último commit publicado; versión desplegada; pruebas reales y simuladas; gasto DeepSeek; configuración y bloqueos; próximo paso exacto; procesos que deben seguir activos. Actualiza este archivo y `docs/STATUS.md`.
@@ -83,3 +87,12 @@ Título «Relevo»: fecha y host; cambios; rama y último commit publicado; vers
 - **Bloqueos:** extensión no instalada en Edge; recursos de Analytics Hub sin revisar; Apps Script sin vincular.
 - **Próximo paso exacto:** (a) el propietario carga `extension/` desempaquetada en Edge tras `python tools/prepare_local_ocr.py` y se ejecuta la lista «Pendiente» de `docs/browser-extension-plan.md` con la fixture; (b) integrar el modelo de formato con captura/revisión; (c) fase 2 sección 4, paso 1 (revisar recursos Analytics Hub) y paso 2 con confirmación.
 - **Node en esta PC:** no está en PATH; usar el de `%USERPROFILE%\.cache\codex-runtimes\...\node\bin\node.exe` y pasar los archivos `*.test.js` explícitamente (Node 24 no acepta carpetas en `--test`).
+
+## 10. Relevo — 30/09/2026 ~14:30 (UTC-5), DESKTOP-NLTEF6C (Claude Opus 5.5)
+- **Cambios:** fusionados a `main` los PR #6–#12: extensión Edge (probada real: pausa ante login y exportación sin datos personales), fase 2 pasos 1–5, `docs/PRIVACY.md`, `tools/get_checkpoint_oauth.py`, `tools/agy-login-codespace.ps1`.
+- **Desplegado:** Render Live en `dc7eced` con los 5 secretos. Autodeploy desactivado: tras cada cambio relevante, «Manual Deploy → Deploy latest commit».
+- **Pruebas reales:** extensión en Edge; Apps Script vinculado y desplegado «Solo yo»; refresh token OAuth; `agy` `SUCCESS`/`ZERUEL_OK` en codespace; arranque de Render sin errores. **Simuladas:** 50 Python y 61 Node.
+- **DeepSeek:** US$0 en esta sesión; acumulado US$0,2143.
+- **Bloqueos:** la tarea sintética **en Render** no se ha ejecutado (requiere que el propietario pegue `ZERUEL_ACCESS_TOKEN` en https://zeruel-synthetic-probe.onrender.com); `cloud_gate_passed=false`.
+- **Próximo paso exacto:** el propietario lanza una tarea en la web del servicio; esperado `synthetic_success`. Si falla, leer `/api/status` y logs de Render. Después, resto de la matriz (sección 4, paso 6), incluida la prueba desde el móvil con los Windows apagados.
+- **Procesos activos:** ninguno local. Codespace de login borrado; queda «silver-space-carnival» apagado (no creado por el agente; GitHub lo elimina tras 30 días sin uso).
