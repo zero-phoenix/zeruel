@@ -90,3 +90,9 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - **Real:** código remoto = `apps-script/SyntheticCheckpoint.gs` de `main` (8 756 bytes LF); manifiesto con `oauthScopes: [userinfo.email]` y `executionApi.access: MYSELF`.
 - **Real:** implementación «Ejecutable de API, Solo yo» creada por el propietario. El ID se guardará solo como secreto de Render (`ZERUEL_CHECKPOINT_DEPLOYMENT_ID`), no en el repositorio.
 - Pendiente: cliente OAuth + refresh token (paso 4), secretos en Render y despliegue manual (paso 5), matriz real (paso 6). `cloud_gate_passed=false`.
+
+## Fase 2, pasos 4–5 — 30/09/2026 ~13:35, DESKTOP-NLTEF6C (Claude Opus 5.5)
+- **Real:** pantalla de consentimiento «Zeruel» en producción (externa, solo `userinfo.email`; política en `docs/PRIVACY.md`). Cliente OAuth de escritorio creado; refresh token obtenido con `tools/get_checkpoint_oauth.py` y guardado fuera del repo (`~/.zeruel-private`). Google añadió `openid`.
+- **Real:** Render tiene `ZERUEL_CHECKPOINT_DEPLOYMENT_ID`, `ZERUEL_CHECKPOINT_OAUTH_JSON` y `ZERUEL_CHECKPOINT_SECRET` (valores pegados por el propietario; no leídos). Despliegue manual de `c1a1c92` **Live**; log «Zeruel synthetic probe ready»; `/healthz` responde `cloud_gate_passed:false`.
+- Pendiente: tarea sintética real (requiere `ZERUEL_ACCESS_TOKEN` del propietario en la web) para confirmar que ya no devuelve `blocked_persistence`; sesión `agy` y `ZERUEL_AGY_OAUTH_TOKEN`; resto de la matriz.
+- Nota operativa: el panel de navegador integrado no acepta pegar desde el portapapeles de Windows; los secretos se pegan en Edge.
