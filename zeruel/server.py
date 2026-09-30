@@ -14,61 +14,116 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class Controller:
-    def __init__(self, gateway=None, run_probe=probe):
-        self.gateway = gateway
-        self.run_probe = run_probe
+    def __init__(self, gateway=None, run_probe=probe, recovery_dir=None):
+        self.gateway, self.run_probe = gateway, run_probe
+        self.recovery_dir = Path(recovery_dir) if recovery_dir else home_path() / "checkpoint-recovery"
+        self.pending = {}
         self.lock = threading.Lock()
         self.status = {"state": "paused", "cloud_gate_passed": False}
         self.last_run = 0.0
 
+    @staticmethod
+    def public(record):
+        allowed = {"id", "state", "started", "completed", "elapsed_seconds", "children_peak_rss_kib",
+                   "children_cpu_seconds", "result", "checkpoint_saved", "recovered"}
+        return {**{k: v for k, v in record.items() if k in allowed}, "cloud_gate_passed": False}
+
+    def journal(self, task_id, value):
+        self.recovery_dir.mkdir(parents=True, exist_ok=True)
+        if os.name != "nt":
+            self.recovery_dir.chmod(0o700)
+        temporary = self.recovery_dir / (task_id + ".tmp")
+        with temporary.open("w", encoding="utf-8") as stream:
+            if os.name != "nt":
+                os.chmod(temporary, 0o600)
+            json.dump(value, stream)
+            stream.flush()
+            os.fsync(stream.fileno())
+        temporary.replace(self.recovery_dir / (task_id + ".json"))
+
+    def persist(self, task_id, pending):
+        self.pending[task_id] = pending
+        try:
+            self.journal(task_id, pending)
+            self.gateway.call("complete", task_id, pending["report"], generation=pending["generation"])
+            self.status = self.public({"id": task_id, **pending["report"], "checkpoint_saved": True})
+            # Keep the report for idempotent persistence retries after restart.
+            return 200, self.status
+        except (OSError, ValueError, TypeError):
+            self.status = {"id": task_id, "state": "blocked_checkpoint", "checkpoint_saved": False,
+                           "cloud_gate_passed": False}
+            return 503, self.status
+
     def start(self, task_id):
         if not re.fullmatch(r"[a-f0-9]{32}", task_id):
-            return 400, {"state": "invalid_request"}
+            return 400, {"state": "invalid_request", "cloud_gate_passed": False}
         if not self.lock.acquire(blocking=False):
-            return 409, {"state": "active"}
+            return 409, {"state": "active", "cloud_gate_passed": False}
         transferred = False
         try:
             if os.environ.get("RENDER") and self.gateway is None:
-                return 503, {"state": "blocked_persistence"}
+                return 503, {"state": "blocked_persistence", "cloud_gate_passed": False}
+            generation = None
             if self.gateway:
+                pending = self.pending.get(task_id)
+                path = self.recovery_dir / (task_id + ".json")
+                if pending is None and path.exists():
+                    pending = json.loads(path.read_text(encoding="utf-8"))
+                if pending is not None:
+                    if (not isinstance(pending, dict) or
+                            not isinstance(pending.get("generation"), str) or
+                            not re.fullmatch(r"[a-f0-9]{32}", pending["generation"]) or
+                            (pending.get("report") is not None and not isinstance(pending["report"], dict))):
+                        raise ValueError("Invalid recovery journal")
+                    if pending.get("report") is not None:
+                        return self.persist(task_id, pending)
+                    self.status = {"id": task_id, "state": "paused_uncertain", "cloud_gate_passed": False}
+                    return 200, self.status
                 result = self.gateway.call("claim", task_id)
                 if not result.get("claimed"):
-                    self.status = result.get("record") or {"state": "active"}
+                    self.status = self.public(result.get("record") or {"state": "paused_uncertain"})
+                    # An existing lease belongs to an earlier worker; no local report proves its outcome.
+                    if self.status["state"] == "active" and self.status.get("id") == task_id:
+                        self.status["state"] = "paused_uncertain"
                     return 200, self.status
+                generation = result.get("generation")
+                if not isinstance(generation, str) or not re.fullmatch(r"[a-f0-9]{32}", generation):
+                    raise ValueError("Missing lease generation")
+                intent = {"generation": generation, "report": None}
+                self.pending[task_id] = intent
+                self.journal(task_id, intent)
             elif time.monotonic() - self.last_run < 30:
-                return 429, {"state": "paused_cooldown"}
+                return 429, {"state": "paused_cooldown", "cloud_gate_passed": False}
             self.status = {"id": task_id, "state": "active", "cloud_gate_passed": False}
             self.last_run = time.monotonic()
-            threading.Thread(target=self.work, args=(task_id,), daemon=True).start()
+            threading.Thread(target=self.work, args=(task_id, generation), daemon=True).start()
             transferred = True
             return 202, self.status
-        except (OSError, ValueError):
-            return 503, {"state": "blocked_checkpoint"}
+        except (OSError, ValueError, TypeError):
+            return 503, {"state": "blocked_checkpoint", "cloud_gate_passed": False}
         finally:
-            # Work thread owns release only when it was actually started.
             if not transferred:
                 self.lock.release()
 
-    def work(self, task_id):
+    def work(self, task_id, generation=None):
         try:
             try:
-                report = self.run_probe()
+                report = self.public(self.run_probe())
             except Exception:
                 report = {"state": "failed_runtime", "cloud_gate_passed": False}
             self.status = {"id": task_id, **report}
             if self.gateway:
-                try:
-                    self.gateway.call("complete", task_id, report)
-                    self.status["checkpoint_saved"] = True
-                except (OSError, ValueError):
-                    self.status.update(state="blocked_checkpoint", checkpoint_saved=False)
+                self.persist(task_id, {"generation": generation, "report": report})
         finally:
             self.lock.release()
 
     def read(self, task_id=None):
         if task_id and self.gateway:
-            return self.gateway.call("get", task_id).get("record") or {"state": "not_found"}
-        return self.status
+            record = self.public(self.gateway.call("get", task_id).get("record") or {"state": "not_found"})
+            if record["state"] == "active" and not self.lock.locked():
+                record["state"] = "paused_uncertain"
+            return record
+        return self.public(self.status)
 
 
 def make_handler(controller, token):

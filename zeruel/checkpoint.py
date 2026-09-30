@@ -19,15 +19,18 @@ class Checkpoint:
             raise ValueError("Checkpoint secret must be at least 32 characters")
         self.url, self.secret = url, secret
 
-    def envelope(self, action, task_id, report=None):
-        payload = json.dumps({"action": action, "id": task_id, "report": report}, separators=(",", ":"))
+    def envelope(self, action, task_id, report=None, generation=None, confirm=None):
+        data = {"action": action, "id": task_id, "report": report, "generation": generation}
+        if confirm is not None:
+            data["confirm"] = confirm
+        payload = json.dumps(data, separators=(",", ":"))
         timestamp = str(int(time.time()))
         nonce = uuid.uuid4().hex
         message = timestamp + "\n" + nonce + "\n" + payload
         signature = hmac.new(self.secret.encode(), message.encode(), hashlib.sha256).hexdigest()
         return {"timestamp": timestamp, "nonce": nonce, "payload": payload, "signature": signature}
 
-    def call(self, action, task_id, report=None):
+    def call(self, action, task_id, report=None, generation=None, confirm=None):
         raise ValueError("Public web checkpoint is disabled; configure owner OAuth")
 
 
@@ -67,8 +70,8 @@ class PrivateCheckpoint(Checkpoint):
             self.expires_at = time.time() + int(result.get("expires_in", 0))
             return self.access_token
 
-    def call(self, action, task_id, report=None):
-        body = json.dumps({"function":"runCheckpoint", "parameters":[self.envelope(action, task_id, report)],
+    def call(self, action, task_id, report=None, generation=None, confirm=None):
+        body = json.dumps({"function":"runCheckpoint", "parameters":[self.envelope(action, task_id, report, generation, confirm)],
                            "devMode":False}).encode()
         value = self.request_json(self.url, body,
                 {"Content-Type":"application/json", "Authorization":"Bearer " + self.token()})
