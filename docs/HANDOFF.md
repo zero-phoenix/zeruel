@@ -1,5 +1,15 @@
 # Relevo de Zeruel — para el siguiente agente (GPT 6.1 u otro)
 
+## 12. Relevo — 30/09/2026, DESKTOP-NLTEF6C (Codex)
+- **REAL:** sincronizado con `origin/main` `1afaffd`; rama `codex/mobile-autorun`. Se reutilizó el commit de autorun `5c93327` del PR #21, sin sus herramientas de arranque remoto. Se añadió consulta del checkpoint cuando falla la respuesta del lanzamiento; nunca se reenvía la inferencia automáticamente.
+- **REAL:** ADB existente reconoce un dispositivo autorizado; modelo `25028RN03L`, Android 15, `mobile_data=1`. No se cambiaron ajustes. No existe `~/.zeruel-private/c4-state.json`. ADB cerrado al terminar la verificación.
+- **SIMULADA:** 61 pruebas Python y 40 Node (18 web + 22 checkpoint) aprobadas; `node --check web/app.js` aprobado. No prueban autenticación ni inferencia real en el móvil.
+- **Decisión del propietario:** autorun permanente. Sustituye la instrucción anterior de revertirlo tras C5. Solo los tres errores OAuth previstos permiten un reintento, y siempre tras validar `state`.
+- **Bloqueos:** apertura/lectura móvil rechazada por revisión automática (`blocked by policy`); no ejecutada. Fusión necesita autorización del número del nuevo PR. Despliegue y pruebas móvil/renovación pendientes; versión Live no revalidada.
+- **Próximo paso:** autorizar el PR acotado, desplegar manualmente en Render y validar el móvil. No fusionar el PR #21 como parte de esta autorización. Confirmar que el móvil usa conexión independiente; pedir permiso específico antes de cambiar `screen_off_timeout`.
+- **Puerta:** `cloud_gate_passed=false`. Faltan evidencia real de cuota, concurrencia, bloqueo expirado, trabajador antiguo, escritura parcial, recuperación manual, respuesta perdida, renovación y móvil con ambos Windows apagados; comprobación oficial de suscripción y recuperación de checkpoint tras suspensión. Rechazo de otra identidad Google en vivo sigue pendiente en el relevo anterior.
+- **DeepSeek:** US$0 en esta sesión. **Procesos auxiliares activos de esta sesión:** ninguno.
+
 Última actualización: 30/09/2026, por Claude (Opus 5.5) desde DESKTOP-B6D864U. Todo lo necesario está en este repositorio; los archivos locales de esa PC **no** estarán disponibles.
 
 ## 1. Tu papel

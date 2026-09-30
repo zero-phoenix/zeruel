@@ -32,7 +32,7 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza | Simulada |
 | Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render | **Real** tras reinicio; tras suspensión: arranque en frío real (28,3 s), recuperación de un resultado anterior pendiente |
 | Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones | Pendiente (proceso vivo > 1 h) |
-| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente |
+| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente. REAL: ADB autorizado, Android 15. SIMULADA: autorun probado localmente; sin evidencia de ejecución móvil |
 | Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes | **Real**: ~210 MB pico, 0,5–0,6 s CPU; sin reinicios observados |
 
 No modificar `cloud_gate_passed` para convertir una prueba parcial en aprobación. La versión actual siempre informa `false`: es una prueba de viabilidad, no certificación del agente.

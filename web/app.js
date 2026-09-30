@@ -90,7 +90,15 @@ async function runProbe(id) {
     const data = await request('/api/probe', {id});
     if (data.state === 'active') timer = setTimeout(poll, 2000);
     else $('run').disabled = false;
-  } catch { if (mine === session) $('run').disabled = false; }
+  } catch {
+    if (mine !== session) return;
+    // A lost response must never cause another inference. Recover by id instead.
+    try {
+      const data = await request('/api/checkpoint/' + id);
+      if (data.state === 'active') timer = setTimeout(poll, 2000);
+    } catch { /* Keep the id visible for manual checkpoint lookup. */ }
+    if (mine === session) $('run').disabled = false;
+  }
 }
 $('run').onclick = () => runProbe();
 async function poll() {

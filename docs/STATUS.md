@@ -117,3 +117,9 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **Real:** tras 17 min sin tráfico, el endpoint de salud respondió 200 en 28,3 s (arranque en frío de Render Free).
 - **Real:** con el endurecimiento del PR #18 desplegado, acceso con Google del propietario y tarea `046b7652…` → `synthetic_success` (8,18 s, pico 208 768 KiB); token basura y cabecera no ASCII → 401.
 - Pendiente: tarea desde el móvil con ambos Windows apagados; renovación del token en proceso vivo >1 h; cuota agotada + respaldo. `cloud_gate_passed=false`.
+
+## Autorun móvil permanente — 30/09/2026, Codex
+- **REAL:** preparado en rama `codex/mobile-autorun`, sin cambios de servidor. ID estricto en fragmento, Google silencioso con un único reintento interactivo validado, consumo del ID antes del envío y consulta del checkpoint ante respuesta fallida. El propietario decidió conservar la función.
+- **SIMULADA:** `node --check` aprobado, 61 pruebas Python y 40 Node aprobadas. Ninguna de estas pruebas demuestra ejecución móvil en producción.
+- **REAL:** ADB reconoce móvil autorizado, modelo `25028RN03L`, Android 15, datos móviles habilitados. Sin cambios de ajustes; ADB cerrado. La revisión automática rechazó abrir/leer la web móvil; esa operación no se ejecutó.
+- **Pendiente:** autorización del PR y despliegue manual, pruebas móvil con PC encendida y ambas PCs apagadas, renovación en el mismo proceso. Versión Live no revalidada; `cloud_gate_passed=false`. Las filas simuladas de la matriz permanecen simuladas.

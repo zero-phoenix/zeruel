@@ -176,6 +176,20 @@ test('lost probe response consumes autorun without an automatic resubmission', a
   assert.equal(reply.storage.size, 0);
   assert.equal(reply.elements.task.value, id);
   assert.equal(reply.timers.length, 0);
+  assert.equal(reply.calls.at(-1).path, '/api/checkpoint/' + id);
+});
+
+test('lost probe response recovers the saved result without submitting again', async () => {
+  const p = await begin();
+  const reply = page({storage: p.storage, hash: callback(p.storage), respond: async path => {
+    if (path === '/api/probe') throw new Error('network');
+    if (path === '/api/checkpoint/' + id) return {ok: true,
+      json: async () => ({id, state: 'synthetic_success', checkpoint_saved: true})};
+  }});
+  await tick();
+  assert.equal(reply.calls.filter(call => call.path === '/api/probe').length, 1);
+  assert.equal(JSON.parse(reply.elements.report.textContent).state, 'synthetic_success');
+  assert.equal(reply.storage.size, 0);
 });
 
 test('manual Google sign-in still uses account selection and no autorun', async () => {

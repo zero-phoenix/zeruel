@@ -79,7 +79,7 @@ Evidencia **REAL** de «lanzada desde el móvil» (con la PC encendida).
 - Al cargar, si `location.hash` coincide con `^#autorun=([a-f0-9]{32})$`:
   - guarda el id en `sessionStorage` (`zeruel_autorun`) y borra el hash con `history.replaceState`;
   - llama a `startGoogle('none')`.
-- En `finishGoogle()`, ante **cualquier** `error=` (incluido `account_selection_required`) con autorun pendiente y sin reintento previo: marca `zeruel_autorun_retry` y llama a `startGoogle('select_account')`.
+- En `finishGoogle()`, valida `state` también en errores. Solo ante `interaction_required`, `login_required` o `consent_required`, con autorun pendiente y sin reintento previo: marca `zeruel_autorun_retry` y llama a `startGoogle('select_account')`.
 - Tras `if (await connect())` con autorun pendiente:
   1. borra `zeruel_autorun` **antes** de lanzar;
   2. pon el id en el campo `task`;
@@ -124,7 +124,7 @@ Sin esto, el reposo detiene `sleep` y el bloqueo impide que Chrome ejecute la p�
 3. El propietario confirma por chat que la otra PC también estaba apagada durante ese intervalo.
 4. Restaura `screen_off_timeout`, ejecuta `& $adb shell rm /data/local/tmp/zr.sh` y borra `c4-state.json` y `$env:TEMP\zr.sh`.
 5. Evidencia **REAL** de «Móvil y equipos apagados» solo si se cumplen los tres puntos.
-6. Abre un PR que **revierta el autorun** (evita pruebas lanzadas por un enlace sin confirmación).
+6. Conserva el autorun: el propietario decidió que sea permanente el 30/09/2026. Sigue exigiendo autenticación del propietario; no autoriza ninguna tarea fuera de la prueba sintética fija.
 
 ## 6. Fase D — Renovación del token OAuth en un proceso vivo
 El token se pide en la **primera llamada al checkpoint** del proceso, no al arrancar, y se renueva unos 54 min después.
