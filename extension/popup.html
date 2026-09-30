@@ -1,0 +1,14 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Zeruel local</title><link rel="stylesheet" href="popup.css"></head><body>
+<h1>Zeruel</h1><p id="status" role="status">Desconectado</p>
+<p>Solo estructura: nunca texto, valores ni imágenes originales. Sin conexión con servicios.</p>
+<button id="authorize">Autorizar únicamente este sitio</button>
+<label>Modo <select id="mode"><option value="dom">Página con controles</option><option value="remote">Escritorio remoto (imagen opaca)</option></select></label>
+<label><input type="checkbox" id="remoteSafe"> El remoto ya salió del inicio de sesión. Lo pausaré antes de volver a entrar.</label>
+<fieldset><legend>Zonas excluidas (porcentajes de la pantalla)</legend>
+<div class="coordinates"><label>X<input id="x" type="number" min="0" max="100" step="1" value="0"></label><label>Y<input id="y" type="number" min="0" max="100" step="1" value="0"></label><label>Ancho<input id="w" type="number" min="1" max="100" step="1" value="100"></label><label>Alto<input id="h" type="number" min="1" max="100" step="1" value="100"></label></div>
+<button id="addZone">Añadir zona</button><button id="clearZones">Quitar zonas</button><p id="zones">Sin zonas</p></fieldset>
+<button id="activate">Activar hoy</button><button id="pause">Pausar ahora</button>
+<label>Decisión estructural<select id="decision"><option value="continue">Continuar</option><option value="correct">Corregir</option><option value="request_information">Pedir información</option><option value="admit">Admitir</option><option value="reject">Rechazar</option><option value="review">Revisar</option></select></label><button id="recordDecision">Anotar decisión</button>
+<button id="export">Exportar JSON anónimo</button><button id="preview">Ver última captura estructural</button><button id="clear">Eliminar registros locales</button>
+<p><a href="review.html" target="_blank" rel="noopener">Revisión local de texto / OCR (piloto)</a></p>
+<p id="notice" role="alert"></p><div id="capture"></div><script type="module" src="popup.js"></script></body></html>

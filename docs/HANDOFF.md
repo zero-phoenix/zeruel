@@ -28,11 +28,11 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 | Herramientas del modelo | Denegadas en modo `-p` | **Real**: `denied_actions: RunCommand`, sin archivos creados |
 | Render `zeruel-synthetic-probe` (`srv-dau6eq9srm7s73avnsb0`) | Live en `6f07373` (código viejo), autodeploy desactivado | Dashboard: https://dashboard.render.com/web/srv-dau6eq9srm7s73avnsb0 |
 | Apps Script «Zeruel — punto de control sintético» | Código remoto viejo; proyecto Cloud predeterminado | https://script.google.com/home/projects/1CBRJQOLkMf-Fy6JVpsj0fqKx-9KyjeKbQw9wrsFE3F_lWjzHpQdRsxth/edit |
-| Google Cloud | Condiciones aceptadas por el propietario. Proyecto `zeruel-checkpoint-09292354` (nº 1096719789550) creado, **sin vincular** | Tiene 24 APIs activas por defecto; facturación **no verificada** |
+| Google Cloud | Condiciones aceptadas por el propietario. Proyecto `zeruel-checkpoint-09292354` (nº 1096719789550) creado, **sin vincular** | 30/09/2026: consola confirma que no tiene cuenta de facturación vinculada; 24 APIs habilitadas, incluida Apps Script |
 | DeepSeek | ≤ US$0,2143 gastados de US$1 | `docs/reviews/` |
 
 ## 4. Próximos pasos (fase 2), en orden
-1. **Proyecto Cloud:** `gcloud billing projects describe zeruel-checkpoint-09292354` (si pregunta por habilitar la API de facturación, responde con `--quiet`/no y verifica en la consola). Revisa las 24 APIs; deja solo las necesarias (`script.googleapis.com`). Sin facturación.
+1. **Proyecto Cloud:** sin facturación confirmado en la consola el 30/09/2026. Revisa recursos y dependencias de las 24 APIs antes de retirar las innecesarias. El propietario decidió **conservar Analytics Hub y revisar recursos antes**; no desactivarla sin nueva confirmación. Apps Script debe permanecer habilitada. No deshabilitar servicios administrativos por suponer que son innecesarios.
 2. **Vincular Apps Script** (Configuración del proyecto → cambiar proyecto → número 1096719789550). **Irreversible**: revoca autorizaciones y no permite volver al predeterminado. Pide confirmación al propietario inmediatamente antes.
 3. Subir `apps-script/SyntheticCheckpoint.gs` y manifiesto (solo `userinfo.email`); propiedades privadas `ZERUEL_OWNER_EMAIL` y `ZERUEL_CHECKPOINT_SECRET` (aleatorio ≥ 32, generado por script sin mostrarlo). Implementar como **Ejecutable de API, Solo yo**.
 4. Cliente OAuth del propietario con `userinfo.email` (+ el mínimo que exija `scripts.run`; justificar cualquier ámbito extra antes). Obtener refresh token por flujo oficial.
@@ -55,6 +55,11 @@ Autorizada por el propietario el 30/09/2026. Carpeta `extension/`, Manifest V3, 
 - Registros locales; el propietario los exporta a mano ya anonimizados. Procedimientos anonimizados en `docs/procedimientos/`.
 - Prueba que falle si un registro o exportación contiene datos personales sin anonimizar (con datos ficticios). Probar en Edge, evidencia real vs simulada.
 
+### Aclaración del propietario — 30/09/2026
+El texto es necesario, también el obtenido de imágenes con escritura manuscrita o tipeada. La vista exclusivamente estructural no satisface el objetivo final. La anonimización debe distinguir nombre de hombre, nombre de mujer, apellido, tarjeta, crédito, póliza y las restantes categorías. Usar NOMBRE_DESCONOCIDO si el género no está establecido; no adivinarlo por el nombre. OCR y clasificación deben ejecutarse localmente; originales solo en memoria transitoria, nunca en registros, exportaciones ni servicios externos. La base estructural es una entrega parcial y no autoriza observar expedientes reales. Texto/OCR requieren pruebas propias y bloqueo ante contenido sin revisar.
+
+También se exige copiar íntegramente formato: tipografía, tamaño, estilo, interlineado, márgenes, tablas, encabezados y pies de página. Los marcadores deben conservar ubicación y estilo. Preferir estructura del documento editable cuando exista autorización y acceso; los píxeles del remoto/OCR no proporcionan por sí solos una fuente, interlineado o pie editable exactos. Reconstrucciones deben identificarse y compararse con fixtures sintéticos. No declarar fidelidad íntegra hasta verificarla.
+
 ## 6. DeepSeek como asistente
 `python tools/deepseek_assist.py <prompt> <salida> [tokens]`. Solo código público, diffs depurados y preguntas acotadas; nunca conversaciones, capturas, expedientes, memoria ni secretos. Reserva previa del coste máximo; una llamada incierta conserva la reserva y no se reintenta. Usa ≥ 60 000 tokens de salida (el razonamiento consume el tope). Verifica cada hallazgo antes de aceptarlo; registra aceptados y rechazados en `docs/reviews/`.
 
@@ -68,3 +73,13 @@ Autorizada por el propietario el 30/09/2026. Carpeta `extension/`, Manifest V3, 
 
 ## 8. Formato de cierre de cada sesión
 Título «Relevo»: fecha y host; cambios; rama y último commit publicado; versión desplegada; pruebas reales y simuladas; gasto DeepSeek; configuración y bloqueos; próximo paso exacto; procesos que deben seguir activos. Actualiza este archivo y `docs/STATUS.md`.
+
+## 9. Relevo — 30/09/2026 10:40 (UTC-5), DESKTOP-NLTEF6C
+- **Cambios:** piloto de extensión Edge (`extension/`), OCR local con Tesseract.js (`tools/prepare_local_ocr.py` regenera `extension/vendor/`, ignorado por Git), anonimizador por spans tipados, modelo de formato, revisión local `docs/reviews/local-2026-09-30.md`. Trabajo de Codex rescatado sin commitear y publicado por Claude (Opus 5.5).
+- **Rama:** `feat/edge-learning-local` (base `ce77356`). No fusionada a `main`.
+- **Desplegado:** Render sigue en `6f07373` (no revalidado).
+- **Pruebas simuladas:** 50 Python y 61 Node (22 backend + 39 extensión) aprobadas. **Real:** OCR sintético impreso en navegador de prueba (no Edge); proyecto Cloud sin facturación.
+- **DeepSeek:** US$0 en esta sesión; acumulado US$0,2143.
+- **Bloqueos:** extensión no instalada en Edge; recursos de Analytics Hub sin revisar; Apps Script sin vincular.
+- **Próximo paso exacto:** (a) el propietario carga `extension/` desempaquetada en Edge tras `python tools/prepare_local_ocr.py` y se ejecuta la lista «Pendiente» de `docs/browser-extension-plan.md` con la fixture; (b) integrar el modelo de formato con captura/revisión; (c) fase 2 sección 4, paso 1 (revisar recursos Analytics Hub) y paso 2 con confirmación.
+- **Node en esta PC:** no está en PATH; usar el de `%USERPROFILE%\.cache\codex-runtimes\...\node\bin\node.exe` y pasar los archivos `*.test.js` explícitamente (Node 24 no acepta carpetas en `--test`).

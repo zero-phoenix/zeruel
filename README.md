@@ -41,3 +41,7 @@ Consulta [el protocolo](docs/first-milestone.md). `Dockerfile` prepara un servic
 4. `zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi`.
 
 No se han verificado ni cambiado sus reglas jurídicas. La implementación posterior deberá leer sus instrucciones y comprobar generadores, plantillas y verificadores en copias.
+
+## Extensión local de Edge (piloto)
+
+Código e instrucciones en [extension/README.md](extension/README.md). Observación estructural con permiso por sitio, activación diaria, pausa y exportación manual. Texto anonimizado por categorías, OCR local y conservación íntegra de formato son requisitos adicionales; consultar los límites y pruebas del piloto antes de usarlo. La prueba OCR sintética en el navegador integrado no equivale a validación de la extensión en Edge. No se han observado expedientes reales.
