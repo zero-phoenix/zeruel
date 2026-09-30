@@ -22,7 +22,8 @@ class Blocked(Exception):
 
 
 def home_path():
-    return Path(os.environ.get("ZERUEL_PRIVATE_HOME", "work/private/gemini-home")).resolve()
+    # An empty value must not resolve to the current directory.
+    return Path(os.environ.get("ZERUEL_PRIVATE_HOME") or "work/private/gemini-home").resolve()
 
 
 def prepare(home):
@@ -93,8 +94,15 @@ def run_child(command, env, cwd, timeout):
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                            creationflags=subprocess.CREATE_NO_WINDOW, check=False)
         else:
-            os.killpg(process.pid, signal.SIGKILL)
-        process.communicate()
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass  # Exited between the timeout and the kill.
+        try:
+            process.communicate(timeout=10)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.communicate(timeout=10)
         raise Blocked("paused_timeout")
 
 
@@ -107,11 +115,21 @@ def classify_error(text):
     return "failed_cli"
 
 
+def children_usage():
+    if sys.platform == "win32":
+        return None
+    import resource
+    usage = resource.getrusage(resource.RUSAGE_CHILDREN)
+    peak = usage.ru_maxrss // 1024 if sys.platform == "darwin" else usage.ru_maxrss  # macOS reports bytes
+    return peak, usage.ru_utime + usage.ru_stime
+
+
 def probe(env=None, runner=run_child):
     env = dict(os.environ if env is None else env)
-    home = Path(env.get("ZERUEL_PRIVATE_HOME", "work/private/gemini-home")).resolve()
+    home = Path(env.get("ZERUEL_PRIVATE_HOME") or "work/private/gemini-home").resolve()
     bundle = Path(env.get("ZERUEL_CLI_BUNDLE", "work/gemini-cli/package/bundle/gemini.js")).resolve()
     started = time.monotonic()
+    baseline = children_usage()
     report = {"state": "disconnected", "cli_version": VERSION,
               "synthetic_only": True, "subscription_verified": False,
               "cloud_gate_passed": False}
@@ -143,11 +161,12 @@ def probe(env=None, runner=run_child):
     except (OSError, ValueError):
         report["state"] = "failed_runtime"
     report["elapsed_seconds"] = round(time.monotonic() - started, 3)
-    if sys.platform != "win32":
-        import resource
-        usage = resource.getrusage(resource.RUSAGE_CHILDREN)
-        report["children_peak_rss_kib"] = usage.ru_maxrss
-        report["children_cpu_seconds"] = round(usage.ru_utime + usage.ru_stime, 3)
+    usage = children_usage()
+    if usage and baseline:
+        # RUSAGE_CHILDREN is cumulative for the server's lifetime: report this run's CPU only.
+        # Peak RSS cannot be isolated per run; it is the lifetime maximum of finished children.
+        report["children_peak_rss_kib"] = usage[0]
+        report["children_cpu_seconds"] = round(usage[1] - baseline[1], 3)
     return report
 
 
