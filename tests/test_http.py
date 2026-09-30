@@ -51,7 +51,7 @@ class HTTPTests(unittest.TestCase):
 
     def test_mobile_interface_and_javascript_served(self):
         self.assertIn(b'name="viewport"',self.request('/')[2])
-        self.assertIn(b'crypto.randomUUID',self.request('/app.js')[2])
+        self.assertIn(b'crypto.getRandomValues',self.request('/app.js')[2])
 
 
 if __name__=='__main__':unittest.main()

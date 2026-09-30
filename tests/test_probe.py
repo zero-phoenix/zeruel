@@ -4,6 +4,7 @@ from pathlib import Path
 import tempfile
 import threading
 import unittest
+import unittest.mock
 from unittest.mock import patch
 from zeruel.probe import EXPECTED, Blocked, child_environment, probe
 from zeruel.server import Controller
@@ -111,3 +112,18 @@ class ControllerTests(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+
+class ProbeHardeningTests(unittest.TestCase):
+    def test_empty_private_home_never_resolves_to_cwd(self):
+        from zeruel import probe as module
+        with unittest.mock.patch.dict(module.os.environ, {'ZERUEL_PRIVATE_HOME': ''}):
+            self.assertNotEqual(module.home_path(), module.Path.cwd())
+            self.assertTrue(str(module.home_path()).endswith('gemini-home'))
+
+    def test_child_cpu_is_reported_per_run(self):
+        from zeruel import probe as module
+        with unittest.mock.patch.object(module, 'children_usage', side_effect=[(100, 50.0), (120, 52.5)]):
+            report = module.probe({'ZERUEL_PRIVATE_HOME': tempfile.mkdtemp()})
+        self.assertEqual(report['children_cpu_seconds'], 2.5)
+        self.assertEqual(report['children_peak_rss_kib'], 120)
