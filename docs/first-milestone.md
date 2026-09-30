@@ -38,3 +38,14 @@ Render Free se suspende por inactividad y pierde archivos locales. No ofrece gar
 
 Gemini CLI puede reutilizar autenticaciÃ³n existente en modo programÃ¡tico; la ejecuciÃ³n remota con esta cuenta sigue pendiente de verificaciÃ³n. Fuente: https://geminicli.com/docs/get-started/authentication/
 
+
+## Configuración privada del punto de control
+
+1. Guardar la versión actual de `SyntheticCheckpoint.gs` y el manifiesto. `doPost` rechaza todas las llamadas web, incluso con firma válida. Configurar `ZERUEL_OWNER_EMAIL` con la cuenta principal, solo en propiedades privadas. No añadir cuentas secundarias.
+2. Usar un proyecto Google Cloud estándar común al script y al cliente OAuth, sin vincular facturación ni activar pruebas de pago. Habilitar únicamente Apps Script API. La vinculación desde un proyecto predeterminado revoca autorizaciones anteriores y no permite volver a ese proyecto predeterminado: revisar antes de confirmar.
+3. Configurar el cliente OAuth del propietario y el alcance mínimo `userinfo.email` solicitado por el manifiesto. No utilizar las credenciales del cliente Gemini CLI para acceder a Apps Script. Si Google exige ámbitos más amplios, detenerse y documentar el requisito.
+4. Implementar como **Ejecutable de API**, acceso **Solo yo**. No implementar como aplicación web pública. El transporte llama `runCheckpoint` con `devMode:false` y usa el ID de implementación, conforme a la documentación actual.
+5. Tras autorización del almacenamiento remoto, introducir `ZERUEL_CHECKPOINT_DEPLOYMENT_ID`, `ZERUEL_CHECKPOINT_SECRET` y `ZERUEL_CHECKPOINT_OAUTH_JSON` únicamente en secretos Render. El JSON contiene `client_id`, `client_secret`, `refresh_token`. No pegarlo en chats ni repositorios. El transporte renueva tokens y rechaza redirecciones para no reenviar credenciales.
+6. Probar acceso real del propietario, rechazo de otras identidades, renovación, reinicios e idempotencia antes de declarar persistencia lista. Los tests locales usan identidades simuladas, no demuestran permisos efectivos de Google.
+
+Fuentes oficiales: https://developers.google.com/apps-script/api/how-tos/execute y https://developers.google.com/identity/protocols/oauth2 . El consentimiento OAuth en modo Testing puede limitar la duración de los refresh tokens a siete días dependiendo de los ámbitos; verificar el comportamiento real y conservar pausa ante expiración.

@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 import threading
 import time
-from .checkpoint import Checkpoint
+from .checkpoint import PrivateCheckpoint
 from .probe import home_path, prepare, probe
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -153,7 +153,11 @@ def main():
             path.chmod(0o600)
     gateway = None
     if os.environ.get("ZERUEL_CHECKPOINT_URL"):
-        gateway = Checkpoint(os.environ["ZERUEL_CHECKPOINT_URL"], os.environ.get("ZERUEL_CHECKPOINT_SECRET", ""))
+        raise SystemExit("Public checkpoint URLs are disabled; use owner OAuth.")
+    if os.environ.get("ZERUEL_CHECKPOINT_DEPLOYMENT_ID"):
+        gateway = PrivateCheckpoint(os.environ["ZERUEL_CHECKPOINT_DEPLOYMENT_ID"],
+            os.environ.get("ZERUEL_CHECKPOINT_SECRET", ""),
+            json.loads(os.environ.get("ZERUEL_CHECKPOINT_OAUTH_JSON", "null")))
     controller = Controller(gateway)
     host = "0.0.0.0" if os.environ.get("RENDER") else "127.0.0.1"
     server = ThreadingHTTPServer((host, int(os.environ.get("PORT", "8765"))), make_handler(controller, token))

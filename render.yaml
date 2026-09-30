@@ -10,7 +10,9 @@ services:
         generateValue: true
       - key: ZERUEL_GEMINI_OAUTH_JSON
         sync: false
-      - key: ZERUEL_CHECKPOINT_URL
+      - key: ZERUEL_CHECKPOINT_DEPLOYMENT_ID
         sync: false
       - key: ZERUEL_CHECKPOINT_SECRET
+        sync: false
+      - key: ZERUEL_CHECKPOINT_OAUTH_JSON
         sync: false

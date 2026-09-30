@@ -1,7 +1,22 @@
 /* Milestone-only storage. No Drive/Gmail scopes, documents or credentials. */
+// Public web requests are deliberately disabled, including signed requests.
 function doPost(e) {
-  const reply = value => ContentService.createTextOutput(JSON.stringify(value))
+  return ContentService.createTextOutput(JSON.stringify({ok:false}))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Deploy only as an API executable with access restricted to the owner.
+function runCheckpoint(envelope) {
+  try {
+    const owner = PropertiesService.getScriptProperties().getProperty('ZERUEL_OWNER_EMAIL');
+    const identity = Session.getEffectiveUser().getEmail();
+    if (!owner || !identity || identity.toLowerCase() !== owner.toLowerCase()) return {ok:false};
+    return processCheckpoint_({postData:{contents:JSON.stringify(envelope)}});
+  } catch (_) {return {ok:false};}
+}
+
+function processCheckpoint_(e) {
+  const reply = value => value;
   try {
     if (!e || !e.postData || e.postData.contents.length > 5000) return reply({ok:false});
     const body = JSON.parse(e.postData.contents);

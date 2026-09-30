@@ -5,7 +5,9 @@ import json
 import time
 import urllib.request
 import uuid
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlencode
+import re
+import threading
 
 
 class Checkpoint:
@@ -17,17 +19,61 @@ class Checkpoint:
             raise ValueError("Checkpoint secret must be at least 32 characters")
         self.url, self.secret = url, secret
 
-    def call(self, action, task_id, report=None):
+    def envelope(self, action, task_id, report=None):
         payload = json.dumps({"action": action, "id": task_id, "report": report}, separators=(",", ":"))
         timestamp = str(int(time.time()))
         nonce = uuid.uuid4().hex
         message = timestamp + "\n" + nonce + "\n" + payload
         signature = hmac.new(self.secret.encode(), message.encode(), hashlib.sha256).hexdigest()
-        body = json.dumps({"timestamp": timestamp, "nonce": nonce, "payload": payload,
-                           "signature": signature}).encode()
-        request = urllib.request.Request(self.url, data=body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(request, timeout=20) as response:
-            value = json.load(response)
-        if not value.get("ok"):
-            raise ValueError("Checkpoint request rejected")
-        return value
+        return {"timestamp": timestamp, "nonce": nonce, "payload": payload, "signature": signature}
+
+    def call(self, action, task_id, report=None):
+        raise ValueError("Public web checkpoint is disabled; configure owner OAuth")
+
+
+class PrivateCheckpoint(Checkpoint):
+    """Owner-only Apps Script API transport. Never follows credential redirects."""
+    def __init__(self, deployment_id, secret, credentials):
+        if not re.fullmatch(r"[A-Za-z0-9_-]{20,200}", deployment_id) or len(secret) < 32:
+            raise ValueError("Invalid private checkpoint configuration")
+        if not isinstance(credentials, dict) or any(not isinstance(credentials.get(k), str) or not credentials[k]
+                for k in ("client_id", "client_secret", "refresh_token")):
+            raise ValueError("Invalid owner OAuth credentials")
+        self.url = "https://script.googleapis.com/v1/scripts/" + deployment_id + ":run"
+        self.secret, self.credentials = secret, credentials
+        self.lock = threading.Lock()
+        self.access_token, self.expires_at = None, 0
+
+    @staticmethod
+    def request_json(url, body, headers):
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, req, fp, code, msg, headers, newurl):
+                return None
+        request = urllib.request.Request(url, data=body, headers=headers)
+        with urllib.request.build_opener(NoRedirect).open(request, timeout=20) as response:
+            return json.loads(response.read(65537))
+
+    def token(self):
+        with self.lock:
+            if self.access_token and self.expires_at > time.time() + 360:
+                return self.access_token
+            fields = {k:self.credentials[k] for k in ("client_id", "client_secret", "refresh_token")}
+            fields["grant_type"] = "refresh_token"
+            result = self.request_json("https://oauth2.googleapis.com/token", urlencode(fields).encode(),
+                                       {"Content-Type":"application/x-www-form-urlencoded"})
+            if not isinstance(result.get("access_token"), str) or result.get("token_type", "").lower() != "bearer":
+                raise ValueError("Owner OAuth refresh rejected")
+            self.access_token = result["access_token"]
+            self.expires_at = time.time() + int(result.get("expires_in", 0))
+            return self.access_token
+
+    def call(self, action, task_id, report=None):
+        body = json.dumps({"function":"runCheckpoint", "parameters":[self.envelope(action, task_id, report)],
+                           "devMode":False}).encode()
+        value = self.request_json(self.url, body,
+                {"Content-Type":"application/json", "Authorization":"Bearer " + self.token()})
+        result = value.get("response", {}).get("result")
+        if value.get("error") or not isinstance(result, dict) or not result.get("ok"):
+            raise ValueError("Private checkpoint rejected")
+        return result
+

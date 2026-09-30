@@ -5,7 +5,7 @@
 - Repositorio creado por Antigravity; código del primer hito publicado por Codex.
 - Gemini CLI oficial `0.62.0` instalado en el directorio de trabajo aislado. Integridad SHA-512 verificada; archivo descargado: 20.787.241 bytes.
 - El CLI instalado informa versión `0.62.0`.
-- 18 pruebas Python y 6 pruebas Node pasan localmente. Cubren autenticación del servicio, exclusión de secretos, bloqueo de rutas facturables, cuota, concurrencia, HMAC, replay, persistencia simulada e idempotencia.
+- 22 pruebas Python y 9 pruebas Node pasan localmente. Cubren autenticación del servicio, exclusión de secretos, bloqueo de rutas facturables, cuota, concurrencia, HMAC, replay, persistencia simulada e idempotencia.
 - La prueba real local se detiene con `blocked_auth`, sin llamar al modelo.
 - Acceso a Render recuperado; workspace visible: My Workspace. Servicio `zeruel-synthetic-probe` creado con Docker, rama main, Free (US$0/mes, 0.1 CPU, 512 MB) y despliegue automático desactivado. No se conectó un proveedor Git adicional: se usó el repositorio público.
 - Render informa `Deploy succeeded|Live` para el commit `6f07373`. Instalación del CLI oficial y SHA-512 comprobadas también durante la construcción en nube.
@@ -24,3 +24,10 @@
 **El primer hito NO está superado. El resto de la implementación permanece condicionado a su validación, según el plan aprobado.**
 
 El acceso GitHub disponible no permite publicar workflows de Actions (`workflow` scope ausente). El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las pruebas se ejecutaron localmente, sin ampliar permisos de GitHub.
+
+## Acceso privado: avance posterior
+
+- Propietario exclusivo requerido; cuentas secundarias pendientes. No se public� la configuraci�n web con acceso Cualquiera.
+- C�digo actualizado guardado en Apps Script: entrada web deshabilitada, funci�n privada con comprobaci�n de identidad y manifiesto limitado a userinfo.email. Propiedad privada del propietario configurada.
+- Transporte Python para API OAuth preparado y probado con respuestas simuladas. Deshabilitado el antiguo transporte web.
+- Pendientes: proyecto Cloud est�ndar com�n, cliente OAuth, implementaci�n API Solo yo, permisos reales, almacenamiento autorizado de credenciales y despliegue actualizado en Render. La versi�n Live anterior sigue en blocked_persistence.
