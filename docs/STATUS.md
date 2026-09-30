@@ -123,3 +123,11 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **SIMULADA:** `node --check` aprobado, 61 pruebas Python y 40 Node aprobadas. Ninguna de estas pruebas demuestra ejecución móvil en producción.
 - **REAL:** ADB reconoce móvil autorizado, modelo `25028RN03L`, Android 15, datos móviles habilitados. Sin cambios de ajustes; ADB cerrado. La revisión automática rechazó abrir/leer la web móvil; esa operación no se ejecutó.
 - **Pendiente:** autorización del PR y despliegue manual, pruebas móvil con PC encendida y ambas PCs apagadas, renovación en el mismo proceso. Versión Live no revalidada; `cloud_gate_passed=false`. Las filas simuladas de la matriz permanecen simuladas.
+
+## Prueba móvil con Windows encendido — 30/09/2026, Codex
+- **REAL:** PR #22 fusionado con autorización explícita del propietario, commit `8662fb8`. No se comprobó ni ejecutó el despliegue de ese commit en Render.
+- **REAL:** lectura de pantalla y pulsaciones por ADB en Brave (`com.brave.browser`). El propietario dejó Zeruel abierto. Inicialmente mostraba `Desconectado`; el agente pulsó «Acceder con Google», eligió la cuenta del propietario ya abierta y pulsó «Ejecutar prueba sintética», sin introducir credenciales ni cambiar ajustes.
+- **REAL:** tarea `0a079423ff3c3fcc25f255e6a1058255` pasó de `active` a `synthetic_success`, con `ZERUEL_OK`, suma 42, 7,27 s, pico 210816 KiB y 0,629 s CPU. «Consultar punto de control» recuperó el mismo resultado con `completed=1790810077` (epoch UTC).
+- **Límite:** la PC estaba encendida. Esto demuestra lanzamiento móvil y consulta autenticada del checkpoint; no demuestra autorun desplegado, ambas PCs apagadas ni renovación OAuth.
+- **REAL:** los comandos de apertura de navegador siguen rechazados por revisión automática (`blocked by policy`), pero leer el teléfono y pulsar controles visibles sí funcionó. Se retiró el XML temporal del teléfono y se cerró ADB. Sin procesos auxiliares de esta sesión.
+- **Pendiente:** desplegar manualmente `8662fb8` y validar autorun en el navegador que mantiene la sesión (Brave en esta prueba); después ejecución diferida, apagado coordinado y renovación. `cloud_gate_passed=false`.
