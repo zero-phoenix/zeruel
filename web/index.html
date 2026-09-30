@@ -1,13 +1,14 @@
 <!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://accounts.google.com/gsi/; frame-src https://accounts.google.com/gsi/; frame-ancestors 'none'">
 <title>Zeruel · Prueba de conexión</title>
 <style>body{font:17px system-ui;background:#0c1520;color:#e6edf5;margin:0;padding:24px}main{max-width:650px;margin:auto}h1{font-size:38px}label{display:block;margin:20px 0 8px}input,button{box-sizing:border-box;font:inherit;padding:12px;border-radius:8px}input{width:100%;background:#152437;color:#fff;border:1px solid #64748b}button{margin:12px 8px 12px 0;background:#a7f3d0;border:0;color:#123328;cursor:pointer}button:disabled{opacity:.5}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}#indicator{padding:12px;border:1px solid #a7f3d0;border-radius:8px}small{color:#aebed2}</style>
 <main><h1>Zeruel</h1><p id="indicator" role="status" aria-live="polite">Desconectado</p>
 <p>Prueba sintética de conexión. La observación del escritorio está desactivada y el agente todavía no está habilitado.</p>
-<label for="token">Clave privada de acceso</label><input id="token" type="password" autocomplete="off">
+<div id="google"></div><small>Solo la cuenta del propietario puede entrar con Google.</small>
+<label for="token">O bien, clave privada de acceso</label><input id="token" type="password" autocomplete="off">
 <small>Se utiliza solo en esta pestaña; no se guarda en el navegador.</small><br>
 <button id="connect">Conectar</button><button id="run" disabled>Ejecutar prueba sintética</button>
 <label for="task">Identificador para recuperar una prueba</label><input id="task" maxlength="32" placeholder="Identificador de 32 caracteres">
 <button id="restore" disabled>Consultar punto de control</button><button id="disconnect">Desconectar</button>
 <pre id="report" aria-live="polite"></pre><p><small>Un resultado correcto no certifica todavía la suscripción, la persistencia ni la ejecución con equipos apagados.</small></p></main>
-<script src="/app.js"></script></html>
+<script src="https://accounts.google.com/gsi/client" async></script><script src="/app.js"></script></html>
