@@ -7,12 +7,15 @@
 - El CLI instalado informa versión `0.62.0`.
 - 18 pruebas Python y 6 pruebas Node pasan localmente. Cubren autenticación del servicio, exclusión de secretos, bloqueo de rutas facturables, cuota, concurrencia, HMAC, replay, persistencia simulada e idempotencia.
 - La prueba real local se detiene con `blocked_auth`, sin llamar al modelo.
-- El usuario indicó haber iniciado sesión en Render. La pestaña accesible cambió de `/login` a `/`, pero la herramienta no consiguió leer el dashboard por repetidos tiempos de espera. La cuenta y el plan no se han confirmado.
+- Acceso a Render recuperado; workspace visible: My Workspace. Servicio `zeruel-synthetic-probe` creado con Docker, rama main, Free (US$0/mes, 0.1 CPU, 512 MB) y despliegue automático desactivado. No se conectó un proveedor Git adicional: se usó el repositorio público.
+- Render informa `Deploy succeeded|Live` para el commit `6f07373`. Instalación del CLI oficial y SHA-512 comprobadas también durante la construcción en nube.
+- Aplicación disponible en https://zeruel-synthetic-probe.onrender.com. Acceso autenticado probado en la interfaz; la prueba real se detiene con `blocked_persistence` antes de ejecutar Gemini, porque el punto de control externo aún no está configurado.
+- Clave de acceso configurada como secreto de Render. Ninguna credencial de Gemini se ha cargado en Render.
+- Plan de extensión para Edge, Chrome, Brave y Firefox registrado en `docs/browser-extension-plan.md`; no se ha implementado ni activado captura.
 - No se añadió tarjeta, no se habilitó facturación, no se cargaron expedientes y no se activó observación del escritorio. No queda un proceso de Gemini esperando el acceso.
 
 ## Pendiente y bloqueante
 
-- Acceso operativo al dashboard de Render y creación del servicio Free.
 - Autenticación oficial de Gemini CLI con la cuenta del propietario y verificación del nivel de suscripción.
 - Autorización y configuración segura de las credenciales remotas y del punto de control Apps Script.
 - Prueba real de inferencia, renovación, suspensión, reinicio, persistencia externa y uso móvil con equipos apagados.
