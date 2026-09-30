@@ -107,3 +107,8 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **Real (Render, `abâ€¦`â†’ commit de PR #15):** tarea `b59b8efdâ€¦` â†’ `synthetic_success`, motor `antigravity-cli`, modelo `gemini-3.8-flash-high`, `{"marker":"ZERUEL_OK","sum":42}`, 6,21 s, pico 211 956 KiB, 0,527 s CPU.
 - **Real:** Â«Consultar punto de controlÂ» devuelve el mismo registro desde Apps Script (persistencia privada operativa).
 - Pendiente de la matriz: otra identidad rechazada (en vivo), HMAC/replay, renovaciÃ³n de token, reinicio y suspensiÃ³n de Render, idempotencia, `recover` real, cuota agotada + respaldo, tarea desde el mÃ³vil con ambos Windows apagados. `cloud_gate_passed=false`.
+
+## Matriz: idempotencia y reinicio — 30/09/2026 ~15:15
+- **Real:** repetir `POST /api/probe` con un id ya completado devuelve el registro guardado sin reejecutar (misma marca `completed`).
+- **Real:** tras «Restart service» en Render (disco local borrado; estado en memoria vuelve a `paused`), ambas tareas se recuperan desde el checkpoint de Apps Script y un reintento del mismo id tras el reinicio no reejecuta (`completed=1790798200` original).
+- Pendiente: suspensión por inactividad de Render, renovación del token OAuth (>1 h), cuota agotada + respaldo, otra identidad en vivo, prueba desde el móvil con ambos Windows apagados. `cloud_gate_passed=false`.
