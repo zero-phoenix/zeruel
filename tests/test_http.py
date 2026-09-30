@@ -49,6 +49,17 @@ class HTTPTests(unittest.TestCase):
         self.assertEqual(headers['Cache-Control'],'no-store')
         self.assertEqual(headers['X-Frame-Options'],'DENY')
 
+    def test_non_ascii_authorization_is_rejected_cleanly(self):
+        self.assertEqual(self.request('/api/status',token='\xe9'*40)[0],401)
+
+    def test_google_disabled_without_verifier(self):
+        self.assertEqual(self.request('/api/status',token=None)[0],401)
+        request=urllib.request.Request(self.url+'/api/status',headers={'Authorization':'Google eyJ'+'a'*60})
+        with self.assertRaises(urllib.error.HTTPError) as caught:
+            urllib.request.urlopen(request,timeout=3)
+        self.assertEqual(caught.exception.code,401)
+        self.assertEqual(json.loads(self.request('/api/config')[2]),{'google_client_id':None})
+
     def test_mobile_interface_and_javascript_served(self):
         self.assertIn(b'name="viewport"',self.request('/')[2])
         self.assertIn(b'crypto.getRandomValues',self.request('/app.js')[2])

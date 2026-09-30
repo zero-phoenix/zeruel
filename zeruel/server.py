@@ -155,7 +155,9 @@ def make_handler(controller, token, google=None, google_client_id=None):
             if supplied.startswith("Google "):
                 # Owner-only Google Sign-In; any other account is rejected.
                 return google is not None and google.verify(supplied[len("Google "):])
-            return hmac.compare_digest(supplied, "Bearer " + token)
+            # Bytes comparison: non-ASCII header values must yield 401, not an unhandled TypeError.
+            return hmac.compare_digest(supplied.encode("utf-8", "surrogateescape"),
+                                       ("Bearer " + token).encode("utf-8"))
 
         def do_GET(self):
             if self.path == "/healthz":
