@@ -54,7 +54,11 @@ class PrivateCheckpoint(Checkpoint):
                 return None
         request = urllib.request.Request(url, data=body, headers=headers)
         with urllib.request.build_opener(NoRedirect).open(request, timeout=20) as response:
-            return json.loads(response.read(65537))
+            value = json.loads(response.read(65537))
+        # A non-object reply must fail closed as ValueError, never escape as AttributeError.
+        if not isinstance(value, dict):
+            raise ValueError("Unexpected checkpoint reply")
+        return value
 
     def token(self):
         with self.lock:

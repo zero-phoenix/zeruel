@@ -1,5 +1,6 @@
 import json
 import unittest
+import unittest.mock
 from unittest.mock import patch
 from zeruel.checkpoint import Checkpoint, PrivateCheckpoint
 
@@ -63,3 +64,13 @@ class PrivateCheckpointTests(unittest.TestCase):
         for secret in ('fixture','fixture-refresh','synthetic-secret-'):
             self.assertNotIn(secret,str(caught.exception))
         self.assertIsNone(gateway.access_token)
+
+    def test_non_object_json_reply_fails_closed_as_value_error(self):
+        class Reply:
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def read(self, n): return b'[1]'
+        opener = unittest.mock.Mock(); opener.open.return_value = Reply()
+        with patch('urllib.request.build_opener', return_value=opener):
+            with self.assertRaisesRegex(ValueError, '^Unexpected checkpoint reply$'):
+                PrivateCheckpoint.request_json('https://script.googleapis.com/x', b'{}', {})

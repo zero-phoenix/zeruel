@@ -64,3 +64,10 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - Evidencia **simulada** (Node `vm` y mocks Python): pasan 39 pruebas Python y 22 Node. Cubren vencimiento exacto, confirmación y generación, informe durable, tombstone, trabajador antiguo frente a una lease nueva, segunda escritura del claim fallida, respuesta perdida tras escribir, recuperación parcial, renovación OAuth entre claim y complete, refresh revocado sin filtrar secretos, y ausencia de `recover` en el servidor. Tres mutaciones de las guardas de `recover` son derribadas. **No prueban permisos efectivos de Google ni persistencia real.**
 - Puerta del proveedor revalidada hoy contra la fuente oficial: sin restauración de Gemini CLI para Google AI Pro. Inferencia bloqueada; `cloud_gate_passed=false`.
 - Sin cambios en Apps Script remoto, Google Cloud ni Render: requieren confirmaciones del propietario. DeepSeek no se usó (clave pendiente de rotación privada): consumo US$0, sin reservas abiertas.
+
+## Asistencia DeepSeek — 29/09/2026
+
+- Clave nueva (rotada por el propietario) usada solo desde un script privado fuera del repositorio, con registro de gasto y reserva previa. Modelo `deepseek-flash` con esfuerzo `max`, sin herramientas, solo código público.
+- Dos llamadas: la primera agotó el tope en razonamiento sin respuesta. Coste máximo total US$0,092 del US$1 autorizado; sin reservas pendientes.
+- Hallazgo aceptado: una respuesta JSON que no fuera objeto escapaba como `AttributeError` fuera de `persist`. Ahora falla cerrada como `ValueError`; prueba de regresión derriba la versión anterior.
+- Rechazados: liberar automáticamente registros `preparing` vencidos (contradice la recuperación exclusiva del propietario) y ACL de Windows para el journal (Render ejecuta Linux con permisos 0600).
