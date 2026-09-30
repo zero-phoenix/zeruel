@@ -8,6 +8,7 @@ import re
 import threading
 import time
 from .checkpoint import PrivateCheckpoint
+from .google_auth import GoogleOwnerVerifier
 from .probe import TOKEN, home_path, prepare, probe
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -127,7 +128,7 @@ class Controller:
         return self.public(self.status)
 
 
-def make_handler(controller, token):
+def make_handler(controller, token, google=None, google_client_id=None):
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
             super().setup()
@@ -151,6 +152,9 @@ def make_handler(controller, token):
 
         def authorized(self):
             supplied = self.headers.get("Authorization", "")
+            if supplied.startswith("Google "):
+                # Owner-only Google Sign-In; any other account is rejected.
+                return google is not None and google.verify(supplied[len("Google "):])
             return hmac.compare_digest(supplied, "Bearer " + token)
 
         def do_GET(self):
@@ -160,6 +164,9 @@ def make_handler(controller, token):
                 return self.send(200, (ROOT / "web" / "index.html").read_bytes(), "text/html; charset=utf-8")
             if self.path == "/app.js":
                 return self.send(200, (ROOT / "web" / "app.js").read_bytes(), "text/javascript; charset=utf-8")
+            if self.path == "/api/config":
+                # The OAuth client ID is public by design; no secret is exposed here.
+                return self.send(200, {"google_client_id": google_client_id if google else None})
             if not self.authorized():
                 return self.send(401, {"state": "disconnected"})
             if self.path == "/api/status":
@@ -213,8 +220,12 @@ def main():
             os.environ.get("ZERUEL_CHECKPOINT_SECRET", ""),
             json.loads(os.environ.get("ZERUEL_CHECKPOINT_OAUTH_JSON", "null")))
     controller = Controller(gateway)
+    client_id = os.environ.get("ZERUEL_GOOGLE_CLIENT_ID", "").strip()
+    owner = os.environ.get("ZERUEL_OWNER_EMAIL", "").strip()
+    google = GoogleOwnerVerifier(client_id, owner) if client_id and owner else None
     host = "0.0.0.0" if os.environ.get("RENDER") else "127.0.0.1"
-    server = ThreadingHTTPServer((host, int(os.environ.get("PORT", "8765"))), make_handler(controller, token))
+    server = ThreadingHTTPServer((host, int(os.environ.get("PORT", "8765"))),
+                                 make_handler(controller, token, google, client_id))
     print("Zeruel synthetic probe ready; desktop observation is disabled.", flush=True)
     try:
         server.serve_forever()

@@ -1,10 +1,12 @@
 const $ = id => document.getElementById(id);
 let timer;
 let session = 0; // Responses from a previous connection are ignored.
+let idToken = ''; // Google ID token, kept only in memory for this tab.
+const auth = () => idToken ? 'Google ' + idToken : 'Bearer ' + $('token').value;
 async function request(path, body) {
   const mine = session;
   const response = await fetch(path, {method: body ? 'POST' : 'GET',
-    headers: {'Authorization': 'Bearer ' + $('token').value, 'Content-Type': 'application/json'},
+    headers: {'Authorization': auth(), 'Content-Type': 'application/json'},
     body: body ? JSON.stringify(body) : undefined, cache: 'no-store'});
   const data = await response.json();
   if (mine !== session) throw new Error('stale');
@@ -19,10 +21,24 @@ function show(data) {
     data.state === 'synthetic_success' ? 'Completado · prueba sintética' : 'Pausado · ' + data.state;
 }
 function fail() { clearTimeout(timer); $('indicator').textContent = 'Desconectado · no se confirmó la conexión'; }
-$('connect').onclick = async () => {
+async function connect() {
   try { await request('/api/status'); $('run').disabled = false; $('restore').disabled = false; }
   catch { fail(); }
-};
+}
+$('connect').onclick = () => { idToken = ''; connect(); };
+async function initGoogle() {
+  try {
+    const config = await (await fetch('/api/config', {cache: 'no-store'})).json();
+    if (!config.google_client_id) return;
+    const ready = () => window.google && google.accounts && google.accounts.id;
+    for (let i = 0; i < 50 && !ready(); i++) await new Promise(r => setTimeout(r, 100));
+    if (!ready()) return;
+    google.accounts.id.initialize({client_id: config.google_client_id, auto_select: true,
+      callback: r => { session++; idToken = r.credential; connect(); }});
+    google.accounts.id.renderButton($('google'), {theme: 'filled_blue', size: 'large', text: 'signin_with', locale: 'es'});
+  } catch { /* The private key remains available. */ }
+}
+initGoogle();
 $('run').onclick = async () => {
   $('run').disabled = true;
   try {
@@ -45,6 +61,7 @@ $('restore').onclick = async () => {
   try { await request('/api/checkpoint/' + $('task').value); } catch { /* displayed above */ }
 };
 $('disconnect').onclick = () => {
-  session++; clearTimeout(timer); $('token').value = ''; $('run').disabled = true; $('restore').disabled = true;
+  session++; clearTimeout(timer); $('token').value = ''; idToken = ''; $('run').disabled = true; $('restore').disabled = true;
+  if (window.google && google.accounts && google.accounts.id) google.accounts.id.disableAutoSelect();
   show({state:'disconnected'});
 };
