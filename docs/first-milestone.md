@@ -10,7 +10,7 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 2. Autenticar Gemini CLI oficial con la cuenta de Google AI Pro en un perfil aislado. Comprobar en la interfaz oficial que corresponde a la suscripción del propietario. No inferir el nivel Pro únicamente porque una solicitud devuelve respuesta.
 3. Provisionar el perfil OAuth para el entorno remoto únicamente mediante los secretos de Render y tras autorización específica de ese almacenamiento. `ZERUEL_GEMINI_OAUTH_JSON` contiene credenciales sensibles: no compartirlo en chat, GitHub, logs ni archivos públicos. La renovación y el soporte remoto deben verificarse, no asumirse.
 4. Para el punto de control sintético, crear un proyecto Apps Script con `apps-script/SyntheticCheckpoint.gs`. Configurar una clave aleatoria de al menos 32 caracteres como propiedad `ZERUEL_CHECKPOINT_SECRET`. El script utiliza únicamente almacenamiento de propiedades, sin acceso a expedientes, Drive o Gmail. El endpoint requiere HMAC y rechaza repeticiones.
-5. Desplegar la web app de prueba con el alcance de acceso necesario para Render, después de revisar el permiso de exposición del endpoint. Configurar `ZERUEL_CHECKPOINT_URL` y `ZERUEL_CHECKPOINT_SECRET` como secretos en Render. No configurar una base de datos gratuita que expire como almacenamiento definitivo.
+5. Acceso exclusivo del propietario mediante su cuenta de Google: no desplegar con acceso «Cualquiera» ni «Cualquier persona que tenga una Cuenta de Google». La firma HMAC no sustituye el inicio de sesión del propietario. El adaptador Apps Script actual no autentica la identidad Google; por ello queda bloqueado para uso remoto hasta implementar y validar una conexión OAuth privada. No configurar el endpoint en Render mientras no cumpla esta condición. Las cuentas secundarias quedan pendientes.
 6. Configurar `ZERUEL_ACCESS_TOKEN` aleatorio de al menos 32 caracteres. La web lo recibe en un campo de contraseña y lo envía como cabecera; no se almacena ni se coloca en URLs.
 
 ## Matriz de aceptación
@@ -37,3 +37,4 @@ Solo después de documentar éxito de toda la matriz: cola real, SQLite + sincro
 Render Free se suspende por inactividad y pierde archivos locales. No ofrece garantía de actividad permanente. Fuente: https://render.com/docs/free
 
 Gemini CLI puede reutilizar autenticación existente en modo programático; la ejecución remota con esta cuenta sigue pendiente de verificación. Fuente: https://geminicli.com/docs/get-started/authentication/
+
