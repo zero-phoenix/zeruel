@@ -21,26 +21,42 @@ function show(data) {
     data.state === 'synthetic_success' ? 'Completado · prueba sintética' : 'Pausado · ' + data.state;
 }
 function fail() { clearTimeout(timer); $('indicator').textContent = 'Desconectado · no se confirmó la conexión'; }
-async function connect() {
-  try { await request('/api/status'); $('run').disabled = false; $('restore').disabled = false; }
+const pendingAutorun = () => {
+  const id = sessionStorage.getItem('zeruel_autorun') || '';
+  return /^[a-f0-9]{32}$/.test(id) ? id : '';
+};
+async function connect(google = false) {
+  try {
+    await request('/api/status'); $('run').disabled = false; $('restore').disabled = false;
+    const id = google && idToken && pendingAutorun();
+    if (id) {
+      // Consume once, even if the response is lost; the checkpoint can be queried by this id.
+      sessionStorage.removeItem('zeruel_autorun');
+      sessionStorage.removeItem('zeruel_autorun_retry');
+      await runProbe(id);
+    }
+  }
   catch { fail(); }
 }
 $('connect').onclick = () => { idToken = ''; connect(); };
 // Google sign-in by full-page redirect (OpenID Connect implicit id_token): no popups, FedCM or
 // third-party scripts. state and nonce live only in this tab's sessionStorage.
 const hex = n => [...crypto.getRandomValues(new Uint8Array(n))].map(b => b.toString(16).padStart(2, '0')).join('');
-$('google').onclick = async () => {
+async function startGoogle(prompt = 'select_account') {
+  const mine = session;
   try {
     const config = await (await fetch('/api/config', {cache: 'no-store'})).json();
+    if (mine !== session) return;
     if (!config.google_client_id) return show({state: 'google_unavailable'});
     const flow = {state: hex(16), nonce: hex(16)};
     sessionStorage.setItem('zeruel_oidc', JSON.stringify(flow));
     location.assign('https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
       client_id: config.google_client_id, redirect_uri: location.origin + '/', response_type: 'id_token',
-      scope: 'openid email', prompt: 'select_account', ...flow}));
+      scope: 'openid email', prompt, ...flow}));
   } catch { show({state: 'google_unavailable'}); }
-};
-function finishGoogle() {
+}
+$('google').onclick = () => startGoogle();
+async function finishGoogle() {
   if (!location.hash.includes('id_token=') && !location.hash.includes('error=')) return;
   const reply = new URLSearchParams(location.hash.slice(1));
   history.replaceState(null, '', location.pathname); // Removes the token from the address bar.
@@ -48,26 +64,35 @@ function finishGoogle() {
   try { flow = JSON.parse(sessionStorage.getItem('zeruel_oidc') || '{}'); } catch { /* invalid */ }
   sessionStorage.removeItem('zeruel_oidc');
   const token = reply.get('id_token');
-  if (!token) return show({state: 'google_' + (reply.get('error') || 'cancelled')});
   if (!flow.state || reply.get('state') !== flow.state) return show({state: 'google_state_mismatch'});
+  if (!token) {
+    const error = reply.get('error');
+    if (pendingAutorun() && /^(interaction_required|login_required|consent_required)$/.test(error || '') &&
+        !sessionStorage.getItem('zeruel_autorun_retry')) {
+      sessionStorage.setItem('zeruel_autorun_retry', '1');
+      return startGoogle('select_account');
+    }
+    return show({state: 'google_' + (error || 'cancelled')});
+  }
   try {
     const part = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
     const claims = JSON.parse(atob(part + '='.repeat((4 - part.length % 4) % 4)));
     if (claims.nonce !== flow.nonce) return show({state: 'google_nonce_mismatch'});
   } catch { return show({state: 'google_invalid_token'}); }
-  session++; idToken = token; connect();
+  session++; idToken = token; await connect(true);
 }
-finishGoogle();
-$('run').onclick = async () => {
+async function runProbe(id) {
+  const mine = session;
   $('run').disabled = true;
   try {
-    const id = [...crypto.getRandomValues(new Uint8Array(16))].map(b => b.toString(16).padStart(2, '0')).join('');
+    id = id || hex(16);
     $('task').value = id;
     const data = await request('/api/probe', {id});
     if (data.state === 'active') timer = setTimeout(poll, 2000);
     else $('run').disabled = false;
-  } catch { $('run').disabled = false; }
-};
+  } catch { if (mine === session) $('run').disabled = false; }
+}
+$('run').onclick = () => runProbe();
 async function poll() {
   try {
     const data = await request('/api/status');
@@ -81,5 +106,15 @@ $('restore').onclick = async () => {
 };
 $('disconnect').onclick = () => {
   session++; clearTimeout(timer); $('token').value = ''; idToken = ''; $('run').disabled = true; $('restore').disabled = true;
+  sessionStorage.removeItem('zeruel_autorun'); sessionStorage.removeItem('zeruel_autorun_retry');
   show({state:'disconnected'});
 };
+const autorun = /^#autorun=([a-f0-9]{32})$/.exec(location.hash);
+if (autorun) {
+  sessionStorage.setItem('zeruel_autorun', autorun[1]);
+  sessionStorage.removeItem('zeruel_autorun_retry');
+  history.replaceState(null, '', location.pathname);
+  startGoogle('none');
+} else {
+  finishGoogle();
+}
