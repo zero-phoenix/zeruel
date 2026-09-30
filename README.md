@@ -14,6 +14,7 @@ Este repositorio implementa **el primer hito: prueba sintética de viabilidad**.
 - Una inferencia a la vez; prueba fija, sin archivos ni herramientas.
 - Interfaz móvil con estados desconectado/pausado/activo, autenticación y resultados sanitizados.
 - Punto de control sintético externo opcional en Apps Script, firmado y persistente.
+- Recuperación conservadora: generación privada por bloqueo, registro local previo y reintentos de persistencia sin repetir inferencia. Una operación incierta queda pausada; solo el propietario puede cerrarla con `scripts/recover_checkpoint.py`, sin volver a inferir.
 
 ## Prueba local
 

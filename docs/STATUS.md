@@ -40,3 +40,27 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - Se inició sesión en Render con `david.chavez.nge@gmail.com` sin conceder acceso nuevo a la aplicación GitHub. El dashboard reconfirmó **Live** en `6f073737d81057fcdc7f77b5941e535ea4e6feaf`, plan **Free**, Docker y rama `main`. El estado funcional `blocked_persistence` es el último resultado de la prueba previa; no se repitió hoy la llamada a la aplicación.
 - Este relevo actualiza documentación y corrige la codificación mixta previa de `STATUS.md` y `first-milestone.md`; no toca código de ejecución, credenciales, expedientes ni servicios. Pasaron 22 pruebas Python y 9 Node locales; no se hicieron pruebas de integración real ni de inferencia. `cloud_gate_passed` sigue `false`.
 - Próximo paso externo: aceptar personalmente las condiciones de Google Cloud si se desean usar sus servicios; después revisar el proyecto estándar concreto y confirmar la vinculación irreversible del script. El commit desplegado en Render permanecerá en `6f07373` hasta decidir un despliegue manual; el despliegue automático está desactivado. Ningún proceso nuevo debe permanecer activo.
+
+## Recuperación segura — DESKTOP-B6D864U, 29/09/2026
+
+- Trabajo en rama `fix/checkpoint-recovery`, basado en `main` `a295068`. Se conserva intacta la modificación pendiente del README de la PC original.
+- Cada bloqueo lleva una generación privada. Una respuesta antigua no puede cerrar otro bloqueo; repetir el mismo resultado solo reintenta persistencia. Cambiar el resultado se rechaza.
+- La intención se registra antes de inferir y el reporte se conserva localmente con escritura atómica. Una escritura parcial, reinicio sin reporte o bloqueo vencido queda incierto y no vuelve a invocar el modelo. Render Free puede perder el registro local; el bloqueo remoto conserva la pausa. Recuperar una operación vencida exige diagnóstico del propietario; no existe reinicio automático de inferencia.
+- Corrección de la auditoría: las 30 pruebas Python y 14 Node de esta etapa no cubrían renovación entre claim y complete, trabajador antiguo frente a otra lease, respuesta HTTP perdida explícita ni fallo en la segunda escritura del claim. Esas brechas se cubren en la etapa siguiente.
+- Corregida la contradicción del protocolo: OAuth ya está implementado; falta validar su identidad y permisos reales.
+- Google Cloud sigue mostrando condiciones iniciales pendientes en la cuenta principal. Se solicitó confirmación antes de aceptarlas; ningún proyecto estándar creado, API habilitada o script vinculado por este trabajo.
+- La clave DeepSeek expuesta y el secreto del checkpoint deben rotarse privadamente antes de su uso. No se realizaron llamadas DeepSeek: consumo de esta etapa US$0. El presupuesto autorizado de US$1 se limita a asistencia sobre código público, nunca inferencia de Zeruel.
+- No se actualizó Apps Script ni Render. Último despliegue verificado: `6f07373`; `cloud_gate_passed=false`. No se cargaron credenciales remotas ni se habilitó facturación.
+- Próximo paso: completar rotación privada y autorización de condiciones; preparar proyecto Cloud común y presentar su identificador antes de confirmar la vinculación irreversible. La inferencia sigue bloqueada por incompatibilidad publicada de Gemini CLI/Google AI Pro. No hay procesos nuevos que deban mantenerse activos.
+
+## Recuperación manual del propietario — Claude, DESKTOP-B6D864U, 29/09/2026
+
+- Problema: `complete` rechaza con razón el primer guardado después de los 180 s aunque exista registro local, y una lease incierta bloquea todos los IDs futuros. No había salida segura.
+- Solución: acción `recover` en Apps Script y comando local `scripts/recover_checkpoint.py`, fuera del servidor HTTP. Exige confirmación explícita del propietario (`--confirm-worker-finished`), la generación exacta y que la lease original haya vencido. Nunca llama al modelo ni concede otra inferencia.
+  - Con informe local durable: guarda ese resultado canónico y su fingerprint, marcado `recovered`, y luego retira solo su bloqueo.
+  - Sin informe: cierre terminal `terminal_unknown` (tombstone). Nunca éxito; el mismo ID no puede reclamarse ni completarse después.
+  - Repetir el mismo resultado es idempotente; otro resultado, otra generación o `--unknown` con informe existente se rechazan. No se borran registros ni se prolonga `expires`.
+- **Límite:** sin informe ni resultado durable no se puede reconstruir un resultado y asegurar a la vez que no haya duplicados. Por eso ese caso se cierra como desconocido y no se reinfiere el mismo ID.
+- Evidencia **simulada** (Node `vm` y mocks Python): pasan 39 pruebas Python y 22 Node. Cubren vencimiento exacto, confirmación y generación, informe durable, tombstone, trabajador antiguo frente a una lease nueva, segunda escritura del claim fallida, respuesta perdida tras escribir, recuperación parcial, renovación OAuth entre claim y complete, refresh revocado sin filtrar secretos, y ausencia de `recover` en el servidor. Tres mutaciones de las guardas de `recover` son derribadas. **No prueban permisos efectivos de Google ni persistencia real.**
+- Puerta del proveedor revalidada hoy contra la fuente oficial: sin restauración de Gemini CLI para Google AI Pro. Inferencia bloqueada; `cloud_gate_passed=false`.
+- Sin cambios en Apps Script remoto, Google Cloud ni Render: requieren confirmaciones del propietario. DeepSeek no se usó (clave pendiente de rotación privada): consumo US$0, sin reservas abiertas.

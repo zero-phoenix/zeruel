@@ -12,7 +12,7 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 2. Solo tras levantar la puerta del proveedor, autenticar Gemini CLI oficial con la cuenta de Google AI Pro en un perfil aislado. Comprobar en la interfaz oficial que corresponde a la suscripción del propietario. No inferir el nivel Pro únicamente porque una solicitud devuelve respuesta.
 3. Provisionar el perfil OAuth para el entorno remoto únicamente mediante los secretos de Render y tras autorización específica de ese almacenamiento. `ZERUEL_GEMINI_OAUTH_JSON` contiene credenciales sensibles: no compartirlo en chat, GitHub, logs ni archivos públicos. La renovación y el soporte remoto deben verificarse, no asumirse.
 4. Para el punto de control sintético, crear un proyecto Apps Script con `apps-script/SyntheticCheckpoint.gs`. Configurar una clave aleatoria de al menos 32 caracteres como propiedad `ZERUEL_CHECKPOINT_SECRET`. El script utiliza únicamente almacenamiento de propiedades, sin acceso a expedientes, Drive o Gmail. El endpoint requiere HMAC y rechaza repeticiones.
-5. Acceso exclusivo del propietario mediante su cuenta de Google: no desplegar con acceso «Cualquiera» ni «Cualquier persona que tenga una Cuenta de Google». La firma HMAC no sustituye el inicio de sesión del propietario. El adaptador Apps Script actual no autentica la identidad Google; por ello queda bloqueado para uso remoto hasta implementar y validar una conexión OAuth privada. No configurar el endpoint en Render mientras no cumpla esta condición. Las cuentas secundarias quedan pendientes.
+5. Acceso exclusivo del propietario mediante su cuenta de Google: no desplegar con acceso «Cualquiera» ni «Cualquier persona que tenga una Cuenta de Google». La firma HMAC no sustituye el inicio de sesión del propietario. El transporte OAuth privado mediante `scripts.run` ya está implementado; `runCheckpoint` comprueba la identidad efectiva. Sus permisos e identidad reales siguen sin validarse con Google. No configurar el transporte en Render hasta completar esa validación. Las cuentas secundarias quedan pendientes.
 6. Configurar `ZERUEL_ACCESS_TOKEN` aleatorio de al menos 32 caracteres. La web lo recibe en un campo de contraseña y lo envía como cabecera; no se almacena ni se coloca en URLs.
 
 ## Matriz de aceptación
@@ -25,6 +25,11 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático |
 | Concurrencia | Segunda ejecución rechazada mientras haya otra activa |
 | Idempotencia | Recuperar el identificador completado no repite la llamada |
+| Bloqueo expirado | La operación incierta queda pausada; no se vuelve a inferir |
+| Trabajador antiguo | Una generación anterior no puede completar otra operación |
+| Escritura parcial | El fallo de almacenamiento bloquea nuevas inferencias y conserva la incertidumbre |
+| Recuperación manual | Lease vencida cerrada por el propietario sin llamar al modelo: informe durable idempotente o `terminal_unknown`, nunca éxito |
+| Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza |
 | Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render |
 | Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones |
 | Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable |
@@ -51,3 +56,18 @@ Gemini CLI puede reutilizar autenticación existente en modo programático; la e
 6. Probar acceso real del propietario, rechazo de otras identidades, renovación, reinicios e idempotencia antes de declarar persistencia lista. Los tests locales usan identidades simuladas, no demuestran permisos efectivos de Google.
 
 Fuentes oficiales: https://developers.google.com/apps-script/api/how-tos/execute y https://developers.google.com/identity/protocols/oauth2 . El consentimiento OAuth en modo Testing puede limitar la duración de los refresh tokens a siete días dependiendo de los ámbitos; verificar el comportamiento real y conservar pausa ante expiración.
+
+## Asistencia externa del desarrollo
+
+DeepSeek puede revisar únicamente código público y diffs como asistente de Codex, con el presupuesto específico autorizado de US$1 del saldo existente y sin recargas. No forma parte de la inferencia de Zeruel. Antes de cada llamada se reserva su coste máximo; una respuesta perdida conserva la reserva y no se reintenta automáticamente. Las credenciales expuestas deben rotarse mediante interfaces privadas antes de cualquier uso. No transmitir capturas, expedientes, memoria personal ni secretos. La autorización no levanta la puerta de Gemini CLI/Google AI Pro ni cambia `cloud_gate_passed`.
+
+## Recuperación manual de una lease incierta
+
+Solo el propietario, tras confirmar que el trabajador original terminó (proceso detenido o instancia reiniciada) y con la lease vencida:
+
+```powershell
+python scripts/recover_checkpoint.py <id> --confirm-worker-finished            # con informe local durable
+python scripts/recover_checkpoint.py <id> --confirm-worker-finished --unknown  # sin informe: terminal_unknown
+```
+
+Si falta el registro local, el comando pide la generación de forma privada (léela en las propiedades del script; no la pases como argumento). Sin informe ni resultado durable no se puede reconstruir un resultado y asegurar a la vez que no haya duplicados: el ID se cierra como desconocido y nunca se reinfiere. El servidor HTTP no expone esta acción.

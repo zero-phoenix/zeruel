@@ -39,3 +39,27 @@ class PrivateCheckpointTests(unittest.TestCase):
         with patch.object(gateway,'request_json',return_value={
                 'access_token':'new','token_type':'Bearer','expires_in':3600}) as request:
             self.assertEqual(gateway.token(),'new');request.assert_called_once()
+
+    def test_refresh_between_claim_and_complete_keeps_generation(self):
+        gateway=self.gateway()
+        with patch.object(gateway,'request_json',side_effect=[
+            {'access_token':'first','token_type':'Bearer','expires_in':3600},
+            {'response':{'result':{'ok':True,'claimed':True,'generation':'b'*32}}},
+            {'access_token':'second','token_type':'Bearer','expires_in':3600},
+            {'response':{'result':{'ok':True,'record':None}}}]) as request:
+            gateway.call('claim','a'*32);gateway.expires_at=0
+            gateway.call('complete','a'*32,{'state':'failed_runtime'},generation='b'*32)
+            last=request.call_args_list[3].args
+            self.assertEqual(last[2]['Authorization'],'Bearer second')
+            envelope=json.loads(json.loads(last[1])['parameters'][0]['payload'])
+            self.assertEqual(envelope['generation'],'b'*32)
+            self.assertNotIn('confirm',envelope)
+
+    def test_revoked_refresh_token_fails_closed_without_secrets(self):
+        gateway=self.gateway()
+        with patch.object(gateway,'request_json',return_value={'error':'invalid_grant'}):
+            with self.assertRaises(ValueError) as caught:
+                gateway.call('get','a'*32)
+        for secret in ('fixture','fixture-refresh','synthetic-secret-'):
+            self.assertNotIn(secret,str(caught.exception))
+        self.assertIsNone(gateway.access_token)
