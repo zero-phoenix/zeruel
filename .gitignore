@@ -20,3 +20,4 @@ node_modules/
 antigravity-oauth-token
 deepseek_ledger.*
 .zeruel-private/
+extension/vendor/

@@ -1,0 +1,10 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Zeruel — revisión privada local</title><link rel="stylesheet" href="review.css"></head><body>
+<h1>Revisión local de texto</h1><p><strong>Original solo en memoria de esta pestaña.</strong> Sin almacenamiento automático ni envíos. No introducir contraseñas, login o tokens. La detección de nombres no es automática. Género solo por selección explícita; usa desconocido si no sabes.</p>
+<p>OCR local piloto de texto impreso: requiere recursos instalados. Manuscrito no está validado. El formato íntegro del documento todavía no se conserva.</p>
+<label>Imagen para OCR local<input type="file" id="image" accept="image/png,image/jpeg,image/webp"></label><button id="ocr">Extraer imagen en esta PC</button>
+<label>Texto original (pega aquí o usa OCR)<textarea id="original" rows="12" autocomplete="off" spellcheck="false"></textarea></label>
+<p>Clasifica cada fragmento con letras o números; todos los no revisados bloquean exportación. TEXTO_OPERATIVO conserva solo vocabulario cerrado: úsalo únicamente tras verificar que la selección no identifica a una persona o empresa. Nombres como «Ella» o «La Vista» se reemplazan, aunque coincidan con palabras corrientes.</p>
+<label>Tipo de marcador<select id="type"></select></label><button id="mark">Reemplazar selección</button><button id="suggest">Proponer correos/números (no aprobar)</button><div id="suggestions"></div>
+<button id="reset">Quitar selecciones</button><button id="clear">Borrar original y revisión</button><p id="status" role="status"></p>
+<label>Vista previa local — puede contener datos pendientes de clasificación<textarea id="preview" readonly rows="12"></textarea></label><button id="export" disabled>Exportar texto anonimizado validado</button>
+<script type="module" src="review.js"></script></body></html>

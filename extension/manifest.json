@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Zeruel — aprendizaje local privado",
+  "version": "0.1.0",
+  "description": "Observación estructural local, activada cada día y sin texto ni imágenes originales.",
+  "permissions": ["storage", "scripting", "activeTab", "alarms"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Zeruel: desconectado"},
+  "content_security_policy": {"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; connect-src 'self'"},
+  "incognito": "not_allowed"
+}

@@ -1,0 +1,11 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Fixture ficticia Zeruel</title><style>body{font:16px serif;line-height:1.6;margin:30px}h1{font-size:22px}footer{position:fixed;bottom:5px}textarea{display:block;width:90%;height:100px}canvas{border:1px solid #999}button{margin:6px;padding:8px}</style></head><body>
+<h1>Fixture ficticia — nunca usar datos reales</h1>
+<p>Revisar expediente EXP-FICTICIO-0001 de María Prueba. DNI 12345678. RUC 20123456789. Correo prueba@example.test. Póliza FICT-1234. Tarjeta 4111 1111 1111 1111. Monto S/ 1250.00. Dirección Av. Ficticia 123.</p>
+<button onclick="document.getElementById('screen').textContent='Pantalla ficticia 2'">Continuar</button><button onclick="location.hash='revision'">Revisar</button><p id="screen">Pantalla ficticia 1</p>
+<form onsubmit="event.preventDefault();document.getElementById('screen').textContent='Formulario ficticio enviado'">
+<label>Texto ficticio<textarea autocomplete="off">Solicitar información del expediente EXP-FICTICIO-0001.</textarea></label><button type="submit">Enviar formulario ficticio</button></form>
+<p>Canvas simulado; fuente cursiva NO demuestra OCR de manuscrito:</p><canvas id="remote" width="600" height="110"></canvas>
+<button onclick="const target=document.getElementById('login');target.replaceChildren();const input=document.createElement('input');input.type='password';input.autocomplete='new-password';target.append(input)">Mostrar login ficticio (debe pausar)</button>
+<div id="login"></div>
+<footer>Pie de página ficticio — formato para comparación local</footer>
+<script>const ctx=document.getElementById('remote').getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,600,110);ctx.fillStyle='#111';ctx.font='24px cursive';ctx.fillText('María Prueba — EXP-FICTICIO-0001',10,65);</script></body></html>
