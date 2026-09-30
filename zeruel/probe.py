@@ -1,4 +1,4 @@
-"""Fixed, tool-free Gemini subscription probe. Never accepts user documents."""
+"""Fixed, tool-free Google AI Pro probe through Antigravity CLI. Never accepts user documents."""
 import argparse
 import json
 import os
@@ -7,13 +7,20 @@ import signal
 import subprocess
 import sys
 import time
+import urllib.request
 
-VERSION = "0.62.0"
+VERSION = "1.2.14"  # Antigravity CLI (agy), pinned; Gemini CLI stopped serving AI Pro on 18/06/2026
+MODEL = "gemini-3.8-flash-high"
 EXPECTED = {"marker": "ZERUEL_OK", "sum": 42}
 PROMPT = ('This is a synthetic connectivity test. Do not use tools or read files. '
           'Return only this JSON object, without markdown: {"marker":"ZERUEL_OK","sum":42}')
+# Any of these would move agy off the owner's subscription onto a billable route.
 FORBIDDEN = ("GEMINI_API_KEY", "GOOGLE_API_KEY", "GOOGLE_GENAI_USE_VERTEXAI",
              "GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_GENAI_USE_GCA", "CLOUD_SHELL")
+TOKEN = Path(".gemini") / "antigravity-cli" / "antigravity-oauth-token"
+FREE_HOST = "generativelanguage.googleapis.com"
+FREE_MODEL = "gemini-flash-latest"  # fixed; no variable can point the fallback at another model
+FREE_URL = "https://" + FREE_HOST + "/v1beta/models/" + FREE_MODEL + ":generateContent"
 
 
 class Blocked(Exception):
@@ -27,40 +34,23 @@ def home_path():
 
 
 def prepare(home):
-    """Use an isolated CLI profile; never edit the user's existing profile."""
-    folder = home / ".gemini"
+    """Isolated agy home (HOME for the child); never the user's own profile."""
+    folder = home / TOKEN.parent
     folder.mkdir(parents=True, exist_ok=True)
-    settings = {"security": {"auth": {"selectedType": "oauth-personal",
-                                     "enforcedType": "oauth-personal"}},
-                "general": {"enableAutoUpdate": False},
-                "telemetry": {"enabled": False},
-                "mcpServers": {}, "hooks": {},
-                "tools": {"exclude": ["run_shell_command", "read_file", "read_many_files",
-                           "list_directory", "glob", "grep_search", "write_file", "replace",
-                           "web_fetch", "google_web_search", "save_memory", "write_todos",
-                           "activate_skill", "ask_user", "enter_plan_mode", "exit_plan_mode"]}}
-    target = folder / "settings.json"
-    target.write_text(json.dumps(settings), encoding="utf-8")
-    policies = folder / "policies"
-    policies.mkdir(exist_ok=True)
-    (policies / "zeruel.toml").write_text(
-        '[[rule]]\ntoolName = "*"\ndecision = "deny"\npriority = 999\n', encoding="utf-8")
     if os.name != "nt":
         home.chmod(0o700)
         folder.chmod(0o700)
-        target.chmod(0o600)
     return folder
 
 
-def preflight(env, home, bundle):
+def preflight(env, home, binary):
     if any(env.get(name) for name in FORBIDDEN):
         raise Blocked("blocked_paid_auth")
-    if not bundle.is_file():
+    if not binary.is_file():
         raise Blocked("blocked_cli_missing")
-    # A separate, explicitly authenticated profile is required. No extraction
-    # from Antigravity, Codex, browser sessions or the user's Gemini profile.
-    creds = home / ".gemini" / "oauth_creds.json"
-    if not creds.is_file():
+    # A session created explicitly for Zeruel by the owner's sign-in. Never copied
+    # from the Antigravity desktop app, browser sessions or another profile.
+    if not (home / TOKEN).is_file():
         raise Blocked("blocked_auth")
 
 
@@ -71,7 +61,8 @@ def child_environment(env, home):
                "APPDATA", "LOCALAPPDATA", "LANG", "LC_ALL", "SSL_CERT_FILE",
                "SSL_CERT_DIR", "NODE_EXTRA_CA_CERTS")
     result = {key: env[key] for key in allowed if key in env}
-    result["GEMINI_CLI_HOME"] = str(home)
+    for name in ("HOME", "USERPROFILE", "APPDATA", "LOCALAPPDATA"):
+        result[name] = str(home)
     result["NO_BROWSER"] = "true"
     return result
 
@@ -110,7 +101,8 @@ def classify_error(text):
     value = text.lower()
     if any(term in value for term in ("429", "resource_exhausted", "quota", "rate limit")):
         return "paused_quota"
-    if any(term in value for term in ("401", "403", "unauthorized", "authentication", "login", "invalid_grant")):
+    if any(term in value for term in ("401", "403", "unauthorized", "authentication", "login", "invalid_grant",
+                                      "authentication failed or timed out")):
         return "blocked_auth"
     return "failed_cli"
 
@@ -124,33 +116,74 @@ def children_usage():
     return peak, usage.ru_utime + usage.ru_stime
 
 
-def probe(env=None, runner=run_child):
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    # A redirect would resend the API key header to another host.
+    def redirect_request(self, *args):
+        return None
+
+
+def free_open(request, timeout):
+    return urllib.request.build_opener(NoRedirect).open(request, timeout=timeout)
+
+
+def free_tier(key, opener=free_open):
+    """Owner-approved fallback after AI Pro quota: synthetic prompt only, key sent as header."""
+    body = json.dumps({"contents": [{"parts": [{"text": PROMPT}]}],
+                       "generationConfig": {"responseMimeType": "application/json"}}).encode()
+    request = urllib.request.Request(FREE_URL, data=body,
+                                     headers={"Content-Type": "application/json", "x-goog-api-key": key})
+    try:
+        with opener(request, timeout=60) as response:
+            value = json.loads(response.read(65537))
+        text = value["candidates"][0]["content"]["parts"][0]["text"]
+        parsed = json.loads(text)
+    except OSError as exc:
+        # 429 or a 403 quotaExceeded both mean the free quota is exhausted.
+        detail = str(getattr(exc, "code", "")) + " " + str(exc)
+        raise Blocked("paused_quota" if classify_error(detail) == "paused_quota" or "429" in detail
+                      else "failed_cli")
+    except (ValueError, TypeError, KeyError, IndexError):
+        raise Blocked("failed_response")
+    if parsed != EXPECTED:
+        raise Blocked("failed_response")
+
+
+def probe(env=None, runner=run_child, opener=free_open):
     env = dict(os.environ if env is None else env)
     home = Path(env.get("ZERUEL_PRIVATE_HOME") or "work/private/gemini-home").resolve()
-    bundle = Path(env.get("ZERUEL_CLI_BUNDLE", "work/gemini-cli/package/bundle/gemini.js")).resolve()
+    binary = Path(env.get("ZERUEL_AGY_BIN") or "work/agy/agy").resolve()
     started = time.monotonic()
     baseline = children_usage()
-    report = {"state": "disconnected", "cli_version": VERSION,
-              "synthetic_only": True, "subscription_verified": False,
-              "cloud_gate_passed": False}
+    report = {"state": "disconnected", "engine": "antigravity-cli", "model": MODEL, "cli_version": VERSION,
+              "synthetic_only": True, "subscription_verified": False, "cloud_gate_passed": False}
     try:
-        preflight(env, home, bundle)
+        preflight(env, home, binary)
         prepare(home)
         scratch = home / "synthetic-workspace"
         scratch.mkdir(exist_ok=True)
-        code, out, err = runner([env.get("ZERUEL_NODE", "node"), str(bundle),
-                                "-p", PROMPT, "--output-format", "json"],
-                               child_environment(env, home), str(scratch), 120)
-        if code:
-            raise Blocked(classify_error(err + out))
+        code, out, err = runner([str(binary), "-p", PROMPT, "--output-format", "json", "--model", MODEL,
+                                 "--sandbox", "--disable-slash-commands", "--print-timeout", "110s"],
+                                child_environment(env, home), str(scratch), 150)
         try:
             envelope = json.loads(out)
-            if envelope.get("error"):
-                # Never publish raw exception messages: they may contain tokens.
-                raise Blocked(classify_error(json.dumps(envelope["error"])))
-            response = envelope.get("response", "")
-            parsed = json.loads(response)
-        except (ValueError, TypeError, AttributeError):
+            if not isinstance(envelope, dict):
+                raise ValueError
+        except (ValueError, TypeError):
+            raise Blocked(classify_error(err) if code else "failed_response")
+        if "print timeout" in err or envelope.get("status") == "TIMEOUT":
+            # agy returns partial output after --print-timeout; never treat it as an answer.
+            raise Blocked("paused_timeout")
+        if envelope.get("denied_actions"):
+            # The model tried a tool; print mode denied it, but the run is not a clean answer.
+            raise Blocked("failed_response")
+        if code or envelope.get("status") != "SUCCESS" or envelope.get("error"):
+            # Never publish raw error text: it may contain tokens.
+            raise Blocked(classify_error(json.dumps(envelope.get("error")) + err))
+        # --json-schema is not used: agy implements it as an internal tool that stalls on 0.1 CPU.
+        # The reply must be exactly the expected object; anything else fails closed.
+        try:
+            parsed = json.loads(envelope.get("response") or "")
+        except (ValueError, TypeError):
             raise Blocked("failed_response")
         if parsed != EXPECTED:
             raise Blocked("failed_response")
@@ -160,6 +193,14 @@ def probe(env=None, runner=run_child):
         report["state"] = exc.state
     except (OSError, ValueError):
         report["state"] = "failed_runtime"
+    key = env.get("ZERUEL_GEMINI_FREE_KEY", "")
+    if report["state"] == "paused_quota" and key:
+        report.update(engine="gemini-api-free-tier", model=FREE_MODEL, primary_state="paused_quota")
+        try:
+            free_tier(key, opener)
+            report.update(state="synthetic_success", result=EXPECTED)
+        except Blocked as exc:
+            report["state"] = exc.state
     report["elapsed_seconds"] = round(time.monotonic() - started, 3)
     usage = children_usage()
     if usage and baseline:

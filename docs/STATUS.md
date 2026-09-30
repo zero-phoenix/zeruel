@@ -71,3 +71,11 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - Dos llamadas: la primera agotó el tope en razonamiento sin respuesta. Coste máximo total US$0,092 del US$1 autorizado; sin reservas pendientes.
 - Hallazgo aceptado: una respuesta JSON que no fuera objeto escapaba como `AttributeError` fuera de `persist`. Ahora falla cerrada como `ValueError`; prueba de regresión derriba la versión anterior.
 - Rechazados: liberar automáticamente registros `preparing` vencidos (contradice la recuperación exclusiva del propietario) y ACL de Windows para el journal (Render ejecuta Linux con permisos 0600).
+
+## Cambio de motor a Antigravity CLI — 30/09/2026
+
+- Decisión del propietario: `agy` con Google AI Pro reemplaza a Gemini CLI; respaldo en capa gratuita de Gemini API tras cuota agotada.
+- Evidencia **real** (contenedor local limitado a 512 MB y 0,1 CPU, como Render Free): el propietario inició sesión con el enlace oficial; `agy` 1.2.14 respondió `{"marker":"ZERUEL_OK","sum":42}` con Gemini 3.8 Flash (High). Imagen de Zeruel con usuario sin privilegios y `--sandbox`: `synthetic_success` en 20 s, pico 218 MB de RAM, 0,87 s de CPU.
+- La sesión de `agy` en Linux es un archivo (`.gemini/antigravity-cli/antigravity-oauth-token`), no el llavero: puede provisionarse como secreto de Render. Pide el ámbito `cloud-platform` además de los de identidad.
+- `--json-schema` se descartó: `agy` lo implementa como herramienta interna y se atasca con 0,1 CPU (0 tokens tras 110 s). La respuesta se valida de forma estricta en Zeruel.
+- Pendiente: vincular Apps Script al proyecto `zeruel-checkpoint-09292354`, cargar secretos en Render, desplegar y pruebas reales en nube. `cloud_gate_passed=false`.
