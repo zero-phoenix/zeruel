@@ -4,6 +4,8 @@ Agente personal para aprender procedimientos y preparar borradores entre disposi
 
 ## Estado real
 
+**Continuidad:** el relevo completo para el siguiente agente está en [docs/HANDOFF.md](docs/HANDOFF.md).
+
 Este repositorio implementa **el primer hito: prueba sintética de viabilidad**. No es todavía un agente operativo, no observa el escritorio y no procesa expedientes. La ejecución en Render, el acceso a Google AI Pro y la recuperación tras suspensión requieren pruebas con las cuentas del propietario. No se afirma que estén superadas.
 
 **Motor de inferencia (decisión del propietario, 30/09/2026):** Gemini CLI dejó de atender a Google AI Pro el 18/06/2026 ([anuncio](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)). El propietario autorizó su reemplazo oficial, **Antigravity CLI (`agy`)**, con su suscripción Google AI Pro y el modelo Gemini 3.8 Flash (High). Respaldo autorizado solo tras cuota agotada: Gemini API en capa gratuita, sin facturación y únicamente para la prueba sintética. Vertex y rutas facturables siguen prohibidas.
