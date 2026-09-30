@@ -17,7 +17,7 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 - `cloud_gate_passed=false` hasta superar **toda** la matriz de `docs/first-milestone.md`.
 - Render Free se suspende y pierde archivos: sin keepalive artificial.
 - Credenciales, capturas, expedientes y memoria personal **fuera** del repositorio público. Nunca pedir secretos por chat.
-- No implementar memoria real, observación, extensión ni flujos jurídicos antes de superar la matriz.
+- Memoria real y flujos jurídicos: no antes de superar la matriz. Excepción autorizada por el propietario (30/09/2026): la extensión de Edge **anonimizada** de la sección 5b.
 - Acciones irreversibles (vincular Apps Script, aceptar condiciones, cargar secretos remotos, fusionar a `main`) → confirmación explícita del propietario en el momento.
 
 ## 3. Estado verificado
@@ -44,6 +44,16 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 - **Sesión de `agy`:** el propietario inicia sesión otra vez. En Windows con Docker: `docker build -t zeruel .` y luego `tools/agy-login.ps1` (abre el enlace completo y pasa el código; guarda la sesión en `%USERPROFILE%\.zeruel-private\agy-home`). En Linux/macOS basta ejecutar `agy` en una terminal.
 - **Clave DeepSeek:** el propietario la define en la variable `DEEPSEEK_API_KEY`. Al crear un registro nuevo, usa `DEEPSEEK_SPENT_BEFORE=0.2143` para no exceder el US$1 total.
 - Clave gratuita de AI Studio (opcional), secreto del checkpoint y credenciales OAuth: se generan en la fase 2.
+
+## 5b. Tarea en paralelo: extensión de Edge anonimizada
+Autorizada por el propietario el 30/09/2026. Carpeta `extension/`, Manifest V3, carga «desempaquetada» en `edge://extensions`, sin tiendas ni pagos. Objetivo: aprender cómo trabaja el propietario en el teletrabajo para después entrenar a Zeruel (al final lo hará Zeruel). Base: `docs/browser-extension-plan.md`.
+- **Anonimizar todo en el propio equipo, antes de guardar nada:** nombres, DNI/RUC, direcciones, correos, teléfonos, números de expediente, póliza, cuenta y tarjeta, montos vinculados a personas y texto de documentos pasan a marcadores (PERSONA_1, EXPEDIENTE_1, EMPRESA_1, MONTO_1…). En las capturas se difumina el texto. Solo se conserva la estructura: pantalla, acción, orden y decisión.
+- Nada sin anonimizar sale del equipo, se envía a GPT, DeepSeek u otro servicio, ni se sube al repositorio.
+- Indicador permanente (activo / pausado / desconectado), pausa inmediata y activación diaria por el propietario.
+- Solo sitios autorizados. Registra clics, navegación, cambios de pestaña, formularios enviados y capturas por acción, todo anonimizado. Nunca contraseñas, campos de contraseña, pantallas de inicio de sesión, tokens ni todas las teclas.
+- Escritorio remoto: capturas anonimizadas y zonas de exclusión.
+- Registros locales; el propietario los exporta a mano ya anonimizados. Procedimientos anonimizados en `docs/procedimientos/`.
+- Prueba que falle si un registro o exportación contiene datos personales sin anonimizar (con datos ficticios). Probar en Edge, evidencia real vs simulada.
 
 ## 6. DeepSeek como asistente
 `python tools/deepseek_assist.py <prompt> <salida> [tokens]`. Solo código público, diffs depurados y preguntas acotadas; nunca conversaciones, capturas, expedientes, memoria ni secretos. Reserva previa del coste máximo; una llamada incierta conserva la reserva y no se reintenta. Usa ≥ 60 000 tokens de salida (el razonamiento consume el tope). Verifica cada hallazgo antes de aceptarlo; registra aceptados y rechazados en `docs/reviews/`.
