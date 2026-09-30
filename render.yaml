@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zeruel-synthetic-probe
+    runtime: docker
+    plan: free
+    autoDeployTrigger: off
+    healthCheckPath: /healthz
+    envVars:
+      - key: ZERUEL_ACCESS_TOKEN
+        generateValue: true
+      - key: ZERUEL_GEMINI_OAUTH_JSON
+        sync: false
+      - key: ZERUEL_CHECKPOINT_URL
+        sync: false
+      - key: ZERUEL_CHECKPOINT_SECRET
+        sync: false

@@ -1,0 +1,7 @@
+.git
+work
+outputs
+private
+.env*
+**/__pycache__
+*.db*
