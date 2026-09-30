@@ -26,19 +26,38 @@ async function connect() {
   catch { fail(); }
 }
 $('connect').onclick = () => { idToken = ''; connect(); };
-async function initGoogle() {
+// Google sign-in by full-page redirect (OpenID Connect implicit id_token): no popups, FedCM or
+// third-party scripts. state and nonce live only in this tab's sessionStorage.
+const hex = n => [...crypto.getRandomValues(new Uint8Array(n))].map(b => b.toString(16).padStart(2, '0')).join('');
+$('google').onclick = async () => {
   try {
     const config = await (await fetch('/api/config', {cache: 'no-store'})).json();
-    if (!config.google_client_id) return;
-    const ready = () => window.google && google.accounts && google.accounts.id;
-    for (let i = 0; i < 50 && !ready(); i++) await new Promise(r => setTimeout(r, 100));
-    if (!ready()) return;
-    google.accounts.id.initialize({client_id: config.google_client_id, auto_select: true,
-      callback: r => { session++; idToken = r.credential; connect(); }});
-    google.accounts.id.renderButton($('google'), {theme: 'filled_blue', size: 'large', text: 'signin_with', locale: 'es'});
-  } catch { /* The private key remains available. */ }
+    if (!config.google_client_id) return show({state: 'google_unavailable'});
+    const flow = {state: hex(16), nonce: hex(16)};
+    sessionStorage.setItem('zeruel_oidc', JSON.stringify(flow));
+    location.assign('https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
+      client_id: config.google_client_id, redirect_uri: location.origin + '/', response_type: 'id_token',
+      scope: 'openid email', prompt: 'select_account', ...flow}));
+  } catch { show({state: 'google_unavailable'}); }
+};
+function finishGoogle() {
+  if (!location.hash.includes('id_token=') && !location.hash.includes('error=')) return;
+  const reply = new URLSearchParams(location.hash.slice(1));
+  history.replaceState(null, '', location.pathname); // Removes the token from the address bar.
+  let flow = {};
+  try { flow = JSON.parse(sessionStorage.getItem('zeruel_oidc') || '{}'); } catch { /* invalid */ }
+  sessionStorage.removeItem('zeruel_oidc');
+  const token = reply.get('id_token');
+  if (!token) return show({state: 'google_' + (reply.get('error') || 'cancelled')});
+  if (!flow.state || reply.get('state') !== flow.state) return show({state: 'google_state_mismatch'});
+  try {
+    const part = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+    const claims = JSON.parse(atob(part + '='.repeat((4 - part.length % 4) % 4)));
+    if (claims.nonce !== flow.nonce) return show({state: 'google_nonce_mismatch'});
+  } catch { return show({state: 'google_invalid_token'}); }
+  session++; idToken = token; connect();
 }
-initGoogle();
+finishGoogle();
 $('run').onclick = async () => {
   $('run').disabled = true;
   try {
@@ -62,6 +81,5 @@ $('restore').onclick = async () => {
 };
 $('disconnect').onclick = () => {
   session++; clearTimeout(timer); $('token').value = ''; idToken = ''; $('run').disabled = true; $('restore').disabled = true;
-  if (window.google && google.accounts && google.accounts.id) google.accounts.id.disableAutoSelect();
   show({state:'disconnected'});
 };
