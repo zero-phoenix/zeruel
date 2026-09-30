@@ -16,10 +16,17 @@ $zrChromePaths = @(
 if (!($zrChromePaths | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })) {
     throw 'Chrome instalado no encontrado. Detener para evitar una descarga adicional del servidor MCP.'
 }
+function Assert-ZrFreeMemory([double]$AvailableBytes, [double]$RequiredBytes) {
+    if ($AvailableBytes -lt $RequiredBytes) {
+        throw ('RAM libre insuficiente: {0} MiB disponibles; se requieren {1} MiB; faltan {2} MiB. No iniciar.' -f
+            [Math]::Floor($AvailableBytes / 1MB), [Math]::Ceiling($RequiredBytes / 1MB),
+            [Math]::Ceiling(($RequiredBytes - $AvailableBytes) / 1MB))
+    }
+}
 # One initial WMI read protects the small native-helper compilation; no WMI polling.
 $zrInitial = Get-CimInstance -Query 'SELECT FreePhysicalMemory,TotalVisibleMemorySize FROM Win32_OperatingSystem'
 $zrMinFree = [Math]::Max(768MB, [double]$zrInitial.TotalVisibleMemorySize * 1KB * 0.15)
-if ([double]$zrInitial.FreePhysicalMemory * 1KB -lt ($zrMinFree + 512MB)) { throw 'RAM libre insuficiente. No iniciar.' }
+Assert-ZrFreeMemory -AvailableBytes ([double]$zrInitial.FreePhysicalMemory * 1KB) -RequiredBytes ($zrMinFree + 512MB)
 if (!('ZeruelResourceGuardV1' -as [type])) {
     Add-Type -TypeDefinition @'
 using System;
@@ -161,7 +168,7 @@ public sealed class ZeruelResourceGuardV1 : IDisposable {
 '@
 }
 $zrMemory = [ZeruelResourceGuardV1]::Memory()
-if ($zrMemory[1] -lt ($zrMinFree + 512MB)) { throw 'RAM libre insuficiente para reserva y grupo. No iniciar.' }
+Assert-ZrFreeMemory -AvailableBytes $zrMemory[1] -RequiredBytes ($zrMinFree + 512MB)
 Write-Host ('REAL local: RAM libre {0:N0} MiB; reserva {1:N0} MiB.' -f ($zrMemory[1] / 1MB), ($zrMinFree / 1MB))
 Write-Host 'Grupo: CPU limitada al 40%; memoria comprometida limitada a 512 MiB.'
 Write-Host 'Cada 3 s: detener solo nuestro grupo si falta reserva RAM o CPU global >85% durante 12 s.'
@@ -171,7 +178,7 @@ if ($CheckOnly) { Write-Host 'Comprobacion previa correcta; agente no iniciado.'
 
 function Invoke-ZrMonitored([string[]]$Arguments) {
     $zrMemory = [ZeruelResourceGuardV1]::Memory()
-    if ($zrMemory[1] -lt ($zrMinFree + 512MB)) { throw 'RAM libre insuficiente para reserva y grupo. No iniciar.' }
+    Assert-ZrFreeMemory -AvailableBytes $zrMemory[1] -RequiredBytes ($zrMinFree + 512MB)
     $zrGuard = [ZeruelResourceGuardV1]::new(40, 512MB)
     try {
         $zrBefore = [ZeruelResourceGuardV1]::Cpu()
