@@ -21,3 +21,4 @@ antigravity-oauth-token
 deepseek_ledger.*
 .zeruel-private/
 extension/vendor/
+client_secret*.json
