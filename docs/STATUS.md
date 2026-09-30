@@ -96,3 +96,8 @@ El archivo `docs/ci-template.yml` es una plantilla y no está activo. Las prueba
 - **Real:** Render tiene `ZERUEL_CHECKPOINT_DEPLOYMENT_ID`, `ZERUEL_CHECKPOINT_OAUTH_JSON` y `ZERUEL_CHECKPOINT_SECRET` (valores pegados por el propietario; no leídos). Despliegue manual de `c1a1c92` **Live**; log «Zeruel synthetic probe ready»; `/healthz` responde `cloud_gate_passed:false`.
 - Pendiente: tarea sintética real (requiere `ZERUEL_ACCESS_TOKEN` del propietario en la web) para confirmar que ya no devuelve `blocked_persistence`; sesión `agy` y `ZERUEL_AGY_OAUTH_TOKEN`; resto de la matriz.
 - Nota operativa: el panel de navegador integrado no acepta pegar desde el portapapeles de Windows; los secretos se pegan en Edge.
+
+## Motor `agy` — 30/09/2026 ~14:20
+- **Real:** sesión `agy` creada por el propietario en un Codespace (`tools/agy-login-codespace.ps1`, sin Docker local): prueba sintética `"status":"SUCCESS"` con `ZERUEL_OK`. Sesión copiada por el propietario a Render (`ZERUEL_AGY_OAUTH_TOKEN`); codespace borrado.
+- **Real:** redespliegue manual de `dc7eced` Live, arranque sin errores.
+- Pendiente: tarea sintética ejecutada **en Render** (el propietario introduce `ZERUEL_ACCESS_TOKEN` en la web) y el resto de la matriz. `cloud_gate_passed=false`.
