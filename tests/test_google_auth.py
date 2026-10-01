@@ -77,6 +77,19 @@ class VerifierTests(unittest.TestCase):
         self.assertFalse(verifier.verify(TOKEN))
         self.assertEqual(len(calls), 1)
 
+    def test_token_expiring_during_tokeninfo_is_rejected(self):
+        for response_time in (2000, 2001):
+            with self.subTest(response_time=response_time):
+                now = [1999]
+
+                def fetch(token):
+                    now[0] = response_time
+                    return info()
+
+                verifier = GoogleOwnerVerifier(CLIENT, OWNER, fetch=fetch, clock=lambda: now[0])
+                self.assertFalse(verifier.verify(TOKEN))
+                self.assertEqual(verifier.cache, {})
+
     def test_requires_configuration(self):
         with self.assertRaises(ValueError):
             GoogleOwnerVerifier('', OWNER)

@@ -71,6 +71,7 @@ class GoogleOwnerVerifier:
             self.checks.append(now)
         try:
             info = self.fetch(id_token)  # Google remains the source of truth for the signature.
+            now = self.clock()  # The token may expire while tokeninfo is in flight.
             ok = (isinstance(info, dict) and self.accepted(info, now)
                   and str(info.get("email_verified", "")).lower() == "true")
         except Exception:
