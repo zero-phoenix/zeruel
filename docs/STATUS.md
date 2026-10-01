@@ -148,3 +148,10 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **Límite:** la PC estaba encendida. Esto demuestra lanzamiento móvil y consulta autenticada del checkpoint; no demuestra autorun desplegado, ambas PCs apagadas ni renovación OAuth.
 - **REAL:** los comandos de apertura de navegador siguen rechazados por revisión automática (`blocked by policy`), pero leer el teléfono y pulsar controles visibles sí funcionó. Se retiró el XML temporal del teléfono y se cerró ADB. Sin procesos auxiliares de esta sesión.
 - **Pendiente:** desplegar manualmente `8662fb8` y validar autorun en el navegador que mantiene la sesión (Brave en esta prueba); después ejecución diferida, apagado coordinado y renovación. `cloud_gate_passed=false`.
+
+## Despliegue privado en Render y prueba móvil — 01/10/2026 10:21 Perú
+- **REAL:** David desplegó en Render conectando el repositorio privado `zero-phoenix/zeruel` vía GitHub (resolviendo el fallo de clonación originado por la privacidad del repositorio).
+- **REAL:** prueba ejecutada desde el móvil el 01/10/2026 10:21 Perú: tarea `352728174ebf07c7fd732960f871c9d3` → `synthetic_success`, marcador `ZERUEL_OK`, suma 42, 7,125 s, pico 214 400 KiB, 0,599 s CPU, `completed=1790868072` (epoch UTC). Resultado recuperado con éxito mediante «Consultar punto de control».
+- **Límite:** no prueba renovación de token OAuth en proceso vivo >1 h ni ejecución con ambas PCs apagadas.
+- **Estado:** `cloud_gate_passed=false`.
+
