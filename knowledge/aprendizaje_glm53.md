@@ -1,0 +1,47 @@
+Let me analyze this task carefully. I'm being asked to act as GLM-5.3 (Max), a structural design and semantics subagent of "Zeruel" (which appears to be an AI system for generating legal/administrative documents — specifically resolutions from INDECOPI's Consumer Protection Commission in Peru).
+
+The task: Deliver a structured assessment (dictamen) in Spanish, without preamble or English, about the differences between 8 drafts and the corrected versions by the boss (LSQ). The assessment must cover:
+
+1. Structural and administrative language patterns of LSQ (exact Code terminology, contrast connectors like "sin embargo", punctuation of incisos and incidental commas).
+2. Heuristic rules of typification and imputation (specification of Art. 88.1, distinction between "falta" vs "negativa" de cobertura, typification of information duty Art. 2, harmonization of "considerando-resuelve").
+3. Data invariants and correction architecture that Zeruel must systematize.
+
+Let me go through each case and extract the patterns:
+
+**CASO 2693-2026 R2 (4 blocks):**
+
+Block 1: Bold formatting fix in DENUNCIANTE line — the bold markers were misplaced: `**FORTUNATO VICENTE AGUILAR MORALES** **(SEÑOR ****AGUILAR****)**` → `**FORTUNATO VICENTE AGUILAR MORALES ****(SEÑOR ****AGUILAR****)**`. So the bold extends to cover the space before "(SEÑOR". This is a formatting invariant: the name and the parenthetical alias should be inside one bold run, with the space inside the bold. Pattern: `**NOMBRE ****(SEÑOR ****APELLIDO****)**` — the bold segments concatenate: `**NOMBRE **` + `**(SEÑOR **` + `**AGUILAR**` + `**)**`. Actually in Markdown, `**FORTUNATO VICENTE AGUILAR MORALES **(SEÑOR **AGUILAR****)**` — hmm, this is tricky markdown. The pattern is that the space between the name and the parenthetical goes INSIDE the bold run of the name. So: name bold ends after the space: `**FORTUNATO VICENTE AGUILAR MORALES **` then `(SEÑOR **AGUILAR****)**`. Wait, let me look at the corrected: `**FORTUNATO VICENTE AGUILAR MORALES ****(SEÑOR ****AGUILAR****)**`. 
+
+Hmm, in raw markdown: `**FORTUNATO VICENTE AGUILAR MORALES ****(SEÑOR ****AGUILAR****)**`. This would render as: bold "FORTUNATO VICENTE AGUILAR MORALES " + "(SEÑOR " + bold "AGUILAR" + ")". Actually the `****` is an empty bold. The key difference: in the draft, there was `** **` between MORALES and (SEÑOR — i.e., `MORALES** **(SEÑOR`, the space was outside bold (as a separate bold segment `** **`?). Actually the draft: `**FORTUNATO VICENTE AGUILAR MORALES** **(SEÑOR ****AGUILAR****)**`. The corrected: `**FORTUNATO VICENTE AGUILAR MORALES ****(SEÑOR ****AGUILAR****)**`. So the change is: `MORALES** **(SEÑOR` → `MORALES ****(SEÑOR`. The space moved inside the first bold run. This is a whitespace/bold-boundary normalization: bold runs should be contiguous, with the space absorbed into the preceding bold run. This avoids a non-bold space between bold segments (which in some renderers breaks or shows inconsistent spacing).
+
+Block 2: Date change: 26 de agosto → 28 de agosto de 2026. Data invariant: the date must match the actual emission date (presumably the date of the session/signing). Also note: in this case the date has NO final period ("Lima, 28 de agosto de 2026" without period), whereas in other cases (2723, 2739, 2847, 2873, 2953, 2972) the corrected adds a period: "Lima, 28 de agosto de 2026." Interesting — in 2693 the corrected date line has no period. Let me check: Block 2 of 2693: `[+] Lima, 28 de agosto de 2026` — no period. In 2723 Block 1: `[+] Lima, 28 de agosto de 2026.` — with period. In 2739 Block 2: with period. 2847 Block 2: with period. 2873 Block 1: with period. 2953 Block 1: "Lima, 11 de setiembre de 2026." with period. 2972 Block 2: "Lima, 11 de setiembre de 2026." with period. 3038 Block 3: "Lima, 11 de setiembre de 2026" — NO period.
+
+Hmm, so the period at the end of the date line is inconsistent across cases. In 2693 and 3038 no period; in others with period. This could be an inconsistency of LSQ herself, or it might depend on what follows (if the date is the last line of the document vs followed by signature). Actually, in these resolutions, the date line typically appears at the end after signatures. The period addition appears in 6 of 8 cases. Hmm, but 2693's block 2 shows only the date change without period — maybe the period was already there or the diff only captured the changed portion. Actually the diff shows the full line replaced: "Lima, 26 de agosto de 2026" → "Lima, 28 de agosto de 2026" — no period in either. So in 2693, LSQ did not add a period. In 3038, also no period. So the period rule is not fully consistent — I should note it as a dominant pattern (6/8) with exceptions, or perhaps the period is added when the date is the final line of the document (after signature block), and in 2693/3038 the date might be elsewhere. Hard to know. I'll note it as a pattern with observed exceptions that Zeruel should verify contextually.
+
+Actually wait — let me reconsider. In 2693, the date "Lima, 26 de agosto de 2026" was changed to "Lima, 28 de agosto de 2026" — only the day changed. If the original had no period and LSQ didn't add one, maybe in that document the date line genuinely has no period (perhaps followed by something else). In 2723, the date was already "28 de agosto de 2026" and LSQ only added the period. So the diff granularity confirms: LSQ adds the period as a separate correction when missing. In 2693 she didn't add it — inconsistency or contextual difference. I'll flag it.
+
+Block 3: The "considerando" paragraph: draft said "habría brindado una respuesta inadecuada al reclamo 123506 presentado por el denunciante." — with a PERIOD ending the "consistente en que" clause (which is grammatically an anacoluthon: "considera que el hecho denunciado, consistente en que... [period]"). LSQ replaced the period with a COMMA and added a specification: ", en el sentido que solo se pronunció sobre la Póliza 07800109040, omitiendo pronunciarse sobre la Póliza 07800106462." 
+
+Key patterns:
+- The specification "en el sentido que..." concretizes the imputation: the vague "respuesta inadecuada" is specified by the factual basis (only responded on one policy, omitted the other).
+- The period after "denunciante" becomes a comma, integrating the specification into the single sentence that ends with the calification.
+- Note: "en el sentido que" (without "de" — not "en el sentido de que"). LSQ uses "en el sentido que".
+- Póliza numbers: 07800109040, 07800106462 — data invariants (must be extracted from the expediente).
+
+Block 4: The "Encargo" or "Tipificación" section (the summary of presunta infracción, likely in the resolution header or the "VISTOS" or the operative part): the same specification is mirrored: "en el sentido que solo se pronunció sobre la Póliza 07800109040, omitiendo pronunciarse sobre la Póliza 07800106462." — So the specification must be REPLICATED identically in both the considerando and the tipificación/encargo section. This is the "armonización considerando-resuelve" or "espejo entre calificación y encargo".
+
+Note the verb tense shift: in the considerando it's "solo se pronunció... omitiendo pronunciarse" — same in both. Actually both use the same wording. Good.
+
+**CASO 2723-2026 R2 (6 blocks):**
+
+Block 1: Date + period: "Lima, 28 de agosto de 2026." — adds final period.
+
+Block 2: "realizó el envío, de la solicitud" → "realizó el envío de la solicitud" — removal of an incidental comma that wrongly separated verb from complement. Pattern: no comma between verb and its direct complement.
+
+Block 3: "no habría brindado una respuesta al reclamo" → "no habría brindado respuesta oportuna al reclamo". Key semantic change: from "no response" (total silence) to "no timely response" (falta de respuesta oportuna). This is a typification precision: the facts showed the company DID respond but late (or the ST wants to frame it as lack of timely response rather than absolute silence). Also note: "brindado respuesta oportuna" — without article "una". Pattern: "brindar respuesta oportuna" (no indefinite article). This matters because Art. 88.1 concerns lack of response within plazo; the imputation must match the actual fact pattern.
+
+Block 4: Requerimiento section: "la negativa de otorgamiento de cobertura fue justificada" → "la falta de otorgamiento de cobertura fue justificada". KEY DISTINCTION: "negativa" (denial — an express refusal) vs "falta" (failure/omission — absence of grant). In this case the company didn't respond (falta), so requiring proof that the "negativa" was justified would be inconsistent with the imputed fact (falta de respuesta). LSQ harmonizes the requerimiento with the calification: since the imputation is lack of timely response, the proof demanded is that the "falta de otorgamiento de cobertura" was justified. This is the "distinción falta vs negativa de cobertura" explicitly mentioned in the prompt.
+
+Block 5: Mirror of Block 3 in the tipificación section: "no habría brindado respuesta oportuna al reclamo..." — same harmonization.
+
+Block 6: The RESUELVE part (QUINTO): same "falta de otorgamiento" change. So the requerimiento appears twice (in the "considerando" requiring and in the operative "QUINTO") and both must be harmon

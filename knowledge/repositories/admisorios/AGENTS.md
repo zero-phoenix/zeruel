@@ -54,6 +54,7 @@ Entregable: `ADM <EXPEDIENTE> R<N>.docx`; `<N>` es el número de resolución que
 10. **Léxico**:
    - Obligatorio: cónyuge (no esposo/a); luego de (no tras); esta/este sin tilde; médico (no doctor/Dr.); «vehículo con Placa de Rodaje …» (no carro/auto).
    - Moneda: `S/ 1 234,56` y `US$ 1 234,56`.
+11. **Preservación estricta de plantilla base y eliminación de resaltados**: La corrección o elaboración de toda resolución debe partir de la plantilla maestra que más se parezca al caso concreto, modificando sus campos sin alterar su formato, márgenes, interlineado, sangrías ni notas al pie. Queda estrictamente prohibido redactar documentos desde cero que alteren la maquetación. En toda versión final deben eliminarse obligatoriamente todas las marcas de resaltado (`w:highlight`).
 
 ## 3. Traslado y descargos (R-155) — literal
 - La fórmula se copia **literal** de la skill `partes-y-notificacion` (artículo 26 del Decreto Legislativo 807; artículo 223 del TUO de la Ley 27444, «merituadas»). Inicia «correr traslado de la denuncia del …[, subsanada …] a …»: cita completa del ordinal de admisión (subsanaciones y complementos); nunca «de la presente resolución» (R-212). La admisión puede estar en SEGUNDO o TERCERO: conserva los ordinales previos.
