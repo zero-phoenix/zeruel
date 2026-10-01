@@ -1,0 +1,1845 @@
+{
+  "role": "apelaciones",
+  "repository": "zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi",
+  "private": true,
+  "default_branch": "main",
+  "commit": "2e822a78ca0eaad7a6f6fcfb2ad5a9c29434b8c2",
+  "tree": [
+    {
+      "path": ".agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd437beae64c4b9da769bc4dcb9324900c9b9bb3",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/bd437beae64c4b9da769bc4dcb9324900c9b9bb3"
+    },
+    {
+      "path": ".agents/skills",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6490e1227233303aad5c082275e67e42f5bace65",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/6490e1227233303aad5c082275e67e42f5bace65"
+    },
+    {
+      "path": ".agents/skills/r1-flujo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "627c74d44fee0d7f06f1e5640a54fa5dc67843b8",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/627c74d44fee0d7f06f1e5640a54fa5dc67843b8"
+    },
+    {
+      "path": ".agents/skills/r1-flujo/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d8e9f95403bd2167bbe86afa8a4b1ede6b0bc38",
+      "size": 1565,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8d8e9f95403bd2167bbe86afa8a4b1ede6b0bc38"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6457753884172fc41c6288a87ba1b9a64b8eb4f7",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/6457753884172fc41c6288a87ba1b9a64b8eb4f7"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5690d7d59779cbaaae03dcde0c6cd11bcd461d47",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/5690d7d59779cbaaae03dcde0c6cd11bcd461d47"
+    },
+    {
+      "path": ".github/workflows/verificar-y-publicar.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82cdd2818a81b2b9083e5599c172ac164e98e1e3",
+      "size": 2651,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/82cdd2818a81b2b9083e5599c172ac164e98e1e3"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc9ad6f0aa3ed2c16a3a6c49dfb31136db8a1d44",
+      "size": 96,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fc9ad6f0aa3ed2c16a3a6c49dfb31136db8a1d44"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80ce923a94cf4226279881fe32f72e9490b3a09f",
+      "size": 8948,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/80ce923a94cf4226279881fe32f72e9490b3a09f"
+    },
+    {
+      "path": "ARRANQUE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b2dfe737b7a1b483be9af1f85b26d72b75f06be",
+      "size": 780,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1b2dfe737b7a1b483be9af1f85b26d72b75f06be"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "597f5086a5484c1dc9beaec4d3768ec006923ea8",
+      "size": 2129,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/597f5086a5484c1dc9beaec4d3768ec006923ea8"
+    },
+    {
+      "path": "PROMPT_ANTIGRAVITY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a003e6c95b3a4eee6945f6ae0bf00158442c7cb6",
+      "size": 6157,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a003e6c95b3a4eee6945f6ae0bf00158442c7cb6"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e00607e9902c1a4fdeca0c7ca83f4799d7c38a03",
+      "size": 2462,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/e00607e9902c1a4fdeca0c7ca83f4799d7c38a03"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cb47e443b3c734fadc4f2243fbd9282b1944ef93",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/cb47e443b3c734fadc4f2243fbd9282b1944ef93"
+    },
+    {
+      "path": "config/firma.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b93d25e19caafdf1f23a03f3eb822d1a21e0e6e4",
+      "size": 321,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/b93d25e19caafdf1f23a03f3eb822d1a21e0e6e4"
+    },
+    {
+      "path": "config/remesa.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32edb9a1c1bc26280e98eac7765c1d83f1b672f9",
+      "size": 185,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/32edb9a1c1bc26280e98eac7765c1d83f1b672f9"
+    },
+    {
+      "path": "corpus",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be0d8a9045c085cc21c6fce3305361a0c705608e",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/be0d8a9045c085cc21c6fce3305361a0c705608e"
+    },
+    {
+      "path": "corpus/cedulas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b63b20f8ee503edadfd5a2f00769a4e95a7949cc",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/b63b20f8ee503edadfd5a2f00769a4e95a7949cc"
+    },
+    {
+      "path": "corpus/cedulas/0017-2026-CC1-APE CEDULA APELANTE (RIMAC) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f49bf3aa8e5a00c668d99480162cea90881e1c8",
+      "size": 162036,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2f49bf3aa8e5a00c668d99480162cea90881e1c8"
+    },
+    {
+      "path": "corpus/cedulas/0017-2026-CC1-APE CEDULA NO APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fca50e45daf4813f0f9f43f181eb98bb0e6f14bc",
+      "size": 162076,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fca50e45daf4813f0f9f43f181eb98bb0e6f14bc"
+    },
+    {
+      "path": "corpus/cedulas/0019-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd2fda317aef0704aee61d54081350663c123637",
+      "size": 161955,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fd2fda317aef0704aee61d54081350663c123637"
+    },
+    {
+      "path": "corpus/cedulas/0019-2026-CC1-APE CEDULA NO APELANTE (INTERSEGURO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec5b5ae115896428584901845253b882c6758e8d",
+      "size": 182993,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ec5b5ae115896428584901845253b882c6758e8d"
+    },
+    {
+      "path": "corpus/cedulas/0057-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab4cdeec943bc7a133f9bd63376e366e786d47da",
+      "size": 162010,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ab4cdeec943bc7a133f9bd63376e366e786d47da"
+    },
+    {
+      "path": "corpus/cedulas/0057-2026-CC1-APE CEDULA NO APELANTE (PROTECTA) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b194982de8e8b5353b2e3e8f3b8083bb2986eef",
+      "size": 162116,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6b194982de8e8b5353b2e3e8f3b8083bb2986eef"
+    },
+    {
+      "path": "corpus/cedulas/0080-2026-CC1-APE CEDULA APELANTE (DDO RIMAC).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c720511c0c4c6f8709a82f07659490f0ab84844f",
+      "size": 161901,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c720511c0c4c6f8709a82f07659490f0ab84844f"
+    },
+    {
+      "path": "corpus/cedulas/0080-2026-CC1-APE CEDULA NO APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8aece558650954e16fa446997b2b98bb7c40809c",
+      "size": 161860,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8aece558650954e16fa446997b2b98bb7c40809c"
+    },
+    {
+      "path": "corpus/cedulas/0096-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be57decbfa1cd2911d420d2fe476804bf9061224",
+      "size": 161847,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/be57decbfa1cd2911d420d2fe476804bf9061224"
+    },
+    {
+      "path": "corpus/cedulas/0096-2026-CC1-APE CEDULA NO APELANTE (DDO BNP PARIBAS).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68eccca68ca5ffb06dd7f670b1324e578ed8f566",
+      "size": 161838,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/68eccca68ca5ffb06dd7f670b1324e578ed8f566"
+    },
+    {
+      "path": "corpus/cedulas/0096-2026-CC1-APE CEDULA NO APELANTE (DDO CALIDDA).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5a0f57a052c4dc9fcb3bb958c286bccf1a1c9a5",
+      "size": 162091,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a5a0f57a052c4dc9fcb3bb958c286bccf1a1c9a5"
+    },
+    {
+      "path": "corpus/cedulas/0098-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0b2a8e734415a141144016a34c56c7e896c6dd0",
+      "size": 161754,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c0b2a8e734415a141144016a34c56c7e896c6dd0"
+    },
+    {
+      "path": "corpus/cedulas/0098-2026-CC1-APE CEDULA NO APELANTE (DDO RIMAC).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fa463c3456aa3228eef947de9091473f4224ced",
+      "size": 161813,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4fa463c3456aa3228eef947de9091473f4224ced"
+    },
+    {
+      "path": "corpus/cedulas/0099-2026-CC1-APE R1 CEDULA APELANTE (RIMAC) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "761fabf03235777475079c0f82149c5daa478963",
+      "size": 161878,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/761fabf03235777475079c0f82149c5daa478963"
+    },
+    {
+      "path": "corpus/cedulas/0099-2026-CC1-APE R1 CEDULA NO APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "262fb0c0b62447bcdaaad4b6c1f60af118dac7e0",
+      "size": 161679,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/262fb0c0b62447bcdaaad4b6c1f60af118dac7e0"
+    },
+    {
+      "path": "corpus/cedulas/0100-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54e7b7fce4cb1226eedc3d0fcc1d096f9e9eb614",
+      "size": 161814,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/54e7b7fce4cb1226eedc3d0fcc1d096f9e9eb614"
+    },
+    {
+      "path": "corpus/cedulas/0100-2026-CC1-APE CEDULA NO APELANTE (DDO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "475f86e00b43af7462ec40db70d85e40fca995aa",
+      "size": 161900,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/475f86e00b43af7462ec40db70d85e40fca995aa"
+    },
+    {
+      "path": "corpus/cedulas/0129-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e562f427a3201e22ace94950b2f3eb239962756",
+      "size": 161834,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6e562f427a3201e22ace94950b2f3eb239962756"
+    },
+    {
+      "path": "corpus/cedulas/0129-2026-CC1-APE CEDULA NO APELANTE (DDO PACIFICO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b9c2a0f979db46ba184bead79085a3f10949af9",
+      "size": 162006,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7b9c2a0f979db46ba184bead79085a3f10949af9"
+    },
+    {
+      "path": "corpus/cedulas/0131-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9dd7950b86b52e78b37e1ea607a7b3b06715d25",
+      "size": 161928,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f9dd7950b86b52e78b37e1ea607a7b3b06715d25"
+    },
+    {
+      "path": "corpus/cedulas/0131-2026-CC1-APE CEDULA NO APELANTE (DDO CALIDDA) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b3ea40d3b2ef7ebc1c5b90e93a0e8a0208f1f6c",
+      "size": 162127,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4b3ea40d3b2ef7ebc1c5b90e93a0e8a0208f1f6c"
+    },
+    {
+      "path": "corpus/cedulas/0164-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1791ca97752f666a0c48bfa5310a58a92eefa12",
+      "size": 161730,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f1791ca97752f666a0c48bfa5310a58a92eefa12"
+    },
+    {
+      "path": "corpus/cedulas/0164-2026-CC1-APE CEDULA NO APELANTE (DDO RIMAC).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f38742ca377faeaca318ea661e1166d53c9cf0e",
+      "size": 161883,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4f38742ca377faeaca318ea661e1166d53c9cf0e"
+    },
+    {
+      "path": "corpus/cedulas/020-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46223f12b66d7e2875c7142d7b333d4caf0b6f70",
+      "size": 161947,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/46223f12b66d7e2875c7142d7b333d4caf0b6f70"
+    },
+    {
+      "path": "corpus/cedulas/020-2026-CC1-APE CEDULA NO APELANTE (DDO RIMAC) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e390df872184eaf68a450f5c8f1edb422a8ceafd",
+      "size": 162212,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/e390df872184eaf68a450f5c8f1edb422a8ceafd"
+    },
+    {
+      "path": "corpus/cedulas/0287-2026-APE CEDULA APELANTE (DDO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40cc90957ad5e1db14abbd744ac534176ff9ebd9",
+      "size": 161870,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/40cc90957ad5e1db14abbd744ac534176ff9ebd9"
+    },
+    {
+      "path": "corpus/cedulas/0287-2026-APE CEDULA NO APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21fab7e5c502b3059aaeb10747ef237cb7a09673",
+      "size": 162143,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/21fab7e5c502b3059aaeb10747ef237cb7a09673"
+    },
+    {
+      "path": "corpus/cedulas/0311-2026-APE CEDULA APELANTE (DDO LA POSITIVA) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b34ac9d44d6ae7e3ccb00668fe9fcd200e7672b",
+      "size": 161924,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2b34ac9d44d6ae7e3ccb00668fe9fcd200e7672b"
+    },
+    {
+      "path": "corpus/cedulas/0311-2026-APE CEDULA NO APELANTE (DDO INSURAMA).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa9e5c774306e437282d38fe011c0077ac2db347",
+      "size": 162007,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fa9e5c774306e437282d38fe011c0077ac2db347"
+    },
+    {
+      "path": "corpus/cedulas/0311-2026-APE CEDULA NO APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87fcebed9301e6a396250638ed567ba1f239d051",
+      "size": 162128,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/87fcebed9301e6a396250638ed567ba1f239d051"
+    },
+    {
+      "path": "corpus/cedulas/0446-2026-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "510c8c8b95e0d25d60c218d1853fb345bd863189",
+      "size": 161945,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/510c8c8b95e0d25d60c218d1853fb345bd863189"
+    },
+    {
+      "path": "corpus/cedulas/0446-2026-APE CEDULA NO APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "faf0ba53f94c0fb71eacb54ca458c178ebbb830d",
+      "size": 162041,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/faf0ba53f94c0fb71eacb54ca458c178ebbb830d"
+    },
+    {
+      "path": "corpus/cedulas/0473-2026-APE CEDULA APELANTE (DDOs) OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e8e325e5a543c55b122ae3f521b934b4843268",
+      "size": 165812,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/01e8e325e5a543c55b122ae3f521b934b4843268"
+    },
+    {
+      "path": "corpus/cedulas/0473-2026-APE CEDULA NO APELANTE (DTE) OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3580bb9a02d82460064c44504e3262bb072effa",
+      "size": 162295,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d3580bb9a02d82460064c44504e3262bb072effa"
+    },
+    {
+      "path": "corpus/cedulas/0972-2025-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1945c43f5ba01ecf606784ac454a17f90f6ea7b2",
+      "size": 162128,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1945c43f5ba01ecf606784ac454a17f90f6ea7b2"
+    },
+    {
+      "path": "corpus/cedulas/0972-2025-CC1-APE CEDULA NO APELANTE (INTERSEGURO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb731d996b4fbbc75568e67ee0f0f64fd9521f99",
+      "size": 161668,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/eb731d996b4fbbc75568e67ee0f0f64fd9521f99"
+    },
+    {
+      "path": "corpus/cedulas/1 608-2026-APE CEDULA APELANTE DTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7c5e5d58d7d21a94a5ebcb4ecc439a705cb7f36",
+      "size": 161816,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d7c5e5d58d7d21a94a5ebcb4ecc439a705cb7f36"
+    },
+    {
+      "path": "corpus/cedulas/1 608-2026-APE CEDULA NO APELANTE DDO.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfd432f5e8045079b9981bd12e7d6e16cb3f45a9",
+      "size": 161913,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/bfd432f5e8045079b9981bd12e7d6e16cb3f45a9"
+    },
+    {
+      "path": "corpus/cedulas/144-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee9e86f16770c522a659583d8467be288b563a6e",
+      "size": 161892,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ee9e86f16770c522a659583d8467be288b563a6e"
+    },
+    {
+      "path": "corpus/cedulas/144-2026-CC1-APE CEDULA NO APELANTE (DDO RIMAC) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6897a2869ac88a6bd27518203bd7ff329fe5e2b9",
+      "size": 162084,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6897a2869ac88a6bd27518203bd7ff329fe5e2b9"
+    },
+    {
+      "path": "corpus/cedulas/154-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7234fe171e4b5101988b51a1667ed7c16b92b5e",
+      "size": 161988,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/b7234fe171e4b5101988b51a1667ed7c16b92b5e"
+    },
+    {
+      "path": "corpus/cedulas/154-2026-CC1-APE CEDULA NO APELANTE (DDO ASISTENCIA 365) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09c777d2f9d5b7d14ad40010f15fe2b6434a057e",
+      "size": 162004,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/09c777d2f9d5b7d14ad40010f15fe2b6434a057e"
+    },
+    {
+      "path": "corpus/cedulas/154-2026-CC1-APE CEDULA NO APELANTE (DDO RIMAC) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f80acdf06e00ac035e29fe49f77bfb67ec20c3a",
+      "size": 162495,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/5f80acdf06e00ac035e29fe49f77bfb67ec20c3a"
+    },
+    {
+      "path": "corpus/cedulas/165-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "482acb151c84cf606f193f5dafb02ad1558ee59b",
+      "size": 162129,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/482acb151c84cf606f193f5dafb02ad1558ee59b"
+    },
+    {
+      "path": "corpus/cedulas/165-2026-CC1-APE CEDULA NO APELANTE (DDO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1081c5e97ad3657dfe069cf38998a326b8118a40",
+      "size": 162131,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1081c5e97ad3657dfe069cf38998a326b8118a40"
+    },
+    {
+      "path": "corpus/cedulas/166-2026-CC1-APE  CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3154b2f76baf18beb5e3f153a5a21d62651e022f",
+      "size": 161894,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3154b2f76baf18beb5e3f153a5a21d62651e022f"
+    },
+    {
+      "path": "corpus/cedulas/168-2026-CC1-APE APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9883e075e42770f3133f37f19ad35c859a0dd850",
+      "size": 161892,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9883e075e42770f3133f37f19ad35c859a0dd850"
+    },
+    {
+      "path": "corpus/cedulas/168-2026-CC1-APE NO APELANTE (DDO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "922ca8406109b744b5d723a6eb4bc4f3ca2ccd1e",
+      "size": 162065,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/922ca8406109b744b5d723a6eb4bc4f3ca2ccd1e"
+    },
+    {
+      "path": "corpus/cedulas/198-2026-CC1-APE CEDULA APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6971733daf8de18df1eeac6dedd6caff7cc3a0f0",
+      "size": 161921,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6971733daf8de18df1eeac6dedd6caff7cc3a0f0"
+    },
+    {
+      "path": "corpus/cedulas/198-2026-CC1-APE CEDULA NO APELANTE (DDO) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1628ce1348fd989a2afb63b84c07ff711fe08586",
+      "size": 162032,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1628ce1348fd989a2afb63b84c07ff711fe08586"
+    },
+    {
+      "path": "corpus/cedulas/206-2026-APE R1 APELANTE (DDO RIMAC).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef7c14cf6848d0e70f2794058c192252a7c58905",
+      "size": 161911,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ef7c14cf6848d0e70f2794058c192252a7c58905"
+    },
+    {
+      "path": "corpus/cedulas/206-2026-APE R1 NO APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3823a0347dc954c9bd24674ac86d9bab551e5975",
+      "size": 161961,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3823a0347dc954c9bd24674ac86d9bab551e5975"
+    },
+    {
+      "path": "corpus/cedulas/333-2026-APE CEDULA APELANTES (DDOs) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d158f9366d0fa9064368d3546702289b6c69e6c4",
+      "size": 163947,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d158f9366d0fa9064368d3546702289b6c69e6c4"
+    },
+    {
+      "path": "corpus/cedulas/333-2026-APE CEDULA NO APELANTE (DTE) - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5245d9c907598d1e8bf58216f08d8051aff5ea5",
+      "size": 162127,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c5245d9c907598d1e8bf58216f08d8051aff5ea5"
+    },
+    {
+      "path": "corpus/cedulas/R1 0351-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e5fec36334e953007bfef5ae5fcb45410e15e9",
+      "size": 161882,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/01e5fec36334e953007bfef5ae5fcb45410e15e9"
+    },
+    {
+      "path": "corpus/cedulas/R1 0351-2026-CC1-APE CEDULA NO APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8eec42862d6866dc75783041432e7969b0e9e8e3",
+      "size": 161969,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8eec42862d6866dc75783041432e7969b0e9e8e3"
+    },
+    {
+      "path": "corpus/cedulas/R1 260-2026-CC1-APE CEDULA APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ae18cb4bab1a221edbe55b9261264c67a22734c",
+      "size": 162086,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4ae18cb4bab1a221edbe55b9261264c67a22734c"
+    },
+    {
+      "path": "corpus/cedulas/R1 260-2026-CC1-APE CEDULA NO APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d3d8b9cc33f891806618a86c405eed86444f42c",
+      "size": 162865,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2d3d8b9cc33f891806618a86c405eed86444f42c"
+    },
+    {
+      "path": "corpus/cedulas/R1 347-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d5ad1e5822d7149b90bca00dc2179db23f87a86",
+      "size": 161896,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7d5ad1e5822d7149b90bca00dc2179db23f87a86"
+    },
+    {
+      "path": "corpus/cedulas/R1 347-2026-CC1-APE CEDULA NO APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "895d0fc1636e71a75108e6779f4b5934765b258c",
+      "size": 161976,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/895d0fc1636e71a75108e6779f4b5934765b258c"
+    },
+    {
+      "path": "corpus/cedulas/R1 353-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f89375cf10a8aa45bf52bb3c5432665fa320e7e1",
+      "size": 161928,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f89375cf10a8aa45bf52bb3c5432665fa320e7e1"
+    },
+    {
+      "path": "corpus/cedulas/R1 353-2026-CC1-APE CEDULA NO APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30a9987cd8749b98a6c5e7d404cbb132e9ae4274",
+      "size": 162011,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/30a9987cd8749b98a6c5e7d404cbb132e9ae4274"
+    },
+    {
+      "path": "corpus/cedulas/R1 354-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "040f26a3af31e1f21bd5b2f54a015198850556ef",
+      "size": 161875,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/040f26a3af31e1f21bd5b2f54a015198850556ef"
+    },
+    {
+      "path": "corpus/cedulas/R1 354-2026-CC1-APE CEDULA NO APELANTE (DDO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c537da3da8311985e8f29656be74f4f6ec3eda54",
+      "size": 162008,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c537da3da8311985e8f29656be74f4f6ec3eda54"
+    },
+    {
+      "path": "corpus/cedulas/R1 370-2026-CC1-APE CEDULA APELANTE (DDO INSURAMA).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30dfffd3035cda690f749d223052529f4ba9d298",
+      "size": 162020,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/30dfffd3035cda690f749d223052529f4ba9d298"
+    },
+    {
+      "path": "corpus/cedulas/R1 370-2026-CC1-APE CEDULA APELANTE (DTE).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1c861741ca95349ab7ac535555d1badd2a81b7e",
+      "size": 161684,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/e1c861741ca95349ab7ac535555d1badd2a81b7e"
+    },
+    {
+      "path": "corpus/cedulas/R1 370-2026-CC1-APE CEDULA NO APELANTE (DDO LA POSITIVA).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58e27a81a42b572c8f872c0a96779208c3f58ebd",
+      "size": 162002,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/58e27a81a42b572c8f872c0a96779208c3f58ebd"
+    },
+    {
+      "path": "corpus/cedulas/R1 450-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "101dd76262a7fc6773dcd1ceb99f8d52e5e88284",
+      "size": 162077,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/101dd76262a7fc6773dcd1ceb99f8d52e5e88284"
+    },
+    {
+      "path": "corpus/cedulas/R1 474-2026  CEDULA DDO INSURAMA APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be71c8af0103862feab839c94d0952b4193a298e",
+      "size": 161836,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/be71c8af0103862feab839c94d0952b4193a298e"
+    },
+    {
+      "path": "corpus/cedulas/R1 474-2026 NO APELANTES.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01f43506b330575bb6d163c15534ffeddd5a3106",
+      "size": 165093,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/01f43506b330575bb6d163c15534ffeddd5a3106"
+    },
+    {
+      "path": "corpus/cedulas/R1 625-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a424fd62042cf890cb2658c0aa550a8ffb3743f",
+      "size": 161985,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0a424fd62042cf890cb2658c0aa550a8ffb3743f"
+    },
+    {
+      "path": "corpus/cedulas/R1 625-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14d54260be524e75b7031c1954bd875ab3218936",
+      "size": 161874,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/14d54260be524e75b7031c1954bd875ab3218936"
+    },
+    {
+      "path": "corpus/cedulas/R1 629-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba995e82b13eab56129424b720f22179f2f379b5",
+      "size": 161950,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ba995e82b13eab56129424b720f22179f2f379b5"
+    },
+    {
+      "path": "corpus/cedulas/R1 629-2026 CEDULAS DDOs.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec70e520b1126fa303f439515127a9bfa080a862",
+      "size": 164102,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ec70e520b1126fa303f439515127a9bfa080a862"
+    },
+    {
+      "path": "corpus/cedulas/R1 663-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8eaea933d7e0c31245376cb2d979390b5261bac3",
+      "size": 161961,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8eaea933d7e0c31245376cb2d979390b5261bac3"
+    },
+    {
+      "path": "corpus/cedulas/R1 663-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "717a90c5a3a8cee42fbb4f025472eccc57ace014",
+      "size": 161961,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/717a90c5a3a8cee42fbb4f025472eccc57ace014"
+    },
+    {
+      "path": "corpus/cedulas/R1 685-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c187a8042240aa51b08f47e3b7f5e4d8025758f7",
+      "size": 162043,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c187a8042240aa51b08f47e3b7f5e4d8025758f7"
+    },
+    {
+      "path": "corpus/cedulas/R1 685-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3a733000a2078c76396b03f02c5409a19c786f4",
+      "size": 161920,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f3a733000a2078c76396b03f02c5409a19c786f4"
+    },
+    {
+      "path": "corpus/cedulas/R1 726-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b6578745e1a1039cb107b355ba67393380c7b0f",
+      "size": 162019,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3b6578745e1a1039cb107b355ba67393380c7b0f"
+    },
+    {
+      "path": "corpus/cedulas/R1 726-2026 CEDULA DDO NO APELANTE.dot",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a946dec57ffeafa68a16fdf405ff3492ee4b972",
+      "size": 177664,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1a946dec57ffeafa68a16fdf405ff3492ee4b972"
+    },
+    {
+      "path": "corpus/cedulas/R1 726-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfe13f2acd525e11a8bb306be0898e175b11c439",
+      "size": 161918,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/bfe13f2acd525e11a8bb306be0898e175b11c439"
+    },
+    {
+      "path": "corpus/cedulas/R1 731-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "354f971370a9b9aba18c3153973c5158ce403c40",
+      "size": 165076,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/354f971370a9b9aba18c3153973c5158ce403c40"
+    },
+    {
+      "path": "corpus/cedulas/R1 731-2026-APE CEDULA DTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95e7f431856305cc6ca2b11ad8d74f1f81865ad3",
+      "size": 161992,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/95e7f431856305cc6ca2b11ad8d74f1f81865ad3"
+    },
+    {
+      "path": "corpus/cedulas/R1 733-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cda4d1a20bc61ca144218b70a50b244c9c499a62",
+      "size": 161965,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/cda4d1a20bc61ca144218b70a50b244c9c499a62"
+    },
+    {
+      "path": "corpus/cedulas/R1 742-2026 CEDULA DDO NO APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d1d71f40bee18b2035aa25f992fc3593bfde660",
+      "size": 162084,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9d1d71f40bee18b2035aa25f992fc3593bfde660"
+    },
+    {
+      "path": "corpus/cedulas/R1 742-2026 CEDULA DTE APELANTE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbb1e2974cfc6de5d6a0617c4b4897592bdd7367",
+      "size": 161983,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/dbb1e2974cfc6de5d6a0617c4b4897592bdd7367"
+    },
+    {
+      "path": "corpus/r1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "de5db25a26267ce8d19abc361404ec3f09825300",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/de5db25a26267ce8d19abc361404ec3f09825300"
+    },
+    {
+      "path": "corpus/r1/0017-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "911c73948dce90ec9d3fd86b071a0685aa77889f",
+      "size": 56006,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/911c73948dce90ec9d3fd86b071a0685aa77889f"
+    },
+    {
+      "path": "corpus/r1/0019-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b8a5cdf8cb34cd69236a46eeeb3b53a01d4864c",
+      "size": 55933,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2b8a5cdf8cb34cd69236a46eeeb3b53a01d4864c"
+    },
+    {
+      "path": "corpus/r1/0057-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4f786c5091bca91221652ca57caae2f1f3a19a1",
+      "size": 56217,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a4f786c5091bca91221652ca57caae2f1f3a19a1"
+    },
+    {
+      "path": "corpus/r1/0080-2026-CC1-APE R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78dd6f278b3af35d1cad48f0f221cc7e3215bf63",
+      "size": 58040,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/78dd6f278b3af35d1cad48f0f221cc7e3215bf63"
+    },
+    {
+      "path": "corpus/r1/0096-2026-CC1-APE R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7403a4079ed11e35b43fb90bc3cec37d4007020",
+      "size": 58030,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a7403a4079ed11e35b43fb90bc3cec37d4007020"
+    },
+    {
+      "path": "corpus/r1/0098-2026-CC1-APE R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc5d106eb8e11fb99ee6aa63a8d93b12dee288d4",
+      "size": 55857,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fc5d106eb8e11fb99ee6aa63a8d93b12dee288d4"
+    },
+    {
+      "path": "corpus/r1/0099-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae4cb8bb4e1670fa836aaef39011cb501e5112d5",
+      "size": 55949,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ae4cb8bb4e1670fa836aaef39011cb501e5112d5"
+    },
+    {
+      "path": "corpus/r1/0100-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "718247ddd9a8cd96c02e326731f3787c8c4badc9",
+      "size": 56329,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/718247ddd9a8cd96c02e326731f3787c8c4badc9"
+    },
+    {
+      "path": "corpus/r1/0129-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68d96d8a9a739e8c5ac95464c8da556dcbf3f754",
+      "size": 56091,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/68d96d8a9a739e8c5ac95464c8da556dcbf3f754"
+    },
+    {
+      "path": "corpus/r1/0131-2026-CC1-APE R1 - en el extremo que resolvió amonestar a XXXX OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6143d3c8fa520a74a017a08134dd436294444c2",
+      "size": 56434,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/b6143d3c8fa520a74a017a08134dd436294444c2"
+    },
+    {
+      "path": "corpus/r1/0164-2026-CC1-APE R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd9e6933d24175da1679e9c3a4ea73127bd2c09e",
+      "size": 55928,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/cd9e6933d24175da1679e9c3a4ea73127bd2c09e"
+    },
+    {
+      "path": "corpus/r1/020-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a5fa7457ce9a0a0db8e73bb67cdc2145f10f871",
+      "size": 57750,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4a5fa7457ce9a0a0db8e73bb67cdc2145f10f871"
+    },
+    {
+      "path": "corpus/r1/0287-2026-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "571739186c94fe5655d41845b87174c3cf81852d",
+      "size": 56020,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/571739186c94fe5655d41845b87174c3cf81852d"
+    },
+    {
+      "path": "corpus/r1/0311-2026-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b2b35e3ffd91b73ed141b8338ca04a7335d5bd9",
+      "size": 58543,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9b2b35e3ffd91b73ed141b8338ca04a7335d5bd9"
+    },
+    {
+      "path": "corpus/r1/0446-2026-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4bbb369c6cdeaa5c19da1e9e068cc6d3d00ea63",
+      "size": 56231,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d4bbb369c6cdeaa5c19da1e9e068cc6d3d00ea63"
+    },
+    {
+      "path": "corpus/r1/0473-2026-APE R1 OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "245a089fa30c22b4cc9f5b7285eea30d594882f3",
+      "size": 57075,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/245a089fa30c22b4cc9f5b7285eea30d594882f3"
+    },
+    {
+      "path": "corpus/r1/0972-2025-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff72d8a6d8c354e40fcfc56fef76b7a94b665ea0",
+      "size": 58237,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ff72d8a6d8c354e40fcfc56fef76b7a94b665ea0"
+    },
+    {
+      "path": "corpus/r1/1 608-2026-APE - RIMAC (Ad Hoc) - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "951031cc77b369a2996a8933f249621ec30ea901",
+      "size": 56210,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/951031cc77b369a2996a8933f249621ec30ea901"
+    },
+    {
+      "path": "corpus/r1/144-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "959793441b657ecd32d25e57cae3f34e630bd292",
+      "size": 57763,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/959793441b657ecd32d25e57cae3f34e630bd292"
+    },
+    {
+      "path": "corpus/r1/154-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "babcab8b61a979940e1437a57bbc5c3f5457cf2f",
+      "size": 58459,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/babcab8b61a979940e1437a57bbc5c3f5457cf2f"
+    },
+    {
+      "path": "corpus/r1/165-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a78572238f1f0fd102cba118c6df8072e80df9b8",
+      "size": 58148,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a78572238f1f0fd102cba118c6df8072e80df9b8"
+    },
+    {
+      "path": "corpus/r1/166-2026-CC1-APE  R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b855934afe2224d9552b5bb919b50e83d7a4ad87",
+      "size": 74267,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/b855934afe2224d9552b5bb919b50e83d7a4ad87"
+    },
+    {
+      "path": "corpus/r1/168-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1d34287b603c47746b28863bbf5c57125847a8b",
+      "size": 55989,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/e1d34287b603c47746b28863bbf5c57125847a8b"
+    },
+    {
+      "path": "corpus/r1/198-2026-CC1-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d14149bf04336118ebf886c3ede8cd8fb792772",
+      "size": 56056,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6d14149bf04336118ebf886c3ede8cd8fb792772"
+    },
+    {
+      "path": "corpus/r1/206-2026-APE R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33e8af926e4fda040b6968a5956ca0a7bc50e387",
+      "size": 64064,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/33e8af926e4fda040b6968a5956ca0a7bc50e387"
+    },
+    {
+      "path": "corpus/r1/333-2026-APE R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85e570eb7304e2a690b3bc7da7e7d2d79a5d3363",
+      "size": 56918,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/85e570eb7304e2a690b3bc7da7e7d2d79a5d3363"
+    },
+    {
+      "path": "corpus/r1/R1 0199-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38a0359997eed612c9a7f46a8a2c62b5ae2d1332",
+      "size": 56057,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/38a0359997eed612c9a7f46a8a2c62b5ae2d1332"
+    },
+    {
+      "path": "corpus/r1/R1 0351-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3235969eeec00f088b1f7fd8b869df58c778506e",
+      "size": 56097,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3235969eeec00f088b1f7fd8b869df58c778506e"
+    },
+    {
+      "path": "corpus/r1/R1 0390-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd1da68aebb45f2c2b13bf4b9833908d2ba39373",
+      "size": 56191,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/fd1da68aebb45f2c2b13bf4b9833908d2ba39373"
+    },
+    {
+      "path": "corpus/r1/R1 0397-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66b766e1e04b8c88aa7f2ed6e692a4169d3bd2e9",
+      "size": 56203,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/66b766e1e04b8c88aa7f2ed6e692a4169d3bd2e9"
+    },
+    {
+      "path": "corpus/r1/R1 0398-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c3963c8d135821c5cae2dbc35c9a1d54a732570",
+      "size": 56651,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1c3963c8d135821c5cae2dbc35c9a1d54a732570"
+    },
+    {
+      "path": "corpus/r1/R1 0399-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c03b346a1b0a8c96b5eda09322f9d3ffc0c6fc9",
+      "size": 56961,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7c03b346a1b0a8c96b5eda09322f9d3ffc0c6fc9"
+    },
+    {
+      "path": "corpus/r1/R1 0423-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84a8432f9eae2be1fa52da427084ea97a5e3474e",
+      "size": 57441,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/84a8432f9eae2be1fa52da427084ea97a5e3474e"
+    },
+    {
+      "path": "corpus/r1/R1 0460-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dfaaced26321113d025536873a8e112a511fae6",
+      "size": 57605,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9dfaaced26321113d025536873a8e112a511fae6"
+    },
+    {
+      "path": "corpus/r1/R1 0463-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bc83e3e1c197eb693b88df9b85b202cd9b62345",
+      "size": 57793,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1bc83e3e1c197eb693b88df9b85b202cd9b62345"
+    },
+    {
+      "path": "corpus/r1/R1 0464-2026-CC1-APE - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f4dcd8225325293e02eb0941e6ce0c35377cf5f",
+      "size": 57545,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9f4dcd8225325293e02eb0941e6ce0c35377cf5f"
+    },
+    {
+      "path": "corpus/r1/R1 260-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49fa21edd014a093ccd2749b8f1a7ba3c1851455",
+      "size": 58775,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/49fa21edd014a093ccd2749b8f1a7ba3c1851455"
+    },
+    {
+      "path": "corpus/r1/R1 347-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6091d261a81a87d792f43d5542f1b8c8db095b5d",
+      "size": 56381,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6091d261a81a87d792f43d5542f1b8c8db095b5d"
+    },
+    {
+      "path": "corpus/r1/R1 353-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd2648890e8ac7ba69758cf176339230c356157d",
+      "size": 56257,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/cd2648890e8ac7ba69758cf176339230c356157d"
+    },
+    {
+      "path": "corpus/r1/R1 354-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01cf4e8ade7a9f118e5d8e0bca555ae4c3f4541d",
+      "size": 56189,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/01cf4e8ade7a9f118e5d8e0bca555ae4c3f4541d"
+    },
+    {
+      "path": "corpus/r1/R1 370-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aa2758d6fae102d1ad1e54c89e4cffd097ab76f",
+      "size": 57638,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/5aa2758d6fae102d1ad1e54c89e4cffd097ab76f"
+    },
+    {
+      "path": "corpus/r1/R1 474-2026 -APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af4ff41048c3d944be483b2168da4e88879daebe",
+      "size": 56310,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/af4ff41048c3d944be483b2168da4e88879daebe"
+    },
+    {
+      "path": "corpus/r1/R1 480-2026-APE - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2484763df31032cefd0b11e18dece4ab5b1474df",
+      "size": 56170,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2484763df31032cefd0b11e18dece4ab5b1474df"
+    },
+    {
+      "path": "corpus/r1/R1 517-2026-APE - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc797c35365ddddd0c42be915cf4f51ccf673011",
+      "size": 56380,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/cc797c35365ddddd0c42be915cf4f51ccf673011"
+    },
+    {
+      "path": "corpus/r1/R1 531-2026-APE - RIMAC - LSQok (Ad Hoc).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "953beee30c1c457541a7d2c9392e8857c2f4a6c1",
+      "size": 56185,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/953beee30c1c457541a7d2c9392e8857c2f4a6c1"
+    },
+    {
+      "path": "corpus/r1/R1 541-2026-APE  - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d5262462e29b0f4856bfcc9e4aa744ffdaf06e5",
+      "size": 56165,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0d5262462e29b0f4856bfcc9e4aa744ffdaf06e5"
+    },
+    {
+      "path": "corpus/r1/R1 547-2026-APE - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c4cb5aefb27efe7c5136e9a5983abc77d8468d0",
+      "size": 56429,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0c4cb5aefb27efe7c5136e9a5983abc77d8468d0"
+    },
+    {
+      "path": "corpus/r1/R1 593-2026-APE - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa7e51e0ce3b2b089ab97c0610e9d91905a5655a",
+      "size": 53126,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/aa7e51e0ce3b2b089ab97c0610e9d91905a5655a"
+    },
+    {
+      "path": "corpus/r1/R1 594-2026-APE - RIMAC - LSQok (Ad Hoc).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b799c55e431bc0834109911e32861294ac2dbef7",
+      "size": 57887,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/b799c55e431bc0834109911e32861294ac2dbef7"
+    },
+    {
+      "path": "corpus/r1/R1 595-2026-APE - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51dc7257a1aa0f6ebb64eac6ca4c05de6472962a",
+      "size": 56351,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/51dc7257a1aa0f6ebb64eac6ca4c05de6472962a"
+    },
+    {
+      "path": "corpus/r1/R1 629-2026 - - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ff3b8633592780b1917ad6d8951c467951561af",
+      "size": 56636,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3ff3b8633592780b1917ad6d8951c467951561af"
+    },
+    {
+      "path": "corpus/r1/R1 663-2026 - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "038a54b25a63375780377180117f39152f64549c",
+      "size": 56420,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/038a54b25a63375780377180117f39152f64549c"
+    },
+    {
+      "path": "corpus/r1/R1 685-2026 - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "187e0b47cc1d567106390d73dd72de9728429f52",
+      "size": 56138,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/187e0b47cc1d567106390d73dd72de9728429f52"
+    },
+    {
+      "path": "corpus/r1/R1 726-2026 - tiene escrito adicional para trasladar de una vez.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5afdfaf77f583c66e48803ddf2574be25b4b1860",
+      "size": 56279,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/5afdfaf77f583c66e48803ddf2574be25b4b1860"
+    },
+    {
+      "path": "corpus/r1/R1 726-2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0aa3bacaa95cb4e6046de59c61b246fc3eae7c59",
+      "size": 56212,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0aa3bacaa95cb4e6046de59c61b246fc3eae7c59"
+    },
+    {
+      "path": "corpus/r1/R1 731-2026 - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4594f84bca4f8a7e58b4b5e5789f139eb89521f",
+      "size": 56521,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d4594f84bca4f8a7e58b4b5e5789f139eb89521f"
+    },
+    {
+      "path": "corpus/r1/R1 733-2026 - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a9fc5123642e7f681353dd305c5c15def01eb33",
+      "size": 56338,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4a9fc5123642e7f681353dd305c5c15def01eb33"
+    },
+    {
+      "path": "corpus/r1/R1 742-2026 - LSQok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c019a0f7c63cbb6bdc6ad9cc26549498763cd032",
+      "size": 56323,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c019a0f7c63cbb6bdc6ad9cc26549498763cd032"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce09c224b899ddf083d695cfefc3260ab5c1059b",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/ce09c224b899ddf083d695cfefc3260ab5c1059b"
+    },
+    {
+      "path": "docs/corpus_clasificado.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8672be42edef3e29f4ab161b66ca2e19e0433aff",
+      "size": 11337,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8672be42edef3e29f4ab161b66ca2e19e0433aff"
+    },
+    {
+      "path": "docs/directorio_notificacion.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a07e73a0e3927d2c3085277badc9722eb76d237",
+      "size": 8887,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/5a07e73a0e3927d2c3085277badc9722eb76d237"
+    },
+    {
+      "path": "docs/formulas_literales.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86cbdae287a875ce43d6bdb84d0c46e252326de2",
+      "size": 4041,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/86cbdae287a875ce43d6bdb84d0c46e252326de2"
+    },
+    {
+      "path": "docs/refutaciones.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aac3b186952f92b13ccd39c1c4a2292435d1beb",
+      "size": 6489,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/2aac3b186952f92b13ccd39c1c4a2292435d1beb"
+    },
+    {
+      "path": "entrada",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e9885eba1a78800a5af7d0979e46a256520d1855",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/e9885eba1a78800a5af7d0979e46a256520d1855"
+    },
+    {
+      "path": "entrada/APES_R1_SEGUROS.xlsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89cc509f206b184726dfb24d4c97881295add80b",
+      "size": 256461,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/89cc509f206b184726dfb24d4c97881295add80b"
+    },
+    {
+      "path": "entrada/R1_DATOS.xlsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e45d9d522149d3909d2571b99994c985a941818",
+      "size": 7526,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7e45d9d522149d3909d2571b99994c985a941818"
+    },
+    {
+      "path": "entrada/expedientes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed60d9d9157d7aa37a683b1fb349255cc7342561",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/ed60d9d9157d7aa37a683b1fb349255cc7342561"
+    },
+    {
+      "path": "entrada/expedientes/0259-2026",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79bee54b9a77b4db46db416445761e507e46fa5f",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/79bee54b9a77b4db46db416445761e507e46fa5f"
+    },
+    {
+      "path": "entrada/expedientes/0259-2026/_FOJAS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e72b0b9f52a808490974c7cce81162673df7069",
+      "size": 1636,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8e72b0b9f52a808490974c7cce81162673df7069"
+    },
+    {
+      "path": "entrada/paquete_01.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d91904eeaaa71286e7ea463dcb710ba7fe76159",
+      "size": 264,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7d91904eeaaa71286e7ea463dcb710ba7fe76159"
+    },
+    {
+      "path": "plantillas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1f9cb1e701e8df649ec2652559d6774e0bb37395",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/1f9cb1e701e8df649ec2652559d6774e0bb37395"
+    },
+    {
+      "path": "plantillas/S1_simple.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a43b66fa64c1f05ea4f964b88d39edbf0684fbe",
+      "size": 56539,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0a43b66fa64c1f05ea4f964b88d39edbf0684fbe"
+    },
+    {
+      "path": "plantillas/S2_con_escritos.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a618941e148103d97c2b44a7408beced21314245",
+      "size": 58137,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a618941e148103d97c2b44a7408beced21314245"
+    },
+    {
+      "path": "plantillas/S3_dos_apelaciones.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c10c63c5076cf2b0ea87cfe5b513eda0c541d64c",
+      "size": 52797,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c10c63c5076cf2b0ea87cfe5b513eda0c541d64c"
+    },
+    {
+      "path": "plantillas/S4_audiencia.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bebce7a48b4a2e15214238d63f9dc5fc5f268504",
+      "size": 64382,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/bebce7a48b4a2e15214238d63f9dc5fc5f268504"
+    },
+    {
+      "path": "plantillas/S5_inadmisibilidad_liminar.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33d15c312b988af4246615a6d3a364359b87e699",
+      "size": 69175,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/33d15c312b988af4246615a6d3a364359b87e699"
+    },
+    {
+      "path": "pruebas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9b15286556a8d707338cca642dbfd5775eaa9993",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/9b15286556a8d707338cca642dbfd5775eaa9993"
+    },
+    {
+      "path": "pruebas/0259",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1bc46fe197d70b40a7cb02a0d97da9cb087a34f",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/a1bc46fe197d70b40a7cb02a0d97da9cb087a34f"
+    },
+    {
+      "path": "pruebas/0259/R1 0259-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67f8c3918d74bc115a17f3284a8347d4ea24168e",
+      "size": 51027,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/67f8c3918d74bc115a17f3284a8347d4ea24168e"
+    },
+    {
+      "path": "pruebas/0259/_REPORTE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ac6b3d63cbda81d131634d53b145c9691a61ed7",
+      "size": 535,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4ac6b3d63cbda81d131634d53b145c9691a61ed7"
+    },
+    {
+      "path": "pruebas/0259/_vista",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6662a572c9b5f0683195fbdc1668459fc6e8d37e",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/6662a572c9b5f0683195fbdc1668459fc6e8d37e"
+    },
+    {
+      "path": "pruebas/0259/_vista/R1 0259-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a63f43bb66142c84c6ac20060e639a983323ff0",
+      "size": 32171,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8a63f43bb66142c84c6ac20060e639a983323ff0"
+    },
+    {
+      "path": "pruebas/0259/_vista/R1 0259-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccd825d297ad4bdded1c83865d6b85c69fd1b61e",
+      "size": 379765,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ccd825d297ad4bdded1c83865d6b85c69fd1b61e"
+    },
+    {
+      "path": "pruebas/0259/_vista/R1 0259-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e84d5baceea3a12dc338169603af108ab9423c76",
+      "size": 4694,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/e84d5baceea3a12dc338169603af108ab9423c76"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac243b2a71ea4ca070b58adc8537f55f0bf91766",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/ac243b2a71ea4ca070b58adc8537f55f0bf91766"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0608-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "957bdbfabe6c1baef67b2c279d95183d463a61d7",
+      "size": 50942,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/957bdbfabe6c1baef67b2c279d95183d463a61d7"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0629-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75bd7c6b8f00aef14ff1c811a2b2725340ffd6e5",
+      "size": 51108,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/75bd7c6b8f00aef14ff1c811a2b2725340ffd6e5"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0663-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a903e6b241050781fb985486836d9b5414d25d2",
+      "size": 50937,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/9a903e6b241050781fb985486836d9b5414d25d2"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0685-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8ad2e9fda899c1847a8d17ed5575004c5844b41",
+      "size": 50950,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f8ad2e9fda899c1847a8d17ed5575004c5844b41"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0731-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1899a298e945bbbb1ca21588f1d27274bd8f3c5",
+      "size": 51034,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/d1899a298e945bbbb1ca21588f1d27274bd8f3c5"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0733-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97545eb8029dc7dd005601e4a9ff6e945237b8c1",
+      "size": 50893,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/97545eb8029dc7dd005601e4a9ff6e945237b8c1"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/R1 0742-2026-CC1-APE.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eefb5e97fc111d9bac865d7508e2a14aadcff981",
+      "size": 50895,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/eefb5e97fc111d9bac865d7508e2a14aadcff981"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_REPORTE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e7ce086862b06c974cbf53d2b8c110981823bf2",
+      "size": 1619,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6e7ce086862b06c974cbf53d2b8c110981823bf2"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f696a6d11d0af636a0cfbf8521e60c3bb1e57e9f",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/f696a6d11d0af636a0cfbf8521e60c3bb1e57e9f"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0608-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f81ffaf2db4c56425d243dda2d7563e70179777",
+      "size": 31747,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8f81ffaf2db4c56425d243dda2d7563e70179777"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0608-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ce27f6811a16828ccbe88348a3565491b512493",
+      "size": 312310,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/3ce27f6811a16828ccbe88348a3565491b512493"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0608-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1af3d736c3f5a8200b93d20641df2e2f1e031f61",
+      "size": 4494,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1af3d736c3f5a8200b93d20641df2e2f1e031f61"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0629-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d2d77cfe2291ddb5aa309c2c3fae7e7dcd8851a",
+      "size": 33007,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0d2d77cfe2291ddb5aa309c2c3fae7e7dcd8851a"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0629-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f63972c5b98ddd41f10facf50c8b5e0e466f679e",
+      "size": 391607,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f63972c5b98ddd41f10facf50c8b5e0e466f679e"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0629-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1091626771f86f6f96fd22c14117c2ad371ecf86",
+      "size": 4929,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/1091626771f86f6f96fd22c14117c2ad371ecf86"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0663-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0511a8380492812aa07d3671c14dc7dc682d7de9",
+      "size": 31749,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/0511a8380492812aa07d3671c14dc7dc682d7de9"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0663-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2141d2b32634c1718f09fdb9bf50ee873bf2e5f",
+      "size": 373550,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a2141d2b32634c1718f09fdb9bf50ee873bf2e5f"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0663-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee11e5b00f1384378ab7c291a1b7ce2b7029e36f",
+      "size": 4493,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ee11e5b00f1384378ab7c291a1b7ce2b7029e36f"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0685-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec378ad5d7817c612f2f59a7b45db1b4d6b44e67",
+      "size": 31774,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ec378ad5d7817c612f2f59a7b45db1b4d6b44e67"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0685-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6823697592d4a1623b05224c00b717b7f1ba321a",
+      "size": 316297,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/6823697592d4a1623b05224c00b717b7f1ba321a"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0685-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "338ce5a585a28810e9276d64c8fb88275210adee",
+      "size": 4507,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/338ce5a585a28810e9276d64c8fb88275210adee"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0731-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72187cd94137df6643d8951ad5569d0facd6d689",
+      "size": 32229,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/72187cd94137df6643d8951ad5569d0facd6d689"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0731-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06c2070b77bf2416930bbdd9dae724f7dd4d666d",
+      "size": 387266,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/06c2070b77bf2416930bbdd9dae724f7dd4d666d"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0731-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13abc183f952edf0e75a147b86db1551e0ce6a0b",
+      "size": 4696,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/13abc183f952edf0e75a147b86db1551e0ce6a0b"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0733-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b42b10dea6f9fd7e6e5bd5e1ab656cf9c3ac6cc",
+      "size": 30959,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/5b42b10dea6f9fd7e6e5bd5e1ab656cf9c3ac6cc"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0733-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd6cbec728fd585d0aaa9b215941bbb4ac15413b",
+      "size": 348258,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/dd6cbec728fd585d0aaa9b215941bbb4ac15413b"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0733-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c280ecc04ada9dd95ddc8849e92a3d7e6894a7d2",
+      "size": 4288,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c280ecc04ada9dd95ddc8849e92a3d7e6894a7d2"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0742-2026-CC1-APE.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8fcb02aaa422f16a5d2b1ef0f073124dda85999",
+      "size": 30961,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/a8fcb02aaa422f16a5d2b1ef0f073124dda85999"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0742-2026-CC1-APE.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a7fd8189c2b09bde21e1fc1d79ea918b29d9baf",
+      "size": 350420,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/8a7fd8189c2b09bde21e1fc1d79ea918b29d9baf"
+    },
+    {
+      "path": "pruebas/paquete_01_prueba/_vista/R1 0742-2026-CC1-APE_FORMATO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919045e324ae7ac32c263e5ed10b5f4fa19f519c",
+      "size": 4292,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/919045e324ae7ac32c263e5ed10b5f4fa19f519c"
+    },
+    {
+      "path": "pruebas/simulacion.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "329ab175bf3528c358674dd36dd0ba55bdabe4a6",
+      "size": 54374,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/329ab175bf3528c358674dd36dd0ba55bdabe4a6"
+    },
+    {
+      "path": "pruebas/test_notas.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c09a8b9213e84fa446e6e0d56cc3005003eee2e",
+      "size": 1126,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/7c09a8b9213e84fa446e6e0d56cc3005003eee2e"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee57aca1d05b48d97cbab3337f9978ae9922c08a",
+      "size": 140,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/ee57aca1d05b48d97cbab3337f9978ae9922c08a"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "614cd617112080a1bd38ff47785fc1abe6ed4d4d",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/trees/614cd617112080a1bd38ff47785fc1abe6ed4d4d"
+    },
+    {
+      "path": "scripts/documento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49e8d7f5ece42b579195d88a5e2e99ad03d9081f",
+      "size": 12539,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/49e8d7f5ece42b579195d88a5e2e99ad03d9081f"
+    },
+    {
+      "path": "scripts/fojas.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf63269f34f9a5c77da8cb0ebc5bccb4fc0d646e",
+      "size": 9432,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/cf63269f34f9a5c77da8cb0ebc5bccb4fc0d646e"
+    },
+    {
+      "path": "scripts/modelo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ae6ace787bbe5ba7437d8f5989213a5a5a8815",
+      "size": 16779,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/04ae6ace787bbe5ba7437d8f5989213a5a5a8815"
+    },
+    {
+      "path": "scripts/r1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2a499499b12a43e303be3791ce2759842e22984",
+      "size": 11689,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/f2a499499b12a43e303be3791ce2759842e22984"
+    },
+    {
+      "path": "scripts/redaccion.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "872cb1104ef172846aff9c02af24c09ba5a5b1e1",
+      "size": 10215,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/872cb1104ef172846aff9c02af24c09ba5a5b1e1"
+    },
+    {
+      "path": "scripts/simular.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c186ef33bade64f742f845cb712b59bbb94c72ac",
+      "size": 11307,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/c186ef33bade64f742f845cb712b59bbb94c72ac"
+    },
+    {
+      "path": "scripts/textos.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34e1c0dbf9333c6721cd2371256e7c430e9ca324",
+      "size": 7794,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/34e1c0dbf9333c6721cd2371256e7c430e9ca324"
+    },
+    {
+      "path": "scripts/vista.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ddf991c8b9306d5ee61d5659270a4dd210744ff",
+      "size": 21300,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi/git/blobs/4ddf991c8b9306d5ee61d5659270a4dd210744ff"
+    }
+  ]
+}

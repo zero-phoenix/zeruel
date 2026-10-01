@@ -1,0 +1,593 @@
+diff --git a/extension/layout-from-ocr.js b/extension/layout-from-ocr.js
+new file mode 100644
+index 0000000..1abcaee
+--- /dev/null
++++ b/extension/layout-from-ocr.js
+@@ -0,0 +1,121 @@
++// Derives formatting metadata (size, alignment, geometry) from local OCR word boxes.
++// Input is geometry + the owner's transient OCR proposal; this module never stores text,
++// never emits recognized words, and never claims an exact reproduction. Font family, weight,
++// italic and underline cannot be read from OCR boxes alone, so they stay deliberately unknown
++// (font:'unknown', weight:400, italic/underline:false) rather than guessed. Output objects are
++// shaped to pass layout-model.validateLayout and carry no personal content.
++import {validateLayout} from './layout-model.js';
++
++const clampPx = value => Math.max(-10000, Math.min(10000, Math.round(value)));
++const median = numbers => {
++  const sorted = [...numbers].sort((a, b) => a - b);
++  if (!sorted.length) return 0;
++  const mid = Math.floor(sorted.length / 2);
++  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
++};
++
++function box(node) {
++  const b = node && node.bbox;
++  if (!b || ![b.x0, b.y0, b.x1, b.y1].every(Number.isFinite) || b.x1 <= b.x0 || b.y1 <= b.y0) return null;
++  return {x0: b.x0, y0: b.y0, x1: b.x1, y1: b.y1};
++}
++
++// A line is a run of words sharing a baseline. We only keep its geometry, never its text.
++function linesFrom(ocr) {
++  if (Array.isArray(ocr?.lines)) {
++    return ocr.lines
++      .map(line => (Array.isArray(line?.words) ? line.words : []).map(box).filter(Boolean))
++      .filter(words => words.length)
++      .map(words => ({
++        x0: Math.min(...words.map(w => w.x0)), y0: Math.min(...words.map(w => w.y0)),
++        x1: Math.max(...words.map(w => w.x1)), y1: Math.max(...words.map(w => w.y1)),
++        heights: words.map(w => w.y1 - w.y0),
++      }));
++  }
++  // Fallback: a flat word list, grouped into lines by vertical overlap.
++  const words = (Array.isArray(ocr?.words) ? ocr.words : []).map(box).filter(Boolean)
++    .sort((a, b) => a.y0 - b.y0 || a.x0 - b.x0);
++  const lines = [];
++  for (const w of words) {
++    const mid = (w.y0 + w.y1) / 2;
++    const current = lines[lines.length - 1];
++    if (current && mid >= current.y0 && mid <= current.y1) {
++      current.x0 = Math.min(current.x0, w.x0); current.x1 = Math.max(current.x1, w.x1);
++      current.y0 = Math.min(current.y0, w.y0); current.y1 = Math.max(current.y1, w.y1);
++      current.heights.push(w.y1 - w.y0);
++    } else {
++      lines.push({x0: w.x0, y0: w.y0, x1: w.x1, y1: w.y1, heights: [w.y1 - w.y0]});
++    }
++  }
++  return lines;
++}
++
++// Blocks: consecutive lines whose vertical gap is small relative to their height.
++function blocksFrom(lines) {
++  const sorted = [...lines].sort((a, b) => a.y0 - b.y0);
++  const blocks = [];
++  let current = null;
++  for (const line of sorted) {
++    const h = median(line.heights) || (line.y1 - line.y0);
++    if (current && line.y0 - current.bottom <= h * 1.6) {
++      current.lines.push(line); current.bottom = Math.max(current.bottom, line.y1);
++    } else {
++      current = {lines: [line], bottom: line.y1}; blocks.push(current);
++    }
++  }
++  return blocks.map(b => b.lines);
++}
++
++function alignment(lines, pageWidthPx) {
++  if (lines.length < 2) return 'left';
++  const lefts = lines.map(l => l.x0), rights = lines.map(l => l.x1);
++  const spread = arr => Math.max(...arr) - Math.min(...arr);
++  const width = median(lines.map(l => l.x1 - l.x0)) || 1;
++  const tol = Math.max(6, width * 0.04);
++  const leftAligned = spread(lefts) <= tol;
++  const rightAligned = spread(rights) <= tol;
++  if (leftAligned && rightAligned) return 'justify';
++  if (rightAligned && !leftAligned) return 'right';
++  if (leftAligned) return 'left';
++  // Centered: each line's left and right margins (within the block span) are symmetric.
++  const blockLeft = Math.min(...lefts), blockRight = Math.max(...rights);
++  const centered = lines.every(l => Math.abs((l.x0 - blockLeft) - (blockRight - l.x1)) <= tol);
++  return centered ? 'center' : 'left';
++}
++
++function role(block, index, total, pageHeightPx, bodySizePx) {
++  const size = median(block.flatMap(l => l.heights));
++  const top = Math.min(...block.map(l => l.y0));
++  const bottom = Math.max(...block.map(l => l.y1));
++  if (index === 0 && pageHeightPx && top < pageHeightPx * 0.08) return 'header';
++  if (index === total - 1 && pageHeightPx && bottom > pageHeightPx * 0.9 && size <= bodySizePx) return 'footer';
++  if (size >= bodySizePx * 1.3) return 'heading';
++  return 'body';
++}
++
++export function layoutFromOcr(ocr, {pageWidthPx = 0, pageHeightPx = 0, page = 1} = {}) {
++  const lines = linesFrom(ocr);
++  const blocks = blocksFrom(lines);
++  if (!blocks.length) return [];
++  const bodySizePx = median(lines.flatMap(l => l.heights)) || 12;
++  return blocks.map((block, index) => {
++    const heights = block.flatMap(l => l.heights);
++    const fontSizePx = Math.max(1, clampPx(median(heights) || bodySizePx));
++    const tops = block.map(l => l.y0).sort((a, b) => a - b);
++    const gaps = tops.slice(1).map((y, i) => y - tops[i]);
++    const lineHeightPx = Math.max(1, clampPx(gaps.length ? median(gaps) : fontSizePx * 1.2));
++    const x0 = Math.min(...block.map(l => l.x0)), y0 = Math.min(...block.map(l => l.y0));
++    const x1 = Math.max(...block.map(l => l.x1)), y1 = Math.max(...block.map(l => l.y1));
++    const prevBottom = index > 0 ? Math.max(...blocks[index - 1].map(l => l.y1)) : y0;
++    const layout = {
++      role: role(block, index, blocks.length, pageHeightPx, bodySizePx),
++      font: 'unknown', fontSizePx, weight: 400, italic: false, underline: false,
++      lineHeightPx, alignment: alignment(block, pageWidthPx),
++      marginTopPx: Math.max(0, clampPx(y0 - prevBottom)), marginBottomPx: 0,
++      indentPx: Math.max(0, clampPx(block[0].x0 - x0)),
++      page: Math.max(1, Math.min(10000, Math.round(page))),
++      xPx: clampPx(x0), yPx: clampPx(y0), widthPx: Math.max(0, clampPx(x1 - x0)), heightPx: Math.max(0, clampPx(y1 - y0)),
++    };
++    return validateLayout(layout);
++  });
++}
+diff --git a/extension/tests/layout-from-ocr.test.js b/extension/tests/layout-from-ocr.test.js
+new file mode 100644
+index 0000000..7680e0a
+--- /dev/null
++++ b/extension/tests/layout-from-ocr.test.js
+@@ -0,0 +1,62 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {layoutFromOcr} from '../layout-from-ocr.js';
++import {validateLayout} from '../layout-model.js';
++
++// Synthetic word boxes only. No real document, no personal text.
++const word = (x0, y0, x1, y1) => ({text: 'XXXX', bbox: {x0, y0, x1, y1}});
++const line = (y, x0, x1, h = 20) => ({words: [word(x0, y, x1, y + h)]});
++
++test('agrupa líneas en un bloque y estima tamaño e interlineado', () => {
++  const ocr = {lines: [line(100, 50, 400), line(130, 50, 410), line(160, 50, 390)]};
++  const [block] = layoutFromOcr(ocr, {pageWidthPx: 1000, pageHeightPx: 1400, page: 1});
++  assert.equal(block.fontSizePx, 20);
++  assert.equal(block.lineHeightPx, 30);
++  assert.equal(block.alignment, 'left');
++  assert.equal(block.font, 'unknown');
++  assert.equal(block.weight, 400);
++});
++
++test('detecta alineación derecha, centrada y justificada', () => {
++  const right = {lines: [line(100, 200, 400), line(130, 260, 400), line(160, 230, 400)]};
++  assert.equal(layoutFromOcr(right)[0].alignment, 'right');
++  const center = {lines: [line(100, 300, 500), line(130, 320, 480), line(160, 310, 490)]};
++  assert.equal(layoutFromOcr(center)[0].alignment, 'center');
++  const justify = {lines: [line(100, 100, 500), line(130, 100, 500), line(160, 100, 500)]};
++  assert.equal(layoutFromOcr(justify)[0].alignment, 'justify');
++});
++
++test('separa bloques por el salto vertical y marca encabezado/cuerpo/pie', () => {
++  const ocr = {lines: [
++    line(40, 100, 300, 30),        // header near top, larger
++    line(500, 50, 600), line(530, 50, 610), // body
++    line(1360, 50, 400, 14),       // footer near bottom, smaller
++  ]};
++  const blocks = layoutFromOcr(ocr, {pageWidthPx: 1000, pageHeightPx: 1400, page: 2});
++  assert.equal(blocks.length, 3);
++  assert.equal(blocks[0].role, 'header');
++  assert.equal(blocks[1].role, 'body');
++  assert.equal(blocks[2].role, 'footer');
++  assert.equal(blocks[0].page, 2);
++});
++
++test('acepta lista plana de palabras y produce layout válido', () => {
++  const ocr = {words: [word(50, 100, 150, 120), word(160, 100, 260, 120), word(50, 130, 150, 150)]};
++  const blocks = layoutFromOcr(ocr, {pageWidthPx: 800, pageHeightPx: 1000});
++  assert.ok(blocks.length >= 1);
++  for (const b of blocks) assert.doesNotThrow(() => validateLayout(b));
++});
++
++test('entrada vacía o inválida devuelve lista vacía, nunca lanza', () => {
++  assert.deepEqual(layoutFromOcr({}), []);
++  assert.deepEqual(layoutFromOcr({lines: []}), []);
++  assert.deepEqual(layoutFromOcr({words: [{text: 'x', bbox: {x0: 5, y0: 5, x1: 1, y1: 1}}]}), []);
++});
++
++test('todo bloque emitido pasa validateLayout (sin contenido personal)', () => {
++  const ocr = {lines: Array.from({length: 6}, (_, i) => line(100 + i * 25, 60, 520))};
++  for (const b of layoutFromOcr(ocr, {pageWidthPx: 1000, pageHeightPx: 1400})) {
++    assert.doesNotThrow(() => validateLayout(b));
++    assert.equal(Object.prototype.hasOwnProperty.call(b, 'text'), false);
++  }
++});
+diff --git a/extension/training/format-profiles.json b/extension/training/format-profiles.json
+new file mode 100644
+index 0000000..4534594
+--- /dev/null
++++ b/extension/training/format-profiles.json
+@@ -0,0 +1,236 @@
++{
++  "schema": 1,
++  "content": "format_only_no_text",
++  "profiles": {
++    "improcedencia_susalud": {
++      "documents": 7,
++      "has_header": 7,
++      "has_footer": 7,
++      "runs": 1990,
++      "bold": 282,
++      "italic": 77,
++      "underline": 74,
++      "tables": {
++        "min": 0,
++        "max": 0
++      },
++      "page_cm": {
++        "21.0x29.7": 7
++      },
++      "margins_cm_trbl": {
++        "3.5/2.5/3.0/2.5": 7
++      },
++      "alignment": {
++        "justify": 662,
++        "left": 37,
++        "center": 14
++      },
++      "line_spacing": {
++        "1.0x": 690
++      },
++      "space_after_pt": {
++        "0.0": 655,
++        "10.0": 28
++      },
++      "font": {
++        "Arial": 1986,
++        "unknown": 2,
++        "other": 2
++      },
++      "size_pt": {
++        "11.0": 1892,
++        "8.0": 52,
++        "16.0": 23,
++        "10.0": 21,
++        "18.0": 2
++      },
++      "indent_left_cm": {
++        "1.0": 221,
++        "2.0": 52,
++        "1.01": 49,
++        "1.27": 28,
++        "2.01": 21,
++        "4.5": 16,
++        "4.44": 14,
++        "4.51": 14,
++        "-0.01": 14
++      },
++      "indent_hanging_cm": {
++        "1.0": 214,
++        "1.01": 21,
++        "1.02": 21,
++        "4.5": 16,
++        "4.52": 14,
++        "4.44": 7
++      }
++    },
++    "requerimiento": {
++      "documents": 12,
++      "has_header": 12,
++      "has_footer": 11,
++      "runs": 1830,
++      "bold": 438,
++      "italic": 49,
++      "underline": 82,
++      "tables": {
++        "min": 0,
++        "max": 2
++      },
++      "page_cm": {
++        "21.59x27.94": 10,
++        "21.0x29.7": 2
++      },
++      "margins_cm_trbl": {
++        "1.75/3.0/1.25/3.0": 8,
++        "2.5/3.0/2.5/3.0": 1,
++        "2.5/2.5/2.22/3.0": 1,
++        "1.75/3.0/0.75/3.0": 1,
++        "3.75/3.0/2.5/3.0": 1
++      },
++      "alignment": {
++        "justify": 479,
++        "center": 77,
++        "left": 60
++      },
++      "line_spacing": {
++        "1.0x": 266
++      },
++      "space_after_pt": {
++        "0.0": 547
++      },
++      "font": {
++        "other": 1829,
++        "unknown": 1
++      },
++      "size_pt": {
++        "11.0": 1580,
++        "10.0": 125,
++        "10.5": 108,
++        "9.0": 10,
++        "8.0": 7
++      },
++      "indent_left_cm": {
++        "1.0": 163,
++        "3.75": 35,
++        "2.0": 4,
++        "0.25": 3,
++        "5.0": 3,
++        "4.44": 3,
++        "2.54": 1,
++        "0.0": 1
++      },
++      "indent_hanging_cm": {
++        "1.0": 100,
++        "3.75": 35,
++        "0.75": 17,
++        "5.0": 3,
++        "4.44": 3
++      },
++      "space_before_pt": {
++        "0.0": 264
++      }
++    },
++    "admisorio": {
++      "documents": 12,
++      "has_header": 12,
++      "has_footer": 12,
++      "runs": 5352,
++      "bold": 556,
++      "italic": 0,
++      "underline": 22,
++      "tables": {
++        "min": 0,
++        "max": 0
++      },
++      "page_cm": {
++        "21.0x29.7": 12
++      },
++      "margins_cm_trbl": {
++        "2.5/3.0/2.5/3.0": 12
++      },
++      "alignment": {
++        "justify": 1107,
++        "left": 55,
++        "center": 48
++      },
++      "line_spacing": {
++        "1.0x": 1205
++      },
++      "space_after_pt": {
++        "0.0": 1174
++      },
++      "font": {
++        "other": 5352
++      },
++      "size_pt": {
++        "11.0": 5337,
++        "8.0": 15
++      },
++      "indent_left_cm": {
++        "1.0": 375,
++        "2.0": 142,
++        "3.75": 54
++      },
++      "indent_hanging_cm": {
++        "1.0": 372,
++        "3.75": 42
++      },
++      "space_before_pt": {
++        "0.0": 452
++      }
++    },
++    "cedula_r1": {
++      "documents": 12,
++      "has_header": 12,
++      "has_footer": 12,
++      "runs": 661,
++      "bold": 74,
++      "italic": 0,
++      "underline": 2,
++      "tables": {
++        "min": 3,
++        "max": 3
++      },
++      "page_cm": {
++        "21.0x29.7": 12
++      },
++      "margins_cm_trbl": {
++        "2.5/2.5/2.22/3.0": 12
++      },
++      "alignment": {
++        "justify": 226,
++        "left": 200,
++        "center": 74,
++        "right": 24
++      },
++      "font": {
++        "other": 589,
++        "unknown": 36,
++        "Times New Roman": 36
++      },
++      "size_pt": {
++        "11.0": 254,
++        "10.0": 173,
++        "default": 170,
++        "9.0": 52,
++        "8.0": 12
++      },
++      "space_before_pt": {
++        "6.0": 12
++      },
++      "indent_left_cm": {
++        "1.27": 24,
++        "0.2": 12,
++        "1.26": 12,
++        "0.63": 12,
++        "0.14": 12
++      },
++      "space_after_pt": {
++        "0.0": 72
++      },
++      "indent_hanging_cm": {
++        "0.63": 48
++      }
++    }
++  }
++}
+\ No newline at end of file
+diff --git a/tools/extract_template_formats.py b/tools/extract_template_formats.py
+new file mode 100644
+index 0000000..09e00a6
+--- /dev/null
++++ b/tools/extract_template_formats.py
+@@ -0,0 +1,149 @@
++"""Extract formatting profiles (no text) from the owner's private Word templates.
++
++Downloads each .docx into memory through the authenticated `gh` CLI, reads only formatting
++XML (page size, margins, paragraph alignment/spacing/indent, run font/size/bold/italic/underline,
++tables, header/footer presence) and writes aggregated statistics per category. Document text,
++file names, expediente numbers and author metadata are never read into the output.
++"""
++import collections
++import io
++import json
++import re
++import subprocess
++import sys
++import zipfile
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++OUT = ROOT / 'extension' / 'training' / 'format-profiles.json'
++W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
++FONTS = ['Arial', 'Calibri', 'Times New Roman', 'Cambria', 'Verdana', 'Tahoma', 'Georgia', 'Courier New']
++SOURCES = {
++    'improcedencia_susalud': ('elaboracion-de-resoluciones-de-improcedencia-a-susalud', r'^plantillas_maestras/[^/]+\.docx$'),
++    'requerimiento': ('elaboracion-de-resoluciones-de-requerimiento', r'^plantillas_maestras/modelos_origen/.+\.docx$'),
++    'admisorio': ('SystemHope-ResAdmis', r'^plantillas_maestras/.+\.docx$'),
++    'cedula_r1': ('elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi', r'^corpus/cedulas/.+\.docx$'),
++}
++LIMIT = 12  # per category; keeps the Celeron responsive
++
++
++def gh(*args, binary=False):
++    result = subprocess.run(['gh', *args], capture_output=True, check=True)
++    return result.stdout if binary else result.stdout.decode('utf8')
++
++
++def font_bucket(name):
++    if not name:
++        return 'unknown'
++    for font in FONTS:
++        if name.strip().lower() == font.lower():
++            return font
++    return 'other'
++
++
++def twips_to_cm(value):
++    return round(int(value) / 567, 2)
++
++
++def analyze(blob, stats):
++    from xml.etree import ElementTree as ET
++    z = zipfile.ZipFile(io.BytesIO(blob))
++    names = set(z.namelist())
++    doc = ET.fromstring(z.read('word/document.xml'))
++    defaults = {'font': None, 'size': None}
++    if 'word/styles.xml' in names:
++        styles = ET.fromstring(z.read('word/styles.xml'))
++        rpr = styles.find(f'{W}docDefaults/{W}rPrDefault/{W}rPr')
++        if rpr is not None:
++            fonts = rpr.find(f'{W}rFonts')
++            size = rpr.find(f'{W}sz')
++            defaults['font'] = fonts.get(f'{W}ascii') if fonts is not None else None
++            defaults['size'] = int(size.get(f'{W}val')) / 2 if size is not None else None
++    stats['documents'] += 1
++    stats['has_header'] += any(n.startswith('word/header') for n in names)
++    stats['has_footer'] += any(n.startswith('word/footer') for n in names)
++    stats['tables'].append(len(doc.findall(f'.//{W}tbl')))
++    for sect in doc.iter(f'{W}sectPr'):
++        size = sect.find(f'{W}pgSz')
++        margin = sect.find(f'{W}pgMar')
++        if size is not None:
++            stats['page_cm'][f"{twips_to_cm(size.get(f'{W}w'))}x{twips_to_cm(size.get(f'{W}h'))}"] += 1
++        if margin is not None:
++            key = '/'.join(str(twips_to_cm(margin.get(f'{W}{side}', 0))) for side in ('top', 'right', 'bottom', 'left'))
++            stats['margins_cm_trbl'][key] += 1
++    for p in doc.iter(f'{W}p'):
++        ppr = p.find(f'{W}pPr')
++        jc = ppr.find(f'{W}jc') if ppr is not None else None
++        stats['alignment'][(jc.get(f'{W}val') if jc is not None else 'left').replace('both', 'justify')] += 1
++        spacing = ppr.find(f'{W}spacing') if ppr is not None else None
++        if spacing is not None and spacing.get(f'{W}line'):
++            rule = spacing.get(f'{W}lineRule', 'auto')
++            value = int(spacing.get(f'{W}line'))
++            stats['line_spacing'][f'{round(value / 240, 2)}x' if rule == 'auto' else f'{round(value / 20, 1)}pt_{rule}'] += 1
++        if spacing is not None:
++            for side in ('before', 'after'):
++                if spacing.get(f'{W}{side}'):
++                    stats[f'space_{side}_pt'][round(int(spacing.get(f'{W}{side}')) / 20, 1)] += 1
++        ind = ppr.find(f'{W}ind') if ppr is not None else None
++        if ind is not None:
++            for attr in ('firstLine', 'left', 'hanging'):
++                if ind.get(f'{W}{attr}'):
++                    stats[f'indent_{attr}_cm'][twips_to_cm(ind.get(f'{W}{attr}'))] += 1
++        for r in p.iter(f'{W}r'):
++            if r.find(f'{W}t') is None:
++                continue
++            rpr = r.find(f'{W}rPr')
++            fonts = rpr.find(f'{W}rFonts') if rpr is not None else None
++            size = rpr.find(f'{W}sz') if rpr is not None else None
++            stats['font'][font_bucket(fonts.get(f'{W}ascii') if fonts is not None else defaults['font'])] += 1
++            stats['size_pt'][int(size.get(f'{W}val')) / 2 if size is not None else (defaults['size'] or 'default')] += 1
++            for tag, key in ((f'{W}b', 'bold'), (f'{W}i', 'italic'), (f'{W}u', 'underline')):
++                el = rpr.find(tag) if rpr is not None else None
++                stats[key] += el is not None and el.get(f'{W}val', 'true') not in ('0', 'false', 'none')
++            stats['runs'] += 1
++
++
++def new_stats():
++    s = collections.defaultdict(collections.Counter)
++    for key in ('documents', 'has_header', 'has_footer', 'runs', 'bold', 'italic', 'underline'):
++        s[key] = 0
++    s['tables'] = []
++    return s
++
++
++def finish(s):
++    out = {}
++    for key, value in s.items():
++        if isinstance(value, collections.Counter):
++            out[key] = {str(k): v for k, v in value.most_common(12)}
++        elif isinstance(value, list):
++            out[key] = {'min': min(value, default=0), 'max': max(value, default=0)}
++        else:
++            out[key] = value
++    return out
++
++
++def main():
++    profiles = {}
++    for category, (repo, pattern) in SOURCES.items():
++        branch = json.loads(gh('api', f'repos/zero-phoenix/{repo}'))['default_branch']
++        tree = json.loads(gh('api', f'repos/zero-phoenix/{repo}/git/trees/{branch}?recursive=1'))['tree']
++        paths = [t['path'] for t in tree if t['type'] == 'blob' and re.search(pattern, t['path'])][:LIMIT]
++        stats = new_stats()
++        for path in paths:
++            from urllib.parse import quote
++            blob = gh('api', '-H', 'Accept: application/vnd.github.raw', f'repos/zero-phoenix/{repo}/contents/{quote(path)}', binary=True)
++            try:
++                analyze(blob, stats)
++            except (zipfile.BadZipFile, KeyError):
++                stats['unreadable'] = stats.get('unreadable', 0) + 1
++            del blob
++        profiles[category] = finish(stats)
++        print(f'{category}: {stats["documents"]} documentos analizados')
++    OUT.parent.mkdir(exist_ok=True)
++    OUT.write_text(json.dumps({'schema': 1, 'content': 'format_only_no_text', 'profiles': profiles}, ensure_ascii=False, indent=2), encoding='utf8')
++    print(f'Perfil guardado: {OUT.relative_to(ROOT)}')
++
++
++if __name__ == '__main__':
++    sys.exit(main())

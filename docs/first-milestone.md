@@ -1,3 +1,5 @@
+> Actualización 30/09/2026: el archivo integral privado se conserva en knowledge/; no satisface ninguna fila técnica adicional de esta matriz. La prueba manual REAL móvil registrada en HANDOFF ocurrió con Windows encendido. Autorun real, apagado de ambas PCs y renovación permanecen pendientes. cloud_gate_passed=false.
+
 # Protocolo del primer hito
 
 ## Condiciones que no se negocian

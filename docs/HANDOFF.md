@@ -1,3 +1,18 @@
+# Relevo vigente: archivo privado integral — 30/09/2026
+
+- Host: DESKTOP-NLTEF6C. Rama codex/seguros-knowledge, base main 79e1bcd. Ver git log para commit publicado y PR de archivo. El checkout original codex/extension-capture-ocr (1ad02a76) permanece intacto.
+- REAL: repositorio cambiado a PRIVATE y verificado. Los 182 originales de documentos y reporte solo seguros están completos, con hashes de fuente/copia iguales (30.193.970 bytes). Índices: 177 documentos, 23 hojas, 9.229 filas no vacías, incluyendo encabezados. Esto no equivale a 9.229 expedientes. Ver knowledge/verification-local.json.
+- Leer knowledge/README.md, WORKLOAD.md y PROMPT-continuacion.md. Archivo privado autorizado expresamente por el propietario; sustituye la anterior prohibición general de guardar expedientes solamente dentro de este archivo privado. No autoriza exponerlos en nube pública ni ejecutar actuaciones. Cambios de privacidad pueden requerir nueva conexión privada autorizada para futuros deploys de Render; no volver público para resolverlo.
+- REAL: PR #22 fusionado en 8662fb894 y PR #23 en 79e1bcd; el sitio respondió 200 y contiene autorun/recuperación, pero SHA de despliegue no comprobada. PR #21 no autorizado y sigue aparte.
+- REAL móvil manual: ID 0a079423ff3c3fcc25f255e6a1058255, synthetic_success, ZERUEL_OK/suma42, completed=1790810077 UTC, Windows encendido. No demuestra autorun ni ambas PCs apagadas. ADB cerrado, sin ajustes modificados.
+- SIMULADA histórica: 61 Python aprobadas. Suite Node del trabajo local de extensión con fallo PII para «Ella Pumayalli Soncco»; archivado sin corregir/activar. La preservación documental no añadió ni acreditó nuevas pruebas OAuth/inferencia.
+- cloud_gate_passed=false. Pendientes: toda fila REAL aún faltante de matriz, autorun móvil nuevo ID, diferidos 60/120/600s, intervalo de PCs apagadas demostrado, renovación checkpoint T1+61..70min y no reinicios, verificación versión Render y resto de bloqueos históricos.
+- Procesos auxiliares activos de esta tarea: ninguno. No borrados, reinicios ni modificaciones del teléfono. El propietario formatea por su cuenta; antes debe poder recuperar desde GitHub el PR/rama de archivo o su merge autorizado.
+
+Los registros siguientes se conservan como historia; esta actualización corrige afirmaciones anteriores de repositorio público, ausencia de archivo real, PR #22/#23 pendiente y autorun inexistente.
+
+---
+
 # Relevo de Zeruel — para el siguiente agente (GPT 6.1 u otro)
 
 ## 12. Relevo — 30/09/2026, DESKTOP-NLTEF6C (Codex)
@@ -121,3 +136,7 @@ Título «Relevo»: fecha y host; cambios; rama y último commit publicado; vers
 - **Pendiente de la matriz:** tarea desde el móvil con ambos Windows apagados (solo el propietario); renovación del token OAuth en un proceso vivo >1 h; cuota agotada + respaldo; otra identidad Google real en vivo. `cloud_gate_passed=false`.
 - **Próximo paso exacto:** el propietario apaga ambos Windows y, desde el celular con datos móviles, entra en https://zeruel-synthetic-probe.onrender.com → «Acceder con Google» → «Ejecutar prueba sintética»; al volver informa el estado. Si es `synthetic_success`, marcar la prueba y evaluar `cloud_gate_passed` con la matriz completa.
 - **Nota para agentes:** el agente puede entrar a la web desde su navegador integrado eligiendo la cuenta de Google ya abierta (sin contraseña); los secretos siempre los pega el propietario en Edge.
+
+## 12. Memoria integral de seguros antes del formateo
+
+La fuente de arranque es knowledge/README.md y knowledge/PROMPT-continuacion.md. Se preservaron completos ambos directorios autorizados, no solamente resúmenes anonimizados. WORKLOAD integra calificación/admisión 20 días hábiles, procedimiento primera instancia 120 días hábiles, FECHA LÍMITE final, requerimientos/subsanación/inadmisibilidad, improcedencia por causal, apelaciones CC1 antiguas primero y vínculo resolución-cédula-notificación. Copias/reglas de sistemas especializados y trabajo local pendiente están documentados. Cada reloj requiere fuente, notificación, calendario y suspensiones por expediente. No confundir archivo privado con motor operativo ni con aprobación del hito cloud.
