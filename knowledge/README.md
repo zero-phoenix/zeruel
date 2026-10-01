@@ -2,13 +2,15 @@
 
 Archivo integral solicitado por el propietario el 30/09/2026 antes de borrar/formatear su equipo. No depende de la memoria de Codex ni de archivos externos de esta computadora.
 
+La copia está publicada en la rama **codex/seguros-knowledge**. Mientras su PR no esté fusionado, seleccionar esa rama al recuperar desde GitHub: clonar sólo main no recupera el archivo nuevo. `verification-remote.json` registra el commit cuya totalidad de archivos de knowledge/ se contrastó contra el árbol GitHub, incluidos los 182 originales comprobados también como blobs Git contra SHA-256 de fuente. La fusión necesita autorización específica del propietario.
+
 ## Recuperación y recorrido
 
 1. Leer [WORKLOAD.md](WORKLOAD.md): función general, colas, plazos, decisiones, formato y cédulas.
 2. Leer [PROMPT-continuacion.md](PROMPT-continuacion.md) y los relevos técnicos existentes en docs/.
 3. Localizar cada original con [manifest.json](private_sources/manifest.json). SHA-256, tamaño y ruta original relativa permiten comprobar identidad exacta. Copiarlo a una carpeta de trabajo; conservar el archivo maestro.
 4. Buscar el texto de resoluciones/PDF en `private_index/documents.jsonl`; buscar Excel en `private_index/workbooks.jsonl`. Leer registros de forma incremental, no cargar ambos archivos completos. Recuperar el original para formato, tablas, imágenes, firmas, notas, comentarios y cálculos.
-5. Consultar `repositories/index.json`, árboles completos, README y AGENTS/ARRANQUE fijados al commit de los cuatro sistemas especializados. En GitHub privado autenticado se puede recuperar el resto del repositorio a ese commit.
+5. Consultar `repositories/index.json`, árboles completos, README y AGENTS, junto con ARRANQUE donde existe, fijados al commit de los cuatro sistemas especializados. `archived_rules` enumera exactamente qué reglas se copiaron. En GitHub privado autenticado se puede recuperar el resto del repositorio a ese commit.
 6. Revisar `repository_drafts/`: trabajo local de extensión conservado sin activar. Sus limitaciones están documentadas.
 
 ## Qué se conserva

@@ -1,5 +1,5 @@
 """Verify all tracked archive blobs match a complete private GitHub commit tree."""
-import hashlib, json, subprocess
+import hashlib, json, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +51,7 @@ def main():
               'original_files_verified_remote':len(manifest['files']), 'original_git_bytes_sha256_match':True,
               'tree_truncated':False}
     print(json.dumps(result))
-    (ROOT/'knowledge/verification-remote.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    if '--no-save' not in sys.argv:
+        (ROOT/'knowledge/verification-remote.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 
 if __name__=='__main__': main()

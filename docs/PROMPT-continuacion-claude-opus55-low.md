@@ -97,3 +97,7 @@ Actualizar `docs/STATUS.md`, `docs/HANDOFF.md` y la matriz con evidencia y lími
 Continúa desde el primer paso pendiente, sin atribuir a producción el código aún no desplegado y sin perder la evidencia móvil ya obtenida.
 
 ---
+# Actualización prioritaria: memoria privada integral
+
+Antes de este relevo técnico, leer [knowledge/PROMPT-continuacion.md](../knowledge/PROMPT-continuacion.md) y [knowledge/WORKLOAD.md](../knowledge/WORKLOAD.md). El repositorio es PRIVADO y conserva los 182 originales de trabajo con índices, hashes y reglas vinculadas. Si el PR no está fusionado, están en codex/seguros-knowledge. Este archivo anterior se conserva como historia técnica.
+

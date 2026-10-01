@@ -1,0 +1,9 @@
+{
+  "evidence": "REAL",
+  "private_verified": true,
+  "remote_commit": "9cdc4a5ab56a793b69598faa4054eb2baf2b6a2c",
+  "all_tracked_knowledge_blobs_verified": 213,
+  "original_files_verified_remote": 182,
+  "original_git_bytes_sha256_match": true,
+  "tree_truncated": false
+}
