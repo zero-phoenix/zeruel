@@ -1,31 +1,58 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""tools/audit_generated.py: Auditoría estructural de resoluciones generadas vs modelos.
+Comprueba marcas de resaltado residuales (<w:highlight>), conteo de párrafos y palabras clave.
+"""
+
+import sys
+import argparse
 import zipfile
 import re
+from pathlib import Path
 import docx
 
-cases = [
-    ('3017', r'C:\Users\D\Desktop\Nuevas correcciones\3017-2026\ADM 3017-2026 R2.docx'),
-    ('3057', r'C:\Users\D\Desktop\Nuevas correcciones\3057-2026\ADM 3057-2026 R2.docx'),
-    ('3075', r'C:\Users\D\Desktop\Nuevas correcciones\3075-2026\ADM 3075-2026 R2.docx'),
-]
 
-for c, p in cases:
-    print(f"=== AUDITORÍA CASO {c} ===")
-    z = zipfile.ZipFile(p)
-    doc_xml = z.read('word/document.xml').decode('utf-8', 'replace')
+def audit_file(path: Path, keywords: list = None):
+    p_str = str(path)
+    print(f"=== AUDITORÍA ARCHIVO: {path.name} ===")
+    if not path.exists():
+        print(f"[ERROR] Archivo no encontrado: {path}")
+        return
+
+    with zipfile.ZipFile(p_str) as z:
+        doc_xml = z.read('word/document.xml').decode('utf-8', 'replace')
+
     hl = re.findall(r'<w:highlight\b', doc_xml)
     print(f"Highlights restantes: {len(hl)}")
-    doc = docx.Document(p)
+
+    doc = docx.Document(p_str)
     print(f"Párrafos totales: {len(doc.paragraphs)}")
-    
-    # Buscar palabras clave residuales
-    for bad in ['remolque', 'transferido a Rímac']:
-        count = doc_xml.lower().count(bad.lower())
-        print(f"Menciones de '{bad}': {count}")
-    
-    # En caso 3075, lucro cesante solo debe aparecer en el considerando de descarte/incompetencia
-    if c == '3075':
-        lc_count = doc_xml.lower().count('lucro cesante')
-        print(f"Menciones de 'lucro cesante' (debe ser 1 en descarte): {lc_count}")
+
+    if keywords:
+        for kw in keywords:
+            count = doc_xml.lower().count(kw.lower())
+            print(f"Menciones de '{kw}': {count}")
     print()
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Auditoría estructural de documentos DOCX.")
+    parser.add_argument("files", nargs="*", type=Path, help="Archivos DOCX a auditar")
+    parser.add_argument("--dir", type=Path, default=None, help="Directorio con documentos a auditar")
+    parser.add_argument("--keywords", nargs="*", default=["remolque", "transferido a Rímac"], help="Palabras clave a buscar")
+    args = parser.parse_args()
+
+    target_files = list(args.files)
+    if args.dir and args.dir.exists():
+        target_files.extend(args.dir.glob("*.docx"))
+
+    if not target_files:
+        print("No se especificaron archivos DOCX para auditar.")
+        sys.exit(0)
+
+    for f in target_files:
+        audit_file(f, args.keywords)
+
+
+if __name__ == "__main__":
+    main()

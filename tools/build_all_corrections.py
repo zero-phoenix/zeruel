@@ -11,34 +11,31 @@ aplicando el estándar superior Zeruel:
 import os
 import re
 import shutil
-import zipfile
+from pathlib import Path
 from xml.etree import ElementTree as ET
+
+try:
+    from tools.docx_utils import clean_highlights_zip
+except ImportError:
+    from docx_utils import clean_highlights_zip
+
+DEFAULT_BASE_DIR = Path(os.environ.get("ZERUEL_CORRECTIONS_DIR", Path.home() / "Desktop" / "Nuevas correcciones"))
 
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 
 def strip_all_highlights_and_clean(docx_path):
     """Limpia todo rastro de resaltado en el docx."""
-    temp_zip = docx_path + ".clean.zip"
-    with zipfile.ZipFile(docx_path, 'r') as zin:
-        with zipfile.ZipFile(temp_zip, 'w', compression=zipfile.ZIP_DEFLATED) as zout:
-            for item in zin.infolist():
-                data = zin.read(item.filename)
-                if item.filename.endswith('.xml'):
-                    text = data.decode('utf-8', 'replace')
-                    # Quitar highlight
-                    text = re.sub(r'<w:highlight\b[^>]*/>', '', text)
-                    text = re.sub(r'<w:highlight\b[^>]*>.*?</w:highlight>', '', text)
-                    zout.writestr(item, text.encode('utf-8'))
-                else:
-                    zout.writestr(item, data)
-    os.replace(temp_zip, docx_path)
+    clean_highlights_zip(docx_path)
 
-def build_case_3017():
+def build_case_3017(base_dir=None):
     print("Construyendo corrección superior para CASO 3017-2026...")
-    folder = r"C:\Users\D\Desktop\Nuevas correcciones\3017-2026"
-    borrador_path = os.path.join(folder, "ADM 3017-2026 R2 borrador.docx")
-    out_path = os.path.join(folder, "ADM 3017-2026 R2.docx")
-    out_corregido = os.path.join(folder, "ADM 3017-2026 R2 corregido.docx")
+    folder = Path(base_dir or DEFAULT_BASE_DIR) / "3017-2026"
+    if not folder.exists():
+        print(f"[WARN] Directorio no encontrado: {folder}")
+        return
+    borrador_path = str(folder / "ADM 3017-2026 R2 borrador.docx")
+    out_path = str(folder / "ADM 3017-2026 R2.docx")
+    out_corregido = str(folder / "ADM 3017-2026 R2 corregido.docx")
     
     # Copiar borrador base como punto de partida que ya tiene los estilos y márgenes del caso
     shutil.copy2(borrador_path, out_path)
@@ -145,12 +142,15 @@ def build_case_3017():
     shutil.copy2(out_path, out_corregido)
     print(f"Caso 3017 generado en: {out_path} y {out_corregido}")
 
-def build_case_3057():
+def build_case_3057(base_dir=None):
     print("Construyendo corrección superior para CASO 3057-2026...")
-    folder = r"C:\Users\D\Desktop\Nuevas correcciones\3057-2026"
-    borrador_path = os.path.join(folder, "ADM 3057-2026 R2 borrador.docx")
-    out_path = os.path.join(folder, "ADM 3057-2026 R2.docx")
-    out_corregido = os.path.join(folder, "ADM 3057-2026 R2 corregido.docx")
+    folder = Path(base_dir or DEFAULT_BASE_DIR) / "3057-2026"
+    if not folder.exists():
+        print(f"[WARN] Directorio no encontrado: {folder}")
+        return
+    borrador_path = str(folder / "ADM 3057-2026 R2 borrador.docx")
+    out_path = str(folder / "ADM 3057-2026 R2.docx")
+    out_corregido = str(folder / "ADM 3057-2026 R2 corregido.docx")
     
     shutil.copy2(borrador_path, out_path)
     
@@ -182,12 +182,15 @@ def build_case_3057():
     shutil.copy2(out_path, out_corregido)
     print(f"Caso 3057 generado en: {out_path} y {out_corregido}")
 
-def build_case_3075():
+def build_case_3075(base_dir=None):
     print("Construyendo corrección superior para CASO 3075-2026...")
-    folder = r"C:\Users\D\Desktop\Nuevas correcciones\3075-2026"
-    borrador_path = os.path.join(folder, "ADM 3075-2026 R2 borrador.docx")
-    out_path = os.path.join(folder, "ADM 3075-2026 R2.docx")
-    out_corregido = os.path.join(folder, "ADM 3075-2026 R2 corregido.docx")
+    folder = Path(base_dir or DEFAULT_BASE_DIR) / "3075-2026"
+    if not folder.exists():
+        print(f"[WARN] Directorio no encontrado: {folder}")
+        return
+    borrador_path = str(folder / "ADM 3075-2026 R2 borrador.docx")
+    out_path = str(folder / "ADM 3075-2026 R2.docx")
+    out_corregido = str(folder / "ADM 3075-2026 R2 corregido.docx")
     
     shutil.copy2(borrador_path, out_path)
     
@@ -262,7 +265,16 @@ def build_case_3075():
     print(f"Caso 3075 generado en: {out_path} y {out_corregido}")
 
 if __name__ == '__main__':
-    build_case_3017()
-    build_case_3057()
-    build_case_3075()
-    print("\n¡Los 3 casos fueron procesados y generados con éxito!")
+    import argparse
+    parser = argparse.ArgumentParser(description="Genera resoluciones corregidas sin acoplamiento a rutas fijas.")
+    parser.add_argument("--base-dir", type=Path, default=DEFAULT_BASE_DIR, help="Directorio base que contiene carpetas de casos")
+    parser.add_argument("--cases", nargs="*", default=["3017", "3057", "3075"], help="Casos a procesar")
+    args = parser.parse_args()
+
+    if "3017" in args.cases:
+        build_case_3017(args.base_dir)
+    if "3057" in args.cases:
+        build_case_3057(args.base_dir)
+    if "3075" in args.cases:
+        build_case_3075(args.base_dir)
+    print("\nProcesamiento de resoluciones completado.")

@@ -1,7 +1,8 @@
 """Finalize portable notes without altering historical evidence."""
 from pathlib import Path
-import json, re, socket
+import json, re, socket, sys
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT / 'tools'))
 host = socket.gethostname()
 update = f'''# Relevo vigente: archivo privado integral — 30/09/2026
 
@@ -43,18 +44,30 @@ patterns = {'admisión':r'admitir|admisorio', 'subsanación':r'subsan',
             'apelación':r'apelaci[oó]n', 'cédula':r'c[eé]dula',
             'notificación':r'notific', 'confidencialidad':r'confidencial|reserva',
             'SUSALUD':r'susalud'}
-with (ROOT/'knowledge/private_index/documents.jsonl').open(encoding='utf-8') as stream:
-    for line in stream:
-        doc = json.loads(line)
-        text = '\n'.join(doc.get('pages', [])) if doc['format'] == '.pdf' else '\n'.join(
-            p['text'] for part in doc['parts'] for p in part['paragraphs'])
-        catalog.append({'source':doc['source'], 'sha256':doc['sha256'], 'format':doc['format'],
-            'text_characters':len(text), 'lexical_tags_not_legal_classification':[
-                key for key,pattern in patterns.items() if re.search(pattern,text,re.I)],
-            'opening_text_for_retrieval':text[:900]})
-(ROOT/'knowledge/private_index/catalog.json').write_text(
-    json.dumps({'classification':'nonexclusive lexical retrieval only','documents':catalog},
-               ensure_ascii=False,indent=2),encoding='utf-8')
+from corpus import get_corpus_root
+
+docs_path = ROOT / 'knowledge/private_index/documents.jsonl'
+if not docs_path.exists():
+    docs_path = get_corpus_root() / 'knowledge/private_index/documents.jsonl'
+
+catalog_dest = ROOT / 'knowledge/private_index/catalog.json'
+if not catalog_dest.parent.exists():
+    catalog_dest = get_corpus_root() / 'knowledge/private_index/catalog.json'
+
+if docs_path.exists():
+    with docs_path.open(encoding='utf-8') as stream:
+        for line in stream:
+            doc = json.loads(line)
+            text = '\n'.join(doc.get('pages', [])) if doc['format'] == '.pdf' else '\n'.join(
+                p['text'] for part in doc['parts'] for p in part['paragraphs'])
+            catalog.append({'source':doc['source'], 'sha256':doc['sha256'], 'format':doc['format'],
+                'text_characters':len(text), 'lexical_tags_not_legal_classification':[
+                    key for key,pattern in patterns.items() if re.search(pattern,text,re.I)],
+                'opening_text_for_retrieval':text[:900]})
+    if catalog_dest.parent.exists():
+        catalog_dest.write_text(
+            json.dumps({'classification':'nonexclusive lexical retrieval only','documents':catalog},
+                       ensure_ascii=False,indent=2),encoding='utf-8')
 for name in ['tools/analyze_workload.py', 'tools/snapshot_related_repositories.py']:
     path = ROOT/name
     text = path.read_text(encoding='utf-8').replace('autre_ou_inconnue','otra_o_desconocida').replace('templates_docx','docx_files')

@@ -1,52 +1,58 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Resume de forma legible las diferencias para cada uno de los 8 pares."""
+"""tools/summarize_diffs.py: Resume de forma legible en Markdown las diferencias
+extraídas de documentos de aprendizaje."""
 
+import sys
 import json
+import argparse
+from pathlib import Path
 
-def summarize():
-    with open('knowledge/diferencias_aprendizaje.json', 'r', encoding='utf-8') as f:
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def summarize(input_path: Path = None, output_path: Path = None):
+    in_file = input_path or (ROOT / 'knowledge' / 'diferencias_aprendizaje.json')
+    out_file = output_path or (ROOT / 'knowledge' / 'diff_summary.md')
+
+    if not in_file.exists():
+        print(f"[WARN] Archivo de entrada no encontrado: {in_file}")
+        return
+
+    with open(in_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    for caso, info in data.items():
-        print(f"==================================================")
-        print(f"CASO: {caso}")
-        print(f"==================================================")
-        diffs = info['diferencias']
-        print(f"Total bloques modificados: {len(diffs)}")
-        for idx, d in enumerate(diffs):
-            tipo = d['tipo']
-            print(f"\n--- Bloque {idx+1} ({tipo}) ---")
-            if d['borrador_lineas']:
-                print("BORRADOR:")
-                for l in d['borrador_lineas']:
-                    print(f"  [-] {l}")
-            if d['corregido_lineas']:
-                print("CORREGIDO (LSQ):")
-                for l in d['corregido_lineas']:
-                    print(f"  [+] {l}")
-        print("\n")
-
-    with open('knowledge/diff_summary.md', 'w', encoding='utf-8') as out_f:
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_file, 'w', encoding='utf-8') as out_f:
         for caso, info in data.items():
             out_f.write(f"==================================================\n")
             out_f.write(f"CASO: {caso}\n")
             out_f.write(f"==================================================\n")
-            diffs = info['diferencias']
+            diffs = info.get('diferencias', [])
             out_f.write(f"Total bloques modificados: {len(diffs)}\n")
             for idx, d in enumerate(diffs):
-                tipo = d['tipo']
+                tipo = d.get('tipo', 'cambio')
                 out_f.write(f"\n--- Bloque {idx+1} ({tipo}) ---\n")
-                if d['borrador_lineas']:
+                if d.get('borrador_lineas'):
                     out_f.write("BORRADOR:\n")
                     for l in d['borrador_lineas']:
                         out_f.write(f"  [-] {l}\n")
-                if d['corregido_lineas']:
+                if d.get('corregido_lineas'):
                     out_f.write("CORREGIDO (LSQ):\n")
                     for l in d['corregido_lineas']:
                         out_f.write(f"  [+] {l}\n")
-    print("Guardado en knowledge/diff_summary.md")
+            out_f.write("\n")
+
+    print(f"Resumen generado exitosamente en: {out_file}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Genera resumen Markdown de diferencias de aprendizaje.")
+    parser.add_argument("--input", type=Path, default=None, help="Archivo JSON de diferencias de entrada")
+    parser.add_argument("--output", type=Path, default=None, help="Archivo Markdown de salida")
+    args = parser.parse_args()
+    summarize(args.input, args.output)
+
 
 if __name__ == '__main__':
-    summarize()
-
+    main()

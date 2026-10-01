@@ -11,8 +11,11 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent))
 import council
 
-def run_analysis():
-    diff_file = Path("knowledge/diff_summary.md")
+def run_analysis(diff_path: str = None, out_ds_path: str = None, out_glm_path: str = None):
+    diff_file = Path(diff_path) if diff_path else Path("knowledge/diff_summary.md")
+    if not diff_file.exists():
+        print(f"[WARN] No se encontró archivo de diffs en {diff_file}")
+        return
     diff_text = diff_file.read_text(encoding="utf-8")
 
     prompt_ds = (
@@ -64,8 +67,9 @@ def run_analysis():
         res_ds = f_ds.result()
         res_glm = f_glm.result()
 
-    out_ds = Path("knowledge/aprendizaje_deepseek.md")
-    out_glm = Path("knowledge/aprendizaje_glm53.md")
+
+    out_ds = Path(out_ds_path) if out_ds_path else Path("knowledge/aprendizaje_deepseek.md")
+    out_glm = Path(out_glm_path) if out_glm_path else Path("knowledge/aprendizaje_glm53.md")
 
     ds_content = res_ds.get("content", f"[Error: {res_ds.get('error')}]")
     glm_content = res_glm.get("content", f"[Error: {res_glm.get('error')}]")
@@ -77,4 +81,5 @@ def run_analysis():
     print(f"GLM-5.3 finalizado. Guardado en {out_glm}")
 
 if __name__ == "__main__":
-    run_analysis()
+    diff_arg = sys.argv[1] if len(sys.argv) > 1 else None
+    run_analysis(diff_arg)

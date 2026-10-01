@@ -1,8 +1,10 @@
-# Prompt de continuación — Claude Opus 5.5 (esfuerzo bajo), celular por USB
+# Perfil: Celular por USB (Android / ADB) — Claude Opus 5.5 (Esfuerzo Bajo)
 
-**Cómo usarlo:** abre una sesión nueva de Claude Code en la carpeta
-`C:\Users\Admin\Documents\Codex\2026-09-29\github-plugin-github-openai-curated-remote\work\zeruel`,
-elige Opus 5.5 con esfuerzo bajo y pega todo lo que está entre las líneas.
+> **Perfil de Entorno:** Este perfil complementa y extiende el Core canónico [`knowledge/PROMPT-CONTINUIDAD-APRENDIZAJE.md`](../knowledge/PROMPT-CONTINUIDAD-APRENDIZAJE.md).
+> Aplica para sesiones de validación y control desde dispositivos móviles vía USB y ADB.
+
+**Cómo usarlo:** abre una sesión de Claude Code en el directorio raíz del repositorio `zero-phoenix/zeruel`,
+elige Opus 5.5 con esfuerzo bajo y utiliza las directivas operativas de este perfil.
 Revisado por dos revisores independientes (técnico y de seguridad) el 30/09/2026.
 
 ---

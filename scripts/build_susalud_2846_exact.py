@@ -16,8 +16,11 @@ from docx.oxml.ns import qn, nsdecls
 import win32com.client
 import fitz
 
-BASE_TEMPLATE = Path(r"C:\Users\D\Code\repos\SystemHope-ResAdmis\Modelos al 30-06-26\MODELOS IMPROCEDENCIAS (incluye adm mas impro y otros)\MODELOS IMPROS SUSALUD CON FUNDAMENTO MEJORADO\2685-2025 RXX IMPRO SUSALUD okOK .docx")
-OUTPUT_DIR = Path(r"C:\Users\D\Desktop\2846-2026 impro susalud")
+DEFAULT_TEMPLATE = Path(os.environ.get("SUSALUD_TEMPLATE_PATH", Path.home() / "Code/repos/SystemHope-ResAdmis/Modelos al 30-06-26/MODELOS IMPROCEDENCIAS (incluye adm mas impro y otros)/MODELOS IMPROS SUSALUD CON FUNDAMENTO MEJORADO/2685-2025 RXX IMPRO SUSALUD okOK .docx"))
+DEFAULT_OUTPUT_DIR = Path(os.environ.get("SUSALUD_OUTPUT_DIR", Path.home() / "Desktop/2846-2026 impro susalud"))
+
+BASE_TEMPLATE = DEFAULT_TEMPLATE
+OUTPUT_DIR = DEFAULT_OUTPUT_DIR
 OUTPUT_DOCX = OUTPUT_DIR / "RESOLUCION_2846-2026_CC1_IMPRO_SUSALUD.docx"
 OUTPUT_PDF = OUTPUT_DIR / "RESOLUCION_2846-2026_CC1_IMPRO_SUSALUD.pdf"
 PAGES_DIR = OUTPUT_DIR / "paginas_resolucion"
@@ -402,5 +405,21 @@ def format_document_paragraphs():
     print("Página 1 configurada exactamente según el modelo 0146-2026.")
 
 if __name__ == "__main__":
-    update_docx_package()
-    format_document_paragraphs()
+    import argparse
+    parser = argparse.ArgumentParser(description="Generador exacto de Resolución de Improcedencia SUSALUD.")
+    parser.add_argument("--template", type=Path, default=DEFAULT_TEMPLATE, help="Ruta a plantilla Word DOCX")
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Directorio de salida")
+    args = parser.parse_args()
+
+    BASE_TEMPLATE = args.template
+    OUTPUT_DIR = args.output_dir
+    OUTPUT_DOCX = OUTPUT_DIR / "RESOLUCION_2846-2026_CC1_IMPRO_SUSALUD.docx"
+    OUTPUT_PDF = OUTPUT_DIR / "RESOLUCION_2846-2026_CC1_IMPRO_SUSALUD.pdf"
+    PAGES_DIR = OUTPUT_DIR / "paginas_resolucion"
+
+    if not BASE_TEMPLATE.exists():
+        print(f"[WARN] Plantilla no encontrada: {BASE_TEMPLATE}")
+        print("Especifique una plantilla válida mediante --template o variable de entorno SUSALUD_TEMPLATE_PATH.")
+    else:
+        update_docx_package()
+        format_document_paragraphs()
