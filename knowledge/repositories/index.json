@@ -2,7 +2,7 @@
   {
     "role": "admisorios",
     "repository": "zero-phoenix/SystemHope-ResAdmis",
-    "commit": "7bb25b0659e5005c40a55783f1bd699e560eb61a",
+    "commit": "2b2f89edf1fd401b8a2df9b339e4b5644dd57558",
     "tree_entries": 2427,
     "code_files": [
       "arranque/construir_portable.ps1",

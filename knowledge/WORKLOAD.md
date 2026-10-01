@@ -47,7 +47,7 @@ Los commits, árboles y reglas locales están en `repositories/`; no depender de
 
 | Función | Repositorio privado | Commit fijado | DOCX |
 |---|---|---|---:|
-| Admisorios e imputaciones | zero-phoenix/SystemHope-ResAdmis | 7bb25b0659e5005c40a55783f1bd699e560eb61a | 577 |
+| Admisorios e imputaciones | zero-phoenix/SystemHope-ResAdmis | 2b2f89edf1fd401b8a2df9b339e4b5644dd57558 | 577 |
 | Requerimientos | zero-phoenix/elaboracion-de-resoluciones-de-requerimiento | 787a440546d22b6b1e82e7f57e30284193300bd6 | 33 |
 | Improcedencia especializada SUSALUD | zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud | 042889e4de2af8e92647e8598e29180bc6b1f0b4 | 8 |
 | R1 apelaciones CC1 | zero-phoenix/elaboracion-de-r1-de-expedientes-de-apelaciones-en-la-cc1-de-indecopi | 2e822a78ca0eaad7a6f6fcfb2ad5a9c29434b8c2 | 156 |

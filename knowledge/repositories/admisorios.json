@@ -3,36 +3,36 @@
   "repository": "zero-phoenix/SystemHope-ResAdmis",
   "private": true,
   "default_branch": "main",
-  "commit": "7bb25b0659e5005c40a55783f1bd699e560eb61a",
+  "commit": "2b2f89edf1fd401b8a2df9b339e4b5644dd57558",
   "tree": [
     {
       "path": ".agents",
       "mode": "040000",
       "type": "tree",
-      "sha": "fa31ea65aac0358b3ac6e36892afaf1077412084",
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/fa31ea65aac0358b3ac6e36892afaf1077412084"
+      "sha": "8fd7a1da066483a0237297094b58c5387b4ba136",
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/8fd7a1da066483a0237297094b58c5387b4ba136"
     },
     {
       "path": ".agents/skills",
       "mode": "040000",
       "type": "tree",
-      "sha": "94dbe7c2f6603934a71dd4a011bdb753a5ef7ca9",
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/94dbe7c2f6603934a71dd4a011bdb753a5ef7ca9"
+      "sha": "2cb0fa59662cf1ff90cdacd66d64825d28449119",
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/2cb0fa59662cf1ff90cdacd66d64825d28449119"
     },
     {
       "path": ".agents/skills/admisorio-flujo",
       "mode": "040000",
       "type": "tree",
-      "sha": "116f9b935dd195cb71110b99d20cd94e6ec41b60",
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/116f9b935dd195cb71110b99d20cd94e6ec41b60"
+      "sha": "d79fad1fbfdcf9cc48e1b776cd140096dcf15eaa",
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/d79fad1fbfdcf9cc48e1b776cd140096dcf15eaa"
     },
     {
       "path": ".agents/skills/admisorio-flujo/SKILL.md",
       "mode": "100644",
       "type": "blob",
-      "sha": "2f00eba7ce874576bf17bfd0d0bbc648341cef07",
-      "size": 12937,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/2f00eba7ce874576bf17bfd0d0bbc648341cef07"
+      "sha": "0a723e5191cc061bf489d0d1f068c7f920f08744",
+      "size": 14329,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/0a723e5191cc061bf489d0d1f068c7f920f08744"
     },
     {
       "path": ".agents/skills/confidencialidad",
@@ -68,16 +68,16 @@
       "path": ".agents/skills/partes-y-notificacion",
       "mode": "040000",
       "type": "tree",
-      "sha": "66df4c6cc0abf2cb8a48b05a2ba8e1c81e5fee68",
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/66df4c6cc0abf2cb8a48b05a2ba8e1c81e5fee68"
+      "sha": "b826d215ca1a14cc84421933e1efb3825d527776",
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/b826d215ca1a14cc84421933e1efb3825d527776"
     },
     {
       "path": ".agents/skills/partes-y-notificacion/SKILL.md",
       "mode": "100644",
       "type": "blob",
-      "sha": "9d0826d79f1ebc4512254bc47387d2b883298cfe",
-      "size": 8374,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/9d0826d79f1ebc4512254bc47387d2b883298cfe"
+      "sha": "e98e628b7bba668bc8459d809d99493475f5d4c3",
+      "size": 8591,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/e98e628b7bba668bc8459d809d99493475f5d4c3"
     },
     {
       "path": ".github",
@@ -129,25 +129,25 @@
       "path": "AGENTS.md",
       "mode": "100644",
       "type": "blob",
-      "sha": "b012e4fb9d226a37c9a5d158da15650599c4660a",
-      "size": 12365,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/b012e4fb9d226a37c9a5d158da15650599c4660a"
+      "sha": "2b37dfc6b44f29afc61b52dfc4a0db81ed06c8c4",
+      "size": 12369,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/2b37dfc6b44f29afc61b52dfc4a0db81ed06c8c4"
     },
     {
       "path": "ARRANQUE.md",
       "mode": "100644",
       "type": "blob",
-      "sha": "d1a4eec10965b1d230e2276db14d43e2aee14345",
-      "size": 6575,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/d1a4eec10965b1d230e2276db14d43e2aee14345"
+      "sha": "16b55034c973ff7547771644583e4fb43add44d9",
+      "size": 6534,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/16b55034c973ff7547771644583e4fb43add44d9"
     },
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
       "type": "blob",
-      "sha": "b84740c241572cac0df0a3e5d5e47f3874015a81",
-      "size": 45498,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/b84740c241572cac0df0a3e5d5e47f3874015a81"
+      "sha": "1d7c086c15fe8da23d467661b4a85dbb3ac0e00b",
+      "size": 46738,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/1d7c086c15fe8da23d467661b4a85dbb3ac0e00b"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -18256,8 +18256,8 @@
       "path": "scripts",
       "mode": "040000",
       "type": "tree",
-      "sha": "19edfbf1554389b656a1576355d7e636e2f89361",
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/19edfbf1554389b656a1576355d7e636e2f89361"
+      "sha": "7bcb69e7af75f1c5faf642d077d3d932aec548ec",
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/trees/7bcb69e7af75f1c5faf642d077d3d932aec548ec"
     },
     {
       "path": "scripts/admisorio.py",
@@ -18637,9 +18637,9 @@
       "path": "scripts/previsualizar.py",
       "mode": "100644",
       "type": "blob",
-      "sha": "7b8f7981e6e5703ba73e4828d25a7d900068dda1",
-      "size": 12298,
-      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/7b8f7981e6e5703ba73e4828d25a7d900068dda1"
+      "sha": "4bb60ecd58bc13c5708c882b40e4e3571db1c8d5",
+      "size": 12077,
+      "url": "https://api.github.com/repos/zero-phoenix/SystemHope-ResAdmis/git/blobs/4bb60ecd58bc13c5708c882b40e4e3571db1c8d5"
     },
     {
       "path": "scripts/prueba_casos.py",
