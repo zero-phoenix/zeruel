@@ -1,5 +1,7 @@
 # Zeruel
 
+**Para continuar con otra IA:** entregar el [megaprompt detallado](knowledge/MEGAPROMPT-continuacion.md), que contiene el recorrido de lectura, mapa del código, contexto jurídico y evidencia. El archivo integral del PR #24 ya está fusionado en main `9af5fb4` y verificado.
+
 **Repositorio PRIVADO con archivo integral de trabajo:** [memoria y originales](knowledge/README.md), [seguros CC1](knowledge/WORKLOAD.md) y [prompt para otra IA](knowledge/PROMPT-continuacion.md). El archivo no se sirve desde la web ni se incluye en el contexto Docker.
 
 Agente personal para aprender procedimientos y preparar borradores entre dispositivos, sin tarjeta ni pagos adicionales. Nombre aprobado: **Zeruel**.

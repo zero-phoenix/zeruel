@@ -1,6 +1,6 @@
 # Continuidad de Zeruel y archivo de trabajo
 
-Lee primero [knowledge/README.md](knowledge/README.md), [conocimiento operativo](knowledge/WORKLOAD.md), [relevo portátil](knowledge/PROMPT-continuacion.md), `docs/STATUS.md` y `docs/HANDOFF.md`.
+Lee primero [megaprompt integral](knowledge/MEGAPROMPT-continuacion.md), [knowledge/README.md](knowledge/README.md), [conocimiento operativo](knowledge/WORKLOAD.md), [relevo portátil](knowledge/PROMPT-continuacion.md), `docs/STATUS.md` y `docs/HANDOFF.md`.
 
 Este repositorio DEBE permanecer PRIVADO. Por autorización expresa del propietario contiene originales íntegros de expedientes, resoluciones, cédulas y controles Excel. No publique estos datos ni los copie a web/, logs, pruebas públicas, imágenes Docker o servicios externos. La autorización de archivo privado no autoriza notificar partes, enviar comunicaciones ni resolver expedientes sin revisión.
 

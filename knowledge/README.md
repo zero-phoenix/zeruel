@@ -2,12 +2,12 @@
 
 Archivo integral solicitado por el propietario el 30/09/2026 antes de borrar/formatear su equipo. No depende de la memoria de Codex ni de archivos externos de esta computadora.
 
-La copia está publicada en la rama **codex/seguros-knowledge**. Mientras su PR no esté fusionado, seleccionar esa rama al recuperar desde GitHub: clonar sólo main no recupera el archivo nuevo. `verification-remote.json` registra el commit cuya totalidad de archivos de knowledge/ se contrastó contra el árbol GitHub, incluidos los 182 originales comprobados también como blobs Git contra SHA-256 de fuente. La fusión necesita autorización específica del propietario.
+La copia está integrada en **main**: PR #24 fusionado con autorización explícita, commit `9af5fb47f31ff338c49d3eeaa0b57f62f2dd2634`. `verification-main-pr24.json` acredita la comprobación posterior de main y sus 182 originales. `verification-remote.json` conserva una comprobación anterior de la rama de archivo. Para dar contexto a otra IA, entregar [MEGAPROMPT-continuacion.md](MEGAPROMPT-continuacion.md); si su PR documental aún está abierto, ese archivo ampliado está en `codex/mega-relevo`.
 
 ## Recuperación y recorrido
 
 1. Leer [WORKLOAD.md](WORKLOAD.md): función general, colas, plazos, decisiones, formato y cédulas.
-2. Leer [PROMPT-continuacion.md](PROMPT-continuacion.md) y los relevos técnicos existentes en docs/.
+2. Leer [MEGAPROMPT-continuacion.md](MEGAPROMPT-continuacion.md), el [prompt breve](PROMPT-continuacion.md) y los relevos técnicos existentes en docs/.
 3. Localizar cada original con [manifest.json](private_sources/manifest.json). SHA-256, tamaño y ruta original relativa permiten comprobar identidad exacta. Copiarlo a una carpeta de trabajo; conservar el archivo maestro.
 4. Buscar el texto de resoluciones/PDF en `private_index/documents.jsonl`; buscar Excel en `private_index/workbooks.jsonl`. Leer registros de forma incremental, no cargar ambos archivos completos. Recuperar el original para formato, tablas, imágenes, firmas, notas, comentarios y cálculos.
 5. Consultar `repositories/index.json`, árboles completos, README y AGENTS, junto con ARRANQUE donde existe, fijados al commit de los cuatro sistemas especializados. `archived_rules` enumera exactamente qué reglas se copiaron. En GitHub privado autenticado se puede recuperar el resto del repositorio a ese commit.
