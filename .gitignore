@@ -22,3 +22,8 @@ deepseek_ledger.*
 .zeruel-private/
 extension/vendor/
 client_secret*.json
+
+# Archivo íntegro autorizado únicamente en el repositorio PRIVADO.
+!knowledge/private_sources/**/*.docx
+!knowledge/private_sources/**/*.pdf
+!knowledge/private_sources/**/*.xlsx

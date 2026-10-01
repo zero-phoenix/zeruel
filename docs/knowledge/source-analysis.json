@@ -1,0 +1,7063 @@
+{
+  "schema": 1,
+  "privacy": "aggregate_and_allowlisted_structure_only",
+  "scope": "seguros; legal classifications provisional until review",
+  "workbooks": [
+    {
+      "origen": "base_general",
+      "hojas": [
+        {
+          "alias": "libro_1_hoja_1",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "campo_no_clasificado"
+            ],
+            "4": [
+              "denunciante"
+            ],
+            "5": [
+              "campo_no_clasificado"
+            ],
+            "6": [
+              "denunciado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "fecha"
+            ],
+            "9": [
+              "campo_no_clasificado"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "fecha_limite",
+              "fecha"
+            ],
+            "13": [
+              "asignacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ],
+            "15": [
+              "campo_no_clasificado"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "campo_no_clasificado"
+            ],
+            "19": [
+              "campo_no_clasificado"
+            ],
+            "20": [
+              "fecha"
+            ],
+            "21": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 321,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 321,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_2",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "presentacion"
+            ],
+            "4": [
+              "campo_no_clasificado"
+            ],
+            "5": [
+              "expediente"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "observacion"
+            ],
+            "9": [
+              "fecha"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "observacion"
+            ],
+            "13": [
+              "campo_no_clasificado"
+            ],
+            "14": [
+              "fecha"
+            ],
+            "15": [
+              "campo_no_clasificado"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "campo_no_clasificado"
+            ],
+            "19": [
+              "campo_no_clasificado"
+            ],
+            "20": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1080,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1080,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_3",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "campo_no_clasificado"
+            ],
+            "4": [
+              "denunciante"
+            ],
+            "5": [
+              "campo_no_clasificado"
+            ],
+            "6": [
+              "denunciado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "fecha"
+            ],
+            "9": [
+              "campo_no_clasificado"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1026,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1026,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_4",
+          "rol": "base_general",
+          "campos": {
+            "2": [
+              "campo_no_clasificado"
+            ],
+            "3": [
+              "expediente"
+            ],
+            "4": [
+              "campo_no_clasificado"
+            ],
+            "5": [
+              "denunciante"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "denunciado"
+            ],
+            "8": [
+              "campo_no_clasificado"
+            ],
+            "9": [
+              "fecha"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "fecha"
+            ],
+            "13": [
+              "asignacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1014,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1014,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_5",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "presentacion"
+            ],
+            "4": [
+              "expediente"
+            ],
+            "5": [
+              "expediente"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "presentacion",
+              "fecha"
+            ],
+            "9": [
+              "observacion"
+            ],
+            "10": [
+              "fecha"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "campo_no_clasificado"
+            ],
+            "13": [
+              "observacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ],
+            "15": [
+              "fecha"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "campo_no_clasificado"
+            ],
+            "19": [
+              "campo_no_clasificado"
+            ],
+            "20": [
+              "campo_no_clasificado"
+            ],
+            "21": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 15,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 15,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_6",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "presentacion"
+            ],
+            "4": [
+              "expediente"
+            ],
+            "5": [
+              "expediente"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "presentacion",
+              "fecha"
+            ],
+            "9": [
+              "observacion"
+            ],
+            "10": [
+              "fecha"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "campo_no_clasificado"
+            ],
+            "13": [
+              "observacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ],
+            "15": [
+              "fecha"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "expediente",
+              "asignacion"
+            ],
+            "19": [
+              "campo_no_clasificado"
+            ],
+            "20": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 100,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 100,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_7",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "presentacion"
+            ],
+            "4": [
+              "expediente"
+            ],
+            "5": [
+              "expediente"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "presentacion",
+              "fecha"
+            ],
+            "10": [
+              "fecha"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "campo_no_clasificado"
+            ],
+            "13": [
+              "observacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ],
+            "15": [
+              "fecha"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "campo_no_clasificado"
+            ],
+            "19": [
+              "asignacion"
+            ],
+            "22": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 365,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 365,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_8",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ]
+          },
+          "filas_datos": 357,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 357,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_9",
+          "rol": "base_general",
+          "campos": {
+            "2": [
+              "campo_no_clasificado"
+            ],
+            "3": [
+              "expediente"
+            ],
+            "4": [
+              "campo_no_clasificado"
+            ],
+            "5": [
+              "denunciante"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "denunciado"
+            ],
+            "8": [
+              "campo_no_clasificado"
+            ],
+            "9": [
+              "fecha"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "fecha"
+            ],
+            "13": [
+              "asignacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1011,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1011,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_10",
+          "rol": "base_general",
+          "campos": {
+            "2": [
+              "campo_no_clasificado"
+            ],
+            "3": [
+              "expediente"
+            ],
+            "4": [
+              "denunciado"
+            ],
+            "5": [
+              "observacion"
+            ],
+            "9": [
+              "campo_no_clasificado"
+            ],
+            "10": [
+              "expediente"
+            ],
+            "11": [
+              "denunciado"
+            ],
+            "12": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 35,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 35,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_11",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "presentacion"
+            ],
+            "4": [
+              "expediente"
+            ],
+            "5": [
+              "expediente"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "presentacion",
+              "fecha"
+            ],
+            "9": [
+              "observacion"
+            ],
+            "10": [
+              "fecha"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ],
+            "12": [
+              "campo_no_clasificado"
+            ],
+            "13": [
+              "observacion"
+            ],
+            "14": [
+              "campo_no_clasificado"
+            ],
+            "15": [
+              "fecha"
+            ],
+            "16": [
+              "campo_no_clasificado"
+            ],
+            "17": [
+              "campo_no_clasificado"
+            ],
+            "18": [
+              "expediente",
+              "asignacion"
+            ]
+          },
+          "filas_datos": 21,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 21,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_12",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "denunciado"
+            ],
+            "4": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 30,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 30,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_1_hoja_13",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "denunciado"
+            ],
+            "4": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 23,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 23,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        }
+      ]
+    },
+    {
+      "origen": "base_general",
+      "hojas": [
+        {
+          "alias": "libro_2_hoja_1",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "expediente"
+            ],
+            "2": [
+              "asignacion"
+            ],
+            "3": [
+              "campo_no_clasificado"
+            ],
+            "4": [
+              "fecha"
+            ],
+            "5": [
+              "observacion"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "estado"
+            ],
+            "8": [
+              "campo_no_clasificado"
+            ],
+            "9": [
+              "campo_no_clasificado"
+            ],
+            "11": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1134,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1134,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_2_hoja_2",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "campo_no_clasificado"
+            ],
+            "3": [
+              "fecha"
+            ],
+            "4": [
+              "asignacion"
+            ],
+            "5": [
+              "campo_no_clasificado"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ],
+            "7": [
+              "campo_no_clasificado"
+            ],
+            "8": [
+              "estado"
+            ],
+            "10": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 1871,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 1871,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_2_hoja_3",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "fecha"
+            ],
+            "3": [
+              "estado"
+            ],
+            "4": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 64,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 64,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_2_hoja_4",
+          "rol": "base_general",
+          "campos": {
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "campo_no_clasificado"
+            ],
+            "4": [
+              "campo_no_clasificado"
+            ],
+            "5": [
+              "fecha"
+            ],
+            "6": [
+              "estado"
+            ],
+            "7": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 4,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 4,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_2_hoja_5",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "fecha"
+            ],
+            "3": [
+              "campo_no_clasificado"
+            ],
+            "5": [
+              "campo_no_clasificado"
+            ],
+            "6": [
+              "campo_no_clasificado"
+            ]
+          },
+          "filas_datos": 39,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 39,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        },
+        {
+          "alias": "libro_2_hoja_6",
+          "rol": "base_general",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "campo_no_clasificado"
+            ],
+            "3": [
+              "estado"
+            ]
+          },
+          "filas_datos": 45,
+          "filas_seguros": 0,
+          "identificadores_distintos_seguros_en_hoja": 0,
+          "filas_sin_clasificacion_de_sector": 45,
+          "dias_habiles": {
+            "n": 0,
+            "min": null,
+            "max": null,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {}
+        }
+      ]
+    },
+    {
+      "origen": "reporte_semanal",
+      "hojas": [
+        {
+          "alias": "libro_3_hoja_1",
+          "rol": "sin_admitir",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "dias_habiles_transcurridos"
+            ],
+            "4": [
+              "fecha_limite",
+              "fecha"
+            ],
+            "5": [
+              "denunciante"
+            ],
+            "6": [
+              "grupo"
+            ],
+            "7": [
+              "asignacion"
+            ],
+            "8": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 232,
+          "filas_seguros": 6,
+          "identificadores_distintos_seguros_en_hoja": 6,
+          "filas_sin_clasificacion_de_sector": 0,
+          "dias_habiles": {
+            "n": 6,
+            "min": 3,
+            "max": 15,
+            "valores_mayores_20": 0
+          },
+          "fechas_por_mes": {
+            "fecha_limite/fecha": {
+              "2027-01": 2,
+              "2027-02": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "origen": "reporte_semanal",
+      "hojas": [
+        {
+          "alias": "libro_4_hoja_1",
+          "rol": "requerimientos",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente"
+            ],
+            "3": [
+              "dias_habiles_transcurridos"
+            ],
+            "4": [
+              "fecha_limite",
+              "fecha"
+            ],
+            "5": [
+              "denunciante"
+            ],
+            "6": [
+              "grupo"
+            ],
+            "7": [
+              "asignacion"
+            ],
+            "8": [
+              "observacion"
+            ]
+          },
+          "filas_datos": 167,
+          "filas_seguros": 40,
+          "identificadores_distintos_seguros_en_hoja": 40,
+          "filas_sin_clasificacion_de_sector": 0,
+          "dias_habiles": {
+            "n": 40,
+            "min": 0,
+            "max": 29,
+            "valores_mayores_20": 1
+          },
+          "fechas_por_mes": {
+            "fecha_limite/fecha": {
+              "2027-01": 15,
+              "2027-02": 25
+            }
+          }
+        }
+      ]
+    },
+    {
+      "origen": "reporte_semanal",
+      "hojas": [
+        {
+          "alias": "libro_5_hoja_1",
+          "rol": "apelaciones",
+          "campos": {
+            "1": [
+              "campo_no_clasificado"
+            ],
+            "2": [
+              "expediente_origen",
+              "expediente"
+            ],
+            "3": [
+              "expediente"
+            ],
+            "4": [
+              "presentacion"
+            ],
+            "5": [
+              "dias_habiles_transcurridos"
+            ],
+            "6": [
+              "fecha_limite"
+            ],
+            "7": [
+              "denunciado"
+            ],
+            "8": [
+              "grupo"
+            ],
+            "9": [
+              "asignacion"
+            ]
+          },
+          "filas_datos": 205,
+          "filas_seguros": 46,
+          "identificadores_distintos_seguros_en_hoja": 92,
+          "filas_sin_clasificacion_de_sector": 0,
+          "dias_habiles": {
+            "n": 46,
+            "min": 0,
+            "max": 37,
+            "valores_mayores_20": 22
+          },
+          "fechas_por_mes": {
+            "presentacion": {
+              "2026-03": 1,
+              "2026-05": 2,
+              "2026-06": 1,
+              "2026-07": 22,
+              "2026-08": 20
+            },
+            "fecha_limite": {
+              "2026-05": 1,
+              "2026-07": 2,
+              "2026-08": 10,
+              "2026-09": 25,
+              "2026-10": 8
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "documents": {
+    "file_counts": {
+      ".docx": 171,
+      ".pdf": 6
+    },
+    "read": 177,
+    "read_failures": {},
+    "pdf_without_extractable_text": 0,
+    "provisional_families_all_sources": {
+      "admisorio": 47,
+      "requerimiento": 75,
+      "sin_clasificar": 7,
+      "improcedencia": 17,
+      "apelacion": 17,
+      "inadmisibilidad": 13,
+      "notificacion": 1
+    },
+    "provisional_scope": {
+      "seguros_por_indicios_textuales": 116,
+      "sector_no_confirmado": 22,
+      "seguros_por_enlace_local": 39
+    },
+    "section_frequency": {
+      "resolucion": 177,
+      "notificacion": 161,
+      "antecedentes": 42,
+      "analisis": 44,
+      "vistos": 34,
+      "se resuelve": 5,
+      "resuelve": 26,
+      "anexos": 4
+    },
+    "business_day_mentions_not_rules": {},
+    "distinct_case_keys_local_all_sources": 143,
+    "cases_with_resolution_and_notification": 0,
+    "cases_with_resolution_no_notification_found": 142,
+    "cases_with_notification_no_resolution_found": 1
+  },
+  "document_structure": [
+    {
+      "alias": "documento_001",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 82,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 363
+        },
+        "size_pt_direct": {
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 76,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 82
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_002",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 122,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 570
+        },
+        "size_pt_direct": {
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 116,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 122
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_003",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 196,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 803,
+          "Arial": 1
+        },
+        "size_pt_direct": {
+          "11.0": 700,
+          "9.0": 1,
+          "10.0": 98,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 162,
+          "center": 4
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1985/1701/1701/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_004",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 166
+        },
+        "size_pt_direct": {
+          "11.0": 84,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_005",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 85,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 353
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 80,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 85
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_006",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 101,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 397
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 96,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 101
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_007",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 98,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 460
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 92,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 98
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_008",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 72,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 259
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 67,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 72
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_009",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 8,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_010",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 6,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_011",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 98,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 451
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 89,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 93
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_012",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "se resuelve",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 87,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 365,
+          "autre_ou_inconnue": 1
+        },
+        "size_pt_direct": {
+          "9.0": 14,
+          "11.0": 338,
+          "16.0": 7,
+          "10.0": 7
+        },
+        "alignments_direct": {
+          "center": 1,
+          "both": 80
+        },
+        "spacing_direct": {
+          "240_twips_auto": 33
+        },
+        "margins_twips_trbl": {
+          "1418/1467/1985/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_013",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 67,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 369
+        },
+        "size_pt_direct": {
+          "11.0": 23,
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 59,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 49
+        },
+        "margins_twips_trbl": {
+          "1702/1416/1702/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_014",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 67,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 378
+        },
+        "size_pt_direct": {
+          "11.0": 23,
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 59,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 49
+        },
+        "margins_twips_trbl": {
+          "1702/1416/1702/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_015",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 117,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 446,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 112,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 116
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_016",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 101,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 430,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 95,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 99
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_017",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 85,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 334
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 79,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 85
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_018",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 94,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 405
+        },
+        "size_pt_direct": {
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 85,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 94
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_019",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 89,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 431
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 84,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 89
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_020",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 122,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 482
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 116,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 122
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_021",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 99,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 481
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 94,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 99
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_022",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 113,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 472
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 107,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 113
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_023",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 70,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 302
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 65,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 70
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_024",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 131,
+        "tables": 1,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 269,
+          "Arial": 1
+        },
+        "size_pt_direct": {
+          "8.0": 28,
+          "14.0": 8,
+          "10.0": 54,
+          "11.0": 1
+        },
+        "alignments_direct": {
+          "center": 17,
+          "right": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 62
+        },
+        "margins_twips_trbl": {
+          "1843/1418/1843/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_025",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 161,
+        "tables": 1,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 371,
+          "Arial": 1
+        },
+        "size_pt_direct": {
+          "8.0": 19,
+          "14.0": 8,
+          "10.0": 68,
+          "11.0": 2
+        },
+        "alignments_direct": {
+          "center": 17,
+          "right": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 77
+        },
+        "margins_twips_trbl": {
+          "1843/1418/1843/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_026",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 152
+        },
+        "size_pt_direct": {
+          "11.0": 78,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_027",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 53,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 204
+        },
+        "size_pt_direct": {
+          "11.0": 123,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 44,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_028",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 217
+        },
+        "size_pt_direct": {
+          "10.0": 217,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 44,
+          "center": 5
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_029",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 46,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 190
+        },
+        "size_pt_direct": {
+          "11.0": 92,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_030",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 43,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 166
+        },
+        "size_pt_direct": {
+          "11.0": 86,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 6
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_031",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 146
+        },
+        "size_pt_direct": {
+          "11.0": 53,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 30,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_032",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 26,
+        "tables": 0,
+        "headers": 1,
+        "footers": 0,
+        "fonts_direct": {
+          "autre_ou_inconnue": 104
+        },
+        "size_pt_direct": {
+          "12.0": 60,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 22,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 26
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_033",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 83,
+        "tables": 0,
+        "headers": 1,
+        "footers": 0,
+        "fonts_direct": {
+          "autre_ou_inconnue": 398
+        },
+        "size_pt_direct": {
+          "10.0": 25,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 69,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 77
+        },
+        "margins_twips_trbl": {
+          "1985/1701/1701/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_034",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 71,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 225
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 64,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 68
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_035",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 191
+        },
+        "size_pt_direct": {
+          "11.0": 112,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 43,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_036",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 77,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 385
+        },
+        "size_pt_direct": {
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 69,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 75
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_037",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 156
+        },
+        "size_pt_direct": {
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 36
+        },
+        "margins_twips_trbl": {
+          "1985/1701/1135/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_038",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 43,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 158
+        },
+        "size_pt_direct": {
+          "11.0": 85,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 37,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_039",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 44,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 170
+        },
+        "size_pt_direct": {
+          "11.0": 97,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_040",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 164
+        },
+        "size_pt_direct": {
+          "11.0": 91,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_041",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 136
+        },
+        "size_pt_direct": {
+          "11.0": 52,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 29,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_042",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 43,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 156
+        },
+        "size_pt_direct": {
+          "11.0": 80,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 35,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_043",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 154
+        },
+        "size_pt_direct": {
+          "11.0": 54,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 30,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_044",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 162
+        },
+        "size_pt_direct": {
+          "10.0": 153,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 5
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_045",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 159
+        },
+        "size_pt_direct": {
+          "11.0": 79,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_046",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 179,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 474,
+          "Calibri": 19
+        },
+        "size_pt_direct": {
+          "8.0": 21,
+          "16.0": 7,
+          "10.0": 6,
+          "9.0": 2,
+          "7.0": 1
+        },
+        "alignments_direct": {
+          "center": 4,
+          "both": 154
+        },
+        "spacing_direct": {
+          "240_twips_auto": 166,
+          "276_twips_auto": 11
+        },
+        "margins_twips_trbl": {
+          "1701/1416/1702/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_047",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 178,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 573,
+          "Calibri": 22
+        },
+        "size_pt_direct": {
+          "8.0": 17,
+          "16.0": 9,
+          "10.0": 6,
+          "9.0": 2,
+          "7.0": 1
+        },
+        "alignments_direct": {
+          "center": 4,
+          "both": 151
+        },
+        "spacing_direct": {
+          "240_twips_auto": 163,
+          "276_twips_auto": 11
+        },
+        "margins_twips_trbl": {
+          "1701/1416/1702/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_048",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 62,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 265
+        },
+        "size_pt_direct": {
+          "8.0": 15,
+          "16.0": 4
+        },
+        "alignments_direct": {
+          "center": 1,
+          "both": 41
+        },
+        "spacing_direct": {
+          "240_twips_auto": 61
+        },
+        "margins_twips_trbl": {
+          "1984/1417/1700/1417": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_049",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 61,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 254
+        },
+        "size_pt_direct": {
+          "8.0": 15,
+          "16.0": 4
+        },
+        "alignments_direct": {
+          "center": 1,
+          "both": 41
+        },
+        "spacing_direct": {
+          "240_twips_auto": 59
+        },
+        "margins_twips_trbl": {
+          "1984/1417/1700/1417": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_050",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 100,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 373,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 11,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 95,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 99
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_051",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 117,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 533,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 7,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 111,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 115
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_052",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 97,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 364,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 93,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 97
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_053",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 105,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 390,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 11,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 98,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 102
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_054",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 122,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 693,
+          "Arial": 2
+        },
+        "size_pt_direct": {
+          "11.0": 691,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 110,
+          "center": 7
+        },
+        "spacing_direct": {
+          "240_twips_auto": 10
+        },
+        "margins_twips_trbl": {
+          "1985/1701/1701/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_055",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 71,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 349
+        },
+        "size_pt_direct": {
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 66,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 71
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_056",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 71,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 325
+        },
+        "size_pt_direct": {
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 65,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 71
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_057",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "se resuelve",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 41,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 146
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 140,
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 16,
+          "center": 4
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_058",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 35,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 157
+        },
+        "size_pt_direct": {
+          "11.0": 145,
+          "11.5": 6,
+          "8.0": 6
+        },
+        "alignments_direct": {
+          "both": 27,
+          "center": 4
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1560/1701": 1,
+          "1276/1701/1985/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_059",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 115
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 111,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 15,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_060",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 100
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 96,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 13,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_061",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 113
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 109,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 13,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_062",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 32,
+        "tables": 1,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 102
+        },
+        "size_pt_direct": {
+          "11.0": 95,
+          "16.0": 1,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 24,
+          "center": 4
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1985/1701/1276/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_063",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "vistos",
+        "se resuelve",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 166
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 160,
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 15,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_064",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "se resuelve",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 42,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 157
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 151,
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 16,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_065",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 113
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 109,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 13,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_066",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 74,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 265
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 67,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 72
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_067",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 64,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 243
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 60,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 64
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_068",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 92,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 391
+        },
+        "size_pt_direct": {
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 83,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 87
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_069",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 73,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 296
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 66,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 72
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_070",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 79,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 279
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 69,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 75
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_071",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 164
+        },
+        "size_pt_direct": {
+          "11.0": 88,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_072",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 97,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 392,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 93,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 97
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_073",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 105,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 416,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 11,
+          "16.0": 5,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 101,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 105
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_074",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 63,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 407
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 59,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 14,
+          "276_twips_auto": 49
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_075",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 81,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 270
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 76,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 81
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_076",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "notificacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 80,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 337
+        },
+        "size_pt_direct": {
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 72,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 78
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_077",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 104,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 508
+        },
+        "size_pt_direct": {
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 88,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 96
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_078",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 57,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 238
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 51,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 57
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_079",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 41,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 162
+        },
+        "size_pt_direct": {
+          "11.0": 86,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_080",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 59,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 222
+        },
+        "size_pt_direct": {
+          "11.0": 138,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 51,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_081",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 41,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 170
+        },
+        "size_pt_direct": {
+          "11.0": 85,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_082",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 45,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 200
+        },
+        "size_pt_direct": {
+          "11.0": 115,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 36,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_083",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 46,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 172
+        },
+        "size_pt_direct": {
+          "11.0": 94,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_084",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 152
+        },
+        "size_pt_direct": {
+          "11.0": 79,
+          "10.0": 1,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_085",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 44,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 158
+        },
+        "size_pt_direct": {
+          "11.0": 84,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 37,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_086",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 157
+        },
+        "size_pt_direct": {
+          "11.0": 54,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 29,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_087",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 43,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 180
+        },
+        "size_pt_direct": {
+          "11.0": 97,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 37,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_088",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 154
+        },
+        "size_pt_direct": {
+          "11.0": 54,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 29,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_089",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 153
+        },
+        "size_pt_direct": {
+          "11.0": 75,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_090",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion",
+        "anexos"
+      ],
+      "formato": {
+        "paragraphs": 50,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 178
+        },
+        "size_pt_direct": {
+          "11.0": 99,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 41,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_091",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 126,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 828
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 113,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 122
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_092",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 6,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_093",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 9,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_094",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 90,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 570
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 83,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 88
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_095",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 93,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 458
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 84,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 90
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_096",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 110,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 520
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 97,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 102
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_097",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 78,
+        "tables": 1,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 324
+        },
+        "size_pt_direct": {
+          "10.0": 29,
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 65,
+          "center": 12
+        },
+        "spacing_direct": {
+          "240_twips_auto": 69
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_098",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 69,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 258
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 63,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 69
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_099",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 225,
+        "tables": 2,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 275,
+          "autre_ou_inconnue": 162
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 12,
+          "9.0": 37,
+          "11.0": 50
+        },
+        "alignments_direct": {
+          "both": 173,
+          "center": 17
+        },
+        "spacing_direct": {
+          "240_twips_auto": 170,
+          "259_twips_auto": 3
+        },
+        "margins_twips_trbl": {
+          "2269/1416/1417/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_100",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 64,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 407
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 59,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 63
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_101",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 80,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 464
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 73,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 80
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_102",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 81,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 436
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 69,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 77
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_103",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 88,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 445
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 82,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 87
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_104",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 107,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 439
+        },
+        "size_pt_direct": {
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 99,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 106
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_105",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 85,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 459
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 78,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 83
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_106",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 98,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 446,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 7,
+          "10.0": 5
+        },
+        "alignments_direct": {
+          "both": 94,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 98
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_107",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 104,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 544,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 11,
+          "16.0": 7,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 98,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 102
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_108",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 97,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 465,
+          "Calibri": 1
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 7,
+          "10.0": 4
+        },
+        "alignments_direct": {
+          "both": 92,
+          "center": 2
+        },
+        "spacing_direct": {
+          "240_twips_auto": 96
+        },
+        "margins_twips_trbl": {
+          "1985/1418/1701/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_109",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 60,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 208
+        },
+        "size_pt_direct": {
+          "11.0": 123,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 48,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_110",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 193
+        },
+        "size_pt_direct": {
+          "11.0": 103,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 39,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_111",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 148
+        },
+        "size_pt_direct": {
+          "11.0": 77,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_112",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 41,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 166
+        },
+        "size_pt_direct": {
+          "11.0": 65,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_113",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 48,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 203
+        },
+        "size_pt_direct": {
+          "11.0": 87,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 36,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 23
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_114",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 41,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 162
+        },
+        "size_pt_direct": {
+          "11.0": 82,
+          "10.0": 1,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_115",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 55,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 209
+        },
+        "size_pt_direct": {
+          "11.0": 119,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 44,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 23
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_116",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 65,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 276
+        },
+        "size_pt_direct": {
+          "10.0": 12,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 59,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 63
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_117",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 65,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 251
+        },
+        "size_pt_direct": {
+          "10.0": 6,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 60,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 64
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_118",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 34,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 116
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 113,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 10,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_119",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 33,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 125
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 122,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 10,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_120",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 33,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 107
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 104,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 10,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_121",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 36,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 98
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 95,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 11,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_122",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 36,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 118
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 115,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 11,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_123",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 36,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 98
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 95,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 11,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_124",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 33,
+        "tables": 1,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 135
+        },
+        "size_pt_direct": {
+          "11.0": 133,
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 12,
+          "center": 4
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_125",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "vistos",
+        "se resuelve",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 128
+        },
+        "size_pt_direct": {
+          "10.5": 127,
+          "8.0": 2
+        },
+        "alignments_direct": {
+          "both": 15,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_126",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "apelacion",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 36,
+        "tables": 1,
+        "headers": 4,
+        "footers": 4,
+        "fonts_direct": {
+          "autre_ou_inconnue": 98
+        },
+        "size_pt_direct": {
+          "1.0": 1,
+          "11.0": 95,
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 11,
+          "center": 5
+        },
+        "spacing_direct": {},
+        "margins_twips_trbl": {
+          "1276/1701/1985/1701": 2
+        }
+      }
+    },
+    {
+      "alias": "documento_127",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 261,
+        "tables": 2,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 267,
+          "autre_ou_inconnue": 186
+        },
+        "size_pt_direct": {
+          "8.0": 12,
+          "16.0": 5,
+          "10.0": 12,
+          "9.0": 37,
+          "11.0": 46
+        },
+        "alignments_direct": {
+          "both": 197,
+          "center": 17
+        },
+        "spacing_direct": {
+          "240_twips_auto": 195,
+          "259_twips_auto": 3
+        },
+        "margins_twips_trbl": {
+          "2269/1416/1417/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_128",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 154
+        },
+        "size_pt_direct": {
+          "11.0": 78,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_129",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 152
+        },
+        "size_pt_direct": {
+          "11.0": 76,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_130",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 177
+        },
+        "size_pt_direct": {
+          "11.0": 94,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_131",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 52,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 191
+        },
+        "size_pt_direct": {
+          "11.0": 114,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 41,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_132",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 172
+        },
+        "size_pt_direct": {
+          "11.0": 88,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_133",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 151
+        },
+        "size_pt_direct": {
+          "11.0": 81,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 34,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_134",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "sin_clasificar",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 104,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 154,
+          "autre_ou_inconnue": 131
+        },
+        "size_pt_direct": {
+          "10.0": 51,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 85,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 83
+        },
+        "margins_twips_trbl": {
+          "1985/1416/1702/1418": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_135",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 55,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 181
+        },
+        "size_pt_direct": {
+          "11.0": 104,
+          "10.0": 2,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 43,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_136",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 189
+        },
+        "size_pt_direct": {
+          "11.0": 79,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_137",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 36,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 154
+        },
+        "size_pt_direct": {
+          "11.0": 64,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 28,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_138",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 55,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 191
+        },
+        "size_pt_direct": {
+          "11.0": 107,
+          "10.0": 2,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 44,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_139",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion",
+        "anexos"
+      ],
+      "formato": {
+        "paragraphs": 86,
+        "tables": 2,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 326,
+          "Times New Roman": 15
+        },
+        "size_pt_direct": {
+          "9.0": 2,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 54,
+          "center": 29
+        },
+        "spacing_direct": {
+          "240_twips_auto": 65
+        },
+        "margins_twips_trbl": {
+          "2124/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_140",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 166
+        },
+        "size_pt_direct": {
+          "11.0": 83,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_141",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 162
+        },
+        "size_pt_direct": {
+          "10.0": 152,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 5
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_142",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 161
+        },
+        "size_pt_direct": {
+          "10.0": 149,
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 30,
+          "center": 5
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_143",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 50,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 182
+        },
+        "size_pt_direct": {
+          "11.0": 96,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_144",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 168
+        },
+        "size_pt_direct": {
+          "11.0": 88,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_145",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 43,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 172
+        },
+        "size_pt_direct": {
+          "11.0": 96,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 37,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_146",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 53,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 193
+        },
+        "size_pt_direct": {
+          "11.0": 115,
+          "10.0": 2,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 43,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_147",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "improcedencia",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "resuelve",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 90,
+        "tables": 1,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "Arial": 220
+        },
+        "size_pt_direct": {
+          "8.0": 15,
+          "16.0": 6
+        },
+        "alignments_direct": {
+          "center": 10,
+          "both": 51,
+          "right": 1
+        },
+        "spacing_direct": {
+          "240_twips_auto": 80
+        },
+        "margins_twips_trbl": {
+          "1984/1417/1700/1417": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_148",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 49,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 170
+        },
+        "size_pt_direct": {
+          "11.0": 95,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_149",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 53,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 180
+        },
+        "size_pt_direct": {
+          "11.0": 102,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 41,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_150",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 53,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 178
+        },
+        "size_pt_direct": {
+          "11.0": 91,
+          "10.0": 2,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 42,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 21
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_151",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 159
+        },
+        "size_pt_direct": {
+          "11.0": 79,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 31,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_152",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 35,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 153
+        },
+        "size_pt_direct": {
+          "11.0": 64,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 28,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_153",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 58,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 192
+        },
+        "size_pt_direct": {
+          "11.0": 115,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 46,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_154",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 176
+        },
+        "size_pt_direct": {
+          "11.0": 95,
+          "10.0": 2,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 39,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_155",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 38,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 146
+        },
+        "size_pt_direct": {
+          "11.0": 53,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 28,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/426/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_156",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 58,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 200
+        },
+        "size_pt_direct": {
+          "11.0": 114,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 46,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 23
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_157",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 52,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 199
+        },
+        "size_pt_direct": {
+          "11.0": 109,
+          "10.0": 1,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 40,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 23
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_158",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 195
+        },
+        "size_pt_direct": {
+          "11.0": 107,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 39,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 23
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_159",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 47,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 206
+        },
+        "size_pt_direct": {
+          "11.0": 116,
+          "10.0": 1,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 39,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_160",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 153
+        },
+        "size_pt_direct": {
+          "11.0": 80,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 17
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_161",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 53,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 192
+        },
+        "size_pt_direct": {
+          "11.0": 102,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 41,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_162",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 39,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 171
+        },
+        "size_pt_direct": {
+          "11.0": 84,
+          "9.0": 2
+        },
+        "alignments_direct": {
+          "both": 33,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 18
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_163",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 40,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 158
+        },
+        "size_pt_direct": {
+          "11.0": 76,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 32,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 19
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_164",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "seguros_por_enlace_local",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 50,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 180
+        },
+        "size_pt_direct": {
+          "11.0": 102,
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 38,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 22
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_165",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "requerimiento",
+      "alcance_provisional": "sector_no_confirmado",
+      "secciones_detectadas": [
+        "vistos",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 51,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 198
+        },
+        "size_pt_direct": {
+          "11.0": 119,
+          "9.0": 4
+        },
+        "alignments_direct": {
+          "both": 42,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 20
+        },
+        "margins_twips_trbl": {
+          "993/1701/709/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_166",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 73,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 351
+        },
+        "size_pt_direct": {
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 65,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 73
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_167",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 9,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_168",
+      "tipo_archivo": ".pdf",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "analisis",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "pages": 8,
+        "extractable_text": true
+      }
+    },
+    {
+      "alias": "documento_169",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion",
+        "anexos"
+      ],
+      "formato": {
+        "paragraphs": 86,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 452
+        },
+        "size_pt_direct": {
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 80,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 85
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_170",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 93,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 391
+        },
+        "size_pt_direct": {
+          "8.0": 3
+        },
+        "alignments_direct": {
+          "both": 82,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 87
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_171",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 82,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 415
+        },
+        "size_pt_direct": {
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 73,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 81
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_172",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 75,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 350
+        },
+        "size_pt_direct": {
+          "9.0": 5
+        },
+        "alignments_direct": {
+          "both": 68,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 75
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_173",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 100,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 430
+        },
+        "size_pt_direct": {
+          "9.0": 3
+        },
+        "alignments_direct": {
+          "both": 87,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 94
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_174",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 77,
+        "tables": 0,
+        "headers": 3,
+        "footers": 3,
+        "fonts_direct": {
+          "autre_ou_inconnue": 374
+        },
+        "size_pt_direct": {
+          "8.0": 5
+        },
+        "alignments_direct": {
+          "both": 73,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 77
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_175",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "admisorio",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "resolucion",
+        "notificacion"
+      ],
+      "formato": {
+        "paragraphs": 89,
+        "tables": 0,
+        "headers": 1,
+        "footers": 0,
+        "fonts_direct": {
+          "autre_ou_inconnue": 476
+        },
+        "size_pt_direct": {
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 77,
+          "center": 5
+        },
+        "spacing_direct": {
+          "240_twips_auto": 88
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_176",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion"
+      ],
+      "formato": {
+        "paragraphs": 64,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 267
+        },
+        "size_pt_direct": {
+          "10.0": 11,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 60,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 64
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    },
+    {
+      "alias": "documento_177",
+      "tipo_archivo": ".docx",
+      "familia_provisional": "inadmisibilidad",
+      "alcance_provisional": "seguros_por_indicios_textuales",
+      "secciones_detectadas": [
+        "antecedentes",
+        "analisis",
+        "vistos",
+        "resolucion",
+        "anexos"
+      ],
+      "formato": {
+        "paragraphs": 66,
+        "tables": 0,
+        "headers": 1,
+        "footers": 1,
+        "fonts_direct": {
+          "autre_ou_inconnue": 280
+        },
+        "size_pt_direct": {
+          "10.0": 19,
+          "8.0": 4
+        },
+        "alignments_direct": {
+          "both": 62,
+          "center": 4
+        },
+        "spacing_direct": {
+          "240_twips_auto": 66
+        },
+        "margins_twips_trbl": {
+          "1417/1701/1417/1701": 1
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "No raw text, source names, case IDs, identity values or reversible mappings exported.",
+    "Word direct formatting is not a full effective-style or visual fidelity verification.",
+    "A case join is not proof of one notification for each resolution or of effective delivery.",
+    "An unknown sector is never assigned to insurance automatically.",
+    "Counts describe source snapshots, not current live assignments or completed case counts."
+  ]
+}

@@ -1,5 +1,7 @@
 # Zeruel
 
+**Repositorio PRIVADO con archivo integral de trabajo:** [memoria y originales](knowledge/README.md), [seguros CC1](knowledge/WORKLOAD.md) y [prompt para otra IA](knowledge/PROMPT-continuacion.md). El archivo no se sirve desde la web ni se incluye en el contexto Docker.
+
 Agente personal para aprender procedimientos y preparar borradores entre dispositivos, sin tarjeta ni pagos adicionales. Nombre aprobado: **Zeruel**.
 
 ## Estado real

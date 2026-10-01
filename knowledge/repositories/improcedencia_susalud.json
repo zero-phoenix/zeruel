@@ -1,0 +1,659 @@
+{
+  "role": "improcedencia_susalud",
+  "repository": "zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud",
+  "private": true,
+  "default_branch": "main",
+  "commit": "042889e4de2af8e92647e8598e29180bc6b1f0b4",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e177df848238e9fac6689b2139bd1b9f2eb7d0d1",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/e177df848238e9fac6689b2139bd1b9f2eb7d0d1"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce25535a9f7b12d47cf94e98b785995024b7e727",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/ce25535a9f7b12d47cf94e98b785995024b7e727"
+    },
+    {
+      "path": ".github/workflows/build-and-release.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b28ec0b780eb9a67a8692bae613cbd44abba7ea",
+      "size": 4148,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/7b28ec0b780eb9a67a8692bae613cbd44abba7ea"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9323e8bb4e83aa7d8418de436f3e45a0abd4e0ca",
+      "size": 146,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/9323e8bb4e83aa7d8418de436f3e45a0abd4e0ca"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a1204e475634ea356571f2e9b3c165a238b30a1",
+      "size": 4667,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/8a1204e475634ea356571f2e9b3c165a238b30a1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cce7d5fb11acf4d8f601995a26ee163803da32d",
+      "size": 18296,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/4cce7d5fb11acf4d8f601995a26ee163803da32d"
+    },
+    {
+      "path": "best_dump.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f46fe8d186665eb0a4508bbb9bda268cc76df85",
+      "size": 14821,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/6f46fe8d186665eb0a4508bbb9bda268cc76df85"
+    },
+    {
+      "path": "build",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1ed73204e5160771f1144c6079b7329fe24cc7e",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/c1ed73204e5160771f1144c6079b7329fe24cc7e"
+    },
+    {
+      "path": "build/improcedencia-engine",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "373e4335def601191824a8c4653d9f8c3ea08ffc",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/373e4335def601191824a8c4653d9f8c3ea08ffc"
+    },
+    {
+      "path": "build/improcedencia-engine/Analysis-00.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8377072a71e1d3841ab2e955e9339bcc8af282e",
+      "size": 121520,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/a8377072a71e1d3841ab2e955e9339bcc8af282e"
+    },
+    {
+      "path": "build/improcedencia-engine/EXE-00.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b713405a2a79bc22c7bdfb501c0e9d0f0b29b3",
+      "size": 22139,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/41b713405a2a79bc22c7bdfb501c0e9d0f0b29b3"
+    },
+    {
+      "path": "build/improcedencia-engine/PKG-00.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3334e50c46b9b718015fb4ee6877e9b193ed913",
+      "size": 20308,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/c3334e50c46b9b718015fb4ee6877e9b193ed913"
+    },
+    {
+      "path": "build/improcedencia-engine/PYZ-00.pyz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52f75d4ec03ea2e24afdf8d845a1c39d0c3d11ad",
+      "size": 3663788,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/52f75d4ec03ea2e24afdf8d845a1c39d0c3d11ad"
+    },
+    {
+      "path": "build/improcedencia-engine/PYZ-00.toc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de163879b3f16e920fe546359573d349b30ba2e1",
+      "size": 79945,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/de163879b3f16e920fe546359573d349b30ba2e1"
+    },
+    {
+      "path": "build/improcedencia-engine/base_library.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed555db0f6e2b84a82e57e99a92908500b685cc9",
+      "size": 1333717,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ed555db0f6e2b84a82e57e99a92908500b685cc9"
+    },
+    {
+      "path": "build/improcedencia-engine/improcedencia-engine.pkg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd08e56efb8075bec90b9adf1444fa7dedebb9e0",
+      "size": 14907257,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/dd08e56efb8075bec90b9adf1444fa7dedebb9e0"
+    },
+    {
+      "path": "build/improcedencia-engine/warn-improcedencia-engine.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8253a8d38fc1de401f186fc2c057450d3f9f722c",
+      "size": 5381,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/8253a8d38fc1de401f186fc2c057450d3f9f722c"
+    },
+    {
+      "path": "build/improcedencia-engine/xref-improcedencia-engine.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "909f271795a15dac23e4ac5fd4913a194e5a3354",
+      "size": 811346,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/909f271795a15dac23e4ac5fd4913a194e5a3354"
+    },
+    {
+      "path": "build/improcedencia-susalud-engine",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d12f93c247f79874ef4ba5fc2d26b28b69b4b28",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/1d12f93c247f79874ef4ba5fc2d26b28b69b4b28"
+    },
+    {
+      "path": "build/improcedencia-susalud-engine/warn-improcedencia-susalud-engine.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04175102c519ad7534295d7f75a05084f0565e5b",
+      "size": 5591,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/04175102c519ad7534295d7f75a05084f0565e5b"
+    },
+    {
+      "path": "cuantia_dump.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0039f5e4e00001b75b40ac592860e09ff45b9c2",
+      "size": 18742,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f0039f5e4e00001b75b40ac592860e09ff45b9c2"
+    },
+    {
+      "path": "dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7857ce3a99ac15d14f9d2ca48e75f3489b45cc29",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/7857ce3a99ac15d14f9d2ca48e75f3489b45cc29"
+    },
+    {
+      "path": "dist/improcedencia-engine.exe",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13a34316d7db83ba14eca2c6b856ffe85e3ad3a4",
+      "size": 15280505,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/13a34316d7db83ba14eca2c6b856ffe85e3ad3a4"
+    },
+    {
+      "path": "dist/improcedencia-susalud-engine.exe",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "914b0c1e3727906feebd6b5902c0731724ceffb7",
+      "size": 33894856,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/914b0c1e3727906feebd6b5902c0731724ceffb7"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51e3a01b131af1065c4813857237d62cbffe87eb",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/51e3a01b131af1065c4813857237d62cbffe87eb"
+    },
+    {
+      "path": "docs/CATALOGO_SUPUESTOS_UNIVERSALES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "164c56637e64f88f6dc8bb25e836d781de2624d1",
+      "size": 5548,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/164c56637e64f88f6dc8bb25e836d781de2624d1"
+    },
+    {
+      "path": "generados",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "520d72c232750bcaa6dd653ccd3d57c03d2f403d",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/520d72c232750bcaa6dd653ccd3d57c03d2f403d"
+    },
+    {
+      "path": "generados/RESOLUCION_COMPLEJA_CC1_IMPROCEDENCIA_SUSALUD.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c59bff31ba948cd4eb89357b53d55ead536f205b",
+      "size": 311010,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/c59bff31ba948cd4eb89357b53d55ead536f205b"
+    },
+    {
+      "path": "generados/RESOLUCION_SIMULADA_9999-2026_CC1_IMPRO_SUSALUD.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38b12e2c787f44ac05959fe5cee8adcc004051eb",
+      "size": 70455,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/38b12e2c787f44ac05959fe5cee8adcc004051eb"
+    },
+    {
+      "path": "generados/RESOLUCION_SIMULADA_9999-2026_CC1_IMPRO_SUSALUD.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0da20eb053367d00c434ec0e68a0c2ee3c4231f3",
+      "size": 262436,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/0da20eb053367d00c434ec0e68a0c2ee3c4231f3"
+    },
+    {
+      "path": "generados/capturas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "005d60b2c8918a93500ce82147edb97831e652d7",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/005d60b2c8918a93500ce82147edb97831e652d7"
+    },
+    {
+      "path": "generados/capturas/resolucion_pagina_1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f31fd095bbccae054c742868b13928f526b01cf",
+      "size": 414498,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/0f31fd095bbccae054c742868b13928f526b01cf"
+    },
+    {
+      "path": "generados/capturas/resolucion_pagina_2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2fdc2e44351d0e2b854fc30ef6d6a48bbf09faa",
+      "size": 459979,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f2fdc2e44351d0e2b854fc30ef6d6a48bbf09faa"
+    },
+    {
+      "path": "generados/capturas/resolucion_pagina_3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee58a2dd54d1b1e47a913dab1aa6087f0398aed8",
+      "size": 458749,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ee58a2dd54d1b1e47a913dab1aa6087f0398aed8"
+    },
+    {
+      "path": "generados/capturas/resolucion_pagina_4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba9ce246eb1c864c2c5b8d51a31817c549e57e86",
+      "size": 456320,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ba9ce246eb1c864c2c5b8d51a31817c549e57e86"
+    },
+    {
+      "path": "generados/capturas/resolucion_pagina_5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ef146e31cac51dd31059e5d244ccb7fd8ada3cd",
+      "size": 387951,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/5ef146e31cac51dd31059e5d244ccb7fd8ada3cd"
+    },
+    {
+      "path": "generados/capturas_simulacion",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d5665c5c948018d30e6d958fc0002df9f9c2c60",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/2d5665c5c948018d30e6d958fc0002df9f9c2c60"
+    },
+    {
+      "path": "generados/capturas_simulacion/pagina_01.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8165457a5b4e62a98832e1af9ae3ba0357b27e8b",
+      "size": 316977,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/8165457a5b4e62a98832e1af9ae3ba0357b27e8b"
+    },
+    {
+      "path": "generados/capturas_simulacion/pagina_02.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de7f6948f59cacee0cb6967aab7dc1fcead6ab0f",
+      "size": 386661,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/de7f6948f59cacee0cb6967aab7dc1fcead6ab0f"
+    },
+    {
+      "path": "generados/capturas_simulacion/pagina_03.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dfecc257682b41189e0390d4f780a9c6fd14395",
+      "size": 352162,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/8dfecc257682b41189e0390d4f780a9c6fd14395"
+    },
+    {
+      "path": "generados/capturas_simulacion/pagina_04.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60fae86284ecf16120b93f595e8c5114e8f27b01",
+      "size": 379516,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/60fae86284ecf16120b93f595e8c5114e8f27b01"
+    },
+    {
+      "path": "generados/capturas_simulacion/pagina_05.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed811af32066ff05167fbcc42e259bd22f5f5bb3",
+      "size": 289483,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ed811af32066ff05167fbcc42e259bd22f5f5bb3"
+    },
+    {
+      "path": "iafas_soat_dump.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "baf6183f9923bd3884bc0f7f3a06f9cc833ed9a2",
+      "size": 35831,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/baf6183f9923bd3884bc0f7f3a06f9cc833ed9a2"
+    },
+    {
+      "path": "improcedencia-engine.spec",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a0cd2f173e204f4f45b8aaeaaf5368d18643be5",
+      "size": 689,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/9a0cd2f173e204f4f45b8aaeaaf5368d18643be5"
+    },
+    {
+      "path": "ipress_servicios_dump.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2d323b49ac1b97ce64ba26561cb88667c35d356",
+      "size": 36068,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/b2d323b49ac1b97ce64ba26561cb88667c35d356"
+    },
+    {
+      "path": "laboral_dump.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7561c56f8235d0b332ba1669a064676eadcb7df8",
+      "size": 21385,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/7561c56f8235d0b332ba1669a064676eadcb7df8"
+    },
+    {
+      "path": "normas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c7b327d0a4e5e499aad1f6fed201e0664de826a0",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/c7b327d0a4e5e499aad1f6fed201e0664de826a0"
+    },
+    {
+      "path": "normas/MARCO_NORMATIVO_SUSALUD_IPRESS_IAFAS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "645554b484acbef2b24a0134ab2835eef0d94322",
+      "size": 8264,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/645554b484acbef2b24a0134ab2835eef0d94322"
+    },
+    {
+      "path": "plantillas_maestras",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "70240f1ef19579c7acd96e1670a69aafe0915f27",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/70240f1ef19579c7acd96e1670a69aafe0915f27"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_base_susalud.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b11c91da672e1bd4edbff9ae738d79eed4e2428",
+      "size": 109717,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/3b11c91da672e1bd4edbff9ae738d79eed4e2428"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_clean_9paginas.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7643e250beae8556c4582418f8587c1bfc3af383",
+      "size": 76188,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/7643e250beae8556c4582418f8587c1bfc3af383"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_iafas.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2abd832c347445ffd04fae8bc99d3ac8aac88d09",
+      "size": 96316,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/2abd832c347445ffd04fae8bc99d3ac8aac88d09"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_impro_susalud.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b11c91da672e1bd4edbff9ae738d79eed4e2428",
+      "size": 109717,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/3b11c91da672e1bd4edbff9ae738d79eed4e2428"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_ipress.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9190e4337dbe5266c1defce3583545157b5b757",
+      "size": 95217,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/c9190e4337dbe5266c1defce3583545157b5b757"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_mixta_iafas_ipress.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4151da336cf49c5d624ccd55200ed7b6be88dcf9",
+      "size": 98506,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/4151da336cf49c5d624ccd55200ed7b6be88dcf9"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_maestra_universal.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4151da336cf49c5d624ccd55200ed7b6be88dcf9",
+      "size": 98506,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/4151da336cf49c5d624ccd55200ed7b6be88dcf9"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffa7d5a795882932ece531d362bcbf77fc1f0c33",
+      "size": 49,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ffa7d5a795882932ece531d362bcbf77fc1f0c33"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "961ce667ec821c4d7d6ebcfbf816a70273695a43",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/961ce667ec821c4d7d6ebcfbf816a70273695a43"
+    },
+    {
+      "path": "scripts/analizar_carpeta_susalud.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "034fc41b6e3ad721e9e2945a541219848e988e56",
+      "size": 2776,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/034fc41b6e3ad721e9e2945a541219848e988e56"
+    },
+    {
+      "path": "scripts/build_clean_mixta.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9124c3a0eaa2775ebfa51063647aec451962293",
+      "size": 17016,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f9124c3a0eaa2775ebfa51063647aec451962293"
+    },
+    {
+      "path": "scripts/convert_to_pdf.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa6643c5d4dd5b8b14c732aeb6663cac8579b765",
+      "size": 719,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/fa6643c5d4dd5b8b14c732aeb6663cac8579b765"
+    },
+    {
+      "path": "scripts/dump_comparativas.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97849bcf7e9444982cb222b1244e56e3e4b31900",
+      "size": 1244,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/97849bcf7e9444982cb222b1244e56e3e4b31900"
+    },
+    {
+      "path": "scripts/examine_paragraphs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f24788992f4316a3476ab5971405ea22186a098a",
+      "size": 372,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f24788992f4316a3476ab5971405ea22186a098a"
+    },
+    {
+      "path": "scripts/generar_caso_complejo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5183dd6bc5c8112ae0fabdf3e82bfddfb7c7936",
+      "size": 30539,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/b5183dd6bc5c8112ae0fabdf3e82bfddfb7c7936"
+    },
+    {
+      "path": "scripts/generar_caso_nuevo_rimac_anglo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72e44f949ee316f02cc944876a8611b8407ed26f",
+      "size": 13198,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/72e44f949ee316f02cc944876a8611b8407ed26f"
+    },
+    {
+      "path": "scripts/generar_comparativas_modelo_vs_ficticio.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b458f0ebe527056b5673ef7891887a4c27690be4",
+      "size": 2875,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/b458f0ebe527056b5673ef7891887a4c27690be4"
+    },
+    {
+      "path": "scripts/generar_comparativas_visuales.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87627933985851461257a7d55fe7393551821f59",
+      "size": 2994,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/87627933985851461257a7d55fe7393551821f59"
+    },
+    {
+      "path": "scripts/generar_resolucion_popperiana.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7f05700620341fc48118be78c12908ceaaa7430",
+      "size": 9942,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f7f05700620341fc48118be78c12908ceaaa7430"
+    },
+    {
+      "path": "scripts/guardia_improcedencia.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b091edf61e08b799e69a5093e979458188f96ade",
+      "size": 2547,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/b091edf61e08b799e69a5093e979458188f96ade"
+    },
+    {
+      "path": "scripts/improcedencia.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ec371c1b63e7517ac110ff2f78ecffcc52252c9",
+      "size": 5308,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/6ec371c1b63e7517ac110ff2f78ecffcc52252c9"
+    },
+    {
+      "path": "scripts/inspect_clean_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b516c06cfe4f1a54324c227b9dff1363cc88016",
+      "size": 696,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/0b516c06cfe4f1a54324c227b9dff1363cc88016"
+    },
+    {
+      "path": "scripts/reemplazar_con_precision_docx.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48f437754b29696368e45fdd3ab21567435c4ef8",
+      "size": 12674,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/48f437754b29696368e45fdd3ab21567435c4ef8"
+    },
+    {
+      "path": "scripts/render_mixta.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3095f6b893024965b403a8ad31eae1d2b9cb8589",
+      "size": 648,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/3095f6b893024965b403a8ad31eae1d2b9cb8589"
+    },
+    {
+      "path": "scripts/render_nueva_resolucion.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efc1babb6bc12e6c50b81750a87638a0ca1bb762",
+      "size": 839,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/efc1babb6bc12e6c50b81750a87638a0ca1bb762"
+    },
+    {
+      "path": "scripts/render_pages.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3ad652174b6977eae22677bc5798d63075baaa7",
+      "size": 1131,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/c3ad652174b6977eae22677bc5798d63075baaa7"
+    },
+    {
+      "path": "scripts/test_word.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f89a60ff3f219b94b95ad90e4915888b38c4ad7",
+      "size": 186,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/8f89a60ff3f219b94b95ad90e4915888b38c4ad7"
+    },
+    {
+      "path": "scripts/verificar_improcedencia.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00af51669ce760a2ebe1a8c49a12ed182450e14c",
+      "size": 4568,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/00af51669ce760a2ebe1a8c49a12ed182450e14c"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c1540cfa170df7eabc19ec0a2cfde78f6de44af",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/trees/8c1540cfa170df7eabc19ec0a2cfde78f6de44af"
+    },
+    {
+      "path": "src/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c25ab41b822848019374346cf4ef4b651cdbc83e",
+      "size": 167,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/c25ab41b822848019374346cf4ef4b651cdbc83e"
+    },
+    {
+      "path": "src/builder.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec03cd6268f54029703bbf91f192dba4dca97c72",
+      "size": 12804,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/ec03cd6268f54029703bbf91f192dba4dca97c72"
+    },
+    {
+      "path": "src/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f80c3837cd051c9c9ea3d1bcd3a064496ccd282c",
+      "size": 1087,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/f80c3837cd051c9c9ea3d1bcd3a064496ccd282c"
+    },
+    {
+      "path": "src/improcedencia_engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0d49d0ec71a1679a5cb9fa6c61d7502ae8e5999",
+      "size": 11252,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/b0d49d0ec71a1679a5cb9fa6c61d7502ae8e5999"
+    },
+    {
+      "path": "src/rules_engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d4749d4a517a6a3bbbf281012363a319220b441",
+      "size": 4919,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-improcedencia-a-susalud/git/blobs/7d4749d4a517a6a3bbbf281012363a319220b441"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "source": "extension/pii-detector.js",
+    "sha256": "e4b78c0546c5b85b87a4bd534351a2a277da385cf289eed34e7d754763101862"
+  },
+  {
+    "source": "extension/tests/pii-detector.test.js",
+    "sha256": "a1369c02b425a4b0a85f3da5b22161d6f0bd3b5479a4153185d38d87db07d83c"
+  },
+  {
+    "source": "extension/training/evaluate.js",
+    "sha256": "d9afd9d617feabc90097a25c05270802cf361da0ac12e0b899d8f1cf4b3b743a"
+  },
+  {
+    "source": "extension/training/synth-generator.js",
+    "sha256": "48589352de1665be4c47b62313ee5ae739ef852f4bd2d35ae174151fdd49fd7f"
+  }
+]

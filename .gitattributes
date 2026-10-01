@@ -1,0 +1,3 @@
+# Preserve original bytes and draft hashes on every operating system.
+knowledge/private_sources/** -text
+knowledge/repository_drafts/** -text

@@ -1,0 +1,590 @@
+{
+  "role": "requerimientos",
+  "repository": "zero-phoenix/elaboracion-de-resoluciones-de-requerimiento",
+  "private": true,
+  "default_branch": "main",
+  "commit": "787a440546d22b6b1e82e7f57e30284193300bd6",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c14d5fa64abd356e084774471a90b0421a4e04ab",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/c14d5fa64abd356e084774471a90b0421a4e04ab"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "66b1818b1d8466021d09b3cb352ba966dfa7d02e",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/66b1818b1d8466021d09b3cb352ba966dfa7d02e"
+    },
+    {
+      "path": ".github/workflows/ci_release.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea3a9d3b3f99522a5e37a7538a3ef0ab28ff38fb",
+      "size": 4228,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/ea3a9d3b3f99522a5e37a7538a3ef0ab28ff38fb"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2efa6b3a9fac768c22fba066b33f50a738fdbf6f",
+      "size": 519,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2efa6b3a9fac768c22fba066b33f50a738fdbf6f"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d0aa04dbe060f9da061c053c2e6cd05138a16e5",
+      "size": 6068,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2d0aa04dbe060f9da061c053c2e6cd05138a16e5"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca560a3cd69d584a6ccab6b656ed496aebf53004",
+      "size": 11866,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/ca560a3cd69d584a6ccab6b656ed496aebf53004"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f13024cd8170580d80b9f3959e8683f827d6258e",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/f13024cd8170580d80b9f3959e8683f827d6258e"
+    },
+    {
+      "path": "config/.env.example",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7a35a72ca0bcc3c656d6c8a6c81a744d81516a7",
+      "size": 175,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/c7a35a72ca0bcc3c656d6c8a6c81a744d81516a7"
+    },
+    {
+      "path": "config/config.example.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9eadbbf16d84a2feb7b5f353ffa1d57c85798bd4",
+      "size": 758,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/9eadbbf16d84a2feb7b5f353ffa1d57c85798bd4"
+    },
+    {
+      "path": "crear_excel_muestra.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "324793400be9628188e019b1a24d4af69067be22",
+      "size": 1737,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/324793400be9628188e019b1a24d4af69067be22"
+    },
+    {
+      "path": "cuadro_muestras_precedentes.xlsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6d1e184f910febc04a101bfd1d482fb9738b710",
+      "size": 5528,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/a6d1e184f910febc04a101bfd1d482fb9738b710"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "96c02c35943ff45ed77dd0a9046a49365bdbdbfb",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/96c02c35943ff45ed77dd0a9046a49365bdbdbfb"
+    },
+    {
+      "path": "docs/ANATOMIA_DEL_REQUERIMIENTO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e334efd83f6fd688c5ad5733655d084f32e46414",
+      "size": 8166,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/e334efd83f6fd688c5ad5733655d084f32e46414"
+    },
+    {
+      "path": "docs/CATALOGO_REQUERIMIENTOS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0304e82678164aa2bef4a5a6bf2a3f75851bec3",
+      "size": 5425,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/d0304e82678164aa2bef4a5a6bf2a3f75851bec3"
+    },
+    {
+      "path": "docs/COMO_NO_SE_REDACTA_REQUERIMIENTOS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62f1765054716dceb77da89836af70b68f605e16",
+      "size": 3138,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/62f1765054716dceb77da89836af70b68f605e16"
+    },
+    {
+      "path": "docs/GUIA_FLUJO_EXCEL_A_WORD.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a0bf3fcd152d340e0956b3ace17a892fcfbdbfa",
+      "size": 2876,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/8a0bf3fcd152d340e0956b3ace17a892fcfbdbfa"
+    },
+    {
+      "path": "docs/catalogo_requerimientos.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0e4873f4208c7f4ecc2634528ebbdd82c72c85f",
+      "size": 23730,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/c0e4873f4208c7f4ecc2634528ebbdd82c72c85f"
+    },
+    {
+      "path": "dossier_expedientes.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a152f54475c188f4be7418463f6992e8a73a3c93",
+      "size": 16293,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/a152f54475c188f4be7418463f6992e8a73a3c93"
+    },
+    {
+      "path": "generados",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0594506d5b883d11dcafc3762d3356f4dd54a7f0",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/0594506d5b883d11dcafc3762d3356f4dd54a7f0"
+    },
+    {
+      "path": "generados/REQ 3077-2026 R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a60f0ffd27884384236c889cac54f2154143e2e",
+      "size": 107566,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/5a60f0ffd27884384236c889cac54f2154143e2e"
+    },
+    {
+      "path": "generados/REQ 3085-2026 R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3b641209361aab92bd2893e2346c1547276852e",
+      "size": 107354,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/c3b641209361aab92bd2893e2346c1547276852e"
+    },
+    {
+      "path": "generados/REQ 3090-2026 R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b601aaea58dfd33a8b82fbd6fcc9ec0f4f2309c1",
+      "size": 106861,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/b601aaea58dfd33a8b82fbd6fcc9ec0f4f2309c1"
+    },
+    {
+      "path": "generados/REQ 3125-2026 R1.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "961bde47b0b0aca3c096aa7c0c7f1a8a580f3451",
+      "size": 108184,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/961bde47b0b0aca3c096aa7c0c7f1a8a580f3451"
+    },
+    {
+      "path": "generados/REQ_CASO_EMPRESA_PDT_4120_2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bd3f5cad9e9adcf0306678ae5facd3eb71fc0b0",
+      "size": 126662,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2bd3f5cad9e9adcf0306678ae5facd3eb71fc0b0"
+    },
+    {
+      "path": "generados/REQ_CASO_INVENTADO_3542_2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8eb91172700c1c4c77dfd734acdaf44cc53619f",
+      "size": 136508,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/a8eb91172700c1c4c77dfd734acdaf44cc53619f"
+    },
+    {
+      "path": "generados/REQ_CASO_TARJETA_SANTILLANA_4985_2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca2230bb8044e4547bc3d8a1074afcb7244151cb",
+      "size": 136422,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/ca2230bb8044e4547bc3d8a1074afcb7244151cb"
+    },
+    {
+      "path": "generados/REQ_SIMULACION_3077_2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93ff67fc03f3fc3d490aabecb60e9155708473a1",
+      "size": 129722,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/93ff67fc03f3fc3d490aabecb60e9155708473a1"
+    },
+    {
+      "path": "generados/REQ_SIMULACION_AUTOCORREGIDA_3077.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c93619112b52bf2f7e844c736c3add8ea93dc9f",
+      "size": 136745,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/8c93619112b52bf2f7e844c736c3add8ea93dc9f"
+    },
+    {
+      "path": "generados/REQ_SUBSANACION_SIMPLE_3150_2026.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe811f746b86b36f28f12803d9787b7348a3411c",
+      "size": 124014,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/fe811f746b86b36f28f12803d9787b7348a3411c"
+    },
+    {
+      "path": "normas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5753368e165b49db020053f76ec40ff38d3c36b",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/f5753368e165b49db020053f76ec40ff38d3c36b"
+    },
+    {
+      "path": "normas/MARCO_NORMATIVO_REQUERIMIENTOS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c22ab117c37c9a8ae11567d29e331eeac214e04",
+      "size": 2931,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2c22ab117c37c9a8ae11567d29e331eeac214e04"
+    },
+    {
+      "path": "plantillas_maestras",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cbc8e3ecb6ead775f5e6431a8eafe84eed984d90",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/cbc8e3ecb6ead775f5e6431a8eafe84eed984d90"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2339119af2dca87713906b9b4ebc3ec0480b22b4",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/2339119af2dca87713906b9b4ebc3ec0480b22b4"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/000000k REQ 0098-2026 modelo mas actualizado de ratificacion de sucesion intestada.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "569f5937da9fd78db2ba2f25610e04adaf0a0d61",
+      "size": 187334,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/569f5937da9fd78db2ba2f25610e04adaf0a0d61"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/000k MEJOR MODELO HECHOS INFRACTORES, tasa, Y NARRACION DE HECHOS ACLARADOS 0991-2025 R1 REQ-ok.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af63cf4595cb6a4e0122a2dffb0b837b145ecbdd",
+      "size": 182534,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/af63cf4595cb6a4e0122a2dffb0b837b145ecbdd"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/00k MEJOR MODELO REQ SUBSANACIÓN + CONFI cuando solo marcan confi pero en su escrito no lo solicitan de manera expresa.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0615d8b518c030d27cfff69607d000b51981c7d5",
+      "size": 188693,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/0615d8b518c030d27cfff69607d000b51981c7d5"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/00k REQUERIMIENTO EMPRESA  PDT,  EMPRESA FUNDAMENTADO A EMPRESA, PDT, PODER, INFRACCIONES.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b439759cb755cd3efd07267028d3a588fbb00114",
+      "size": 189030,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/b439759cb755cd3efd07267028d3a588fbb00114"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/0k 1608-2024-CC1 R6 REQ ESC SIN FIRMA (POST ADMISORIO).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83cb27f700f57e4ae4c404716aad9eea74763a6f",
+      "size": 161067,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/83cb27f700f57e4ae4c404716aad9eea74763a6f"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/0k 2288-2025 R3 REQ FIRMA-ok (POST INADMISIBILIDAD).docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e0bf0fa17eadff413149211d3605de70b2d8fe2",
+      "size": 160431,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/8e0bf0fa17eadff413149211d3605de70b2d8fe2"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/0k REQ 1259-2026 R1 - OK confi + cautelar y req subsanacion.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1de1d0a47c854dc8ab315f0418a149a01971b996",
+      "size": 196223,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/1de1d0a47c854dc8ab315f0418a149a01971b996"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/0k REQUERIMIENTO DE solamenteee TASA.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb13ad91c89e098106b3e1336f301f459b4669d5",
+      "size": 181227,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/bb13ad91c89e098106b3e1336f301f459b4669d5"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/REQ 2395-2026 R1 - OK - precisar cobertura de prestacion medica o economica.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b92fa677aa607553a58611203f24ec0c46f3a041",
+      "size": 181908,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/b92fa677aa607553a58611203f24ec0c46f3a041"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/REQ 2425-2026 R1 - OK precisar los anexos que no adjunto.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9eadbd746136f51dd0b40afd6ec923b35284fcd",
+      "size": 181351,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/b9eadbd746136f51dd0b40afd6ec923b35284fcd"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/REQ 2890-2026 R1 requerimos fecha y prueba negativa.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d42ff484f1cc8bee89135da7f1e07932d22e795",
+      "size": 181353,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/3d42ff484f1cc8bee89135da7f1e07932d22e795"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/tarjetas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "122b17811e5e64f1ebb42d547034381307fc6832",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/122b17811e5e64f1ebb42d547034381307fc6832"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/tarjetas/REQ 0980-2026-CC1 - LSQok falta actualizar el tuo lpag.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9badd4e8dc108b2ad73d2ca43e69b56e66d873d7",
+      "size": 187104,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/9badd4e8dc108b2ad73d2ca43e69b56e66d873d7"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/tarjetas/REQ 1149-2026-CC1 - LSQok falta actualizar el tuo lpag.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c370914f132c9bba30eb58ddabca19d0d9776aff",
+      "size": 186273,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/c370914f132c9bba30eb58ddabca19d0d9776aff"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/tarjetas/mpg 2665-2026 RQ TASA, HECHOS.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adad9ffde6941e7859ba12f9aa7f6142daa19583",
+      "size": 195023,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/adad9ffde6941e7859ba12f9aa7f6142daa19583"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z  CRITERIO SEGURO VEHICULAR cuando no se sabe si empresa es titular de poliza PDT IMPORTANTE MODELO REQ 592-2026 R1 - OK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcf99623269368875a1a7a44bea322ff6ca65d5a",
+      "size": 177015,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/fcf99623269368875a1a7a44bea322ff6ca65d5a"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z  FIRMA + ACLARACIÓN DE HECHOS.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df0e40b17869033bffe0e1772a5a2e4bed7ee9c9",
+      "size": 176092,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/df0e40b17869033bffe0e1772a5a2e4bed7ee9c9"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z 1036-2025 R1 SOLO SUBSANACION DE SOLICITUD DE CONFI MDPV NO INDEPENDIZADO.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8aff917fb82271d87589b3ef16c4eeea65e95a5f",
+      "size": 56164,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/8aff917fb82271d87589b3ef16c4eeea65e95a5f"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z APROBADO REQ TASA PORQUE HAN PRESENTADO UNA TASA YA UTILIZADA Y QUE NO PUEDE SER USADA DE NUEVO.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b5a64c71e618616b7bab3c132cc1348976bbbf8",
+      "size": 175148,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/5b5a64c71e618616b7bab3c132cc1348976bbbf8"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z PODERES REPRESENTACION SUCESION INTESTADA 2494-2025 R1 REQ-okOK.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d920889d475ada97492b88d287376892e2dea4c",
+      "size": 174020,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/3d920889d475ada97492b88d287376892e2dea4c"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z PRECISION DE TIPO DE SEGUO ASOCIADO AL PRODUCTO FINANCIERO Y MONTO.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e8c26c43ac1cad0212bacd4ff3efeeafc94094f",
+      "size": 173058,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/1e8c26c43ac1cad0212bacd4ff3efeeafc94094f"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z discriminacion + informe comafp.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebe81bac6d82f3f35eab943e1b321a426e3bd9c6",
+      "size": 174076,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/ebe81bac6d82f3f35eab943e1b321a426e3bd9c6"
+    },
+    {
+      "path": "plantillas_maestras/modelos_origen/z nombre de representante que cambio segun ruc sunat.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e605eabd1b6a2bcde751ca0974f10e16d943d303",
+      "size": 174681,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/e605eabd1b6a2bcde751ca0974f10e16d943d303"
+    },
+    {
+      "path": "plantillas_maestras/plantilla_base_requerimiento.docx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b4d4cf8e2aa15811e813addfb7e1f39df8e693f",
+      "size": 189464,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2b4d4cf8e2aa15811e813addfb7e1f39df8e693f"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a679899e5a17749c35f0179366e1a4f74c24a0e7",
+      "size": 508,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/a679899e5a17749c35f0179366e1a4f74c24a0e7"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "50991766d52e2b6ad3fad9cdd2025cfbbe529c64",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/50991766d52e2b6ad3fad9cdd2025cfbbe529c64"
+    },
+    {
+      "path": "scripts/auditar_requerimiento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e4ca448449623aafafdb2bc7c460a19dcfd5728",
+      "size": 2774,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/1e4ca448449623aafafdb2bc7c460a19dcfd5728"
+    },
+    {
+      "path": "scripts/comprobar_anclaje.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5643fb23480abecf1b4ca81da45b5638302cac10",
+      "size": 2511,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/5643fb23480abecf1b4ca81da45b5638302cac10"
+    },
+    {
+      "path": "scripts/construir_requerimiento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "603bb9134995617a381b2bb486e0b4f7a81dbe90",
+      "size": 2622,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/603bb9134995617a381b2bb486e0b4f7a81dbe90"
+    },
+    {
+      "path": "scripts/guardia_requerimiento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "556bbb759685937bd4d966c0ebd1abd1515b4809",
+      "size": 2101,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/556bbb759685937bd4d966c0ebd1abd1515b4809"
+    },
+    {
+      "path": "scripts/procesar_excel_precedentes.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1690969ca912413365f548a1d425e48f52c527d3",
+      "size": 1988,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/1690969ca912413365f548a1d425e48f52c527d3"
+    },
+    {
+      "path": "scripts/requerimiento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44e536c15b865080b3447387b0381f8fc4a61b95",
+      "size": 10641,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/44e536c15b865080b3447387b0381f8fc4a61b95"
+    },
+    {
+      "path": "scripts/sanitizar_plantillas.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16ee211dd783a903b83f156ec0cc290dba7cabc2",
+      "size": 3318,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/16ee211dd783a903b83f156ec0cc290dba7cabc2"
+    },
+    {
+      "path": "scripts/verificar_requerimiento.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ee5e710e51bf2d16ae1778f759912a3a82896a7",
+      "size": 8720,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2ee5e710e51bf2d16ae1778f759912a3a82896a7"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bff9bafdc04e7af9907ca1051ec596560143af63",
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/trees/bff9bafdc04e7af9907ca1051ec596560143af63"
+    },
+    {
+      "path": "src/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3de5dc36ef852f7107b7075425d19de53075e6df",
+      "size": 106,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/3de5dc36ef852f7107b7075425d19de53075e6df"
+    },
+    {
+      "path": "src/builder.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5f86c3da8ee1eb5533cfb6050b524e8a037f73e",
+      "size": 14789,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/a5f86c3da8ee1eb5533cfb6050b524e8a037f73e"
+    },
+    {
+      "path": "src/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e0820ecd0393848e19e35ed4894fb90653e0e7a",
+      "size": 1064,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/2e0820ecd0393848e19e35ed4894fb90653e0e7a"
+    },
+    {
+      "path": "src/excel_processor.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9fc71f5ae9d05c241b272429ecfeae6ba4d208c",
+      "size": 5471,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/b9fc71f5ae9d05c241b272429ecfeae6ba4d208c"
+    },
+    {
+      "path": "src/requerimiento_engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9af8767022b2a2b162443c8066bc71b8b64f6a09",
+      "size": 12586,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/9af8767022b2a2b162443c8066bc71b8b64f6a09"
+    },
+    {
+      "path": "src/rules_engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e0d93b8483cb1c07da7b5b3f2f1e2ca4de29a38",
+      "size": 5477,
+      "url": "https://api.github.com/repos/zero-phoenix/elaboracion-de-resoluciones-de-requerimiento/git/blobs/4e0d93b8483cb1c07da7b5b3f2f1e2ca4de29a38"
+    }
+  ]
+}
