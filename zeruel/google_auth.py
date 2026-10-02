@@ -51,23 +51,42 @@ class GoogleOwnerVerifier:
             return False
 
     def verify(self, id_token):
+        return self.check(id_token)[0]
+
+    def reject_reason(self, claims, now):
+        """Category of a rejection, never the address itself (it is personal data)."""
+        try:
+            if claims.get("aud") != self.client_id or claims.get("iss") not in ISSUERS:
+                return "wrong_audience"
+            if str(claims.get("email", "")).lower() != self.owner:
+                return "not_owner"
+            if int(claims.get("exp", 0)) <= now:
+                return "expired"
+        except (TypeError, ValueError):
+            return "malformed"
+        return "unverified_email"
+
+    def check(self, id_token):
+        """Returns (accepted, reason); reason is a fixed category safe to log."""
         if not isinstance(id_token, str) or not 20 <= len(id_token) <= 4096:
-            return False
+            return False, "malformed"
         key = hashlib.sha256(id_token.encode("utf-8", "surrogateescape")).hexdigest()
         now = self.clock()
         with self.lock:
             expiry = self.cache.get(key)
         if expiry and expiry > now:
-            return True
+            return True, "ok"
         # Local pre-filter: tokens that do not even claim to be the owner's never reach Google.
         claims = unverified_claims(id_token)
-        if claims is None or not self.accepted(claims, now):
-            return False
+        if claims is None:
+            return False, "malformed"
+        if not self.accepted(claims, now):
+            return False, self.reject_reason(claims, now)
         with self.lock:
             while self.checks and self.checks[0] <= now - 60:
                 self.checks.popleft()
             if len(self.checks) >= MAX_CHECKS_PER_MINUTE:
-                return False
+                return False, "rate_limited"
             self.checks.append(now)
         try:
             info = self.fetch(id_token)  # Google remains the source of truth for the signature.
@@ -75,10 +94,12 @@ class GoogleOwnerVerifier:
             ok = (isinstance(info, dict) and self.accepted(info, now)
                   and str(info.get("email_verified", "")).lower() == "true")
         except Exception:
-            return False  # Fail closed on network errors or malformed replies.
+            return False, "tokeninfo_failed"  # Fail closed on network errors or malformed replies.
         if ok:
             with self.lock:
                 self.cache = {k: v for k, v in self.cache.items() if v > now}
                 if len(self.cache) < 64:
                     self.cache[key] = int(info["exp"])
-        return ok
+        if ok:
+            return True, "ok"
+        return False, self.reject_reason(info, now) if isinstance(info, dict) else "malformed"
