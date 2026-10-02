@@ -42,6 +42,8 @@
 - **3.44** Solo el propietario autoriza; Google es la autoridad. Falsador: otra cuenta autoriza. Pruebas: `test_other_google_account_rejected`, `test_google_reply_is_authoritative`.
 - **3.45** Tokens ajenos o basura nunca llegan a Google. Falsador: llamada a tokeninfo con un token basura. Prueba: `test_junk_and_foreign_tokens_never_reach_google`.
 - **3.46** Un token revocado cierra sin filtrar secretos. Falsador: secreto en el error. Prueba: `test_revoked_refresh_token_fails_closed_without_secrets`.
+- **3.47** `cloud_gate_passed` es siempre `false` en este hito (`AGENTS.md`, `docs/first-milestone.md`). Falsador: una respuesta o un literal con `true`. Pruebas: `test_c1_cloud_gate_never_true_in_source`, aserciones en `test_http.py`, `test_probe.py`, `test_recovery.py`.
+- **3.48** Sin keepalive artificial; los pings a `/healthz` solo como excepción temporal de la Fase D. Falsador: un cliente o documento que programe pings sin esa marca. Prueba: `test_c2_pings_only_as_temporary_exception`.
 
 ## 3.5 Cliente móvil (`web/app.js`)
 
@@ -58,7 +60,7 @@
 
 Proposiciones sin prueba dedicada en `tests/`:
 
-- **D1** `cloud_gate_passed` es siempre `false` en este hito (`AGENTS.md`, `docs/first-milestone.md`). Falsador: una respuesta con `true`. Hoy solo está fijado en `zeruel/server.py` y `zeruel/probe.py`.
+- **D1** (resuelta: ahora 3.47; ver `contradicciones.md`).
 - **D2** Renovación real tras vencer el token en un proceso vivo de más de 1 h (matriz: Pendiente). `test_expiring_token_is_refreshed` solo la simula.
 - **D3** Lanzamiento móvil con ambos Windows apagados y resultado recuperable (matriz: Pendiente).
 - **D4** Nivel de suscripción comprobado por vía oficial (matriz: no comprobado).
@@ -67,5 +69,5 @@ Proposiciones sin prueba dedicada en `tests/`:
 
 ## Recuento
 
-- Con prueba: **34** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.46: 6; 3.51–3.53: 3; 3.61–3.62: 2).
-- Sin prueba (deuda): **6** (D1–D6).
+- Con prueba: **36** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.62: 2).
+- Sin prueba (deuda): **5** (D2–D6).
