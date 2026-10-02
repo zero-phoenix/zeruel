@@ -53,7 +53,7 @@ async function startGoogle(prompt = 'select_account') {
     sessionStorage.setItem('zeruel_oidc', JSON.stringify(flow));
     location.assign('https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
       client_id: config.google_client_id, redirect_uri: location.origin + '/', response_type: 'id_token',
-      scope: 'openid email', prompt, ...flow,
+      scope: 'openid email', ...(prompt ? {prompt} : {}), ...flow,
       // With several Google sessions open, prompt=none fails with «choose an account»
       // unless the account is hinted. The hint only travels in the autorun fragment.
       ...(sessionStorage.getItem('zeruel_hint') ? {login_hint: sessionStorage.getItem('zeruel_hint')} : {})}));
@@ -74,7 +74,8 @@ async function finishGoogle() {
     if (pendingAutorun() && /^(interaction_required|login_required|consent_required)$/.test(error || '') &&
         !sessionStorage.getItem('zeruel_autorun_retry')) {
       sessionStorage.setItem('zeruel_autorun_retry', '1');
-      return startGoogle('select_account');
+      // With a hinted account, omitting prompt lets Google sign it in without the account chooser.
+      return startGoogle(sessionStorage.getItem('zeruel_hint') ? '' : 'select_account');
     }
     return show({state: 'google_' + (error || 'cancelled')});
   }

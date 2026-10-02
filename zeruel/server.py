@@ -154,7 +154,13 @@ def make_handler(controller, token, google=None, google_client_id=None):
             supplied = self.headers.get("Authorization", "")
             if supplied.startswith("Google "):
                 # Owner-only Google Sign-In; any other account is rejected.
-                return google is not None and google.verify(supplied[len("Google "):])
+                if google is None:
+                    return False
+                ok, reason = google.check(supplied[len("Google "):])
+                if not ok:
+                    # Only the category is logged: never the token or the address.
+                    print(f"google_auth_rejected reason={reason}", flush=True)
+                return ok
             # Bytes comparison: non-ASCII header values must yield 401, not an unhandled TypeError.
             return hmac.compare_digest(supplied.encode("utf-8", "surrogateescape"),
                                        ("Bearer " + token).encode("utf-8"))

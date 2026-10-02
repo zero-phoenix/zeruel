@@ -263,3 +263,13 @@ test('hint is cleared on disconnect', async () => {
   assert.equal(p.storage.has('zeruel_hint'), false);
 });
 
+
+test('hinted retry omits prompt so Google skips the account chooser', async () => {
+  const p = page({hash: '#autorun=' + id + '&hint=dueno.ficticio%40example.com'});
+  await tick();
+  const retry = page({storage: p.storage, hash: callback(p.storage, {error: 'interaction_required'})});
+  await tick();
+  const url = new URL(retry.redirects[0]);
+  assert.equal(url.searchParams.has('prompt'), false);
+  assert.equal(url.searchParams.get('login_hint'), 'dueno.ficticio@example.com');
+});

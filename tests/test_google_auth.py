@@ -37,6 +37,16 @@ class VerifierTests(unittest.TestCase):
             return reply
         return GoogleOwnerVerifier(CLIENT, OWNER, fetch=fetch, clock=clock)
 
+    def test_rejection_reasons_are_categories_without_address(self):
+        v = self.verifier(info())
+        self.assertEqual(v.check(jwt(email='otra.cuenta@example.test')), (False, 'not_owner'))
+        self.assertEqual(v.check(jwt(aud='otro')), (False, 'wrong_audience'))
+        self.assertEqual(v.check(jwt(exp='10')), (False, 'expired'))
+        self.assertEqual(v.check('x'), (False, 'malformed'))
+        self.assertEqual(v.check(TOKEN), (True, 'ok'))
+        self.assertEqual(self.verifier(info(email_verified='false')).check(TOKEN), (False, 'unverified_email'))
+        self.assertEqual(self.verifier(OSError()).check(TOKEN), (False, 'tokeninfo_failed'))
+
     def test_owner_accepted_case_insensitive(self):
         self.assertTrue(self.verifier(info(email='Owner@Example.test')).verify(TOKEN))
 
