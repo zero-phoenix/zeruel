@@ -132,7 +132,7 @@ Sin esto, el reposo detiene `sleep` y el bloqueo impide que Chrome ejecute la p�
 El token se pide en la **primera llamada al checkpoint** del proceso, no al arrancar, y se renueva unos 54 min después.
 1. En los eventos de Render anota la hora del último arranque.
 2. Haz una consulta de resultado (sección 2) de un id existente. Esa hora es **T1**.
-3. Lanza **un** proceso en segundo plano (adb cerrado) que llame a `/healthz` cada 10 min hasta T1 + 70 min.
+3. Lanza **un** proceso en segundo plano (adb cerrado) que llame a `/healthz` cada 10 min hasta T1 + 70 min. Es la excepción temporal autorizada a «sin keepalive artificial»: termínalo al acabar; nunca un keepalive permanente.
 4. A partir de T1 + 61 min, vuelve a entrar con Google y lanza una prueba. Exige `synthetic_success` con `checkpoint_saved: true`.
 5. Confirma en Render que no hubo reinicio entre el arranque y la prueba. Solo entonces es evidencia **REAL** de «Renovación».
 6. No fuerces la cuota agotada (gasta la suscripción): queda «no probada», con motivo.
