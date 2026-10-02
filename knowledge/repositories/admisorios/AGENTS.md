@@ -1,23 +1,22 @@
 # AGENTS.md — Admisorios CC1 Indecopi (seguros). Reglas vigentes v3.5
 
-Única fuente de reglas vigentes.
-Redactor: **Google Antigravity con el modelo de `config/modelo.json`** (Gemini 3.8 Flash High o más).
+Única fuente de reglas. Redactor: **Google Antigravity con el modelo de `config/modelo.json`** (Gemini 3.8 Flash High o más).
 
 ## 0. Arranque
 0. **En otra computadora**: sigue `ARRANQUE.md`.
-   Lee las skills de `.agents/skills/`: `admisorio-flujo`, `imputaciones` y `partes-y-notificacion`; y `confidencialidad` si la tiene.
+   Skills de `.agents/skills/`: `admisorio-flujo`, `imputaciones` y `partes-y-notificacion`; y `confidencialidad` si la tiene.
 1. Trabaja desde la **raíz del repositorio**. Primer comando: `python scripts/comprobar_anclaje.py`. Si falla, para.
 2. Fecha de emisión: `python scripts/config_sistema.py`. Si dice «sin fijar», **pregúntala al instructor**.
 3. Si el caso trae `_ORDEN_DE_TRABAJO.md`, manda para ese caso. Si trae `_ESTADO.md` con «CASO CERRADO», no generes nada.
 4. **Haz solo lo que se hace.** Únicos comandos: `comprobar_anclaje`, `config_sistema`, `admisorio.py preparar|previsualizar|entregar`, `similares`, `construir_admisorio`, `inspeccionar_docx`, `plazos`. Prohibido lo demás (`editar_cedulas`, `python -c`, scripts propios, Word, borradores). En la carpeta del caso: originales, lo generado y un único `ADM <EXP> R<N>.docx`; `entregar` rechaza el resto.
 
-## 1. Los pasos (≤ 12 llamadas en un expediente corto)
-1. `python scripts/admisorio.py preparar <carpeta>` — capturas, `_LECTURA.md`, `_FORMATO.md` y **`_FICHA.md`** (comandos, firmas digitales, proveedores y vías, tipificación). **Ritmo**: sin `-h` ni leer scripts o JSON; `_hojas/` en una vuelta; `WaitMsBeforeAsync` 120000.
+## 1. Los pasos (≤ 12 llamadas si es corto)
+1. `python scripts/admisorio.py preparar <carpeta>` — capturas, `_LECTURA.md`, `_FORMATO.md` y **`_FICHA.md`** (comandos, firmas digitales, proveedores y vías, tipificación). **Ritmo**: sin `-h`, scripts ni JSON; `_hojas/` en una vuelta; `WaitMsBeforeAsync` 120000.
 2. **Lectura visual** de `_hojas/` (dos páginas por imagen): una fila por página en `_LECTURA.md`, con «Lo que vi» y «Formato que vi» (medidas en `_FORMATO.md`, cero OCR). Si el texto discrepa, manda la imagen.
 2b. **OBLIGATORIO: las 10 plantillas más similares.** `_CASO.json` (`resolucion`, `carpeta_origen`, `traslado`, escritos con fecha, denunciados DEFINITIVOS, conductas y norma) y `python scripts/similares.py <carpeta>`. `_SIMILARES.md`: el «Por qué» de las 10; la base sale de ellas.
 3. `python scripts/construir_admisorio.py --mapa <mapa.json>` (para corregir un Word, él es la plantilla). Claves = **texto de la plantilla**; `"parrafos"` sustituye un párrafo entero por su inicio. El constructor sanea solo. Sin Word, win32com ni PDF.
-3b. `python scripts/admisorio.py previsualizar "<docx>" --contra "<plantilla>"` — `_vista/` con cada página junto a la de la plantilla. **Míralas todas en una vuelta**.
-4. `python scripts/admisorio.py entregar "<carpeta>/ADM <EXP> R<N>.docx" --recepcion DD/MM/AAAA` — debe decir **ENTREGABLE** y el verificador **APTO**; copia el Word a `carpeta_origen`. Pega la salida literal.
+3b. `python scripts/admisorio.py previsualizar "<docx>" --contra "<plantilla>"` — `_vista/` (solo ONLYOFFICE, no LibreOffice): cada página junto a la de la plantilla. **Míralas todas**.
+4. `python scripts/admisorio.py entregar "<carpeta>/ADM <EXP> R<N>.docx" --recepcion DD/MM/AAAA` — **ENTREGABLE** y verificador **APTO**; copia el Word a `carpeta_origen`. Pega la salida literal.
 
 Entregable: `ADM <EXPEDIENTE> R<N>.docx`; `<N>` es el número de resolución que fija la cédula. Nunca PDF.
 
@@ -54,7 +53,6 @@ Entregable: `ADM <EXPEDIENTE> R<N>.docx`; `<N>` es el número de resolución que
 10. **Léxico**:
    - Obligatorio: cónyuge (no esposo/a); luego de (no tras); esta/este sin tilde; médico (no doctor/Dr.); «vehículo con Placa de Rodaje …» (no carro/auto).
    - Moneda: `S/ 1 234,56` y `US$ 1 234,56`.
-11. **Preservación estricta de plantilla base y eliminación de resaltados**: La corrección o elaboración de toda resolución debe partir de la plantilla maestra que más se parezca al caso concreto, modificando sus campos sin alterar su formato, márgenes, interlineado, sangrías ni notas al pie. Queda estrictamente prohibido redactar documentos desde cero que alteren la maquetación. En toda versión final deben eliminarse obligatoriamente todas las marcas de resaltado (`w:highlight`).
 
 ## 3. Traslado y descargos (R-155) — literal
 - La fórmula se copia **literal** de la skill `partes-y-notificacion` (artículo 26 del Decreto Legislativo 807; artículo 223 del TUO de la Ley 27444, «merituadas»). Inicia «correr traslado de la denuncia del …[, subsanada …] a …»: cita completa del ordinal de admisión (subsanaciones y complementos); nunca «de la presente resolución» (R-212). La admisión puede estar en SEGUNDO o TERCERO: conserva los ordinales previos.
@@ -69,7 +67,7 @@ Entregable: `ADM <EXPEDIENTE> R<N>.docx`; `<N>` es el número de resolución que
 
 ## 5. Nota al pie 1 y plazo
 - **Nota del Código**: tras «Código de Protección y Defensa del Consumidor» en la apertura de HECHOS, nunca tras «señalando lo siguiente:» (R-184).
-- Denuncia **derivada** (MEMORANDUM, Documento u Hoja de Traslado) con el documento entregado: la nota 1, tras la fecha del escrito («Mediante el escrito del …¹»), dice «Denuncia remitida a esta Comisión mediante [documento] de fecha [emisión], recibida el [recepción en CC1].» Desacumulada: forma de las plantillas; no inventes esos datos.
+- Denuncia **derivada** (MEMORANDUM, Documento u Hoja de Traslado) con el documento entregado: la nota 1, tras la fecha del escrito («Mediante el escrito del …¹»), dice «Denuncia remitida a esta Comisión mediante [documento] de fecha [emisión], recibida el [«Fecha de recepción» de la constancia de traslado].» Desacumulada: forma de las plantillas; no inventes esos datos.
 - Presentada en CC1: **ninguna nota sobre la denuncia**; `traslado` en `_CASO.json`: null o el documento.
 - **Plazo de 20 días hábiles**: `python scripts/plazos.py --desde DD/MM/AAAA`; se informa y **no va en la resolución**.
 

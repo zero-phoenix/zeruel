@@ -14,3 +14,17 @@ En esta computadora: una operación pesada por vez, sin agentes adicionales ni h
 
 ## Regla de Oro de Elaboración y Preservación de Formato
 Para toda resolución admisoria o actuación formal, DEBE seleccionarse la plantilla maestra más similar al caso concreto (misma rama, número/tipo de denunciados, género de denunciante y número de resolución) y construirse sobre dicha plantilla base, reemplazando ordenadamente los campos sin alterar su formato (márgenes medidos, interlineado, estilos, negritas, notas al pie y pie institucional M-CPC-01/03). Queda estrictamente prohibido redactar documentos desde cero que alteren la maquetación de Word. En toda versión final deben eliminarse obligatoriamente todas las marcas de resaltado (`w:highlight`). Esta regla rige tanto en Zeruel como en el repositorio especializado de admisorios.
+
+## Reglas máximas (proposiciones; instructor, 01/10/2026)
+Estructura del *Tractatus*: cada proposición decimal precisa a la que la contiene. Cada regla trae su **falsador** popperiano: el hecho observable que la refuta en un caso concreto. Una entrega en la que aparece un falsador es inválida.
+
+1. La vista de un Word se obtiene solo con ONLYOFFICE.
+   1.1 LibreOffice no se usa nunca: ni como motor de vista, ni como respaldo, ni para convertir documentos.
+   1.2 Si ONLYOFFICE Document Builder no está instalado, se instala; la falta de motor no autoriza a usar LibreOffice.
+   1.3 **Falsador:** una vista, imagen o PDF producido por LibreOffice (`soffice`, rótulo «VISTA APROXIMADA (LibreOffice)») en el trabajo de un caso.
+2. La fecha de recepción en CC1 de una denuncia que proviene de otra área se toma de la constancia.
+   2.1 La fuente es la «CONSTANCIA DE RECEPCION DE TRASLADO DE EXPEDIENTE» cuyo órgano que recibe es la CC1, campo «Fecha de recepción».
+   2.2 Esa fecha es la de «recibida el …» en la nota 1 y la de `--recepcion` en `entregar`.
+   2.3 No es la fecha del documento de traslado ni la de una constancia dirigida a otro órgano.
+   2.4 **Falsador:** una «recibida el …» o un `--recepcion` distinto de la «Fecha de recepción» de esa constancia.
+   Rigen en Zeruel y en el repositorio especializado de admisorios (`zero-phoenix/SystemHope-ResAdmis`). `zeruel-corpus` es acéfalo: no guarda reglas.
