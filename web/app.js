@@ -33,6 +33,7 @@ async function connect(google = false) {
       // Consume once, even if the response is lost; the checkpoint can be queried by this id.
       sessionStorage.removeItem('zeruel_autorun');
       sessionStorage.removeItem('zeruel_autorun_retry');
+      sessionStorage.removeItem('zeruel_hint');
       await runProbe(id);
     }
   }
@@ -118,12 +119,21 @@ $('restore').onclick = async () => {
 $('disconnect').onclick = () => {
   session++; clearTimeout(timer); $('token').value = ''; idToken = ''; $('run').disabled = true; $('restore').disabled = true;
   sessionStorage.removeItem('zeruel_autorun'); sessionStorage.removeItem('zeruel_autorun_retry');
+  sessionStorage.removeItem('zeruel_hint');
   show({state:'disconnected'});
 };
 const autorun = /^#autorun=([a-f0-9]{32})(?:&hint=([A-Za-z0-9._%+-]{1,64}(?:%40|@)[A-Za-z0-9.-]{1,180}\.[A-Za-z]{2,24}))?$/.exec(location.hash);
-if (autorun) {
+// A malformed %-sequence must not throw (URIError) nor redirect: such a fragment is invalid.
+const hint = (() => {
+  if (!autorun || !autorun[2]) return '';
+  try {
+    const d = decodeURIComponent(autorun[2]);
+    return /^[^@\s%]{1,64}@[A-Za-z0-9.-]{1,180}\.[A-Za-z]{2,24}$/.test(d) ? d : null;
+  } catch { return null; }
+})();
+if (autorun && hint !== null) {
   sessionStorage.setItem('zeruel_autorun', autorun[1]);
-  if (autorun[2]) sessionStorage.setItem('zeruel_hint', decodeURIComponent(autorun[2]));
+  if (hint) sessionStorage.setItem('zeruel_hint', hint);
   else sessionStorage.removeItem('zeruel_hint');
   sessionStorage.removeItem('zeruel_autorun_retry');
   history.replaceState(null, '', location.pathname);
