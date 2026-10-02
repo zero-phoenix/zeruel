@@ -47,7 +47,7 @@ Ingeniero principal y supervisor de Zeruel. Continúa desde este estado sin repe
 - Cuenta única: david.chavez.nge@gmail.com. Sin cuentas secundarias.
 - Apps Script nunca con acceso «Cualquiera» ni «Cualquier persona con cuenta de Google».
 - `cloud_gate_passed=false` hasta superar **toda** la matriz de `docs/first-milestone.md`.
-- Render Free se suspende y pierde archivos: sin keepalive artificial.
+- Render Free se suspende y pierde archivos: sin keepalive artificial. Única excepción temporal: la prueba limitada de renovación (Fase D), con un solo helper que llama `/healthz` cada 10 min hasta T1+70 min y se termina después; nunca un keepalive permanente.
 - Credenciales, capturas, expedientes y memoria personal **fuera** del repositorio público. Nunca pedir secretos por chat.
 - Memoria real y flujos jurídicos: no antes de superar la matriz. Excepción autorizada por el propietario (30/09/2026): la extensión de Edge **anonimizada** de la sección 5b.
 - Acciones irreversibles (vincular Apps Script, aceptar condiciones, cargar secretos remotos, fusionar a `main`) → confirmación explícita del propietario en el momento.
