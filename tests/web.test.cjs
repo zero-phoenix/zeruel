@@ -236,3 +236,30 @@ test('disconnect with probe in flight never re-enables run on the stale response
   assert.equal(reply.timers.length, 0);
   assert.equal(reply.storage.size, 0);
 });
+
+test('autorun hint travels only in the fragment and becomes login_hint with prompt=none', async () => {
+  const p = page({hash: '#autorun=' + id + '&hint=dueno.ficticio%40example.com'});
+  await tick();
+  assert.equal(p.location.hash, '');
+  const url = new URL(p.redirects[0]);
+  assert.equal(url.searchParams.get('prompt'), 'none');
+  assert.equal(url.searchParams.get('login_hint'), 'dueno.ficticio@example.com');
+});
+
+test('malformed hint is rejected like any other invalid autorun fragment', async () => {
+  for (const hash of ['#autorun=' + id + '&hint=notanemail', '#autorun=' + id + '&hint=a@b.c&x=1',
+    '#autorun=' + id + '&hint=a%ZZb%40example.com', '#autorun=' + id + '&hint=a%25b%40example.com']) {
+    const p = page({hash});
+    await tick();
+    assert.equal(p.redirects.length, 0);
+  }
+});
+
+test('hint is cleared on disconnect', async () => {
+  const p = page({hash: '#autorun=' + id + '&hint=dueno.ficticio%40example.com'});
+  await tick();
+  assert.equal(p.storage.get('zeruel_hint'), 'dueno.ficticio@example.com');
+  p.elements.disconnect.onclick();
+  assert.equal(p.storage.has('zeruel_hint'), false);
+});
+
