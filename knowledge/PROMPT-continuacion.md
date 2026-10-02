@@ -1,21 +1,15 @@
-# Prompt portátil para Claude Opus 5.5, esfuerzo low
+# Prompt de Continuación (Perfil: Base)
 
-El PR #24 está fusionado en main `9af5fb47f31ff338c49d3eeaa0b57f62f2dd2634`; los 182 originales se verificaron allí. Lee `knowledge/verification-main-pr24.json`. La versión ampliada y autosuficiente está en [MEGAPROMPT-continuacion.md](MEGAPROMPT-continuacion.md), rama `codex/mega-relevo` mientras su PR documental no esté fusionado.
+> **AVISO DE ARQUITECTURA (Patrón Core + Profiles):**  
+> Este documento ha sido factorizado y consolidado bajo el estándar canónico **Core + Profiles**.
+> La fuente única de verdad, memoria de aprendizaje, directrices epistemológicas e invariantes universales residen en el Core:
+> 👉 [`knowledge/PROMPT-CONTINUIDAD-APRENDIZAJE.md`](PROMPT-CONTINUIDAD-APRENDIZAJE.md).
 
-Eres quien continúa Zeruel (zero-phoenix/zeruel). Todo el contexto duradero está en este repositorio PRIVADO; no asumas acceso a la computadora anterior, a Codex ni a su conversación. El propietario planea desinstalar y formatear. Lee AGENTS.md, knowledge/README.md, knowledge/WORKLOAD.md, docs/STATUS.md, docs/HANDOFF.md y la matriz del primer hito. Luego revisa git log y los PR abiertos. No fusiones ningún PR nuevo sin autorización explícita de su número.
+## Perfil de Continuación General
 
-Prioridad del propietario: conservar íntegro y comprender su trabajo de seguros ante CC1. knowledge/private_sources/manifest.json contiene los 182 originales (171 DOCX, 6 PDF, 5 XLSX), 30.193.970 bytes. Verifica hashes y usa índices incrementales en knowledge/private_index. No recortes originales ni los vuelvas públicos; analíticamente ignora tarjetas/créditos. Sin admitir significa sin ninguna resolución emitida; requerimientos significa resolución de subsanación ya emitida, admisión si subsana e inadmisibilidad si no corresponde subsanar. D_H son días hábiles; calificación inicial 20, procedimiento primera instancia 120. FECHA LÍMITE corresponde al final, no al admisorio. Confirma inicio/suspensiones/norma por caso. Apelaciones de seguros CC1 de más antiguas a recientes. Leer WORKLOAD antes de actuar: explica resoluciones, competencias, formatos, cédulas, fuentes y límites.
-
-Los cuatro sistemas privados relacionados tienen README, AGENTS, ARRANQUE donde existe y árboles fijados a commit en knowledge/repositories. Consulta esos commits para plantillas/código completos. Las R1 de apelación son resolución inicial, su sistema no genera cédulas. El sistema SUSALUD no cubre toda improcedencia. Conservar relación resolución-destinatario-cédula-cargo-plazo. No inventar datos, fojas, habilitación de casilla ni firma. Nuevos documentos requieren revisión factual y visual y autorización de la actuación real.
-
-Estado técnico conocido: PR #22 de autorun permanente fusionado en 8662fb894; PR #23 documental fusionado en 79e1bcd. PR #21 sigue abierto y no está autorizado. Autorun acepta sólo #autorun=<32 hex minúsculas>, token sólo en memoria, state/nonce y un reintento OAuth select_account validado. Consumo antes del POST {id}; respuesta incierta se consulta por checkpoint sin repetir inferencia. La web publicada respondió 200 y contiene autorun, pero SHA desplegada y autorun real no están acreditados.
-
-REAL móvil manual: Brave, Google del propietario, ID 0a079423ff3c3fcc25f255e6a1058255 → synthetic_success, ZERUEL_OK, suma42, 7,27s, 210816KiB, CPU0,629s, completed=1790810077 UTC. Windows estaba encendido. El checkpoint se recuperó. No repetirla por creer que falta evidencia. ADB lecturas/taps funcionó; apertura por am start fue rechazada blocked by policy. ADB se cerró y no se cambiaron ajustes. Cloud_gate_passed=false.
-
-Pendientes: autorun real nuevo ID, diferidos 60s conectado/120s desconectado, prueba600s con ambas PCs apagadas y retorno >=20min (eventos Windows/arranque rápido y confirmación segundaPC), renovación desde checkpoint T1 a T1+70min con healthz cada10min y prueba>=61min sin reinicios, demás filas de matriz. Guardar coordinación temporal privada fuera del repo sin credenciales. Máximo un helper y cerrar ADB antes. Detenerse ante paused_uncertain, paused_storage_limit o blocked_*; sin recuperación automática. Cambio screen_off_timeout sólo con permiso específico, original registrado/restaurado; no tocar bloqueo seguro. No agotar cuota.
-
-Render: despliegue manual, autodeploy apagado; privacidad nueva puede requerir conexión autorizada para próximo deploy, no volver público para resolverla. No hay acceso nuevo acreditado. No ejecutar computer-use, Docker, instalaciones, agentes adicionales ni optimizadores. Una operación pesada a la vez en Celeron N4020/4GB. Contraseñas/2FA sólo las introduce propietario. No enviar comunicaciones sin autorización. No borrar datos: el propietario formatea personalmente.
-
-Trabajo local de extensión en knowledge/repository_drafts conserva parche desde main79e1bcd hasta1ad02a76 y cuatro JS sin seguimiento. Archivo de código sin activar; hay fallo PII con «Ella Pumayalli Soncco»; OCR geométrico y detector no conectados a revisión. No atribuirle pruebas exitosas completas ni mezclarlo sin revisión. Manifiesto Apps Script genérico local carecía de executionApi:MYSELF; remoto no comprobado en esta sesión.
-
-Al concluir deja Relevo con fecha/host, rama/commit, versión desplegada comprobada o desconocida, evidencia REAL/SIMULADA, pendientes y procesos activos. Mantén PRIVADO el archivo y no declare aprobado el hito ni completada la automatización legal por conservar los documentos.
+1. **Núcleo Canónico:** Lee y aplica estrictamente `knowledge/PROMPT-CONTINUIDAD-APRENDIZAJE.md`.
+2. **Gobernanza del Corpus Acéfalo:** Todo hecho, expediente o fuente documental reside en `zero-phoenix/zeruel-corpus`, gobernado criptográficamente por `corpus.lock` y gestionado mediante `python tools/corpus.py sync|verify|pin`.
+3. **Orquestación Concurrente:** Para subagentes y ejecuciones en paralelo, consulta `knowledge/PROMPT-PARALELO.md`.
+4. **Perfiles de Entorno Especializados:**
+   - Para interacción móvil vía USB/ADB: [`docs/PROMPT-continuacion-celular.md`](../docs/PROMPT-continuacion-celular.md).
+   - Para entornos con restricciones de cómputo (Claude Low-Resource / Celeron): [`docs/PROMPT-continuacion-claude-opus55-low.md`](../docs/PROMPT-continuacion-claude-opus55-low.md).

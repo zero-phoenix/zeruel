@@ -12,7 +12,8 @@ SCOPE = "https://www.googleapis.com/auth/userinfo.email"
 OUT = os.path.join(os.path.expanduser("~"), ".zeruel-private", "checkpoint-oauth.json")
 
 
-def main(path):
+def main(path, out_file=None):
+    destination = out_file or os.environ.get("ZERUEL_OAUTH_OUT", OUT)
     with open(path, encoding="utf-8") as f:
         client = json.load(f)["installed"]
     verifier = secrets.token_urlsafe(64)
@@ -51,14 +52,15 @@ def main(path):
         token = json.load(r)
     if "refresh_token" not in token:
         sys.exit("Google no devolvió refresh_token; revoca el acceso previo y repite.")
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(destination), exist_ok=True)
+    with open(destination, "w", encoding="utf-8") as f:
         json.dump({"client_id": client["client_id"], "client_secret": client["client_secret"],
                    "refresh_token": token["refresh_token"]}, f)
-    print(f"Guardado en {OUT} (no se muestra el contenido). Ámbitos: {token.get('scope')}")
+    print(f"Guardado en {destination} (no se muestra el contenido). Ámbitos: {token.get('scope')}")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    custom_out = sys.argv[2] if len(sys.argv) > 2 else None
+    main(sys.argv[1], custom_out)

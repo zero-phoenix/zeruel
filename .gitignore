@@ -23,7 +23,8 @@ deepseek_ledger.*
 extension/vendor/
 client_secret*.json
 
-# Archivo íntegro autorizado únicamente en el repositorio PRIVADO.
-!knowledge/private_sources/**/*.docx
-!knowledge/private_sources/**/*.pdf
-!knowledge/private_sources/**/*.xlsx
+# Corpus acéfalo desacoplado: fuentes privadas, borradores e índices gobernados por corpus.lock
+knowledge/private_sources/
+knowledge/private_index/
+knowledge/borrador_*.txt
+knowledge/verification-*.json

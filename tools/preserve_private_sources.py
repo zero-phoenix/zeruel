@@ -42,12 +42,13 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--documents', type=Path, required=True)
     ap.add_argument('--reports', type=Path, required=True)
-    ap.add_argument('--repository', type=Path, required=True)
+    ap.add_argument('--repository', type=Path, required=True, help="Directorio del repositorio acéfalo zeruel-corpus")
+    ap.add_argument('--repo-name', type=str, default='zero-phoenix/zeruel-corpus', help="Nombre del repo en GitHub a verificar")
     args = ap.parse_args()
-    visibility = json.loads(subprocess.check_output(['gh', 'repo', 'view', 'zero-phoenix/zeruel',
+    visibility = json.loads(subprocess.check_output(['gh', 'repo', 'view', args.repo_name,
         '--json', 'isPrivate,visibility'], text=True))
     if not visibility.get('isPrivate') or visibility.get('visibility') != 'PRIVATE':
-        raise SystemExit('Repository privacy is not verified; nothing copied')
+        raise SystemExit(f'Repository privacy for {args.repo_name} is not verified; nothing copied')
     repo = args.repository.resolve()
     archive = repo / 'knowledge' / 'private_sources'
     indexes = repo / 'knowledge' / 'private_index'

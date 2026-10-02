@@ -15,6 +15,15 @@ REPOSITORIES = [
 def api(endpoint):
     return json.loads(subprocess.check_output(['gh', 'api', endpoint], text=True, encoding='utf-8'))
 
+SECRET = re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|'
+                    r'\b(?:ghp_|github_pat_)[A-Za-z0-9_]{20,}|'
+                    r'\bBearer\s+eyJ[A-Za-z0-9_-]{20,}\.|'
+                    r'"refresh_token"\s*:\s*"[^"\s]{15,}"')
+
+def assert_no_secret(text):
+    if SECRET.search(text):
+        raise ValueError('Possible credential found; manual private review required')
+
 def main():
     if not api('repos/zero-phoenix/zeruel').get('private'):
         raise SystemExit('Zeruel must remain private')
@@ -32,7 +41,6 @@ def main():
         (dest / (role + '.json')).write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
         readme = api(f'repos/zero-phoenix/{name}/readme?ref={commit}')
         text = base64.b64decode(readme['content']).decode('utf-8')
-        from preserve_private_sources import assert_no_secret
         assert_no_secret(text)
         (dest / (role + '-README.md')).write_text(text, encoding='utf-8')
         source_paths = [x['path'] for x in tree['tree'] if x['type'] == 'blob' and

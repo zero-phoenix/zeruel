@@ -11,7 +11,12 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-GLOBAL_ENV_FILE = Path.home() / ".gemini" / "antigravity" / "keys.env"
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+GLOBAL_ENV_FILE = Path(os.environ.get("ANTIGRAVITY_KEYS_FILE", Path.home() / ".gemini" / "antigravity" / "keys.env"))
 
 def load_keys():
     keys = {

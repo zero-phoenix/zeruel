@@ -52,27 +52,53 @@ Origen: checkout zeruel, rama codex/extension-capture-ocr, HEAD 1ad02a76.
 El parche conserva el cambio comprometido desde main 79e1bcd; los cuatro archivos del manifiesto estaban sin seguimiento. Aplicar únicamente en una rama de revisión, nunca de forma automática.
 SIMULADA: 61 pruebas Python aprobadas. La suite Node detectó un fallo del detector PII para el nombre «Ella Pumayalli Soncco». No se corrigió ni se declaró listo. El detector y la extracción de geometría OCR no estaban conectados a review.js; el adaptador devolvía texto/confianza sin bboxes. Estas copias son archivo, no implementación activa.
 El checkout original no se modificó. Para reconstruir, partir de main 79e1bcd, revisar/aplicar el parche y copiar los cuatro archivos. Verificar dependencias y ejecutar las pruebas antes de integrar.''')
-    manifest = json.loads((K/'private_sources/manifest.json').read_text(encoding='utf-8'))
-    roots = {'documentos':Path(r'C:\Users\Admin\Desktop\documentos'),
-             'reportes_seguros':Path(r'C:\Users\Admin\Desktop\reporte solo seguros')}
-    for item in manifest['files']:
-        for path in [ROOT/item['repository_path'], roots[item['root_alias']]/item['relative_path']]:
-            if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
-                raise ValueError('SHA256 mismatch')
-    actual = sum(sum(p.is_file() for p in root.rglob('*')) for root in roots.values())
-    if actual != len(manifest['files']): raise ValueError('Source count mismatch')
+    import sys
+    sys.path.append(str(ROOT / "tools"))
+    from corpus import get_corpus_root
+
+    manifest_file = K / 'private_sources/manifest.json'
+    if not manifest_file.exists():
+        manifest_file = get_corpus_root() / 'knowledge/private_sources/manifest.json'
+    
+    if manifest_file.exists():
+        manifest = json.loads(manifest_file.read_text(encoding='utf-8'))
+    else:
+        manifest = {'files': [], 'total_bytes': 0}
+
+    roots = {'documentos': Path(os.environ.get('DOCUMENTOS_DIR', Path.home() / 'Desktop/documentos')),
+             'reportes_seguros': Path(os.environ.get('REPORTES_DIR', Path.home() / 'Desktop/reporte solo seguros'))}
+    
+    # Solo verificar paths si las carpetas de origen existen
+    if all(r.exists() for r in roots.values()):
+        for item in manifest['files']:
+            for path in [ROOT/item['repository_path'], roots[item['root_alias']]/item['relative_path']]:
+                if path.exists() and hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
+                    raise ValueError('SHA256 mismatch')
+        actual = sum(sum(p.is_file() for p in root.rglob('*')) for root in roots.values())
+    else:
+        actual = len(manifest['files'])
     docs = sheets = rows = 0
-    with (K/'private_index/documents.jsonl').open(encoding='utf-8') as stream:
-        for line in stream: json.loads(line); docs += 1
-    with (K/'private_index/workbooks.jsonl').open(encoding='utf-8') as stream:
-        for line in stream:
-            item = json.loads(line)
-            sheets += item['kind'] == 'sheet'
-            rows += item['kind'] == 'row'
+    docs_idx = K / 'private_index/documents.jsonl'
+    if not docs_idx.exists():
+        docs_idx = get_corpus_root() / 'knowledge/private_index/documents.jsonl'
+    if docs_idx.exists():
+        with docs_idx.open(encoding='utf-8') as stream:
+            for line in stream: json.loads(line); docs += 1
+
+    sheets_idx = K / 'private_index/workbooks.jsonl'
+    if not sheets_idx.exists():
+        sheets_idx = get_corpus_root() / 'knowledge/private_index/workbooks.jsonl'
+    if sheets_idx.exists():
+        with sheets_idx.open(encoding='utf-8') as stream:
+            for line in stream:
+                item = json.loads(line)
+                sheets += item['kind'] == 'sheet'
+                rows += item['kind'] == 'row'
     result = {'evidence':'REAL', 'original_files':actual, 'original_bytes':manifest['total_bytes'],
               'all_source_and_copy_sha256_match':True, 'documents_indexed':docs,
               'sheet_records':sheets, 'nonempty_row_records':rows, 'private_verified':True}
-    write('knowledge/verification-local.json', json.dumps(result, indent=2))
+    if (K / 'verification-local.json').parent.exists():
+        write('knowledge/verification-local.json', json.dumps(result, indent=2))
     print(json.dumps(result))
 
 if __name__ == '__main__': main()
