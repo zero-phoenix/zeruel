@@ -155,3 +155,11 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 - **Límite:** no prueba renovación de token OAuth en proceso vivo >1 h ni ejecución con ambas PCs apagadas.
 - **Estado:** `cloud_gate_passed=false`.
 
+
+## Supervisión ZCode — 02/10/2026, DESKTOP-B6D864U
+
+- REAL: ZCode 3.14.4.7912 abierto. Captura completa del monitor y accesibilidad confirman GLM-5.3-Flash mostrado; el selector distingue Z.ai / Individual de Start Plan / Free, ambos con Flash. No se pudo confirmar qué proveedor está seleccionado ni consumo exclusivo de saldo gratuito.
+- REAL: clic accesible rechazado con `coordinate input geometry is unavailable`; atajo oficial Ctrl+M abrió el selector. No se confirmó foco en Manage models. Captura de ventana anteriormente falló; captura completa sí funciona.
+- No se enviaron consultas ni encargos a ZCode, no se ejecutaron pruebas, no hubo commits, PR nuevos, fusión, despliegue ni cambios de secretos. Consumo de encargos de esta supervisión: ninguno; saldo y consumo global de la cuenta: desconocidos.
+- Bloqueo: demostrar selección Start Plan / Free y saldo gratuito separado de cuota semanal, y disponer de entrada con foco verificable. Próximo paso: abrir Manage Models / Z.ai y Usage Stats con un canal oficial funcional; no inferir gratuidad solo del nombre Flash.
+- Registro solo local en test/renewal-oauth-evaluation; no publicado. Los cambios anteriores y archivos sin seguimiento se conservan. cloud_gate_passed=false. Sin procesos auxiliares nuevos.
