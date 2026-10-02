@@ -52,7 +52,10 @@ async function startGoogle(prompt = 'select_account') {
     sessionStorage.setItem('zeruel_oidc', JSON.stringify(flow));
     location.assign('https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
       client_id: config.google_client_id, redirect_uri: location.origin + '/', response_type: 'id_token',
-      scope: 'openid email', prompt, ...flow}));
+      scope: 'openid email', prompt, ...flow,
+      // With several Google sessions open, prompt=none fails with «choose an account»
+      // unless the account is hinted. The hint only travels in the autorun fragment.
+      ...(sessionStorage.getItem('zeruel_hint') ? {login_hint: sessionStorage.getItem('zeruel_hint')} : {})}));
   } catch { show({state: 'google_unavailable'}); }
 }
 $('google').onclick = () => startGoogle();
@@ -117,9 +120,11 @@ $('disconnect').onclick = () => {
   sessionStorage.removeItem('zeruel_autorun'); sessionStorage.removeItem('zeruel_autorun_retry');
   show({state:'disconnected'});
 };
-const autorun = /^#autorun=([a-f0-9]{32})$/.exec(location.hash);
+const autorun = /^#autorun=([a-f0-9]{32})(?:&hint=([A-Za-z0-9._%+-]{1,64}(?:%40|@)[A-Za-z0-9.-]{1,180}\.[A-Za-z]{2,24}))?$/.exec(location.hash);
 if (autorun) {
   sessionStorage.setItem('zeruel_autorun', autorun[1]);
+  if (autorun[2]) sessionStorage.setItem('zeruel_hint', decodeURIComponent(autorun[2]));
+  else sessionStorage.removeItem('zeruel_hint');
   sessionStorage.removeItem('zeruel_autorun_retry');
   history.replaceState(null, '', location.pathname);
   startGoogle('none');
