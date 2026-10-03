@@ -1,14 +1,24 @@
+# Evidencia REAL: móvil sin PCs vinculadas y decisión de cuota — 03/10/2026
+
+- **REAL, móvil:** ID `0fc2e9a7201fc0bcc41ef1eb690a2b25` abierto por el propietario en su celular → `synthetic_success` (ZERUEL_OK/42, 8,1 s, checkpoint guardado), recuperado después desde la web con la cuenta del propietario.
+- **PC2:** apagada. **PC1:** encendida pero desvinculada de Zeruel: monitor de solo lectura (`D:\SystemHope\renewal\desconexion.log`, fuera del repo) de 12:26:05 a 12:33:12 Lima, cada 2 s: 179 muestras, **0** conexiones a las IP de Render, **0** procesos y **0** tareas de Zeruel. No se usó ADB.
+- Render: arranque en frío a las 12:31:47, dentro de la ventana (antes, el servicio estaba suspendido), así que la ejecución ocurrió en esa ventana.
+- **Matiz:** no es «ambos Windows apagados» literal; PC1 siguió encendida sin participar.
+- **Cuota:** SIMULADA, aceptada como tal por el propietario el 03/10/2026.
+- **REAL, concurrencia:** dos pestañas del propietario; la primera `POST /api/probe` → 202, ID `d1eeefe707b277d3588554b7168e3c8f` `synthetic_success`; la segunda, durante la primera → 409 `active`, sin inferencia.
+- **Hito: `cloud_gate_passed=true` por decisión del propietario (03/10/2026)**, aceptando como simuladas cuota, bloqueo expirado, trabajador antiguo, escritura parcial, recuperación manual y respuesta perdida. El código sigue informando `false` (no certifica el agente; prueba C2).
+
 # Evidencia REAL: renovación desatendida y rechazo de otra identidad — 02/10/2026
 
 - **REAL, despliegues:** Manual Deploy de `e187cb7` (#34 + #35) y de `97a4358` (#36) en Render, ambos Live; `app.js` publicado verificado.
 - **REAL, renovación > 1 h (prueba 2, con #36):** autorun en Brave con `login_hint` (correo solo en archivo privado local y en el fragmento):
   - t=0, 14:50 Lima, ID `a23de6d166dc811ce9e9251479938100`: `synthetic_success`, 12,6 s.
   - t=35, 15:25, ID `ca1bfae4bbf80127da1e6ceb89121a97`: `synthetic_success` en pantalla; el observador lo marcó timeout por un falso positivo de OCR (el correo del `login_hint` en la barra de direcciones). Corregido: se recorta la barra y solo cuenta «Elige una cuenta».
-  - t=70, 16:03, ID `b2ccd3e166b3bdae04dd62d1b7f384b6`: `synthetic_success`, 62 s, **sin ningún clic del observador**.
-  - El servicio **sí se suspendió y arrancó en frío** antes de t=35 (15:25:47) y de t=70 (16:03:56), por la inactividad de Render Free; la renovación funcionó igual tras cada arranque.
-- **REAL, prueba 1 (antes de #36):** 3/3 `synthetic_success` (IDs `be29674c…`, `73ec0e4a…`, `f7e8348…`); los clics del observador a 35 y 70 min se atribuyen al mismo falso positivo.
+  - t=70, 16:03, ID `b2ccd3e166b3bdae04dd62d1b7f384b6`: `synthetic_success`, 62 s (incluye el arranque en frío), **sin ningún clic del observador**.
+  - El servicio **sí se suspendió y arrancó en frío** antes de t=35 (15:25:47) y de t=70 (16:03:56), consistente con la suspensión por inactividad de Render Free (causa no verificada); la renovación funcionó igual tras cada arranque.
+- **REAL, prueba 1 (antes de #36):** 3/3 `synthetic_success` (IDs `be29674c…`, `73ec0e4a…`, `f7e8348…`); los clics del observador a 35 y 70 min probablemente se deben al mismo falso positivo (no verificado: no se guardaron capturas de esa prueba).
 - **REAL, otra identidad:** cuenta de Google distinta de la del propietario → 401; registro de Render `google_auth_rejected reason=not_owner` (14:51:07), sin correo ni token en el registro.
-- Fuentes: registro local `D:\SystemHopeenewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
+- Fuentes: registro local `D:\SystemHope\renewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
 - Herramientas en `tools/renewal_autorun.ps1`, `tools/observe_probe.py`, `tools/launch_brave.py`.
 - Pendientes: cuota real o aceptada como simulada (decisión del propietario), uso móvil con ambas PCs apagadas, PR de cierre. `cloud_gate_passed=false`.
 
@@ -21,7 +31,7 @@
 - Leer knowledge/README.md, WORKLOAD.md y PROMPT-continuacion.md. Archivo privado autorizado expresamente por el propietario; sustituye la anterior prohibición general de guardar expedientes solamente dentro de este archivo privado. No autoriza exponerlos en nube pública ni ejecutar actuaciones. Cambios de privacidad pueden requerir nueva conexión privada autorizada para futuros deploys de Render; no volver público para resolverlo.
 - REAL: PR #22 fusionado en 8662fb894 y PR #23 en 79e1bcd; el sitio respondió 200 y contiene autorun/recuperación, pero SHA de despliegue no comprobada. PR #21 no autorizado y sigue aparte.
 - REAL móvil manual: ID 0a079423ff3c3fcc25f255e6a1058255, synthetic_success, ZERUEL_OK/suma42, completed=1790810077 UTC, Windows encendido. No demuestra autorun ni ambas PCs apagadas. ADB cerrado, sin ajustes modificados.
-- SIMULADA histórica: 61 Python aprobadas. Suite Node del trabajo local de extensión con fallo PII para «Ella Pumayalli Soncco»; archivado sin corregir/activar. La preservación documental no añadió ni acreditó nuevas pruebas OAuth/inferencia.
+- SIMULADA histórica: 61 Python aprobadas. Suite Node del trabajo local de extensión con fallo PII para un nombre real de tercero (omitido); archivado sin corregir/activar. La preservación documental no añadió ni acreditó nuevas pruebas OAuth/inferencia.
 - cloud_gate_passed=false. Pendientes: toda fila REAL aún faltante de matriz, autorun móvil nuevo ID, diferidos 60/120/600s, intervalo de PCs apagadas demostrado, renovación checkpoint T1+61..70min y no reinicios, verificación versión Render y resto de bloqueos históricos.
 - Procesos auxiliares activos de esta tarea: ninguno. No borrados, reinicios ni modificaciones del teléfono. El propietario formatea por su cuenta; antes debe poder recuperar desde GitHub el PR/rama de archivo o su merge autorizado.
 
@@ -67,8 +77,8 @@ El archivo `docs/ci-template.yml` es una plantilla y no estÃ¡ activo. Las prue
 
 - Checkout nuevo y limpio en `C:\Users\D\Documents\Codex\zeruel`, basado en `main` `63e77959eb5f805ac5caa17cba73586dfd51f59d`. La modificaciÃ³n local de `README.md` en la PC original no se tocÃ³ y debe inspeccionarse maÃ±ana antes de sincronizar.
 - Google anunciÃ³ oficialmente que Gemini CLI dejÃ³ de servir solicitudes de Google AI Pro el 18/06/2026: https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/ . La inferencia de Zeruel permanece bloqueada bajo el fundamento actual. No se autorizaron otros CLI, Gemini API ni Vertex.
-- La consola de Google Cloud, abierta con `david.chavez.nge@gmail.com`, muestra una aceptaciÃ³n inicial de Condiciones del Servicio. No se aceptaron, no se creÃ³ proyecto ni se habilitÃ³ facturaciÃ³n. Apps Script sigue visible bajo la cuenta principal; no se vinculÃ³ un proyecto estÃ¡ndar ni se desplegÃ³ el ejecutable de API.
-- Se iniciÃ³ sesiÃ³n en Render con `david.chavez.nge@gmail.com` sin conceder acceso nuevo a la aplicaciÃ³n GitHub. El dashboard reconfirmÃ³ **Live** en `6f073737d81057fcdc7f77b5941e535ea4e6feaf`, plan **Free**, Docker y rama `main`. El estado funcional `blocked_persistence` es el Ãºltimo resultado de la prueba previa; no se repitiÃ³ hoy la llamada a la aplicaciÃ³n.
+- La consola de Google Cloud, abierta con `la cuenta del propietario`, muestra una aceptaciÃ³n inicial de Condiciones del Servicio. No se aceptaron, no se creÃ³ proyecto ni se habilitÃ³ facturaciÃ³n. Apps Script sigue visible bajo la cuenta principal; no se vinculÃ³ un proyecto estÃ¡ndar ni se desplegÃ³ el ejecutable de API.
+- Se iniciÃ³ sesiÃ³n en Render con `la cuenta del propietario` sin conceder acceso nuevo a la aplicaciÃ³n GitHub. El dashboard reconfirmÃ³ **Live** en `6f073737d81057fcdc7f77b5941e535ea4e6feaf`, plan **Free**, Docker y rama `main`. El estado funcional `blocked_persistence` es el Ãºltimo resultado de la prueba previa; no se repitiÃ³ hoy la llamada a la aplicaciÃ³n.
 - Este relevo actualiza documentaciÃ³n y corrige la codificaciÃ³n mixta previa de `STATUS.md` y `first-milestone.md`; no toca cÃ³digo de ejecuciÃ³n, credenciales, expedientes ni servicios. Pasaron 22 pruebas Python y 9 Node locales; no se hicieron pruebas de integraciÃ³n real ni de inferencia. `cloud_gate_passed` sigue `false`.
 - PrÃ³ximo paso externo: aceptar personalmente las condiciones de Google Cloud si se desean usar sus servicios; despuÃ©s revisar el proyecto estÃ¡ndar concreto y confirmar la vinculaciÃ³n irreversible del script. El commit desplegado en Render permanecerÃ¡ en `6f07373` hasta decidir un despliegue manual; el despliegue automÃ¡tico estÃ¡ desactivado. NingÃºn proceso nuevo debe permanecer activo.
 

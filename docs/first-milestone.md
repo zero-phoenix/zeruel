@@ -24,8 +24,8 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Instalación | Versión fijada y SHA-512 del paquete oficial comprobada | **Real** (`agy` 1.2.14, PR #3) |
 | Autenticación | Perfil aislado OAuth y comprobación oficial del nivel de suscripción | **Real**: sesión `agy` del propietario (Google AI Pro) responde; nivel no comprobado por vía oficial |
 | Inferencia | Respuesta sintética `ZERUEL_OK`, suma 42; sin herramientas | **Real** en Render (5–8 s) |
-| Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático | Simulada |
-| Concurrencia | Segunda ejecución rechazada mientras haya otra activa | Simulada |
+| Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático | Simulada; **aceptada como simulada por el propietario** (03/10/2026) |
+| Concurrencia | Segunda ejecución rechazada mientras haya otra activa | **Real** (03/10/2026): dos pestañas del propietario; la primera `POST /api/probe` → 202 e ID `d1eeefe707b277d3588554b7168e3c8f` `synthetic_success` (6,9 s); la segunda, lanzada durante la primera → **409** `active`, sin inferencia |
 | Idempotencia | Recuperar el identificador completado no repite la llamada | **Real** (también tras reinicio) |
 | Bloqueo expirado | La operación incierta queda pausada; no se vuelve a inferir | Simulada |
 | Trabajador antiguo | Una generación anterior no puede completar otra operación | Simulada |
@@ -33,11 +33,13 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Recuperación manual | Lease vencida cerrada por el propietario sin llamar al modelo: informe durable idempotente o `terminal_unknown`, nunca éxito | Simulada |
 | Respuesta perdida | Repetir persistencia del mismo resultado es idempotente; uno diferente se rechaza | Simulada |
 | Persistencia | Mismo resultado recuperado desde Apps Script tras reiniciar y suspender Render | **Real** tras reinicio; tras suspensión: arranque en frío real (28,3 s), recuperación de un resultado anterior pendiente |
-| Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones | Pendiente (proceso vivo > 1 h) |
-| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | Pendiente con ambos Windows apagados. **REAL:** lanzamiento manual móvil en Brave con PC encendida, ID `0a079423ff3c3fcc25f255e6a1058255`, `synthetic_success` y checkpoint recuperado (`completed=1790810077`). **SIMULADA:** autorun probado localmente |
+| Renovación | Ejecución correcta tras vencer el token de acceso; secretos y logs sin filtraciones | **Real** (02/10/2026): `synthetic_success` a t=0/35/70 min con `login_hint`, t=70 sin intervención; arranques en frío intermedios; ver STATUS |
+| Móvil y equipos apagados | Tarea lanzada desde móvil con ambos Windows apagados y resultado recuperable | **Real con matiz** (03/10/2026): ID `0fc2e9a7201fc0bcc41ef1eb690a2b25` lanzado desde el móvil, `synthetic_success` recuperado; PC2 apagada; PC1 **encendida pero desvinculada** de Zeruel (monitor 12:26:05–12:33:12, 179 muestras, 0 conexiones/procesos/tareas); Render arrancó en frío a las 12:31:47, dentro de la ventana. Literalmente «ambos apagados» sigue sin probarse |
 | Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes | **Real**: ~210 MB pico, 0,5–0,6 s CPU; sin reinicios observados |
 
 No modificar `cloud_gate_passed` para convertir una prueba parcial en aprobación. La versión actual siempre informa `false`: es una prueba de viabilidad, no certificación del agente.
+
+**Decisión del propietario (03/10/2026):** acepta como simuladas las filas restantes (cuota, bloqueo expirado, trabajador antiguo, escritura parcial, recuperación manual y respuesta perdida) y declara el hito con `cloud_gate_passed=true`. Es el estado del hito en esta documentación; el código sigue informando `false` (`/healthz`, prueba C2) porque no certifica el agente.
 
 ## Paso siguiente, condicionado
 
