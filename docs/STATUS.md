@@ -1,3 +1,17 @@
+# Evidencia REAL: renovación desatendida y rechazo de otra identidad — 02/10/2026
+
+- **REAL, despliegues:** Manual Deploy de `e187cb7` (#34 + #35) y de `97a4358` (#36) en Render, ambos Live; `app.js` publicado verificado.
+- **REAL, renovación > 1 h (prueba 2, con #36):** autorun en Brave con `login_hint` (correo solo en archivo privado local y en el fragmento):
+  - t=0, 14:50 Lima, ID `a23de6d166dc811ce9e9251479938100`: `synthetic_success`, 12,6 s.
+  - t=35, 15:25, ID `ca1bfae4bbf80127da1e6ceb89121a97`: `synthetic_success` en pantalla; el observador lo marcó timeout por un falso positivo de OCR (el correo del `login_hint` en la barra de direcciones). Corregido: se recorta la barra y solo cuenta «Elige una cuenta».
+  - t=70, 16:03, ID `b2ccd3e166b3bdae04dd62d1b7f384b6`: `synthetic_success`, 62 s, **sin ningún clic del observador**.
+  - El servicio **sí se suspendió y arrancó en frío** antes de t=35 (15:25:47) y de t=70 (16:03:56), por la inactividad de Render Free; la renovación funcionó igual tras cada arranque.
+- **REAL, prueba 1 (antes de #36):** 3/3 `synthetic_success` (IDs `be29674c…`, `73ec0e4a…`, `f7e8348…`); los clics del observador a 35 y 70 min se atribuyen al mismo falso positivo.
+- **REAL, otra identidad:** cuenta de Google distinta de la del propietario → 401; registro de Render `google_auth_rejected reason=not_owner` (14:51:07), sin correo ni token en el registro.
+- Fuentes: registro local `D:\SystemHopeenewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
+- Herramientas en `tools/renewal_autorun.ps1`, `tools/observe_probe.py`, `tools/launch_brave.py`.
+- Pendientes: cuota real o aceptada como simulada (decisión del propietario), uso móvil con ambas PCs apagadas, PR de cierre. `cloud_gate_passed=false`.
+
 # Relevo vigente: archivo privado integral — 30/09/2026
 
 **Actualización posterior:** PR #24 autorizado y fusionado en main `9af5fb47f31ff338c49d3eeaa0b57f62f2dd2634`, 30/09/2026 21:21:50 Lima (01/10/2026 02:21:50 UTC). Los 182 originales y archivos knowledge se verificaron en ese commit; recibo `knowledge/verification-main-pr24.json`. Megaprompt detallado en `knowledge/MEGAPROMPT-continuacion.md`, rama documental codex/mega-relevo mientras no esté fusionada. Sin despliegue ni nueva inferencia: cloud_gate_passed=false. Los párrafos anteriores de fusión pendiente se conservan como historia.
