@@ -56,6 +56,10 @@
 - **3.61** Un byte alterado en el corpus hace fallar la verificación. Falsador: un corpus manipulado pasa. Pruebas: `test_corpus_verify_fails_on_single_byte_tamper`, `test_corpus_verify_passes_on_valid_data`.
 - **3.62** El cerebro no versiona blobs privados ni hechos binarios. Falsador: un binario de expediente en el árbol. Prueba: `test_no_private_blobs_or_binary_facts`.
 - **3.63** El Tractatus es ejecutable: toda proposición 3.x tiene falsador y cita pruebas que existen; la numeración es única y consecutiva; las pruebas huérfanas no aumentan. Falsador: una proposición sin falsador, con prueba inexistente o numeración rota pasa el lint. Pruebas: `test_tractatus_lint_passes`, `test_lint_detects_missing_cited_test`, `test_lint_detects_missing_falsifier_and_duplicate_numbering`, `test_lint_detects_gap_in_numbering`, `test_orphan_tests_do_not_grow`.
+- **3.64** Un archivo del corpus que no figura en `corpus.lock` refuta la integridad. Falsador: un archivo intruso pasa `verify`. Prueba: `test_corpus_verify_fails_on_extra_file`.
+- **3.65** `file_count` del lock debe coincidir con los archivos listados. Falsador: un recuento falso pasa `verify`. Prueba: `test_corpus_verify_fails_on_file_count_mismatch`.
+- **3.66** El HEAD del corpus debe ser el commit fijado. Falsador: un HEAD movido pasa `verify` aunque los bytes coincidan. Prueba: `test_corpus_verify_fails_when_head_moves`.
+- **3.67** `pin` y `sync` son reproducibles: lo fijado se recupera íntegro y cualquier alteración posterior se detecta. Falsador: tras `pin`→`sync`, un hecho alterado pasa `verify`. Prueba: `test_corpus_pin_then_sync_roundtrip`.
 
 ## Deuda de falsación
 
@@ -70,5 +74,5 @@ Proposiciones sin prueba dedicada en `tests/`:
 
 ## Recuento
 
-- Con prueba: **37** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.63: 3). Comprobado automáticamente por `tools/tractatus.py` (3.63).
+- Con prueba: **41** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.67: 7). Comprobado automáticamente por `tools/tractatus.py` (3.63).
 - Sin prueba automática: D2–D3 pagadas con evidencia Real; deuda abierta **3** (D4–D6).
