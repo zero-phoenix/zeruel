@@ -1,3 +1,12 @@
+# Evidencia REAL: móvil sin PCs vinculadas y decisión de cuota — 03/10/2026
+
+- **REAL, móvil:** ID `0fc2e9a7201fc0bcc41ef1eb690a2b25` abierto por el propietario en su celular → `synthetic_success` (ZERUEL_OK/42, 8,1 s, checkpoint guardado), recuperado después desde la web con la cuenta del propietario.
+- **PC2:** apagada. **PC1:** encendida pero desvinculada de Zeruel: monitor de solo lectura (`D:\SystemHopeenewal\desconexion.log`, fuera del repo) de 12:26:05 a 12:33:12 Lima, cada 2 s: 179 muestras, **0** conexiones a las IP de Render, **0** procesos y **0** tareas de Zeruel. No se usó ADB.
+- Render: arranque en frío a las 12:31:47, dentro de la ventana (antes, el servicio estaba suspendido), así que la ejecución ocurrió en esa ventana.
+- **Matiz:** no es «ambos Windows apagados» literal; PC1 siguió encendida sin participar.
+- **Cuota:** SIMULADA, aceptada como tal por el propietario el 03/10/2026.
+- `cloud_gate_passed` sigue `false`: varias filas de la matriz siguen simuladas (concurrencia, bloqueo expirado, trabajador antiguo, escritura parcial, recuperación manual, respuesta perdida) y la regla del hito prohíbe convertir pruebas parciales en aprobación. Levantarlo es decisión explícita del propietario.
+
 # Evidencia REAL: renovación desatendida y rechazo de otra identidad — 02/10/2026
 
 - **REAL, despliegues:** Manual Deploy de `e187cb7` (#34 + #35) y de `97a4358` (#36) en Render, ambos Live; `app.js` publicado verificado.
@@ -8,7 +17,8 @@
   - El servicio **sí se suspendió y arrancó en frío** antes de t=35 (15:25:47) y de t=70 (16:03:56), por la inactividad de Render Free; la renovación funcionó igual tras cada arranque.
 - **REAL, prueba 1 (antes de #36):** 3/3 `synthetic_success` (IDs `be29674c…`, `73ec0e4a…`, `f7e8348…`); los clics del observador a 35 y 70 min se atribuyen al mismo falso positivo.
 - **REAL, otra identidad:** cuenta de Google distinta de la del propietario → 401; registro de Render `google_auth_rejected reason=not_owner` (14:51:07), sin correo ni token en el registro.
-- Fuentes: registro local `D:\SystemHopeenewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
+- Fuentes: registro local `D:\SystemHope
+enewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
 - Herramientas en `tools/renewal_autorun.ps1`, `tools/observe_probe.py`, `tools/launch_brave.py`.
 - Pendientes: cuota real o aceptada como simulada (decisión del propietario), uso móvil con ambas PCs apagadas, PR de cierre. `cloud_gate_passed=false`.
 
