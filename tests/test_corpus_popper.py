@@ -70,7 +70,20 @@ def test_corpus_pin_then_sync_roundtrip(tmp_path, monkeypatch):
 def test_brain_runtime_never_references_corpus():
     """4.4: el cerebro en ejecución (zeruel/) no lee ni escribe el corpus; solo tools/corpus.py lo toca."""
     raiz = Path(__file__).resolve().parents[1] / "zeruel"
-    tocan = [p.name for p in raiz.rglob("*.py") if "corpus" in p.read_text(encoding="utf-8").lower()]
+    import ast
+    tocan = []
+    for p in raiz.rglob("*.py"):
+        texto = p.read_text(encoding="utf-8")
+        if "corpus" in texto.lower():
+            tocan.append((p.name, "menciona corpus"))
+        for nodo in ast.walk(ast.parse(texto)):
+            # Importar tools/ o importar dinámicamente esquivaría la búsqueda textual.
+            if isinstance(nodo, ast.ImportFrom) and (nodo.module or "").split(".")[0] == "tools":
+                tocan.append((p.name, "importa tools"))
+            if isinstance(nodo, ast.Import) and any(a.name.split(".")[0] in ("tools", "importlib") for a in nodo.names):
+                tocan.append((p.name, "import dinámico o de tools"))
+            if isinstance(nodo, ast.Name) and nodo.id == "__import__":
+                tocan.append((p.name, "__import__"))
     assert tocan == []
 
 
