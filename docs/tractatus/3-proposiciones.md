@@ -55,19 +55,20 @@
 
 - **3.61** Un byte alterado en el corpus hace fallar la verificación. Falsador: un corpus manipulado pasa. Pruebas: `test_corpus_verify_fails_on_single_byte_tamper`, `test_corpus_verify_passes_on_valid_data`.
 - **3.62** El cerebro no versiona blobs privados ni hechos binarios. Falsador: un binario de expediente en el árbol. Prueba: `test_no_private_blobs_or_binary_facts`.
+- **3.63** El Tractatus es ejecutable: toda proposición 3.x tiene falsador y cita pruebas que existen; la numeración es única y consecutiva; las pruebas huérfanas no aumentan. Falsador: una proposición sin falsador, con prueba inexistente o numeración rota pasa el lint. Pruebas: `test_tractatus_lint_passes`, `test_lint_detects_missing_cited_test`, `test_lint_detects_missing_falsifier_and_duplicate_numbering`, `test_lint_detects_gap_in_numbering`, `test_orphan_tests_do_not_grow`.
 
 ## Deuda de falsación
 
 Proposiciones sin prueba dedicada en `tests/`:
 
 - **D1** (resuelta: ahora 3.47; ver `contradicciones.md`).
-- **D2** Renovación real tras vencer el token en un proceso vivo de más de 1 h (matriz: Pendiente). `test_expiring_token_is_refreshed` solo la simula.
-- **D3** Lanzamiento móvil con ambos Windows apagados y resultado recuperable (matriz: Pendiente).
+- **D2** (pagada con evidencia Real, 02/10/2026): renovación tras más de 1 h, t=0/35/70 min `synthetic_success`, t=70 sin intervención; ver `STATUS.md`. La parte automática sigue siendo `test_expiring_token_is_refreshed` (simulada).
+- **D3** (pagada con matiz, 03/10/2026): lanzamiento móvil, ID `0fc2e9a7201fc0bcc41ef1eb690a2b25` recuperado; PC2 apagada y PC1 desvinculada (monitor). «Ambos apagados» literal sigue sin probarse.
 - **D4** Nivel de suscripción comprobado por vía oficial (matriz: no comprobado).
 - **D5** No se fusiona un PR sin autorización explícita de su número (`AGENTS.md`): regla de proceso.
 - **D6** La conservación documental no habilita el agente en nube (`AGENTS.md`).
 
 ## Recuento
 
-- Con prueba: **36** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.62: 2).
-- Sin prueba (deuda): **5** (D2–D6).
+- Con prueba: **37** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.63: 3). Comprobado automáticamente por `tools/tractatus.py` (3.63).
+- Sin prueba automática: D2–D3 pagadas con evidencia Real; deuda abierta **3** (D4–D6).
