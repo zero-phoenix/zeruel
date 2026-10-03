@@ -25,7 +25,7 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Autenticación | Perfil aislado OAuth y comprobación oficial del nivel de suscripción | **Real**: sesión `agy` del propietario (Google AI Pro) responde; nivel no comprobado por vía oficial |
 | Inferencia | Respuesta sintética `ZERUEL_OK`, suma 42; sin herramientas | **Real** en Render (5–8 s) |
 | Cuota | Pausa explícita; ninguna alternativa facturable ni reintento automático | Simulada; **aceptada como simulada por el propietario** (03/10/2026) |
-| Concurrencia | Segunda ejecución rechazada mientras haya otra activa | Simulada |
+| Concurrencia | Segunda ejecución rechazada mientras haya otra activa | **Real** (03/10/2026): dos pestañas del propietario; la primera `POST /api/probe` → 202 e ID `d1eeefe707b277d3588554b7168e3c8f` `synthetic_success` (6,9 s); la segunda, lanzada durante la primera → **409** `active`, sin inferencia |
 | Idempotencia | Recuperar el identificador completado no repite la llamada | **Real** (también tras reinicio) |
 | Bloqueo expirado | La operación incierta queda pausada; no se vuelve a inferir | Simulada |
 | Trabajador antiguo | Una generación anterior no puede completar otra operación | Simulada |
@@ -38,6 +38,8 @@ No añadir tarjeta, usar créditos promocionales con vencimiento, contratar serv
 | Recursos | Tiempo, pico de RAM y CPU del CLI en Render; sin reinicios por recursos insuficientes | **Real**: ~210 MB pico, 0,5–0,6 s CPU; sin reinicios observados |
 
 No modificar `cloud_gate_passed` para convertir una prueba parcial en aprobación. La versión actual siempre informa `false`: es una prueba de viabilidad, no certificación del agente.
+
+**Decisión del propietario (03/10/2026):** acepta como simuladas las filas restantes (cuota, bloqueo expirado, trabajador antiguo, escritura parcial, recuperación manual y respuesta perdida) y declara el hito con `cloud_gate_passed=true`. Es el estado del hito en esta documentación; el código sigue informando `false` (`/healthz`, prueba C2) porque no certifica el agente.
 
 ## Paso siguiente, condicionado
 
