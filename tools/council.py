@@ -92,7 +92,12 @@ def consult_glm(topic, context="", max_tokens=1000):
         {"role": "system", "content": sys_prompt},
         {"role": "user", "content": user_prompt}
     ]
-    # Use OpenRouter z-ai/glm-5.3
+    # Z.ai directo si hay ZAI_API_KEY (modelo configurable; glm-4.5-flash es gratuito); si no, OpenRouter.
+    zai_key = keys.get("ZAI_API_KEY", "")
+    if zai_key:
+        model = os.environ.get("ZERUEL_GLM_MODEL", "glm-4.5-flash")
+        return call_api("https://api.z.ai/api/paas/v4/chat/completions", zai_key, model, messages,
+                        max_tokens=max(max_tokens, 2000))
     or_key = keys.get("OPENROUTER_API_KEY", "")
     return call_api("https://openrouter.ai/api/v1/chat/completions", or_key, "z-ai/glm-5.3", messages, max_tokens=max_tokens)
 
