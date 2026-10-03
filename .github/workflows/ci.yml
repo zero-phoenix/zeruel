@@ -1,0 +1,28 @@
+name: Tractatus y pruebas
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install pytest
+      - name: Pruebas Python
+        run: python -m pytest -q
+      - name: Pruebas node (checkpoint y cliente web)
+        run: node --test tests/checkpoint.test.cjs tests/web.test.cjs
+      - name: Pruebas de la extensión
+        working-directory: extension
+        run: node --test tests/*.test.js
+      - name: Lint del Tractatus
+        run: python tools/tractatus.py
+      - name: Mutaciones (Popper)
+        run: python tools/mutate.py

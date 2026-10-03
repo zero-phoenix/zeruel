@@ -41,3 +41,11 @@ def test_lint_detects_gap_in_numbering():
 
 def test_orphan_tests_do_not_grow():
     assert len(tractatus.huerfanas()) <= MAX_HUERFANAS
+
+
+def test_mutants_apply_to_current_sources():
+    """Cada mutante de tools/mutate.py encuentra su texto exactamente una vez (la lista no caduca)."""
+    import mutate
+    for prop, archivo, original, _, _ in mutate.MUTANTES:
+        texto = (mutate.ROOT / archivo).read_text(encoding="utf-8")
+        assert texto.count(original) == 1, (prop, archivo)

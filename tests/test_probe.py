@@ -88,6 +88,14 @@ class ProbeTests(unittest.TestCase):
                       json.dumps({'status':'FAILED','response':json.dumps(EXPECTED)})[:0] or 'null'):
             self.assertEqual(probe(self.env,lambda *args,v=value:(0,v,''))['state'],'failed_response')
 
+    def test_contract_is_literal_zeruel_ok_42(self):
+        # Literales, no EXPECTED: una prueba que deriva el éxito de la constante no puede refutarla.
+        self.credentials()
+        ok = json.dumps({'status': 'SUCCESS', 'response': '{"marker":"ZERUEL_OK","sum":42}'})
+        bad = json.dumps({'status': 'SUCCESS', 'response': '{"marker":"ZERUEL_OK","sum":43}'})
+        self.assertEqual(probe(self.env, lambda *a: (0, ok, ''))['state'], 'synthetic_success')
+        self.assertEqual(probe(self.env, lambda *a: (0, bad, ''))['state'], 'failed_response')
+
     def test_timeout_does_not_retry(self):
         self.credentials()
         def run(*args): raise Blocked('paused_timeout')
