@@ -1,3 +1,4 @@
+import time
 import json
 import unittest
 import unittest.mock
@@ -39,6 +40,15 @@ class PrivateCheckpointTests(unittest.TestCase):
         gateway=self.gateway();gateway.access_token='old';gateway.expires_at=0
         with patch.object(gateway,'request_json',return_value={
                 'access_token':'new','token_type':'Bearer','expires_in':3600}) as request:
+            self.assertEqual(gateway.token(),'new');request.assert_called_once()
+
+    def test_token_renews_only_inside_360_second_margin(self):
+        gateway=self.gateway();gateway.access_token='old'
+        with patch.object(gateway,'request_json',return_value={
+                'access_token':'new','token_type':'Bearer','expires_in':3600}) as request:
+            gateway.expires_at=time.time()+400
+            self.assertEqual(gateway.token(),'old');request.assert_not_called()
+            gateway.expires_at=time.time()+300
             self.assertEqual(gateway.token(),'new');request.assert_called_once()
 
     def test_refresh_between_claim_and_complete_keeps_generation(self):

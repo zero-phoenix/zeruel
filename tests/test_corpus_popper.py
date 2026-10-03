@@ -65,3 +65,20 @@ def test_corpus_pin_then_sync_roundtrip(tmp_path, monkeypatch):
     assert sync_corpus(destino, lock) is True
     (destino / "hecho.txt").write_bytes(b"hecho alterado")
     assert verify_corpus(destino, lock, verbose=False) is False
+
+
+def test_brain_runtime_never_references_corpus():
+    """4.4: el cerebro en ejecución (zeruel/) no lee ni escribe el corpus; solo tools/corpus.py lo toca."""
+    raiz = Path(__file__).resolve().parents[1] / "zeruel"
+    tocan = [p.name for p in raiz.rglob("*.py") if "corpus" in p.read_text(encoding="utf-8").lower()]
+    assert tocan == []
+
+
+def test_corpus_lock_schema():
+    """2.4: la figura de corpus.lock: versión 1, repo, commit SHA-1, recuento coherente y SHA-256 por archivo."""
+    import re
+    lock = json.loads((Path(__file__).resolve().parents[1] / "corpus.lock").read_text(encoding="utf-8"))
+    assert lock["version"] == 1 and re.fullmatch(r"[\w.-]+/[\w.-]+", lock["repo"])
+    assert re.fullmatch(r"[0-9a-f]{40}", lock["commit"])
+    assert lock["file_count"] == len(lock["files"]) > 0
+    assert all(re.fullmatch(r"[0-9a-f]{64}", h) and not k.startswith(("/", "..")) for k, h in lock["files"].items())

@@ -62,6 +62,14 @@
 - **3.67** `pin` y `sync` son reproducibles: lo fijado se recupera íntegro y cualquier alteración posterior se detecta. Falsador: tras `pin`→`sync`, un hecho alterado pasa `verify`. Prueba: `test_corpus_pin_then_sync_roundtrip`.
 - **3.68** Cada regla crítica tiene un mutante automático que su prueba elimina (`tools/mutate.py`, en CI). Falsador: un mutante sobrevive o deja de aplicarse al código actual. Prueba: `test_mutants_apply_to_current_sources`.
 
+## 3.7 Tiempos, ejecución única y separación cerebro/corpus
+
+- **3.71** Una sola ejecución a la vez en el servidor; el candado se libera al terminar. Real 03/10/2026 en Render: 202 + 409 (ver STATUS). Falsador: una segunda ejecución concurrente obtiene 202. Prueba: `test_single_execution_and_lock_release`.
+- **3.72** Enfriamiento de 30 s entre ejecuciones: antes, `429 paused_cooldown`; después, se admite. Falsador: una ejecución inmediata se admite. Prueba: `test_second_run_within_30_seconds_is_paused_cooldown`.
+- **3.73** El token del checkpoint se renueva solo cuando quedan menos de 360 s. Falsador: renovación con margen amplio o uso de un token a punto de vencer. Prueba: `test_token_renews_only_inside_360_second_margin`.
+- **3.74** El cerebro en ejecución (`zeruel/`) nunca toca el corpus (4.4). Falsador: un módulo de `zeruel/` referencia el corpus. Prueba: `test_brain_runtime_never_references_corpus`.
+- **3.75** `corpus.lock` respeta su figura (2.4): versión 1, repo, commit SHA-1, recuento coherente y SHA-256 por archivo. Falsador: un lock fuera de la figura pasa. Prueba: `test_corpus_lock_schema`.
+
 ## Deuda de falsación
 
 Proposiciones sin prueba dedicada en `tests/`:
@@ -75,5 +83,5 @@ Proposiciones sin prueba dedicada en `tests/`:
 
 ## Recuento
 
-- Con prueba: **42** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.68: 8). Mutantes: 9/9 eliminados (`tools/mutate.py`). Comprobado automáticamente por `tools/tractatus.py` (3.63).
+- Con prueba: **47** (3.11–3.17: 7; 3.21–3.29: 9; 3.31–3.37: 7; 3.41–3.48: 8; 3.51–3.53: 3; 3.61–3.68: 8; 3.71–3.75: 5). Mutantes: 9/9 eliminados (`tools/mutate.py`). Comprobado automáticamente por `tools/tractatus.py` (3.63).
 - Sin prueba automática: D2–D3 pagadas con evidencia Real; deuda abierta **3** (D4–D6).
