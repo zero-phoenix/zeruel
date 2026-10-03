@@ -6,8 +6,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import tractatus  # noqa: E402
 
-# Trinquete: las pruebas huérfanas solo pueden disminuir (fase F2 las lleva a 0).
-MAX_HUERFANAS = 85
+# Toda prueba responde a una proposición: cero huérfanas.
+MAX_HUERFANAS = 0
 
 
 def test_tractatus_lint_passes():

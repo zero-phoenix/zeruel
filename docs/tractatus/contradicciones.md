@@ -23,9 +23,15 @@ Método: grep de valores y prohibiciones en `AGENTS.md`, `docs/HANDOFF.md`, `doc
 - Fusión de PR: HANDOFF:3 (solo #24 autorizado) es coherente con `AGENTS.md:11`.
 
 ## Pendientes
-- Ninguna contradicción abierta. D2–D6 siguen como deuda de falsación (no son contradicciones).
+- Ninguna contradicción abierta. Deuda de falsación abierta: D4–D6 (D2–D3 pagadas con evidencia Real).
 
 ## Revisión del consejo DeepSeek + GLM (02/10/2026) — corregida
 - Nombres cruzados: C1 (keepalive) ↔ `test_c1_pings_only_as_temporary_exception`; C2 (`cloud_gate_passed`) ↔ `test_c2_cloud_gate_never_true_in_source`.
 - La prueba C1 ahora exige «excepción temporal» en la misma línea de HANDOFF que prohíbe el keepalive, recorre todo `docs/` (salvo este archivo histórico) y busca **llamadas** a `/healthz` (no la definición de la ruta) en `.py/.js/.gs/.ps1/.sh` de `zeruel/`, `web/`, `apps-script/`, `tools/` y `scripts/`.
 - Mutaciones ejecutadas (cada una hace fallar exactamente una prueba): M1 quitar la excepción de `HANDOFF.md:50`; M2 añadir un `urlopen(".../healthz")` en `zeruel/`; M3 poner `"cloud_gate_passed": True` en `zeruel/server.py`.
+
+## Recuento ejecutable (03/10/2026)
+- **56** proposiciones 3.x, todas con falsador y pruebas existentes; **0** pruebas huérfanas (`tools/tractatus.py`, `test_tractatus.py`).
+- **11/11** mutantes eliminados (`tools/mutate.py`); el de 3.11 sobrevivía y reveló una prueba tautológica, corregida.
+- Corpus: `verify` refuta byte alterado, archivo sobrante, recuento falso y HEAD movido; 195/195 íntegros en `dbb4d1c`.
+- Todo corre en `.github/workflows/ci.yml` (hoy bloqueado por facturación de GitHub; se ejecuta en local).
