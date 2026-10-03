@@ -2,8 +2,10 @@
   "version": 1,
   "repo": "zero-phoenix/zeruel-corpus",
   "commit": "dbb4d1c589feeee7005344aff675c798a87fe78a",
-  "file_count": 193,
+  "file_count": 195,
   "files": {
+    ".github/workflows/headless-integrity.yml": "56d53de28a7ccf0982313f7b68e9a94aea08cfdc0c7ab3829ca84dc8718da7bd",
+    "README.md": "bbc7f9dc78cbb98e7a8a26dce1b34bd003677d3f8afabaca2c2dfab069d0c655",
     "knowledge/borrador_3017.txt": "a27af529ec0ccf28ed76b0e5bfb5669a0df87613f7ca45c4b0f3d87e1c957f49",
     "knowledge/borrador_3057.txt": "ee986ad374773ed700b1775b4f21f1bbc1c1fd2fc12fe1319547e669931d973a",
     "knowledge/borrador_3075.txt": "1d045833302ae8e3978d8a7649234e318a0b0c0cbd010241ca01408358e8f760",
