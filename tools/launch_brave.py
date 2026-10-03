@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
+import re
 import sys
 import win32process
 
+ALLOWED = re.compile(r"https://zeruel-synthetic-probe\.onrender\.com/[A-Za-z0-9#=&%._@+/-]*")
+
+
 def launch_brave(url):
+    # Solo la URL de la sonda y sin comillas ni espacios: no puede inyectar argumentos a Brave.
+    if not ALLOWED.fullmatch(url):
+        raise SystemExit("URL no permitida")
     brave_exe = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
     si = win32process.STARTUPINFO()
     si.lpDesktop = r"WinSta0\Default"

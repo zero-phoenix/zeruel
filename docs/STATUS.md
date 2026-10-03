@@ -8,6 +8,7 @@
   - El servicio **sí se suspendió y arrancó en frío** antes de t=35 (15:25:47) y de t=70 (16:03:56), por la inactividad de Render Free; la renovación funcionó igual tras cada arranque.
 - **REAL, prueba 1 (antes de #36):** 3/3 `synthetic_success` (IDs `be29674c…`, `73ec0e4a…`, `f7e8348…`); los clics del observador a 35 y 70 min se atribuyen al mismo falso positivo.
 - **REAL, otra identidad:** cuenta de Google distinta de la del propietario → 401; registro de Render `google_auth_rejected reason=not_owner` (14:51:07), sin correo ni token en el registro.
+- Fuentes: registro local `D:\SystemHopeenewal\log.txt` (fuera del repo; líneas por ID con hora UTC) y registros de aplicación de Render del 02/10/2026 (arranques 14:49:54, 15:25:47, 16:03:56; rechazo 14:51:07). La captura de t=35 contiene datos de navegación y no se publica.
 - Herramientas en `tools/renewal_autorun.ps1`, `tools/observe_probe.py`, `tools/launch_brave.py`.
 - Pendientes: cuota real o aceptada como simulada (decisión del propietario), uso móvil con ambas PCs apagadas, PR de cierre. `cloud_gate_passed=false`.
 
