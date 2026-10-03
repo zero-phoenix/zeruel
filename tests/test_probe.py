@@ -179,6 +179,17 @@ class ControllerTests(unittest.TestCase):
             finish.set()
             self.assertTrue(c.lock.acquire(timeout=2));c.lock.release()
 
+    def test_second_run_within_30_seconds_is_paused_cooldown(self):
+        c=Controller(run_probe=lambda:{'state':'synthetic_success'})
+        with patch.dict(os.environ,{},clear=True):
+            self.assertEqual(c.start('a'*32)[0],202)
+            self.assertTrue(c.lock.acquire(timeout=2));c.lock.release()
+            code,body=c.start('b'*32)
+            self.assertEqual((code,body['state']),(429,'paused_cooldown'))
+            c.last_run-=31
+            self.assertEqual(c.start('c'*32)[0],202)
+            self.assertTrue(c.lock.acquire(timeout=2));c.lock.release()
+
     def test_cloud_without_persistence_never_invokes_model(self):
         c=Controller(run_probe=lambda:self.fail('no model call'))
         with patch.dict(os.environ,{'RENDER':'true'}):

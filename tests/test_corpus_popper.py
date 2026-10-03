@@ -65,3 +65,33 @@ def test_corpus_pin_then_sync_roundtrip(tmp_path, monkeypatch):
     assert sync_corpus(destino, lock) is True
     (destino / "hecho.txt").write_bytes(b"hecho alterado")
     assert verify_corpus(destino, lock, verbose=False) is False
+
+
+def test_brain_runtime_never_references_corpus():
+    """4.4: el cerebro en ejecución (zeruel/) no lee ni escribe el corpus; solo tools/corpus.py lo toca."""
+    raiz = Path(__file__).resolve().parents[1] / "zeruel"
+    import ast
+    tocan = []
+    for p in raiz.rglob("*.py"):
+        texto = p.read_text(encoding="utf-8")
+        if "corpus" in texto.lower():
+            tocan.append((p.name, "menciona corpus"))
+        for nodo in ast.walk(ast.parse(texto)):
+            # Importar tools/ o importar dinámicamente esquivaría la búsqueda textual.
+            if isinstance(nodo, ast.ImportFrom) and (nodo.module or "").split(".")[0] == "tools":
+                tocan.append((p.name, "importa tools"))
+            if isinstance(nodo, ast.Import) and any(a.name.split(".")[0] in ("tools", "importlib") for a in nodo.names):
+                tocan.append((p.name, "import dinámico o de tools"))
+            if isinstance(nodo, ast.Name) and nodo.id == "__import__":
+                tocan.append((p.name, "__import__"))
+    assert tocan == []
+
+
+def test_corpus_lock_schema():
+    """2.4: la figura de corpus.lock: versión 1, repo, commit SHA-1, recuento coherente y SHA-256 por archivo."""
+    import re
+    lock = json.loads((Path(__file__).resolve().parents[1] / "corpus.lock").read_text(encoding="utf-8"))
+    assert lock["version"] == 1 and re.fullmatch(r"[\w.-]+/[\w.-]+", lock["repo"])
+    assert re.fullmatch(r"[0-9a-f]{40}", lock["commit"])
+    assert lock["file_count"] == len(lock["files"]) > 0
+    assert all(re.fullmatch(r"[0-9a-f]{64}", h) and not k.startswith(("/", "..")) for k, h in lock["files"].items())

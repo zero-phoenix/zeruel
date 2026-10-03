@@ -81,6 +81,10 @@ MUTANTES = [
         "if False:",
         PY + ["tests/test_tractatus.py"],
     ),
+    ("3.72", "zeruel/server.py", "time.monotonic() - self.last_run < 30", "time.monotonic() - self.last_run < 0",
+     PY + ["tests/test_probe.py"]),
+    ("3.73", "zeruel/checkpoint.py", "self.expires_at > time.time() + 360", "self.expires_at > time.time() + 60",
+     PY + ["tests/test_checkpoint.py"]),
 ]
 
 
