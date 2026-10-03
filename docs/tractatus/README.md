@@ -1,6 +1,6 @@
 # Tractatus de Zeruel
 
-Estructura proposicional del primer hito (sonda sintética). Cada proposición cita su falsador y la prueba existente que lo ejecuta.
+Estructura proposicional del primer hito (sonda sintética). Cada proposición cita su falsador y la prueba existente que lo ejecuta. Es ejecutable: `python tools/tractatus.py` (lint) y `python tools/mutate.py` (mutaciones); recuento en [contradicciones](contradicciones.md).
 
 1. [Hechos](1-hechos.md) — qué hechos maneja Zeruel y de dónde salen.
 2. [Figura](2-figura.md) — esquemas: checkpoint, caso de la sonda, `corpus.lock`.
