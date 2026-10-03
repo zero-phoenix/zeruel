@@ -4,7 +4,7 @@
 
 5.1 **Pruebas.** Cada proposición de `3-proposiciones.md` nombra una prueba de `tests/`. Que el nombre exista se comprueba con `grep` sobre `tests/`; que pase, con `python -m pytest -q` y `node --test tests/*.cjs`.
 
-5.2 **Mutaciones.** Una prueba solo cuenta si falla cuando se rompe la regla. Mutaciones mínimas recomendadas: aceptar `sum != 42` (3.11), permitir un segundo `claim` (3.23), devolver `cloud_gate_passed: true` (3.47), omitir la comprobación de generación (3.26), no borrar secretos del entorno hijo (3.16), alterar un byte del corpus (3.61, ya automatizada). Ninguna mutación se fusiona. El lint `tools/tractatus.py` (3.63) sustituye la comprobación manual de nombres.
+5.2 **Mutaciones.** Una prueba solo cuenta si falla cuando se rompe la regla. Mutaciones mínimas recomendadas: aceptar `sum != 42` (3.11), permitir un segundo `claim` (3.23), devolver `cloud_gate_passed: true` (3.47), omitir la comprobación de generación (3.26), no borrar secretos del entorno hijo (3.16), alterar un byte del corpus (3.61, ya automatizada). Ninguna mutación se fusiona. El lint `tools/tractatus.py` (3.63) sustituye la comprobación manual de nombres y `tools/mutate.py` (3.68) automatiza las mutaciones; ambos corren en `.github/workflows/ci.yml`.
 
 5.3 **Evidencia REAL vs SIMULADA.**
 - **REAL**: observada en Render o Apps Script con identificador, hora y resultado registrados en `docs/first-milestone.md` o `docs/HANDOFF.md`.
